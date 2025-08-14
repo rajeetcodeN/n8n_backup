@@ -1,0 +1,1379 @@
+{
+  "active": false,
+  "connections": {
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "SD agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "SD agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "SD agent",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "When chat message received",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "SD agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Web Search 2": {
+      "ai_tool": [
+        [
+          {
+            "node": "SD agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Web Search 1": {
+      "ai_tool": [
+        [
+          {
+            "node": "SD agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download File": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Set File ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Insert into Supabase Vectorstore",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Insert into Supabase Vectorstore",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert into Supabase Vectorstore": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert Document Metadata": {
+      "main": [
+        [
+          {
+            "node": "Download File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set File ID": {
+      "main": [
+        [
+          {
+            "node": "Insert Document Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Documents": {
+      "ai_tool": [
+        [
+          {
+            "node": "SD agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "S31",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Postgres",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Insert into Supabase Vectorstore",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Postgres1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "S3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Download File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "S31": {
+      "main": [
+        [
+          {
+            "node": "S32",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "S32": {
+      "main": [
+        [
+          {
+            "node": "Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Memory Delete": {
+      "ai_tool": [
+        [
+          {
+            "node": "SD agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-10T20:17:42.461Z",
+  "id": "eRlBwuEdYFpfub0T",
+  "isArchived": false,
+  "meta": null,
+  "name": "testrag",
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -580,
+        1380
+      ],
+      "id": "9c5db1f2-4688-4650-b590-397964d89be5",
+      "name": "OpenAI Chat Model1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9a9a245e-f1a1-4282-bb02-a81ffe629f0f",
+              "name": "chatInput",
+              "value": "={{ $json?.chatInput || $json.body.chatInput }}",
+              "type": "string"
+            },
+            {
+              "id": "b80831d8-c653-4203-8706-adedfdb98f77",
+              "name": "sessionId",
+              "value": "={{ $json?.sessionId || $json.body.sessionId}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3a4ba3f0-9c42-4cb0-afcd-5469f84876ce",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -340,
+        1140
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -40,
+        1500
+      ],
+      "id": "8d39b2c5-c84d-4a35-bd5f-af5b66c2a6b6",
+      "name": "Embeddings OpenAI2"
+    },
+    {
+      "parameters": {
+        "tableName": "n8n_chat"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        -420,
+        1380
+      ],
+      "id": "6150e994-bba2-4615-a677-9ee983f0ea23",
+      "name": "Postgres Chat Memory"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "=You are a helpful, intelligent AI support SD agent and are a proactive chat agent. Lead the conversation by asking open-ended questions and offering suggestions. Don’t wait for the user to guide the chat — keep it moving with helpful, friendly prompts. Anticipate needs, follow up thoughtfully, and make the user feel supported throughout.\n\n*Knowledge Access Instructions*\n   1.  First, for every user question, always use the Supabase store (n8n_test table) as the primary source for all questions.\n\n   2. Begin each query by searching only in Supabase (n8n_test). This content is primarily in German, so make sure all queries sent to Supabase are in German.\n\n   3. If relevant information is found in Supabase, respond in English by first providing the textual information, and then inserting the relevant image(s) immediately after the specific paragraph or section they relate to. Do not group images at the end of the response, and compulsory cite the internal document name and also provide the internal document url from where the information is provide.\nExample:\n\"For your reference, this information is based on the internal documentation related to Delivery Schedule with EDI Call-Off in SAP systems (Anwenderdoku_Lieferplan mit Abruf EDI). For more detailed guidance, you can access the internal document using the following URL:https://docs.google.com/document/d/110npvMDrPp4DkY5A18NLjBx8QXWomSaa/edit#heading=h.p71y513zojx\"\n\n   4. If no relevant information is found in Supabase:\nRespond to the user with:\n\"The information you requested is not available in our internal documentation. Would you like me to do a Web search?\"\n\n   5. Do NOT use web search tools automatically to perform web search.\n\n      -> Wait for the user's explicit confirmation (e.g., \"Yes\", \"Okay\", \"Please do\", etc.).\n\n   6. Only after receiving user permission, you should web search. To search the web always use both (web search 1 and web search 2 tools node) and they accept single string of English querry.\n\n  Clearly state that this is an external source.\nExample:\n\"This information comes from an external source (e.g.,from relevant website)...\"\n\n*Important Rules & Logic*\n   1. After getting permission for web search use that only for the immediate response, return to Supabase for all future queries unless the user explicitly asks for external help again.\n   2. If no data is found in Supabase or web:\n\"At the moment, there is no information available to fully address this request based on current internal and external sources.\"\n 3. Images should be placed inline, following the specific sentence or section they illustrate — not in a separate section. Use this format,\n\"![image](https://nsebtjqnfydjgjtigsiq.supabase.co/storage/v1/object/public/images/extracted_images/\"+ document_metadata_id + \"_\" + image_name +\")\"\n\n  example,\n![image](https://nsebtjqnfydjgjtigsiq.supabase.co/storage/v1/object/public/images/extracted_images/1SCQXpDQIjCppT32dk54Zs3Nzdoq4syu-_image10.png)\n\n*Format & Style Guidelines*\n   1. All Supabase queries must be in German and all responses to the user must be in English\n   2. Responses must be Professional, Clear and helpful, small as possible but presise and well structured.\n  3. Only for guide/ instruction based response, follow this format:\n   • Step-by-Step Guide\n   • Things To Consider\n   • Further Understanding\nUnder \"Further Understanding,\"do not ask for related questions.Instead, write two lines in points asking users what topic to explore next based on user question and give some suggestions.\n\n**Things to Consider/Important Details/Common Pitfalls\n   •You should actively work to avoid common errors and pay close attention to important details, ensuring none are overlooked while performing the task.",
+          "returnIntermediateSteps": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -100,
+        1140
+      ],
+      "id": "1dcf281e-d4c3-4c32-a5a7-8083443b0d6c",
+      "name": "SD agent"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "documents",
+        "toolDescription": "Use RAG to look up information in the knowledgebase.",
+        "tableName": {
+          "__rl": true,
+          "value": "n8n_test",
+          "mode": "list",
+          "cachedResultName": "n8n_test"
+        },
+        "topK": 10,
+        "options": {
+          "queryName": "match5_documents"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1,
+      "position": [
+        20,
+        1360
+      ],
+      "id": "3508aa7e-1c0e-4bf8-b616-1deb5d2175c2",
+      "name": "Supabase Vector Store"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Web Search tool only SAP websites",
+        "method": "POST",
+        "url": "https://api.tavily.com/search",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "Authorization",
+              "valueProvider": "fieldValue",
+              "value": "Bearer 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"
+            },
+            {
+              "name": "Content-Type",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query\": \"{query}\",\n  \"topic\": \"general\",\n  \"search_depth\": \"advanced\",\n  \"max_results\": 20,\n  \"include_answer\": true,\n  \"include_raw_content\": false,\n  \"include_images\": false,\n  \"include_image_descriptions\": false,\n  \"include_domains\": [\"https://help.sap.com/docs/\",\"https://community.sap.com/\"],\n  \"exclude_domains\": []\n}",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "query",
+              "description": "Search Querry",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        500,
+        1360
+      ],
+      "id": "d850098b-7502-4f47-a95a-96e306ac3b13",
+      "name": "Web Search 2"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Web Search tool excluding SAP websites",
+        "method": "POST",
+        "url": "https://api.tavily.com/search",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "Authorization",
+              "valueProvider": "fieldValue",
+              "value": "Bearer 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"
+            },
+            {
+              "name": "Content-Type",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query\": \"{query}\",\n  \"topic\": \"general\",\n  \"search_depth\": \"advanced\",\n  \"max_results\": 20,\n  \"include_answer\": true,\n  \"include_raw_content\": false,\n  \"include_images\": false,\n  \"include_image_descriptions\": false,\n  \"include_domains\": [],\n  \"exclude_domains\": [\"https://help.sap.com/docs/\",\"https://community.sap.com/\"]\n}",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "query",
+              "description": "Search Querry",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        360,
+        1360
+      ],
+      "id": "8d9625a0-ead3-42cb-9a70-3eef64836756",
+      "name": "Web Search 1"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "97d244a1-29ac-4ea2-9718-2907a043ccbc",
+      "name": "Download File",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        60,
+        340
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://universal-file-to-text-extractor.vercel.app/extract",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "mode",
+              "value": "single"
+            },
+            {
+              "name": "output_type",
+              "value": "jsonl"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "files",
+              "inputDataFieldName": "data"
+            },
+            {
+              "name": "include_images",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        340
+      ],
+      "id": "d57ab5b0-4de6-43af-bec2-ae5d3be2a44d",
+      "name": "HTTP Request",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "searchMethod": "query",
+        "returnAll": true,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1WpO8qir_UUWVna9WOY_Vj_RVbwBrWawY",
+            "mode": "list",
+            "cachedResultName": "Customer Documentation",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1WpO8qir_UUWVna9WOY_Vj_RVbwBrWawY"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "mimeType",
+            "name",
+            "webViewLink"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -820,
+        320
+      ],
+      "id": "5a609acb-49cb-4b80-b4c8-d10037ce0437",
+      "name": "Google Drive",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -600,
+        320
+      ],
+      "id": "119caadc-82e4-4646-af1c-8e8cf1e5063b",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.content.parseJson().pageContent.toJsonString() }}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "source",
+                "value": "={{ $json.content.parseJson().metadata.source }}"
+              },
+              {
+                "name": "blobType",
+                "value": "application/jsonb"
+              },
+              {
+                "name": "loc",
+                "value": "={{ $json.content.parseJson().metadata.loc }}"
+              },
+              {
+                "name": "source_metadata_id",
+                "value": "={{ $json.content.parseJson().metadata.source_metadata_id }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "5efa1edf-80cb-4584-9a66-524700e77f0c",
+      "name": "Default Data Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "e943e62f-65e0-426d-bf78-dd6243bd98ad",
+      "name": "Embeddings OpenAI1",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "chunkSize": 10000000
+      },
+      "id": "6216709a-b7e6-49bf-97b5-25c94f51703c",
+      "name": "Character Text Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "tableName": {
+          "__rl": true,
+          "value": "n8n_test",
+          "mode": "list",
+          "cachedResultName": "n8n_test"
+        },
+        "options": {
+          "queryName": "match5_documents"
+        }
+      },
+      "id": "fc849651-c22d-43bf-acac-04175dce82f7",
+      "name": "Insert into Supabase Vectorstore",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "n8n_metadata",
+          "mode": "list",
+          "cachedResultName": "n8n_metadata"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Set File ID').item.json.file_id }}",
+            "title": "={{ $('Set File ID').item.json.file_title.replaceSpecialChars() }}",
+            "url": "={{ $('Set File ID').item.json.file_url }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "schema",
+              "displayName": "schema",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        -140,
+        340
+      ],
+      "id": "c048cabe-8395-4bca-a4de-651e133640f1",
+      "name": "Insert Document Metadata",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "10646eae-ae46-4327-a4dc-9987c2d76173",
+              "name": "file_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "f4536df5-d0b1-4392-bf17-b8137fb31a44",
+              "name": "file_type",
+              "value": "={{ $json.mimeType }}",
+              "type": "string"
+            },
+            {
+              "id": "77d782de-169d-4a46-8a8e-a3831c04d90f",
+              "name": "file_title",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "9bde4d7f-e4f3-4ebd-9338-dce1350f9eab",
+              "name": "file_url",
+              "value": "={{ $json.webViewLink }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c218a92e-2ecb-4f3b-8b41-eb2c69eeb342",
+      "name": "Set File ID",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -360,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to fetch all available documents, including the table schema if the file is a CSV or Excel file.",
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "n8n_metadata",
+          "mode": "list",
+          "cachedResultName": "n8n_metadata"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgresTool",
+      "typeVersion": 2.5,
+      "position": [
+        -220,
+        1400
+      ],
+      "id": "934a5cc9-dc33-4453-9ee8-17e3a2479125",
+      "name": "List Documents"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT table_name\nFROM information_schema.tables\nWHERE table_schema = 'public' and table_name like 'n8n%'\norder by length(table_name) Asc;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        -760,
+        20
+      ],
+      "id": "b4fede7a-f9a7-4f9e-8032-8211ff144b1f",
+      "name": "Postgres1",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -540,
+        20
+      ],
+      "id": "62517b67-d347-476c-a3fc-91a8a84d06c2",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "={{ $json.table_name }}",
+          "mode": "name"
+        },
+        "restartSequences": true,
+        "options": {
+          "cascade": true
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        -280,
+        40
+      ],
+      "id": "85c90067-d809-4602-9c00-401fc4c3470d",
+      "name": "Postgres",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d15e917b-43d2-40b8-8b49-af467ff63961",
+              "leftValue": "={{ $json.data[0].parseJson().skipped }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        520,
+        340
+      ],
+      "id": "ed5df05f-c2e9-4fb1-b82a-38b4fe8be4e7",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5132d92c-41da-4a55-ad79-0c329ca7e626",
+              "name": "Document name",
+              "value": "={{ $('HTTP Request').item.json.data[0].parseJson().source }}",
+              "type": "string"
+            },
+            {
+              "id": "c8160701-2be7-43c6-bcfa-295fbebe0e23",
+              "name": "Document data",
+              "value": "={{ $('HTTP Request').item.json.data[0].parseJson().blocks }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        320
+      ],
+      "id": "4207df50-47aa-4914-8ad0-ecc23c72bd74",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 0. Parse the incoming Document data if it's still a string\nlet raw = $input.first().json['Document data'];\nlet arr = typeof raw === 'string' ? JSON.parse(raw) : raw;\nlet source = $input.first().json['Document name'];\nlet source_id = $('Insert Document Metadata').first().json.id\n\n// Helper: return character length of an array object\nfunction getObjLength(obj) {\n  console.log(obj, typeof(obj));\n  return (obj.content || '').length;\n}\n\nfunction getObjLengthofTextOnly(obj) {\n  if (obj.type === 'image_ocr') {\n    return 0;\n  }\n  return (obj.content || '').length;\n}\n\n// Split any single item whose content is > chunkSize into multiple items\nfunction splitOversizedItems(arr, chunkSize) {\n  const result = [];\n  for (const item of arr) {\n    const content = item.content || '';\n    if (content.length <= chunkSize) {\n      result.push(item);\n    } else {\n      // slice into parts of size chunkSize\n      for (let start = 0; start < content.length; start += chunkSize) {\n        const part = content.slice(start, start + chunkSize);\n        // carry over other fields (type, filename, etc.)\n        result.push({ ...item, content: part });\n      }\n    }\n  }\n  return result;\n}\n\n// Chunking function\nfunction chunkByCharLength(arr, source, chunkSize = 1000) {\n  // first, split oversized items\n  const flat = splitOversizedItems(arr, chunkSize);\n\n  const response = [];\n  let idx = 0;\n  let charPos = 0;\n\n  while (idx < flat.length) {\n    const a = [];\n    let sum = 0;\n    const from = charPos;\n\n    // collect until we hit chunkSize\n    while (idx < flat.length && sum < chunkSize) {\n      const item = flat[idx];\n      const len = getObjLength(item);\n      const text_len = getObjLengthofTextOnly(item);\n      a.push(item);\n      sum += len;\n      charPos += text_len;\n      idx++;\n    }\n\n    const to = charPos;\n    const metadata = {\n      source: source,\n      source_metadata_id: source_id,\n      loc: { Characters: { from, to } }\n    };\n\n    response.push({\n      content: JSON.stringify({\n        pageContent: a,\n        metadata\n      })\n    });\n  }\n\n  return response;\n}\n\n// 1. Run chunking\nconst chunks = chunkByCharLength(arr, source, 1000);\n\n// 2. Return in n8n‑compatible format\nreturn chunks.map(c => ({ json: c }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        320
+      ],
+      "id": "7d490600-eafb-4b16-8d40-e987e2ff7df6",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "formTitle": "Refresh Database ???",
+        "formDescription": "Delete and re-Upload all data in Supabase.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Start Refresh",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Yes"
+                  },
+                  {
+                    "option": "No"
+                  }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -1160,
+        40
+      ],
+      "id": "e0eb8faa-8e16-48d1-b87d-74fd69e62616",
+      "name": "On form submission",
+      "webhookId": "fe596c78-6cc5-44f7-87a4-b2ed7f1a509f"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "32d90ae7-9278-4011-9469-ba387d9d9ed1",
+              "leftValue": "={{ $json['Start Refresh'] }}",
+              "rightValue": "Yes",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1000,
+        40
+      ],
+      "id": "9dfce18c-a09f-484d-a825-3253a2a53625",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data",
+        "options": {
+          "fileName": "={{ $('Insert Document Metadata').item.json.id +\"_\"+ $json.fileName}}"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1400,
+        20
+      ],
+      "id": "3abe3487-8b83-467b-85ce-7169aff64194",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n    \"data\": \"{{ $json.data }}\", \n    \"fileName\": \"{{ $json.filename }}\", \n    \"mimeType\": \"image/png\"\n}\n\n\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1200,
+        20
+      ],
+      "id": "f85ade72-b2c3-4422-b570-5878c9394eab",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7e6dcc66-0501-4739-a738-909878c4b23d",
+              "name": "images",
+              "value": "={{ $('HTTP Request').item.json.data[0].parseJson().images }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        20
+      ],
+      "id": "3afbfb6d-6bc5-46bd-a9b5-844fa06040de",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "images",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        20
+      ],
+      "id": "adacdfb8-0237-4973-ac96-4330f88636e9",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        460,
+        620
+      ],
+      "id": "8db6632d-4521-4bdc-8a15-9820849fd273",
+      "name": "Wait",
+      "webhookId": "29a6451b-8a53-4598-b4fe-e11241eb51ab"
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "bucketName": "images",
+        "fileName": "=",
+        "additionalFields": {
+          "parentFolderKey": "extracted_images"
+        }
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        20
+      ],
+      "id": "6d7e6ffc-6c75-487b-a033-526af85c9385",
+      "name": "S3"
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "operation": "delete",
+        "bucketName": "images",
+        "folderKey": "extracted_images"
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d48f6f28-bdb4-448c-8afa-51c6413d5bb0",
+      "name": "S31",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "bucketName": "images",
+        "folderName": "extracted_images",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "2a2c316f-8034-4145-b876-e7d702246ad4",
+      "name": "S32"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "If user send \"clear\" or \"restart\" use this tool",
+        "operation": "delete",
+        "tableId": "n8n_chat",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "session_id",
+              "condition": "eq",
+              "keyValue": "={{ $('When chat message received').item.json.sessionId }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        640,
+        1340
+      ],
+      "id": "7ab679ac-04b8-4811-a5dc-9c3e06d09d39",
+      "name": "Supabase Memory Delete"
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Need assistance? Just ask—I’m here to support you every step of the way!",
+        "options": {
+          "allowFileUploads": true,
+          "loadPreviousSession": "memory",
+          "subtitle": "Your digital logistics advisor is here. How can I help optimize your supply chain today?",
+          "title": "Welcome to Nosta!",
+          "customCss": ":root {\n  /* Brand Colors (Nosta) */\n  --chat--color-primary: #009EE3; /* Nosta Azure‑blue */\n  --chat--color-primary-shade-50: #007bb8;\n  --chat--color-primary-shade-100: #005d8f;\n  --chat--color-secondary: #582DC6; /* Nosta Violet accent */\n  --chat--color-secondary-shade-50: #461fa1;\n  --chat--color-secondary-shade-100: #36197a;\n  --chat--color-white: #FFFFFF;\n  --chat--color-light: #E4E4E4; /* light grey surfaces & borders */\n  --chat--color-light-shade-50: #d1d1d1;\n  --chat--color-light-shade-100: #bdbdbd;\n  --chat--color-medium: #B5BCC9;\n  --chat--color-dark: #000000; /* solid black text */\n  --chat--color-disabled: #9FA6B2;\n  --chat--color-typing: #555555;\n  --chat--header-height: 4rem;\n\n  /* Layout & Fonts */\n  --chat--spacing: 1rem;\n  --chat--border-radius: 0.5rem;\n  --chat--font-family: 'Roboto', system-ui, sans-serif;\n  --chat--heading-font-family: 'Poppins', system-ui, sans-serif;\n\n  /* Window */\n  --chat--window--width: 420px;\n  --chat--window--height: 600px;\n  --chat--window--z-index: 9999;\n  --chat--window--border: 1px solid var(--chat--color-light-shade-100);\n  --chat--window--border-radius: var(--chat--border-radius);\n\n  /* Header */\n  --chat--header--padding: 0.75rem;                    /* 50% less height */\n  --chat--header--background: var(--chat--color-primary-shade-100); /* deeper blue */\n  --chat--header--color: var(--chat--color-white);\n  --chat--heading--font-size: 1.8em;\n  --chat--subtitle--font-size: 1rem;\n  --chat--subtitle--line-height: 1.5;\n\n  /* Messages */\n  --chat--message--font-size: 1rem;\n  --chat--message--padding: 0.8rem 1rem;\n  --chat--message--border-radius: var(--chat--border-radius);\n  --chat--message--margin-bottom: 0.35rem; /* less spacing */\n  --chat--message-line-height: 1.6;\n  --chat--message--bot--background: #97979738;\n  --chat--message--bot--color: var(--chat--color-dark);\n  --chat--message--user--background: var(--chat--color-primary);\n  --chat--message--user--color: var(--chat--color-white);\n  --chat--message--pre--background: #e8ecf1;\n\n  /* Input */\n  --chat--textarea--height: 52px;\n  --chat--input--background: var(--chat--color-white);\n  --chat--input--text-color: var(--chat--color-dark);\n  --chat--input--padding: 0.75rem 1rem;\n  --chat--input--border: 1px solid var(--chat--color-light-shade-50);\n  --chat--input--border-radius: var(--chat--border-radius);\n\n  /* Buttons */\n  --chat--button--background: var(--chat--color-secondary);\n  --chat--button--color: var(--chat--color-white);\n  --chat--button--hover--background: var(--chat--color-secondary-shade-50);\n  --chat--button--hover--color: var(--chat--color-white);\n  --chat--button--padding: 0.5rem 1.2rem;\n  --chat--button--border-radius: var(--chat--border-radius);\n\n  /* Footer */\n  --chat--body--background: var(--chat--color-light);\n  --chat--footer--background: var(--chat--color-white);\n  --chat--footer--color: var(--chat--color-dark);\n}\n\n/* Structure */\nbody {\n  margin: 0;\n  font-family: var(--chat--font-family);\n  background: var(--chat--body--background);\n}\n\n.chat-window {\n  width: var(--chat--window--width);\n  height: var(--chat--window--height);\n  margin: 2rem auto;\n  border: var(--chat--window--border);\n  border-radius: var(--chat--window--border-radius);\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);\n}\n\n.chat-layout .chat-header {\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: right center;\n    background-image: url(https://www.nosta.com/wp-content/themes/kd-theme/resources/img/nosta.jpg);\n    display: flex;\n    flex-direction: row;\n    justify-content: space-evenly;\n    align-items: center;\n    gap: 1em;\n    height: var(--chat--header-height);\n    padding: var(--chat--header--padding);\n    background-color: var(--chat--header--background);\n    color: var(--chat--header--color);\n    border-top: var(--chat--header--border-top);\n    border-bottom: var(--chat--header--border-bottom);\n    border-left: var(--chat--header--border-left);\n    border-right: var(--chat--header--border-right);\n}\n\n.chat-logo {\n  height: 40px;\n  width: auto;\n}\n\n.chat-header-text h1 {\n  margin: 0;\n  font-family: var(--chat--heading-font-family);\n  font-weight: 600;\n  font-size: var(--chat--heading--font-size);\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n\n.chat-header-text p {\n  margin: 0.25rem 0 0;\n  font-size: var(--chat--subtitle--font-size);\n  line-height: var(--chat--subtitle--line-height);\n}\n\n/* Chat body */\n.chat-body {\n  flex: 1;\n  padding: var(--chat--spacing);\n  background: var(--chat--body--background);\n  overflow-y: auto;\n}\n\n.chat-message {\n  padding: var(--chat--message--padding);\n  margin-bottom: var(--chat--message--margin-bottom);\n  border-radius: var(--chat--message--border-radius);\n  font-size: var(--chat--message--font-size);\n  line-height: var(--chat--message-line-height);\n  max-width: 80%;\n  box-shadow: 0px 5px 9px 3px rgb(0 0 0 / 12%);\n  width: fit-content;\n}\n\n.chat-message.bot {\n  background: var(--chat--message--bot--background);\n  color: var(--chat--message--bot--color);\n  border-left: 3px solid var(--chat--color-primary);\n}\n\n.chat-message.user {\n  background: var(--chat--message--user--background);\n  color: var(--chat--message--user--color);\n  border-left: 3px solid var(--chat--color-secondary);\n  margin-left: auto;\n}\n\n/* Footer */\n.chat-footer {\n  background: var(--chat--footer--background);\n  padding: 0.5rem 1rem;\n  border-top: 1px solid var(--chat--color-light-shade-100);\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n\n.chat-footer textarea {\n  flex-grow: 1;\n  resize: none;\n  padding: var(--chat--input--padding);\n  height: var(--chat--textarea--height);\n  border: var(--chat--input--border);\n  border-radius: var(--chat--input--border-radius);\n  font-family: var(--chat--font-family);\n  font-size: 1rem;\n  color: var(--chat--input--text-color);\n  background: var(--chat--input--background);\n}\n\n.chat-send-button {\n  background: var(--chat--button--background);\n  color: var(--chat--button--color);\n  border: none;\n  padding: var(--chat--button--padding);\n  border-radius: var(--chat--button--border-radius);\n  font-size: 1.25rem;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n\n.chat-send-button:hover {\n  background: var(--chat--button--hover--background);\n}\n\nimg {\n    width: -webkit-fill-available;\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -700,
+        1140
+      ],
+      "id": "d657d35c-e9bf-4ce7-9d16-b1405e56980b",
+      "name": "When chat message received",
+      "webhookId": "cae69b6d-5ce7-47fa-bae6-611f4ba4af17"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-10T20:17:42.000Z",
+  "versionId": "1428feb6-797e-4d41-acc5-a4161bf5ac16"
+}

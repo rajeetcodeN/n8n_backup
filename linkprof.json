@@ -1,0 +1,880 @@
+{
+  "active": false,
+  "connections": {
+    "🚀 Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "📊 Fetch Ready Profiles from Google Sheets ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📊 Fetch Ready Profiles from Google Sheets ": {
+      "main": [
+        [
+          {
+            "node": "Configure Apify API Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔍 Launch LinkedIn Profile Scraper Actor": {
+      "main": [
+        [
+          {
+            "node": "📈 Check Profile Scraper Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📈 Check Profile Scraper Status": {
+      "main": [
+        [
+          {
+            "node": "❓ Is Profile Scraping Complete?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "❓ Is Profile Scraping Complete?": {
+      "main": [
+        [
+          {
+            "node": "📥 Retrieve Profile Data ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "⏰ Wait for Profile Processing ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⏰ Wait for Profile Processing ": {
+      "main": [
+        [
+          {
+            "node": "📈 Check Profile Scraper Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📥 Retrieve Profile Data ": {
+      "main": [
+        [
+          {
+            "node": "💾 Update Profile Information in Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "💾 Update Profile Information in Sheets": {
+      "main": [
+        [
+          {
+            "node": "🔍 Launch LinkedIn Post Scraper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔍 Launch LinkedIn Post Scraper": {
+      "main": [
+        [
+          {
+            "node": "📈 Check Post Scraper Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📈 Check Post Scraper Status": {
+      "main": [
+        [
+          {
+            "node": "❓ Is Post Scraping Complete?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "❓ Is Post Scraping Complete?": {
+      "main": [
+        [
+          {
+            "node": "📥 Retrieve Post Data ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "⏰ Wait for Post Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⏰ Wait for Post Processing": {
+      "main": [
+        [
+          {
+            "node": "📈 Check Post Scraper Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📥 Retrieve Post Data ": {
+      "main": [
+        [
+          {
+            "node": "💾 Save Post Information to Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure Apify API Settings": {
+      "main": [
+        [
+          {
+            "node": "🔍 Launch LinkedIn Profile Scraper Actor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-07T11:50:27.528Z",
+  "id": "3LkkGz7WQI9ssw5a",
+  "isArchived": false,
+  "meta": null,
+  "name": "linkprof",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        60,
+        760
+      ],
+      "id": "2ba3a7b4-a7f3-4417-9e83-975b0c272f9b",
+      "name": "🚀 Manual Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1PFPhAeCU25-7ZBvQfMXZcoDQQ5vkEScMe-ILRmlJeEA",
+          "mode": "list",
+          "cachedResultName": "Linkedin Scrapped Information",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PFPhAeCU25-7ZBvQfMXZcoDQQ5vkEScMe-ILRmlJeEA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Profile Information",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PFPhAeCU25-7ZBvQfMXZcoDQQ5vkEScMe-ILRmlJeEA/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Scrape Status",
+              "lookupValue": "ready"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        300,
+        760
+      ],
+      "id": "75efb41b-4a3d-40ef-be49-e447df4f01b7",
+      "name": "📊 Fetch Ready Profiles from Google Sheets "
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.apify.com/v2/acts/dev_fusion~linkedin-profile-scraper/runs",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"profileUrls\": {{ $json.profile_ids }}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1000,
+        700
+      ],
+      "id": "fad923e2-1688-46e5-ad31-ae830a853336",
+      "name": "🔍 Launch LinkedIn Profile Scraper Actor"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.apify.com/v2/acts/{{ $json.data.actId }}/runs/last",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1260,
+        640
+      ],
+      "id": "48d2c7ca-5ae2-4571-87ac-c2f5c2482cf6",
+      "name": "📈 Check Profile Scraper Status"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f4022ce0-3ed0-4c5b-92e9-9f54dbf8ac9c",
+              "leftValue": "={{ $json.data.status }}",
+              "rightValue": "SUCCEEDED",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1480,
+        560
+      ],
+      "id": "1e512a40-2ace-413e-9e0f-1c68ccd92190",
+      "name": "❓ Is Profile Scraping Complete?"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1700,
+        740
+      ],
+      "id": "8997b27a-57a9-4e72-9d4b-3b113505104f",
+      "name": "⏰ Wait for Profile Processing ",
+      "webhookId": "4ba9e8c1-7bc9-4355-b14c-c18fd30b669e"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.apify.com/v2/acts/{{ $json.data.actId }}/runs/last/dataset/items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1700,
+        500
+      ],
+      "id": "36e43cb5-5b05-411b-be02-e8fe92935781",
+      "name": "📥 Retrieve Profile Data "
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1PFPhAeCU25-7ZBvQfMXZcoDQQ5vkEScMe-ILRmlJeEA",
+          "mode": "list",
+          "cachedResultName": "Linkedin Scrapped Information",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PFPhAeCU25-7ZBvQfMXZcoDQQ5vkEScMe-ILRmlJeEA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Profile Information",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PFPhAeCU25-7ZBvQfMXZcoDQQ5vkEScMe-ILRmlJeEA/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "=",
+            "Scrape Status": "completed",
+            "First Name": "={{ $json.firstName }}",
+            "Linkedin Profile": "={{ $json.linkedinUrl }}",
+            "Last Name": "={{ $json.lastName }}",
+            "Headline": "={{ $json.headline }}",
+            "Connection": "={{ $json.connections }}",
+            "Follower": "={{ $json.followers }}",
+            "Email Id": "={{ $json.email }}",
+            "Mobile Number": "={{ $json.mobileNumber }}",
+            "About": "={{ $json.about }}",
+            "ProfilePic": "={{ $json.profilePic }}"
+          },
+          "matchingColumns": [
+            "Linkedin Profile"
+          ],
+          "schema": [
+            {
+              "id": "Linkedin Profile",
+              "displayName": "Linkedin Profile",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Scrape Status",
+              "displayName": "Scrape Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "First Name",
+              "displayName": "First Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Last Name",
+              "displayName": "Last Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Headline",
+              "displayName": "Headline",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Connection",
+              "displayName": "Connection",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Follower",
+              "displayName": "Follower",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email Id",
+              "displayName": "Email Id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Mobile Number",
+              "displayName": "Mobile Number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "About",
+              "displayName": "About",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ProfilePic",
+              "displayName": "ProfilePic",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        2340,
+        940
+      ],
+      "id": "cb237a78-07f9-4174-a83f-49b57ccc82b2",
+      "name": "💾 Update Profile Information in Sheets"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.apify.com/v2/acts/apimaestro~linkedin-batch-profile-posts-scraper/runs",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"limit\": 5,\n    \"usernames\": {{ $('Configure Apify API Settings').item.json.profile_ids }}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        1340
+      ],
+      "id": "9d29041a-1d15-40fc-ab24-c50bf849f2b4",
+      "name": "🔍 Launch LinkedIn Post Scraper"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.apify.com/v2/acts/{{ $json.data.actId }}/runs/last",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1320,
+        1340
+      ],
+      "id": "6a04c20e-45fc-48cc-8345-0fd115f9f640",
+      "name": "📈 Check Post Scraper Status"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f4022ce0-3ed0-4c5b-92e9-9f54dbf8ac9c",
+              "leftValue": "={{ $json.data.status }}",
+              "rightValue": "SUCCEEDED",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1540,
+        1260
+      ],
+      "id": "7069679a-7b05-442c-9a0b-d2240fc259e5",
+      "name": "❓ Is Post Scraping Complete?"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1760,
+        1440
+      ],
+      "id": "24c1351f-a30b-4a24-bbe0-d9ae914b32a2",
+      "name": "⏰ Wait for Post Processing",
+      "webhookId": "4ba9e8c1-7bc9-4355-b14c-c18fd30b669e"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.apify.com/v2/acts/{{ $json.data.actId }}/runs/last/dataset/items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        1200
+      ],
+      "id": "b88e2fee-a97d-4cf8-be17-acc865aaee41",
+      "name": "📥 Retrieve Post Data "
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1PFPhAeCU25-7ZBvQfMXZcoDQQ5vkEScMe-ILRmlJeEA",
+          "mode": "list",
+          "cachedResultName": "Linkedin Scrapped Information",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PFPhAeCU25-7ZBvQfMXZcoDQQ5vkEScMe-ILRmlJeEA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 874642658,
+          "mode": "list",
+          "cachedResultName": "Post Information",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PFPhAeCU25-7ZBvQfMXZcoDQQ5vkEScMe-ILRmlJeEA/edit#gid=874642658"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Linkedin Profile": "={{ $json.profile_input }}",
+            "Post Link": "={{ $json.url }}",
+            "Posted At": "={{ $json.posted_at.date }}",
+            "Text": "={{ $json.text }}",
+            "Media Type": "={{ $json.media.type }}",
+            "Media URL": "={{ $json.media.url }}",
+            "Total Reaction": "={{ $json.stats.total_reactions }}",
+            "Like": "={{ $json.stats.like }}",
+            "Support": "={{ $json.stats.support }}",
+            "Love": "={{ $json.stats.love }}",
+            "Insight": "={{ $json.stats.insight }}",
+            "Comments": "={{ $json.stats.comments }}",
+            "Celebrate": "={{ $json.stats.celebrate }}",
+            "Reposts": "={{ $json.stats.reposts }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Linkedin Profile",
+              "displayName": "Linkedin Profile",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Post Link",
+              "displayName": "Post Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Posted At",
+              "displayName": "Posted At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Text",
+              "displayName": "Text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Media Type",
+              "displayName": "Media Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Media URL",
+              "displayName": "Media URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Total Reaction",
+              "displayName": "Total Reaction",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Like",
+              "displayName": "Like",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Support",
+              "displayName": "Support",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Love",
+              "displayName": "Love",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Insight",
+              "displayName": "Insight",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Celebrate",
+              "displayName": "Celebrate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Comments",
+              "displayName": "Comments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reposts",
+              "displayName": "Reposts",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        2340,
+        1300
+      ],
+      "id": "01e20601-1b81-4605-981a-9ecfaa9e1f20",
+      "name": "💾 Save Post Information to Sheets"
+    },
+    {
+      "parameters": {
+        "content": "## 🎯 LinkedIn Profile & Post Scraper Workflow\n**Purpose:** Automatically extract comprehensive LinkedIn profile information and recent posts using Apify actors\n\n### 📋 Workflow Steps:\n1. **Profile Processing** → Fetch profiles marked as \"ready\" from Google Sheets\n2. **Batch Control** → Limit processing to prevent rate limits  \n3. **Profile Scraping** → Extract detailed profile data using Apify\n4. **Status Monitoring** → Wait and check until scraping completes\n5. **Data Storage** → Save profile information back to Google Sheets\n6. **Post Scraping** → Extract recent posts from scraped profiles\n7. **Final Storage** → Save post data to separate sheet tab\n\n### 🔄 Automated Flow:\nManual Trigger → Profile Scraping → Data Update → Post Scraping → Final Storage",
+        "height": 300,
+        "width": 660
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        80
+      ],
+      "id": "3b0c2ae0-d45f-4ff0-938f-5708fb19b4e0",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## 👤 Profile Information Extraction\n**Actor Used:** [LinkedIn Profile Scraper](https://console.apify.com/actors/2SyF0bVxmgGr8IVCZ/runs) (Apify)\n\n### 📊 Data Extracted:\n- Basic Info: Name, headline, location, connections\n- Professional: Current job, company details, experience\n- Contact: Email, mobile (when available)\n- Social: Profile picture, LinkedIn URL, about section\n- Detailed: Skills, education, certifications, recommendations\n\n### ⚠️ Requirements:\n- Valid Apify API key\n- LinkedIn profile URLs in \"ready\" status\n- Proper rate limiting to avoid blocks",
+        "height": 580,
+        "width": 1300,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        780,
+        400
+      ],
+      "id": "534bf756-0759-433b-b6a0-4488bf48c00f",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## 📝 LinkedIn Post Data Extraction  \n**Actor Used:** [LinkedIn Batch Profile Posts Scraper](https://console.apify.com/actors/r4oNX7IHlW4RQAjKP/input) (Apify)\n\n### 📊 Post Data Collected:\n- Content: Post text, media URLs, media type\n- Engagement: Likes, comments, reposts, reactions breakdown\n- Metadata: Post date, profile association, post URL\n- Analytics: Total reactions by type (Like, Love, Support, etc.)\n\n### ⚙️ Configuration:\n- Limit: 5 posts per profile (configurable)\n- Batch processing for efficiency\n- Automatic retry on failures",
+        "height": 620,
+        "width": 1300,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        780,
+        1040
+      ],
+      "id": "0c29a9be-eacf-434c-9064-31a1f99b2597",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## 📈 Google Sheets Integration\n**Two-Sheet System for organized data storage**\n\n### 📋 Sheet 1: Profile Information\n- Input: Profiles with \"ready\" status\n- Output: Complete profile data + \"completed\" status\n- Matching: By LinkedIn Profile URL\n\n### 📋 Sheet 2: Post Information  \n- Fresh posts data from all processed profiles\n- Detailed engagement metrics\n- Linked to source profiles for analysis\n\n### 🔄 Status Tracking:\n\"ready\" → \"completed\" prevents duplicate processing",
+        "height": 960,
+        "width": 480,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2180,
+        540
+      ],
+      "id": "69a5f15a-0654-42ea-a576-dd674757af4b",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## 👨‍💻 Creator Information\n\n**Created by:** Lakshit Ukani  \n🔗 **LinkedIn:** [Connect with me](https://www.linkedin.com/in/lakshit-ukani/)\n🔗 **Youtube:** [Subscribe to my Channel](https://www.youtube.com/@lakshit-ukani?sub_confirmation=1)\n\n### 🤝 Community & Support\n💬 **Join Community:** [Skool Community Link](https://www.skool.com/ai-automation-club-7843)   \n📚 **Documentation:** [Apify LinkedIn Scrapers Guide](https://docs.apify.com/academy/web-scraping-for-beginners)  \n\n### 📞 Need Help?\n- **Quick Questions:** Comment on the YouTube video\n- **Workflow Issues:** Post in our community  \n- **Business Inquiries:** Connect via LinkedIn",
+        "height": 360,
+        "width": 540,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a86bb5bc-1c37-4050-b9ea-11ba5e78dfcf",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e5d58c79-b9ae-4f41-ad8b-6d20e9a38833",
+              "name": "profile_ids",
+              "value": "={{ JSON.stringify({\n  profileUrls: $items(\"📊 Fetch Ready Profiles from Google Sheets \")\n    .map(i => i.json[\"Linkedin Profile\"])\n    .filter(url => !!url)\n}[\"profileUrls\"]) }}\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        540,
+        760
+      ],
+      "id": "2e04c587-8fa0-4d13-9379-49eaf0a2b056",
+      "name": "Configure Apify API Settings"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-08T14:26:50.000Z",
+  "versionId": "288f5218-bf2e-4cba-98aa-050c40c4af09"
+}

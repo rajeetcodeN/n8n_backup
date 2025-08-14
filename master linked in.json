@@ -1,0 +1,1487 @@
+{
+  "active": false,
+  "connections": {
+    "Create Image": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        []
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "banner Image": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "ref": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "search": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "scheduler": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "template": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Date": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        []
+      ]
+    },
+    "Supabase user delete": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase user create": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase user get": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase files Delete": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "blogs",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "SAP",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Legal1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Legal2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Legal3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-06T19:06:35.999Z",
+  "id": "H3gAnWwnTvRNMPiK",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "master linked in",
+  "nodes": [
+    {
+      "parameters": {
+        "name": "createImage",
+        "description": "Call this tool to create an image. ",
+        "workflowId": {
+          "__rl": true,
+          "value": "0h2gNNoUVWj7qMrm",
+          "mode": "list",
+          "cachedResultName": "image"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "post": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('post', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "post"
+          ],
+          "schema": [
+            {
+              "id": "post",
+              "displayName": "post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        1400,
+        2140
+      ],
+      "id": "31f393b7-ab47-4dca-92d0-470b066efd61",
+      "name": "Create Image"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        880,
+        2140
+      ],
+      "id": "b7021c99-b5b1-4958-bfc3-b619f9937537",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "description": "Use the tool to think about something. It will not obtain new information or change the database."
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        2140
+      ],
+      "id": "89b71811-d3bf-4948-8c22-6313d5014f41",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=You are a LinkedIn AI Agent making linkedin post , banner ,image and sceduling them also guide user\n\nTools:\n• ref — fetch 5–7 latest AI articles \n• search — fetch  article on a user topic  \n• template — generate post copy from a template \n• createImage — generate a standard post image \n• bannerImage — generate a banner-style image \n• scheduler — schedule the post  \n• think - to think about what to choose\n• Date - to get current date and time\n\n\nTemplates (number → name):\n1. Educational  \n2. Promotional  \n3. Discussion  \n4. Case Study & Testimonial  \n5. News  \n6. Personal  \n7. blogs\n\nWorkflow:\n\n1. Classify Request use 'think' tool to decide which case it belong\n - if user say (“Make a post”,or something about making a post etc.) → CASE 1()\n - If say \"“Make a LinkedIn post using the (template name) template”\" → CASE 2\n  - if user say Make LinkedIn post based on this article\" and gives title + content(title + summary) → CASE 3 .\n\n2. CASE 1: Generic Request \n   a. Call `ref`  tool, show articles,5 or 6 to user ask “Pick one?” Confirm.  \n   b. If no, ask “Your topic?” → call `search`, show output in title and summary & confirm that .  \n   c. Ask “Use a template?” Show 1–7 templates than  Call `template` tool with {template_number, title, summary}.   \n\n3. CASE 2: Template Mentioned**  \n   a. Map template name to number.  \n   b. If template ∈ {1,3,5,}:  \n      • Call `ref` tool, show  titles and summarys, ask “Use one of these?” Confirm choice.   \n      • Then call `template` tool with {template_number, title, summary}.  \n   c. If template ∈ {2,4,6}:  \n      • Ask “Provide a title and summary/message.”  \n      • Confirm inputs.  \n      • Call `template` with {template_number, title,summary}.\n   d. If template ∈ {7}:\n      • Call `template` with {template_number,title,summary} that user provided.\n\n\n4. CASE 3: Article Provided\n   a. Read back title + summary, ask “Is this correct?”  \n   b. Ask “Apply a template?” Show 1–7, confirm.  \n   c. Call `template` with {template_number, title, summary}.\n\n\n5. **Post Review**  \n   • Show generated post, ask “Is this exactly as you want it?”  \n   • If edits: collect feedback, confirm, resend to `template`.\n\n6. **Image Selection**  \n   • Ask “Banner, standard image,  or upload image?” \n   • user can also upload image so in response if you get markdown url similar to this ( ![Screenshot (194).png](https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtdigi/uploads/1754044209978-oz9wsnm.png))  go to **Scheduling** step.\n   • if choice  is given Banner or standard image Call the chosen tool (`bannerImage`/`createImage`/no image`) with post text.  \n   • Show image_markdown, ask if image is “good?”\n  \n\n7. **Scheduling**  \n   • Ask “When should this post be scheduled?” \n   • Convert to MM, DD, YYYY and 24h HH:MM formats if year is not given its 2025.\n   • if user say post now use 'Date' tool to get current date and time than send scheduler.\n   • Confirm: “Schedule for MM, DD, YYYY at HH:MM?”  \n   • send post, image_markdown and time and date  to `scheduler` tool.\n   • Confirm “Your post is scheduled!”\n\n**Guardrails:**  \n– Never proceed without user’s explicit “Yes, that’s correct.”  \n– Echo back every critical input.  \n– Preserve all formatting, emojis, and line breaks.  \n– Do not modify approved content.\n-Re‑prompt any missing/invalid title, summary, template choice, or date/time (provide examples)"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1140,
+        1500
+      ],
+      "id": "63f24125-2af0-472f-9d18-e3b6cc869cca",
+      "name": "LinkedIn Agent"
+    },
+    {
+      "parameters": {
+        "name": "bannerimage",
+        "description": "Call this get banner image",
+        "workflowId": {
+          "__rl": true,
+          "value": "jfWxo5yahoS0vUu5",
+          "mode": "list",
+          "cachedResultName": "banner"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "post": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('post', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "post"
+          ],
+          "schema": [
+            {
+              "id": "post",
+              "displayName": "post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        1540,
+        2180
+      ],
+      "id": "392cc4b9-60ca-4fe5-8d6c-d7358c5814e6",
+      "name": "banner Image"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "JQ3HppfhdFaIbYoW",
+          "mode": "list",
+          "cachedResultName": "ref"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "topic": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('topic', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "topic"
+          ],
+          "schema": [
+            {
+              "id": "topic",
+              "displayName": "topic",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1240,
+        2140
+      ],
+      "id": "af0b391f-20bd-4a8f-84dd-682589f1a862",
+      "name": "ref"
+    },
+    {
+      "parameters": {
+        "description": "search new article that user gave",
+        "workflowId": {
+          "__rl": true,
+          "value": "C24iMvaLu21wtiXU",
+          "mode": "list",
+          "cachedResultName": "search"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "topic": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('topic', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "topic"
+          ],
+          "schema": [
+            {
+              "id": "topic",
+              "displayName": "topic",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        2140
+      ],
+      "id": "3fff6aba-2fc8-4060-b77b-80e12c28ae9f",
+      "name": "search"
+    },
+    {
+      "parameters": {
+        "description": "scheduling post for given date ",
+        "workflowId": {
+          "__rl": true,
+          "value": "WePdOwfufMGQ4jqJ",
+          "mode": "list",
+          "cachedResultName": "scheduler"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "post": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('post', ``, 'string') }}",
+            "image_markdown": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('image_markdown', ``, 'string') }}",
+            "time_of_posting": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('time_of_posting', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "post",
+              "displayName": "post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "image_markdown",
+              "displayName": "image_markdown",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "time_of_posting",
+              "displayName": "time_of_posting",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1680,
+        2180
+      ],
+      "id": "3b0f9174-9f80-4b3a-9718-69544be2227b",
+      "name": "scheduler"
+    },
+    {
+      "parameters": {
+        "description": "templates for different type of post",
+        "workflowId": {
+          "__rl": true,
+          "value": "2DUCSXheSy5taBOn",
+          "mode": "list",
+          "cachedResultName": "template"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "template": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('template', ``, 'number') }}",
+            "message ": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('message_', ``, 'string') }}",
+            "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('title', ``, 'string') }}",
+            "summary ": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('summary_', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "template",
+              "displayName": "template",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number"
+            },
+            {
+              "id": "message ",
+              "displayName": "message ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "summary ",
+              "displayName": "summary ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1820,
+        2180
+      ],
+      "id": "99dbfaa3-a575-4438-a6f0-92eca5209ea8",
+      "name": "template"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {
+          "temperature": 0.5
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        760,
+        2140
+      ],
+      "id": "cdeefe39-d576-48dd-8948-595075622567",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "get current date and time",
+        "includeTime": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Include_Current_Time', ``, 'boolean') }}",
+        "outputFieldName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Output_Field_Name', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTimeTool",
+      "typeVersion": 2,
+      "position": [
+        1940,
+        2200
+      ],
+      "id": "ac6f5a72-26cd-49d4-b917-a4ee4063acac",
+      "name": "Date"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "463448a5-b323-4682-8674-24bee0df163b",
+              "leftValue": "={{ $json.files }}",
+              "rightValue": "",
+              "operator": {
+                "type": "array",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -3060,
+        -360
+      ],
+      "id": "e5fb401f-9390-480c-940b-0894d7f18df3",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "$binary",
+        "options": {
+          "destinationFieldName": "data",
+          "includeBinary": true
+        }
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -1780,
+        -80
+      ],
+      "id": "5c6219ce-53a4-4ec0-8490-4a23a7c4d0c0",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://universal-file-to-text-extractor.vercel.app/extract",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "mode",
+              "value": "single"
+            },
+            {
+              "name": "output_type",
+              "value": "jsonl"
+            },
+            {
+              "name": "include_images",
+              "value": "false"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "files",
+              "inputDataFieldName": "=data0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1540,
+        -60
+      ],
+      "id": "804ff4c6-fe07-4f7d-9a0b-99926e71f099",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('When chat message received').item.json.chatInput }}",
+        "options": {
+          "systemMessage": "=You are a Master AI agent responsible for directing user queries to the correct sub-flow based on their topic. Use the following tools and workflow strictly:\n\nAvailable User Options:\n\"Blogs\" - if user wants post based on a blog and  user  say 'Create a social media post about the following blog'.\n\"Article\" - if user wants post based on a article this is user  say 'Create a post about the following article'.\n\"Template\" - if user wants post based on a template this is user  say 'Make post using template: template name'.\n\"links\" - if user wants post based on link give a url this is user gives a url.\n\"documents\" - if user wants post based on document give a say 'document content'.\n\nfor anything else first check if user choice is available\n\nAvailable Tools:\nSupabase User tools- for creating, deleting, and retrieving user choice records.\n\n\nWorkflow:\nCheck User Choice each time:\n  Important: No matter the prompt always start by using the Supabase user get method to check if a valid user choice from User Options is already stored for given sessionid.\nIf User Choice is NOT Found:\n  Analyze the user's query to guess the User Options. \nuse the Supabase user create method to store the user's choice.\n\nif user choice is found just for send the query with the choice\n  \n\nImportant Notes:\n  Always include valid user option in output. \nDo not save \"None\" user choise.\nIf choice is default none put your output in json \"answer\".\n  If the user wants to change their choice later, delete the previous record using Supabase delete and follow the flow again.\n\nStay concise, efficient, and accurate in all decisions.\n\n\nOutput format example:\n{\n \"choice\": \"Blogs\",\n \"querry\": \"make a Create a social media post about the following blog\",\n  \"content \": \"Title: Enhancing Screen Flows with Visual Picker: Create or Update Quotes by Product Type (Summer '25)\nSummary: This blog explains how to use Salesforce's new Visual Picker component (introduced in Summer '25) to create a flow that helps users create or update Quotes based on product type (Hardware, Software, or Services). It compares Visual Picker with the traditional Choice Lookup, discusses the business challenge of managing different product types, and provides step-by-step instructions for implementing the flow.\nURL: https://www.digitalbiz.tech/blog/2025-07-11-enhancing-screen-flows-with-visual-picker-create-or-update-quotes-by-product-type-summer-25\"\n}\nor,\n{\n \"choice\": \"Template\",\n \"querry\": \"Make post using template: template_name\",\n  \"answer\": \"\"\n}\nor,\n{\n \"choice\": \"Articles\",\n \"querry\": \"Create a post about the following article\",\n  \"content \": \"Title: Can Someone Explain the 1000+ AI Companies?\nSummary: When you do a search for anything AI related, let’s say “AI Video Creation” as an example, countless results come up, with many of them appearing to be pretty small companies.But as far as I can tell there are probably less than 10 serious multi-billion dollar AI players? Such as ChatGPT, Claude, Meta etc.\nSo are all these countless other companies just “renting” bandwidth from companies such as ChatGPT and reselling targeted AI products for video creation, website creation etc? Thanks for your explanations!\nURL: null\"\n}\nor\n\n{\n \"choice\": \"None\",\n \"querry\": \"Hi, how are you ?\",\n  \"answer\": \"Hello! To assist you better, could you please let me know if your query is related to SAP or Legal topics? This will help me direct your question to the right expert.\"\n}",
+          "returnIntermediateSteps": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        -1000,
+        500
+      ],
+      "id": "4565b104-7cc0-4597-b64f-16500811de49",
+      "name": "AI Agent",
+      "alwaysOutputData": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "tableId": "temp_table",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "session_id",
+              "fieldValue": "={{ $('When chat message received').item.json.sessionId }}"
+            },
+            {
+              "fieldId": "file",
+              "fieldValue": "={{ $json.data[0].parseJson().blocks }}"
+            },
+            {
+              "fieldId": "file_name",
+              "fieldValue": "={{ $json.data[0].parseJson().source }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -1260,
+        -120
+      ],
+      "id": "4c912425-2cd8-4379-a3fc-b96ec4effa82",
+      "name": "Supabase",
+      "credentials": {
+        "supabaseApi": {
+          "id": "x822FOiKWL83DNCQ",
+          "name": "Supabase account 5 rn dbt profile"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        -2060,
+        -300
+      ],
+      "id": "58885b57-bdbc-4df0-b811-3a98a7fb0522",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "tableId": "user_choice_table",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "session_id",
+              "condition": "eq",
+              "keyValue": "={{ $('When chat message received').item.json.sessionId }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        760
+      ],
+      "id": "06c997a6-4535-4f01-a6b1-71e5e31efb1b",
+      "name": "Supabase user delete",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "user_choice_table",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "session_id",
+              "fieldValue": "={{ $('When chat message received').item.json.sessionId }}"
+            },
+            {
+              "fieldId": "choice",
+              "fieldValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('fieldValues1_Field_Value', `Store user choice of sub flow`, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        -680,
+        760
+      ],
+      "id": "29642bf1-2333-43b0-965a-aa582263e68c",
+      "name": "Supabase user create",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "user_choice_table",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "session_id",
+              "keyValue": "={{ $('When chat message received').item.json.sessionId }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        -380,
+        740
+      ],
+      "id": "41e5ddb0-957e-4193-bddc-46202c1fa86a",
+      "name": "Supabase user get",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "tableId": "temp_table",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "session_id",
+              "condition": "eq",
+              "keyValue": "={{ $('When chat message received').item.json.sessionId }}"
+            },
+            {
+              "keyName": "file_name",
+              "condition": "eq",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions1_Field_Value', `Provide the file name to delete`, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        760,
+        2720
+      ],
+      "id": "0a00decb-e4e3-4989-9eb9-844c8ccacd50",
+      "name": "Supabase files Delete",
+      "credentials": {
+        "supabaseApi": {
+          "id": "x822FOiKWL83DNCQ",
+          "name": "Supabase account 5 rn dbt profile"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f12a9701-cf5f-4fbc-acfc-8d8cbc64b777",
+              "name": "sessionId",
+              "value": "={{ $json.session_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1480,
+        -320
+      ],
+      "id": "0d8c5c24-a0f8-4a84-bfa2-44c1f5500574",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "91ba5cd5-c7ef-4860-bd47-01bb8c71532f",
+                    "leftValue": "={{ $json.output.choice }}",
+                    "rightValue": "Blogs",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Blogs"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "3993ab1a-fdbe-4e87-a382-56c636333483",
+                    "leftValue": "={{ $json.output.choice }}",
+                    "rightValue": "Articles",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Articles"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0f62390e-365f-41b7-9192-829a0cd52115",
+                    "leftValue": "={{ $json.output.choice }}",
+                    "rightValue": "Template",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Template"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0497a2f2-a5ad-4fbe-88a9-bf30faff966b",
+                    "leftValue": "={{ $json.output.choice }}",
+                    "rightValue": "LINK",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "LINK"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "436fd5c9-e375-4c6a-80f6-f36cda7b1182",
+                    "leftValue": "={{ $json.output.choice }}",
+                    "rightValue": "general",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -360,
+        480
+      ],
+      "id": "4a1d2758-1ed5-4286-a403-17ad6f42977b",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.text }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
+      "position": [
+        1160,
+        2360
+      ],
+      "id": "f5342945-a0d1-42bc-9364-f2e976ab49bc",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f8c6dd23-dbd7-48cf-a312-2e93d688711d",
+              "name": "text",
+              "value": "={{ $json.output.answer }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        2340
+      ],
+      "id": "c75b93cc-1045-4da0-bdbc-f0a664ab9277",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e8b1896-aca8-49b2-961f-514b9aee8abe",
+              "name": "output",
+              "value": "={{ $json.output.parseJson() }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -580,
+        500
+      ],
+      "id": "56e81c79-780a-4e21-91e1-01564248de28",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "6jPRqgMWGxAuNNQv",
+          "mode": "list",
+          "cachedResultName": "Anusha Workspace — SAP Subflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $('Switch').item.json.output.querry }}",
+            "sessionId": "={{ $('When chat message received').item.json.sessionId }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "sessionId",
+              "displayName": "sessionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -20,
+        180
+      ],
+      "id": "e039007d-e6c3-451e-8305-8495b5289cdd",
+      "name": "SAP"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1200,
+        740
+      ],
+      "id": "af4a64b3-aa6c-4186-aea0-2ebbd6c2fcca",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1040,
+        740
+      ],
+      "id": "33551278-3b39-47a5-bc89-9c82e68c6eac",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "public": true,
+        "mode": "webhook",
+        "options": {
+          "responseMode": "lastNode"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1340,
+        500
+      ],
+      "id": "461db259-5d34-46ec-aa6a-a2d7e283c33f",
+      "name": "When chat message received",
+      "webhookId": "6906a73b-1487-47a8-8825-afeca982672b"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "7r4wLfjPALE8M9vJ",
+          "mode": "list",
+          "cachedResultName": "Anusha Workspace — Legal Subflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $json.output.querry }}",
+            "sessionId": "={{ $('When chat message received').item.json.sessionId }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "sessionId",
+              "displayName": "sessionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        20,
+        340
+      ],
+      "id": "7991dfb1-1554-4e96-9b48-63457b1b1317",
+      "name": "Legal1"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "7r4wLfjPALE8M9vJ",
+          "mode": "list",
+          "cachedResultName": "Anusha Workspace — Legal Subflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $json.output.querry }}",
+            "sessionId": "={{ $('When chat message received').item.json.sessionId }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "sessionId",
+              "displayName": "sessionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        40,
+        500
+      ],
+      "id": "a409db3a-27f8-4007-8493-9ed38d25e961",
+      "name": "Legal2"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "7r4wLfjPALE8M9vJ",
+          "mode": "list",
+          "cachedResultName": "Anusha Workspace — Legal Subflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $json.output.querry }}",
+            "sessionId": "={{ $('When chat message received').item.json.sessionId }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "sessionId",
+              "displayName": "sessionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        60,
+        680
+      ],
+      "id": "c2adf104-b7ef-485b-91bf-2af540c7f4f8",
+      "name": "Legal3"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "CSfS6lM26EFqNGnq",
+          "mode": "list",
+          "cachedResultName": "blogs agent"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $json.output.querry }}",
+            "content": "={{ $json.output.content }}",
+            "sessionId": "={{ $('When chat message received').item.json.sessionId }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "sessionId",
+              "displayName": "sessionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "content",
+              "displayName": "content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -20,
+        0
+      ],
+      "id": "b2de4d9b-ff5f-4fc2-a740-e34f6a7fd70d",
+      "name": "blogs"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-07T09:54:54.000Z",
+  "versionId": "833fc164-3e43-4eab-a3d0-c89940cd3ecc"
+}

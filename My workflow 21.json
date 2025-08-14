@@ -1,0 +1,42 @@
+{
+  "active": true,
+  "connections": {},
+  "createdAt": "2025-08-13T15:37:31.886Z",
+  "id": "chYBRhUqUWCqvZpD",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 21",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "options": {
+          "customCss": ":root {\n  /* Brand Colors (Nosta) */\n  --chat--color-primary: #009EE3; /* Nosta Azure‑blue */\n  --chat--color-primary-shade-50: #007bb8;\n  --chat--color-primary-shade-100: #005d8f;\n  --chat--color-secondary: #582DC6; /* Nosta Violet accent */\n  --chat--color-secondary-shade-50: #461fa1;\n  --chat--color-secondary-shade-100: #36197a;\n  --chat--color-white: #FFFFFF;\n  --chat--color-light: #E4E4E4; /* light grey surfaces & borders */\n  --chat--color-light-shade-50: #d1d1d1;\n  --chat--color-light-shade-100: #bdbdbd;\n  --chat--color-medium: #B5BCC9;\n  --chat--color-dark: #000000; /* solid black text */\n  --chat--color-disabled: #9FA6B2;\n  --chat--color-typing: #555555;\n  --chat--header-height: 4rem;\n\n  /* Layout & Fonts */\n  --chat--spacing: 1rem;\n  --chat--border-radius: 0.5rem;\n  --chat--font-family: 'Roboto', system-ui, sans-serif;\n  --chat--heading-font-family: 'Poppins', system-ui, sans-serif;\n\n  /* Window */\n  --chat--window--width: 420px;\n  --chat--window--height: 600px;\n  --chat--window--z-index: 9999;\n  --chat--window--border: 1px solid var(--chat--color-light-shade-100);\n  --chat--window--border-radius: var(--chat--border-radius);\n\n  /* Header */\n  --chat--header--padding: 0.75rem;                    /* 50% less height */\n  --chat--header--background: var(--chat--color-primary-shade-100); /* deeper blue */\n  --chat--header--color: var(--chat--color-white);\n  --chat--heading--font-size: 1.8em;\n  --chat--subtitle--font-size: 1rem;\n  --chat--subtitle--line-height: 1.5;\n\n  /* Messages */\n  --chat--message--font-size: 1rem;\n  --chat--message--padding: 0.8rem 1rem;\n  --chat--message--border-radius: var(--chat--border-radius);\n  --chat--message--margin-bottom: 0.35rem; /* less spacing */\n  --chat--message-line-height: 1.6;\n  --chat--message--bot--background: #97979738;\n  --chat--message--bot--color: var(--chat--color-dark);\n  --chat--message--user--background: var(--chat--color-primary);\n  --chat--message--user--color: var(--chat--color-white);\n  --chat--message--pre--background: #e8ecf1;\n\n  /* Input */\n  --chat--textarea--height: 52px;\n  --chat--input--background: var(--chat--color-white);\n  --chat--input--text-color: var(--chat--color-dark);\n  --chat--input--padding: 0.75rem 1rem;\n  --chat--input--border: 1px solid var(--chat--color-light-shade-50);\n  --chat--input--border-radius: var(--chat--border-radius);\n\n  /* Buttons */\n  --chat--button--background: var(--chat--color-secondary);\n  --chat--button--color: var(--chat--color-white);\n  --chat--button--hover--background: var(--chat--color-secondary-shade-50);\n  --chat--button--hover--color: var(--chat--color-white);\n  --chat--button--padding: 0.5rem 1.2rem;\n  --chat--button--border-radius: var(--chat--border-radius);\n\n  /* Footer */\n  --chat--body--background: var(--chat--color-light);\n  --chat--footer--background: var(--chat--color-white);\n  --chat--footer--color: var(--chat--color-dark);\n}\n\n/* Structure */\nbody {\n  margin: 0;\n  font-family: var(--chat--font-family);\n  background: var(--chat--body--background);\n}\n\n.chat-window {\n  width: var(--chat--window--width);\n  height: var(--chat--window--height);\n  margin: 2rem auto;\n  border: var(--chat--window--border);\n  border-radius: var(--chat--window--border-radius);\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);\n}\n\n.chat-layout .chat-header {\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: right center;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-evenly;\n    align-items: center;\n    gap: 1em;\n    height: var(--chat--header-height);\n    padding: var(--chat--header--padding);\n    background-color: var(--chat--header--background);\n    color: var(--chat--header--color);\n    border-top: var(--chat--header--border-top);\n    border-bottom: var(--chat--header--border-bottom);\n    border-left: var(--chat--header--border-left);\n    border-right: var(--chat--header--border-right);\n}\n\n.chat-logo {\n  height: 40px;\n  width: auto;\n}\n\n.chat-header-text h1 {\n  margin: 0;\n  font-family: var(--chat--heading-font-family);\n  font-weight: 600;\n  font-size: var(--chat--heading--font-size);\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n\n.chat-header-text p {\n  margin: 0.25rem 0 0;\n  font-size: var(--chat--subtitle--font-size);\n  line-height: var(--chat--subtitle--line-height);\n}\n\n/* Chat body */\n.chat-body {\n  flex: 1;\n  padding: var(--chat--spacing);\n  background: var(--chat--body--background);\n  overflow-y: auto;\n}\n\n.chat-message {\n  padding: var(--chat--message--padding);\n  margin-bottom: var(--chat--message--margin-bottom);\n  border-radius: var(--chat--message--border-radius);\n  font-size: var(--chat--message--font-size);\n  line-height: var(--chat--message-line-height);\n  max-width: 80%;\n  box-shadow: 0px 5px 9px 3px rgb(0 0 0 / 12%);\n  width: fit-content;\n}\n\n.chat-message.bot {\n  background: var(--chat--message--bot--background);\n  color: var(--chat--message--bot--color);\n  border-left: 3px solid var(--chat--color-primary);\n}\n\n.chat-message.user {\n  background: var(--chat--message--user--background);\n  color: var(--chat--message--user--color);\n  border-left: 3px solid var(--chat--color-secondary);\n  margin-left: auto;\n}\n\n/* Footer */\n.chat-footer {\n  background: var(--chat--footer--background);\n  padding: 0.5rem 1rem;\n  border-top: 1px solid var(--chat--color-light-shade-100);\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n\n.chat-footer textarea {\n  flex-grow: 1;\n  resize: none;\n  padding: var(--chat--input--padding);\n  height: var(--chat--textarea--height);\n  border: var(--chat--input--border);\n  border-radius: var(--chat--input--border-radius);\n  font-family: var(--chat--font-family);\n  font-size: 1rem;\n  color: var(--chat--input--text-color);\n  background: var(--chat--input--background);\n}\n\n.chat-send-button {\n  background: var(--chat--button--background);\n  color: var(--chat--button--color);\n  border: none;\n  padding: var(--chat--button--padding);\n  border-radius: var(--chat--button--border-radius);\n  font-size: 1.25rem;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n\n.chat-send-button:hover {\n  background: var(--chat--button--hover--background);\n}\n\nimg {\n    width: -webkit-fill-available;\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cd655a07-6961-44b9-9f48-59ac7e0469a9",
+      "name": "When chat message received",
+      "webhookId": "c26899b3-2ee3-4684-a4da-0ddbde724889"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-13T15:39:12.000Z",
+  "versionId": "286b7763-2b84-4137-b755-7e0782e8180a"
+}

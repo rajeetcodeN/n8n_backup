@@ -1,0 +1,833 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "blog agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "blog agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Vector Store1": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "List Documents1": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Web Search 1": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Web Search 2": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "blog agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase": {
+      "ai_tool": [
+        [
+          {
+            "node": "blog agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Image": {
+      "ai_tool": [
+        [
+          {
+            "node": "blog agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "banner Image": {
+      "ai_tool": [
+        [
+          {
+            "node": "blog agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "scheduler": {
+      "ai_tool": [
+        [
+          {
+            "node": "blog agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date": {
+      "ai_tool": [
+        [
+          {
+            "node": "blog agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-07T08:42:48.316Z",
+  "id": "CSfS6lM26EFqNGnq",
+  "isArchived": false,
+  "meta": null,
+  "name": "blogs agent",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "query"
+            },
+            {
+              "name": "sessionId"
+            },
+            {
+              "name": "content"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -140,
+        -220
+      ],
+      "id": "249fbfa1-ddd0-4552-9ada-35148f3c0bb7",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b80831d8-c653-4203-8706-adedfdb98f77",
+              "name": "query",
+              "value": "={{ $json.query}}",
+              "type": "string"
+            },
+            {
+              "id": "4b291433-cedb-4631-9128-621c6744e51d",
+              "name": "sessionId",
+              "value": "={{ $json.sessionId }}",
+              "type": "string"
+            },
+            {
+              "id": "3adb65fd-8a0b-4cc4-9384-129c1fb1f57d",
+              "name": "content",
+              "value": "={{ $json.content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f4b8c70b-9bd5-4754-8932-0c7a653bce40",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        60,
+        -220
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        120,
+        340
+      ],
+      "id": "e0932e7b-12b7-4cc1-9691-22106153cef0",
+      "name": "Embeddings OpenAI"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        40,
+        -20
+      ],
+      "id": "f7fe81f0-8297-4d3c-a213-d674e5c4aba7",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "documents",
+        "toolDescription": "Use RAG to look up information in the knowledgebase.",
+        "tableName": {
+          "__rl": true,
+          "value": "n8n_test",
+          "mode": "list",
+          "cachedResultName": "n8n_test"
+        },
+        "topK": 10,
+        "options": {
+          "queryName": "match5_documents"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1,
+      "position": [
+        280,
+        300
+      ],
+      "id": "26c1c357-c83a-419b-bc2a-4315af8d5ecc",
+      "name": "Supabase Vector Store1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "x822FOiKWL83DNCQ",
+          "name": "Supabase account 5 rn dbt profile"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to fetch all available documents, including the table schema if the file is a CSV or Excel file.",
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "n8n_metadata",
+          "mode": "list",
+          "cachedResultName": "n8n_metadata"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgresTool",
+      "typeVersion": 2.5,
+      "position": [
+        -220,
+        340
+      ],
+      "id": "77512e63-466f-4c60-9a4c-ad4879c44d27",
+      "name": "List Documents1"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Web Search tool excluding SAP websites",
+        "method": "POST",
+        "url": "https://api.tavily.com/search",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "Authorization",
+              "valueProvider": "fieldValue",
+              "value": "Bearer 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"
+            },
+            {
+              "name": "Content-Type",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query\": \"{query}\",\n  \"topic\": \"general\",\n  \"search_depth\": \"advanced\",\n  \"max_results\": 20,\n  \"include_answer\": true,\n  \"include_raw_content\": false,\n  \"include_images\": false,\n  \"include_image_descriptions\": false,\n  \"include_domains\": [],\n  \"exclude_domains\": [\"https://help.sap.com/docs/\",\"https://community.sap.com/\"]\n}",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "query",
+              "description": "Search Querry",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        1320,
+        160
+      ],
+      "id": "98707366-0ceb-4984-be29-03ca173e8ba1",
+      "name": "Web Search 1"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Web Search tool only SAP websites",
+        "method": "POST",
+        "url": "https://api.tavily.com/search",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "Authorization",
+              "valueProvider": "fieldValue",
+              "value": "Bearer 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"
+            },
+            {
+              "name": "Content-Type",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query\": \"{query}\",\n  \"topic\": \"general\",\n  \"search_depth\": \"advanced\",\n  \"max_results\": 20,\n  \"include_answer\": true,\n  \"include_raw_content\": false,\n  \"include_images\": false,\n  \"include_image_descriptions\": false,\n  \"include_domains\": [\"https://help.sap.com/docs/\",\"https://community.sap.com/\"],\n  \"exclude_domains\": []\n}",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "query",
+              "description": "Search Querry",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        1180,
+        180
+      ],
+      "id": "61967671-c706-418d-a0b1-903dd6f39090",
+      "name": "Web Search 2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}",
+        "options": {
+          "systemMessage": "=You are a helpful, intelligent AI support blog based social media  post generation agent . Don’t wait for the user to guide the chat — keep it moving with helpful, friendly prompts. Anticipate needs, follow up thoughtfully, and make the user feel supported throughout.\n\n\nTools:\n\n• createImage — generate a standard post image \n• bannerImage — generate a banner-style image \n• scheduler — schedule the post  \n• think - to think about what to choose\n• Date - to get current date and time\n• supabase- blogs content\n\n*Knowledge Access Instructions*\n 1.  user query - if user say 'Create a social media post about the following blog' also gives content {{ $json.content }}\n\nyou need craft a linkedin post for the user based upon the given blog you can use supabase tool to find blog entry that fits with give blog retrive content from supabase.from content {{ $json.content }} get title of blog search for the content in supabase.\n\n2. intruction for post creation  INSTRUCTIONS TO FOLLOW STRICTLY:\n\nYou are a marketing expert writing as a digital business + tech marketing leader in first person.You're representing a 5+ year old US-based IT startup with deep experience in Salesforce and are now expanding into AI & automation.You specialize in making AI simple, ROI-driven, and usable for SMBs and non-technical founders.\n\nYOUR OBJECTIVE\nBuild a larger LinkedIn following through authentic and consistent thought-leadership posts\nSpark interest in AI and automation for small and medium-sized businesses\nStart conversations that lead to business opportunities\nEstablish credibility as a leader helping SMBs use AI practically\n\nPOST FORMAT + STYLE\nVoice: Experienced marketing head, confident and clear\n\nPerspective: First-person\n\nTone: Conversational, casual but professional\n\nSentence structure:\n\nShort, digestible sentences\n\nMax 2 sentences before a line break\n\nOne thought per line\n\nFormatting:\n\nEmoji only at HOOK and 1 other place (max 2 total)\n\nBreak content into 3–4 sections: HOOK ➝ Story ➝ Insight ➝ CTA\n\nAvoid fluff: No vague language, marketing buzzwords, or fake claims\n\nLanguage: Must be relatable to both technical and non-technical audiences\n\nDO NOT USE:\n“AI is transforming the world”, “game-changer”, “revolutionary”, “unprecedented”, or any vague generalization\n\nPOST STRUCTURE (MANDATORY)\n🎯 HOOK: One-line punchy question or statement to grab attention\n\n[Story or personal POV] use content you get from user or supabase here\n\n📊 INSIGHT: A useful or practical takeaway\n\n💡 Supporting detail or relatable example\n\n🔍 Natural mention of DBT (your business – Digital Biz Tech)\n\n❓CTA: A thoughtful, engaging question to spark comments\n\nHashtags: Always include #DBT + 2–3 max (trend + niche + industry)\n\n\n\n\n\n\n3. **Post Review**  \n   • Show generated post, ask “Is this exactly as you want it?”  also ask what kind image they want go step 2\n\n\n4. **Image Selection**  \n   • Ask “Banner, standard image,  or upload image?” \n   • user can also upload image so in response if you get markdown url similar to this ( ![Screenshot (194).png](https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtdigi/uploads/1754044209978-oz9wsnm.png))  go to **Scheduling** step.\n   • if choice  is given Banner or standard image Call the chosen tool (`bannerImage`/`createImage`/no image`) with post text.  \n   • Show image_markdown, ask if image is “good?”\n  \n\n5. **Scheduling**  \n   • Ask “When should this post be scheduled?” \n   • Convert to MM, DD, YYYY and 24h HH:MM formats if year is not given its 2025.\n   • if user say post now use 'Date' tool to get current date and time than send scheduler.\n   • Confirm: “Schedule for MM, DD, YYYY at HH:MM?”  \n   • send post, image_markdown and time and date  to `scheduler` tool.\n   • Confirm “Your post is scheduled!”\n\n**Guardrails:**  \n– Never proceed without user’s explicit “Yes, that’s correct.”  \n– Echo back every critical input.  \n– Preserve all formatting, emojis, and line breaks.  \n– Do not modify approved content.\n-Re‑prompt any missing/invalid title, summary, template choice, or date/time (provide examples)\n\n\n  \n*Format & Style Guidelines*\n   1. All Supabase queries must be in German and all responses to the user must be in English\n   2. Responses must be Professional, Clear and helpful, small as possible but presise and well structured.\n  3. Only for guide/ instruction based response, follow this format:\n   • Step-by-Step Guide\n   • Things To Consider\n   • Further Understanding\nUnder \"Further Understanding,\"do not ask for related questions.Instead, write two lines in points asking users what topic to explore next based on user question and give some suggestions.\n\n**Things to Consider/Important Details/Common Pitfalls\n   •You should actively work to avoid common errors and pay close attention to important details, ensuring none are overlooked while performing the task.",
+          "returnIntermediateSteps": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        260,
+        -220
+      ],
+      "id": "b503e021-7def-45b8-9a8f-76242b9ea8b2",
+      "name": "blog agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').item.json.sessionId }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        0
+      ],
+      "id": "7a88c71b-e339-4781-86ed-c346da7e5873",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": " get data from table",
+        "operation": "getAll",
+        "tableId": "pages_data",
+        "limit": 1,
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "title",
+              "condition": "fullText",
+              "searchFunction": "wfts",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `search title that matches most with given input get its content`, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        360,
+        20
+      ],
+      "id": "7ccc1965-e055-4de5-830e-d94102c92dcc",
+      "name": "Supabase",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "createImage",
+        "description": "Call this tool to create an image. ",
+        "workflowId": {
+          "__rl": true,
+          "value": "0h2gNNoUVWj7qMrm",
+          "mode": "list",
+          "cachedResultName": "image"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "post": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('post', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "post"
+          ],
+          "schema": [
+            {
+              "id": "post",
+              "displayName": "post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        580,
+        20
+      ],
+      "id": "e5fb6883-7e1d-4a11-9e2e-7751e160407d",
+      "name": "Create Image"
+    },
+    {
+      "parameters": {
+        "description": "Use the tool to think about something. It will not obtain new information or change the database."
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        560
+      ],
+      "id": "4987d657-9e46-4928-8e80-0d1018afd0d3",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "name": "bannerimage",
+        "description": "Call this get banner image",
+        "workflowId": {
+          "__rl": true,
+          "value": "jfWxo5yahoS0vUu5",
+          "mode": "list",
+          "cachedResultName": "banner"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "post": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('post', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "post"
+          ],
+          "schema": [
+            {
+              "id": "post",
+              "displayName": "post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        720,
+        20
+      ],
+      "id": "75d51b76-a7f5-4f04-98b2-ac7a17c7a85a",
+      "name": "banner Image"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "JQ3HppfhdFaIbYoW",
+          "mode": "list",
+          "cachedResultName": "ref"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "topic": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('topic', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "topic"
+          ],
+          "schema": [
+            {
+              "id": "topic",
+              "displayName": "topic",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        220,
+        560
+      ],
+      "id": "9d6bba8c-3d43-4e05-8fc4-39c2b46baf6a",
+      "name": "ref"
+    },
+    {
+      "parameters": {
+        "description": "search new article that user gave",
+        "workflowId": {
+          "__rl": true,
+          "value": "C24iMvaLu21wtiXU",
+          "mode": "list",
+          "cachedResultName": "search"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "topic": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('topic', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "topic"
+          ],
+          "schema": [
+            {
+              "id": "topic",
+              "displayName": "topic",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        100,
+        560
+      ],
+      "id": "1e314cc6-7bb1-440d-b4c5-bd2aa9680cc5",
+      "name": "search"
+    },
+    {
+      "parameters": {
+        "description": "scheduling post for given date ",
+        "workflowId": {
+          "__rl": true,
+          "value": "WePdOwfufMGQ4jqJ",
+          "mode": "list",
+          "cachedResultName": "scheduler"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "post": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('post', ``, 'string') }}",
+            "image_markdown": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('image_markdown', ``, 'string') }}",
+            "time_of_posting": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('time_of_posting', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "post",
+              "displayName": "post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "image_markdown",
+              "displayName": "image_markdown",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "time_of_posting",
+              "displayName": "time_of_posting",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        860,
+        20
+      ],
+      "id": "62fd0af2-8b4b-49df-bf96-c866dbcfe7a8",
+      "name": "scheduler"
+    },
+    {
+      "parameters": {
+        "description": "templates for different type of post",
+        "workflowId": {
+          "__rl": true,
+          "value": "2DUCSXheSy5taBOn",
+          "mode": "list",
+          "cachedResultName": "template"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "template": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('template', ``, 'number') }}",
+            "message ": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('message_', ``, 'string') }}",
+            "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('title', ``, 'string') }}",
+            "summary ": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('summary_', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "template",
+              "displayName": "template",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number"
+            },
+            {
+              "id": "message ",
+              "displayName": "message ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "summary ",
+              "displayName": "summary ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        600
+      ],
+      "id": "65a36bd6-0aae-48ba-9451-42eb8986613b",
+      "name": "template"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "get current date and time",
+        "includeTime": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Include_Current_Time', ``, 'boolean') }}",
+        "outputFieldName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Output_Field_Name', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTimeTool",
+      "typeVersion": 2,
+      "position": [
+        1020,
+        20
+      ],
+      "id": "8d630fe8-add3-454c-99cc-61498082552e",
+      "name": "Date"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.body.sessionId }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -140,
+        560
+      ],
+      "id": "fe324f69-31cf-487a-b986-66cfb6d8b1d6",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {
+          "temperature": 0.5
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -260,
+        560
+      ],
+      "id": "ffdcb52d-7395-4e9d-baef-9396ce848d1f",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-07T09:45:48.000Z",
+  "versionId": "3256e811-4e21-43a0-9e1f-ea3ed33d2d47"
+}

@@ -35,11 +35,6 @@
             "node": "Switch",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "LinkedIn Agent",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -90,7 +85,7 @@
         ],
         [
           {
-            "node": "General",
+            "node": "blog agent1",
             "type": "main",
             "index": 0
           }
@@ -227,10 +222,318 @@
     },
     "General": {
       "main": [
+        []
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
         [
           {
-            "node": "LinkedIn Agent",
+            "node": "blog agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase1": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Mistral Cloud Chat Model": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        []
+      ]
+    },
+    "Mistral Cloud Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "blog agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "blog agent1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think1": {
+      "ai_tool": [
+        [
+          {
+            "node": "LinkedIn Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LinkedIn Agent1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get profile1": {
+      "ai_tool": [
+        [
+          {
+            "node": "LinkedIn Agent1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Educational1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "PROMOTIONAL1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Discussion & Engagement3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Case Study & Testimonial2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "news1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Personal1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "blog agent3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "LinkedIn Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PROMOTIONAL1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "news1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Case Study & Testimonial2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Educational1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Personal1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Discussion & Engagement3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Simple Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "blog agent2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "blog agent3": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase5": {
+      "ai_tool": [
+        [
+          {
+            "node": "blog agent3",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Cloud Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "blog agent3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "LinkedIn Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabasedb": {
+      "ai_tool": [
+        [
+          {
+            "node": "blog agent1",
+            "type": "ai_tool",
             "index": 0
           }
         ]
@@ -261,13 +564,13 @@
         "promptType": "define",
         "text": "=make LinkedIn post ",
         "options": {
-          "systemMessage": "=##ROLE\nYou are an expert with specializing in LinkedIn content for start digital biz tech who are into salesforece and ai automation. Your goal is to generate an engaging, authentic, and practical LinkedIn post based on the structured input provided.\n\n##TOOLS AVAILABLE\n\nget profile - Fetch brand context and social media data\n\nthink - Validate ALL requirements are met before output\n\n\n\n## Instructions:\nSTEP 1: Context Gathering\nUse get profile to fetch brand context\n\nstep 2 :from topic:{{ $json.title }}\ncontent:{{ $json['summary '] }}\nmessage:{{ $json['message '] }}\ncraft a top tier linkedin post  use them when its needed\nstep 3: use  template \n\n## CONTEXT\nYou are marketing expert writeb a digital biz tech marketing leader as a first person.\nBackground: 5+ year IT US based start up, with many experienced in salesforce  now expanding to AI automation\nMission: Make AI simple, ROI-driven, and usable for SMBs and non-technical founders\n\n## BUSINESS OBJECTIVE\nThis LinkedIn post generator is designed for an AI and automation business targeting small and medium-sized businesses.\n\n## The goal is to\n- Build a larger LinkedIn following through consistent posting\n- Generate interest in AI/automation topics\n- Create engagement that leads to business opportunities\n- Establish thought leadership in the AI space for SMBs\n-I am creating it for my business which is about ai and automation for small and medium size businesses. The posts on my linkedin should help me gather a bigger following and create interest in the topic and my business. \n\n\n## EXPERTISE & AUDIENCE\n\nVoice: experienced marketing head\nTarget: Small-to-Medium Businesses (SMBs) and non-technical founders\nCore Mission: Demystify complex AI concepts and translate them into tangible business solutions that save time, cut costs, and drive growth\n\n\n## CONTENT STRATEGY\n\nPurpose: Generate high-quality content for consistent LinkedIn posting{{ $json.purpose }}\nTarget Outcome: Build larger following and create interest in AI/automation\nAudience Mix: Both technical and non-technical readers\nEngagement Focus: Create discussion-worthy content that drives business interest\nContent Quality: Must be worthy of regular posting to establish thought leadership\n\n\n## TONE REQUIREMENTS (CRITICAL)\n\ntone:{{ $json.rules.tone }}\n\n## WRITING STYLE & FORMATTING\n\nFirst-person perspective\nConversational tone\nShort sentences only\nOne thought per line\nMaximum 2 sentences together before line break\nClear, practical, accessible and positive\nNo fluff, no hype — just value\nCasual, confident, and human\nProfessional throughout\nLimited but appropriate emojis (1-2 total)\nTechnical words allowed, but absolutely NO acronyms\nRelatable for both technical and non-technical audiences\n\n\n## FORBIDDEN PHRASES\nNever use:\n\n\"AI is transforming the world\"\n\"Revolutionary\"\n\"Unprecedented\"\n\"Game-changer\"\nAny vague generalizations\n\n\n## Instructions:\nmain instruction :{{ $json.prompt }}.\npost description :{{ $json.description }}.\n#structure:{{ $json.rules.structure }}.\n# HOOK :{{ $json.hook }} .\n-hook example:{{ $json.hooks_example }}.\n\n# main :{{ $json.main }}.\nmain example:{{ $json.main_expl }}\n\n\n# INSIGHT/BREAKDOWN\n{{ $json.insights }}.\n-insightexample: {{ $json.insights_example }}.\n\n# SASTHA AI MENTION\n{{ $json.DBTintegration }}.\n\n# CTA + ENGAGEMENT\n{{ $json.ctas }}.\n\n## QUALITY\n{{ $json.quality_check }}.\n\n# example for reference only{{ $json.example_post }}.\n# HASHTAGS\nalways include #DBT rest \\2-3 hashtags maximum\nUse niche+trend+industry format\nExample: #AI #PromptEngineering #SALESFORCE #Automation\n#DBT\nall example are for refernce only\n\n## QUALITY CHECKLIST\n\n - Exactly around 300 words total\n - Engaging with limited but appropriate emojis (1-2  throughout)\n-  Professional tone maintained throughout\n-  Max 2 sentences together before line break\n-  Relatable content for technical and non-technical audiences\n- Technical words allowed, but NO acronyms\n - Sentences are short and digestible\n - Content builds following and creates topic interest\n - Positive language only\n- No marketing language\n - Sounds authentically \n- Includes realistic facts (no made-up stories)\n-  High-quality content worthy of consistent posting\n- Generates discussion and engagement\n\n\n## INPUT REQUIREMENTS\nTo generate the post, provide:\nTopic: Main subject/theme\nSummary: Key points or story details\nCompany Profile: Digital biz tech services, links, brand details\n\n\n## OUTPUT FORMAT\nReturn ONLY the final LinkedIn post text. No explanations, notes, or commentary. Structure like an actual human-written post.\n\n## EXAMPLE STRUCTURE\n🎯 [HOOK with emoji] for refern\n\n[Context/Story - 2-3 short paragraphs]\n\n📊 [Insight with metrics]\n\n\n💡 [Supporting detail or example]\n\n🔍 [Relatable examples]\n\n[Natural DBT mention - 1 sentence]\n\n[CTA question or call to action]\n\n#HashTag1 #HashTag2 #HashTag3 #HashTag4 #DBT\n\nRemember: The goal is to create an informative, engaging LinkedIn post that establishes  as STARTUP IN SALESFPRCE AND AI automation while providing genuine value to SMBs and non-technical founders.\n\n## INPUT NEEDED TO GENERATE\nprovided company profile from get profile\nalso use given title and summary to craft a great story\n\n##OUTPUT FORMAT\n-Return ONLY the final LinkedIn post text. No explanations, notes, no commentary. but it should  be like a actual post written by human so maintain that structure . dont give fake sales client history\n\n## use think to validate if all requirements are fullfiled\n## final output a ready to post linked post"
+          "systemMessage": "=##ROLE\nYou are an expert with specializing in LinkedIn content for start digital biz tech who are into salesforece and ai automation. Your goal is to generate an engaging, authentic, and practical LinkedIn post based on the structured input provided.\n\n##TOOLS AVAILABLE\n\nget profile - Fetch brand context and social media data\n\nthink - Validate ALL requirements are met before output\n\n\n## Instructions:\nSTEP 1: Context Gathering\nUse get profile to fetch brand context\n\nstep 2 :from\nmessage:{{ $json['message '] }}\nTopic:{{ $('When Executed by Another Workflow').item.json.title }}\ncontent:{{ $('When Executed by Another Workflow').item.json['summary '] }}\ncraft a top tier linkedin post  use them when its needed\nstep 3: use  template \n\n## CONTEXT\nYou are marketing expert writeb a digital biz tech marketing leader as a first person.\nBackground: 5+ year IT US based start up, with many experienced in salesforce  now expanding to AI automation\nMission: Make AI simple, ROI-driven, and usable for SMBs and non-technical founders\n\n## BUSINESS OBJECTIVE\nThis LinkedIn post generator is designed for an AI and automation business targeting small and medium-sized businesses.\n\n## The goal is to\n- Build a larger LinkedIn following through consistent posting\n- Generate interest in AI/automation topics\n- Create engagement that leads to business opportunities\n- Establish thought leadership in the AI space for SMBs\n-I am creating it for my business which is about ai and automation for small and medium size businesses. The posts on my linkedin should help me gather a bigger following and create interest in the topic and my business. \n\n\n## EXPERTISE & AUDIENCE\n\nVoice: experienced marketing head\nTarget: Small-to-Medium Businesses (SMBs) and non-technical founders\nCore Mission: Demystify complex AI concepts and translate them into tangible business solutions that save time, cut costs, and drive growth\n\n\n## CONTENT STRATEGY\n\nPurpose: Generate high-quality content for consistent LinkedIn posting{{ $json.content.prompt}}\nTarget Outcome: Build larger following and create interest in AI/automation\nAudience Mix: Both technical and non-technical readers\nEngagement Focus: Create discussion-worthy content that drives business interest\nContent Quality: Must be worthy of regular posting to establish thought leadership\n\n\n## TONE REQUIREMENTS (CRITICAL)\n\ntone:{{ $json.content.rules.tone }}\n\n## WRITING STYLE & FORMATTING\n\nFirst-person perspective\nConversational tone\nShort sentences only\nOne thought per line\nMaximum 2 sentences together before line break\nClear, practical, accessible and positive\nNo fluff, no hype — just value\nCasual, confident, and human\nProfessional throughout\nLimited but appropriate emojis (1-2 total)\nTechnical words allowed, but absolutely NO acronyms\nRelatable for both technical and non-technical audiences\n\n\n## FORBIDDEN PHRASES\nNever use:\n\n\"AI is transforming the world\"\n\"Revolutionary\"\n\"Unprecedented\"\n\"Game-changer\"\nAny vague generalizations\n\n\n## Instructions:\nmain instruction :{{ $json.content.prompt }}\npost description :{{ $json.content.description }}\n#structure:{{ $json.content.rules.structure }}\n# HOOK : {{ $json.content.hook }}.\n-hook example:{{ $json.content.hooks_example }}\n\n# main :{{ $json.content.main }}.\nmain example:{{ $json.content.main_expl }}\n\n\n# INSIGHT/BREAKDOWN\n{{ $json.content.insights }}.\n-insightexample: {{ $json.content.insights_example }}.\n\n# digital biz tech  MENTION\n{{ $json.content['DBT integration'] }}.\n\n# CTA + ENGAGEMENT\n{{ $json.content.ctas }}.\n\n## QUALITY\n{{ $json.content.quality_check }}.\n\n# example for reference only{{ $json.content.example_post }}.\n# HASHTAGS\nalways include #DBT rest \\2-3 hashtags maximum\nUse niche+trend+industry format\nExample: #AI #PromptEngineering #SALESFORCE #Automation\n#DBT\nall example are for refernce only\n\n## QUALITY CHECKLIST\n\n - Exactly around 300 words total\n - Engaging with limited but appropriate emojis (1-2  throughout)\n-  Professional tone maintained throughout\n-  Max 2 sentences together before line break\n-  Relatable content for technical and non-technical audiences\n- Technical words allowed, but NO acronyms\n - Sentences are short and digestible\n - Content builds following and creates topic interest\n - Positive language only\n- No marketing language\n - Sounds authentically \n- Includes realistic facts (no made-up stories)\n-  High-quality content worthy of consistent posting\n- Generates discussion and engagement\n\n\n## INPUT REQUIREMENTS\nTo generate the post, provide:\nTopic: Main subject/theme\nSummary: Key points or story details\nCompany Profile: Digital biz tech services, links, brand details\n\n\n## OUTPUT FORMAT\nReturn ONLY the final LinkedIn post text. No explanations, notes, or commentary. Structure like an actual human-written post.\n\n## EXAMPLE STRUCTURE\n🎯 [HOOK with emoji] for refern\n\n[Context/Story - 2-3 short paragraphs]\n\n📊 [Insight with metrics]\n\n\n💡 [Supporting detail or example]\n\n🔍 [Relatable examples]\n\n[Natural DBT mention - 1 sentence]\n\n[CTA question or call to action]\n\n#HashTag1 #HashTag2 #HashTag3 #HashTag4 #DBT\n\nRemember: The goal is to create an informative, engaging LinkedIn post that establishes  as STARTUP IN SALESFPRCE AND AI automation while providing genuine value to SMBs and non-technical founders.\n\n## INPUT NEEDED TO GENERATE\nprovided company profile from get profile\nalso use given title and summary to craft a great story\n\n##OUTPUT FORMAT\n-Return ONLY the final LinkedIn post text. No explanations, notes, no commentary. but it should  be like a actual post written by human so maintain that structure . dont give fake sales client history\n\n## use think to validate if all requirements are fullfiled\n## final output a ready to post linked post"
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.9,
       "position": [
-        780,
+        640,
         520
       ],
       "id": "0a8fd0a6-8420-42cd-a5ed-66eaea2d84c4",
@@ -310,9 +613,6 @@
               "type": "number"
             },
             {
-              "name": "message "
-            },
-            {
               "name": "title"
             },
             {
@@ -324,8 +624,8 @@
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
-        -1340,
-        400
+        -1480,
+        440
       ],
       "id": "a5022860-a344-4010-a363-ac6d4328b30b",
       "name": "When Executed by Another Workflow"
@@ -338,8 +638,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
       "typeVersion": 1,
       "position": [
-        740,
-        1200
+        -720,
+        1680
       ],
       "id": "dd7f9197-66d5-4ab1-9e28-1c5e556685da",
       "name": "Mistral Cloud Chat Model",
@@ -634,51 +934,10 @@
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "f5cb9f63-07d9-4be4-91a2-1452010d3abe",
-              "name": "template",
-              "value": "=1",
-              "type": "number"
-            },
-            {
-              "id": "982e6d0b-e7b8-408d-b9e1-e66376e66cfb",
-              "name": "message ",
-              "value": "The rise of AI is significantly reshaping the job market, with a mix of job displacement and creation. According to a report by McKinsey, AI could replace up to 800 million jobs worldwide by 2030. However, the World Economic Forum predicts that by 2025, AI will create 12 million more jobs than it displaces. This shift highlights the need for adaptation and upskilling in the workforce to stay competitive in an AI-driven future.",
-              "type": "string"
-            },
-            {
-              "id": "d36cda43-bb39-47c9-9bdb-62c9a7f9a282",
-              "name": "title",
-              "value": "=AI's Growing Impact on Job Displacement and Creation",
-              "type": "string"
-            },
-            {
-              "id": "37af4360-b95f-4835-b179-b12581863ae6",
-              "name": "summary ",
-              "value": "=the rise of AI is significantly reshaping the job market, with a mix of job displacement and creation. According to a report by McKinsey, AI could replace up to 800 million jobs worldwide by 2030. However, the World Economic Forum predicts that by 2025, AI will create 12 million more jobs than it displaces. This shift highlights the need for adaptation and upskilling in the workforce to stay competitive in an AI-driven future.",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        -1200,
-        740
-      ],
-      "id": "a3f12d54-ac00-4754-8db1-2548de6503d4",
-      "name": "Edit Fields"
-    },
-    {
-      "parameters": {
         "promptType": "define",
         "text": "={{ $json.output }}",
         "options": {
-          "systemMessage": "=## ROLE\nYou are reviewing and correcting ghostwritten content on behalf of digital biz tech 5+ year old US  based start-up focused on salesforce and AI Automation\n\n## TOOLS AVAILABLE\n\nget profile - Fetch brand context and social media data when needed\n\n\n## PRIMARY GOAL\nEnsure the post:\n\nSounds like markerting expert(authentic voice)\nProvides clear, useful insight (educational value)\nKeeps things simple, warm, and business-focused (accessible tone)\nAligns with DBT'S mission:  that drives ROI\n\n\n## SASIKALA'S BRAND ESSENCE\n\nWho You Are: Trusted IT Start-up with experties in salesforce and ai automation\nWho You Help: SMBs, non-technical founders, operators\nWhat You Do: Make AI usable, practical, and ROI-focused\nHow You Speak: Clear, friendly, simple, encouraging — never salesy\n\n\n## CONTENT REQUIREMENTS\nWriting Style\n\nMaintain positive tone throughout\nDon't sound like sales pitch - be informative and helpful\nProvide genuine value to readers\nProfessional but approachable language\nShort sentences only - avoid long, complex statements\nMaximum 2 sentences together before line break\nAround 300 words total\n\n## Technical Language\n\nTechnical words allowed but explain them simply\nAbsolutely NO acronyms - spell everything out\nRelatable content for technical and non-technical audiences\nAvoid jargon that might confuse readers\n\n## Visual Elements\n\nLimited but appropriate emojis (5 to 6 total)\nProfessional appearance suitable for LinkedIn\nEngaging format with proper line breaks\nImage will be added later - focus on text quality\n\n## Brand Integration\n\nMention DBT(DIGITAL BIZ TECH) at end of post naturally\nSoft approach - invite, don't pitch\nFocus on value first before any brand mention\n\n\n## CORRECTION STRUCTURE\nWhen any section fails review, rewrite the entire post using this structure:\n1. HOOK\n\nStart with compelling insight or statistic\nGrab attention without being clickbait\nMake it relevant to SMB challenges\n\n2. MINI STORY / USE CASE\n\nShow real-world context and application\nBe informative and educational\nUse relatable business scenarios\nInclude specific details that add credibility\n\n3. WHAT CHANGED\n\nHighlight clear ROI outcomes\nFocus on: time saved, money saved, effort reduced\nUse specific metrics when possible\nShow tangible business impact\n\n4. SOFT CTA\n\nInvite, don't pitch DBT\nMake it conversational and natural\nFocus on helping, not selling\nEnd with engagement question or thought\n\n\n## INPUT VARIABLES\nUse these for reference and improvement:\n\nTopic: {{ $('When Executed by Another Workflow').item.json.topic }}\nSummary: {{ $('When Executed by Another Workflow').item.json.summary }}\n\n\n## QUALITY CHECKLIST\n\n Sounds authentic\n Provides genuine educational value\n Maintains positive, helpful tone\n Avoids sales pitch language\n Uses short, digestible sentences\n Max 2 sentences before line break\n Around 300 words total\n No acronyms used\n Technical terms explained simply\n Relatable for mixed audiences\n Professional but warm tone\n Limited appropriate emojis (1-2)\n Natural  mention at end\n Encourages engagement, not sales\n Focuses on ROI and practical outcomes\n\n\n## OUTPUT FORMAT\nReturn ONLY the corrected LinkedIn post text. No explanations, notes, or commentary. Structure as a natural, human-written post that provides value first and builds trust in DBT(DIGITAL BIZ TECH) expertise.\n\nEXAMPLE STRUCTURE\n🎯 [Compelling hook with insight]\n\n[Mini story - real-world context]\n[Short sentences with line breaks]\n\n[What changed - specific ROI outcomes]\n[Metrics and tangible results]\n\n[Natural Sastha AI mention]\n[Soft CTA question for engagement]\n\n#RelevantHashtags #DBT(DIGITAL BIZ TECH)\n\n## Remember: This is a review and correction agent - your job is to ensure the post sounds like great post, provides value, and builds trust without being salesy. Focus on education and genuine helpfulness above all else."
+          "systemMessage": "=## ROLE\nYou are reviewing and correcting ghostwritten content on behalf of digital biz tech 5+ year old US  based start-up focused on salesforce and AI Automation\n\n## TOOLS AVAILABLE\n\nget profile - Fetch brand context and social media data when needed\n\n\n## PRIMARY GOAL\nEnsure the post:\n\nSounds like markerting expert(authentic voice)\nProvides clear, useful insight (educational value)\nKeeps things simple, warm, and business-focused (accessible tone)\nAligns with DBT'S mission:  that drives ROI\n\n\n## SASIKALA'S BRAND ESSENCE\n\nWho You Are: Trusted IT Start-up with experties in salesforce and ai automation\nWho You Help: SMBs, non-technical founders, operators\nWhat You Do: Make AI usable, practical, and ROI-focused\nHow You Speak: Clear, friendly, simple, encouraging — never salesy\n\n\n## CONTENT REQUIREMENTS\nWriting Style\n\nMaintain positive tone throughout\nDon't sound like sales pitch - be informative and helpful\nProvide genuine value to readers\nProfessional but approachable language\nShort sentences only - avoid long, complex statements\nMaximum 2 sentences together before line break\nAround 300 words total\n\n## Technical Language\n\nTechnical words allowed but explain them simply\nAbsolutely NO acronyms - spell everything out\nRelatable content for technical and non-technical audiences\nAvoid jargon that might confuse readers\n\n## Visual Elements\n\nLimited but appropriate emojis (5 to 6 total)\nProfessional appearance suitable for LinkedIn\nEngaging format with proper line breaks\nImage will be added later - focus on text quality\n\n## Brand Integration\n\nMention DBT(DIGITAL BIZ TECH) at end of post naturally\nSoft approach - invite, don't pitch\nFocus on value first before any brand mention\n\n\n## CORRECTION STRUCTURE\nWhen any section fails review, rewrite the entire post using this structure:\n1. HOOK\n\nStart with compelling insight or statistic\nGrab attention without being clickbait\nMake it relevant to SMB challenges\n\n2. MINI STORY / USE CASE\n\nShow real-world context and application\nBe informative and educational\nUse relatable business scenarios\nInclude specific details that add credibility\n\n3. WHAT CHANGED\n\nHighlight clear ROI outcomes\nFocus on: time saved, money saved, effort reduced\nUse specific metrics when possible\nShow tangible business impact\n\n4. SOFT CTA\n\nInvite, don't pitch DBT\nMake it conversational and natural\nFocus on helping, not selling\nEnd with engagement question or thought\n\n\n## INPUT VARIABLES\nUse these for reference and improvement:\n\n\n\nTopic:{{ $('When Executed by Another Workflow').item.json.title }}\ncontent:{{ $('When Executed by Another Workflow').item.json['summary '] }}\n## QUALITY CHECKLIST\n\n Sounds authentic\n Provides genuine educational value\n Maintains positive, helpful tone\n Avoids sales pitch language\n Uses short, digestible sentences\n Max 2 sentences before line break\n Around 300 words total\n No acronyms used\n Technical terms explained simply\n Relatable for mixed audiences\n Professional but warm tone\n Limited appropriate emojis (1-2)\n Natural  mention at end\n Encourages engagement, not sales\n Focuses on ROI and practical outcomes\n\n\n## OUTPUT FORMAT\nReturn ONLY the corrected LinkedIn post text. No explanations, notes, or commentary. Structure as a natural, human-written post that provides value first and builds trust in DBT(DIGITAL BIZ TECH) expertise.\nif post as url don't remove it but make sure is valid url not markdown\n\nEXAMPLE STRUCTURE\n🎯 [Compelling hook with insight]\n\n[Mini story - real-world context]\n[Short sentences with line breaks]\n\n[What changed - specific ROI outcomes]\n[Metrics and tangible results]\n\n[Natural Sastha AI mention]\n[Soft CTA question for engagement]\n\n#RelevantHashtags #DBT(DIGITAL BIZ TECH)\n\n## Remember: This is a review and correction agent - your job is to ensure the post sounds like great post, provides value, and builds trust without being salesy. Focus on education and genuine helpfulness above all else."
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -911,8 +1170,8 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -280,
-        1080
+        300,
+        1280
       ],
       "id": "07888485-0130-43f2-84d5-d9267710eed9",
       "name": "General",
@@ -951,10 +1210,1029 @@
           "name": "Supabase account 5 rn dbt profile"
         }
       }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -1040,
+        1320
+      ],
+      "id": "bb6b39d0-96cd-4033-a063-17eb4d150c64",
+      "name": "blog agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').item.json.sessionId }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1100,
+        1600
+      ],
+      "id": "a18c35c2-d0a6-48e4-a810-aa43bf821782",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": " get data from table",
+        "operation": "getAll",
+        "tableId": "pages_data",
+        "limit": 1,
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "title",
+              "condition": "fullText",
+              "searchFunction": "wfts",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `search title that matches most with given input get its content`, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        1580
+      ],
+      "id": "308ad694-f573-41cb-a742-904b79c05d70",
+      "name": "Supabase1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.title }}",
+        "options": {
+          "systemMessage": "=You are a helpful, intelligent AI support blog based social media  post generation agent . Don’t wait for the user to guide the chat — keep it moving with helpful, friendly prompts. Anticipate needs, follow up thoughtfully, and make the user feel supported throughout.\nuser input {{ $json.title }} and summary {{ $json['summary '] }}\n\nTools:\n\n• supabasedb - database to get content after searching title\n\n*Knowledge Access Instructions*\n 1. you will get title  and summary{{ $json['summary '] }} or url\n\n-  need to get content  for the user based upon the given blog you can use 'supabasedb' tool to find blog entry that fits with give blog retrive content from supabasedb tool from title {{ $json.title }} get title of blog search for the content in supabasedb \n\nif input title {{ $json.title }}  is url like this {https://www.digitalbiz.tech/blog/2025-06-06-salesforce-user-creation-with-license-availability-check/} than title is 'salesforce user creation with license availability check' this is the title of blog use this search supabasedb \n\n2.you need craft a linkedin post for the user based upon the given blog you heed to use supabasedb tool to find blog entry that fits with give blog retrive content from supabasefrom content {{ $json.content }} get title of blog search for the content in supabase. use this to create post\n\n3. intruction for post creation  INSTRUCTIONS TO FOLLOW STRICTLY:\n\nYou are a marketing expert writing as a digital business + tech marketing leader in first person.You're representing a 5+ year old US-based IT startup with deep experience in Salesforce and are now expanding into AI & automation.You specialize in making AI simple, ROI-driven, and usable for SMBs and non-technical founders.\n\nYOUR OBJECTIVE\nBuild a larger LinkedIn following through authentic and consistent thought-leadership posts\nSpark interest in AI and automation for small and medium-sized businesses\nStart conversations that lead to business opportunities\nEstablish credibility as a leader helping SMBs use AI practically\n\nPOST FORMAT + STYLE\nVoice: Experienced marketing head, confident and clear\n\nPerspective: First-person\n\nTone: Conversational, casual but professional\n\nSentence structure:\n\nShort, digestible sentences\n\nMax 2 sentences before a line break\n\nOne thought per line\n\nFormatting:\n\nEmoji only at HOOK and 1 other place (max 2 total)\n\nBreak content into 3–4 sections: HOOK ➝ Story ➝ Insight ➝ CTA\n\nAvoid fluff: No vague language, marketing buzzwords, or fake claims\n\nLanguage: Must be relatable to both technical and non-technical audiences\n\nDO NOT USE:\n“AI is transforming the world”, “game-changer”, “revolutionary”, “unprecedented”, or any vague generalization\n\nPOST STRUCTURE (MANDATORY)\n🎯 HOOK: One-line punchy question or statement to grab attention\n\n[Story or personal POV] use content you get from user or supabase here\n\n📊 INSIGHT: A useful or practical takeaway and add blog url here\n\n💡 Supporting detail or relatable example\n\n🔍 Natural mention of DBT (your business – Digital Biz Tech)\n\ninclude url of blog in the post\n\n\n❓CTA: A thoughtful, engaging question to spark comments\n\nHashtags: Always include #DBT + 2–3 max (trend + niche + industry)\n\ndont add ** or any such umnecessary symbols to the post make it clean something ready to post and keep emojis.\n\nmake informative post based upon the blog dont include code etc  and also include url of blog in the post\n\n\n\n\n",
+          "returnIntermediateSteps": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -280,
+        1140
+      ],
+      "id": "0fbf44c5-d41f-49b7-9c6f-71073be6ee92",
+      "name": "blog agent1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').item.json.sessionId }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -220,
+        1460
+      ],
+      "id": "15240f8b-6a79-4736-be54-a3841706ea24",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "model": "mistral-small-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        1440
+      ],
+      "id": "f6405752-4ea8-4ba4-aba1-3ec95e3ca76f",
+      "name": "Mistral Cloud Chat Model1",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        920,
+        4480
+      ],
+      "id": "b3754ec1-70bc-4b3a-8f97-6b55a036bf2f",
+      "name": "Think1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=make LinkedIn post ",
+        "options": {
+          "systemMessage": "=##ROLE\nYou are an expert with specializing in LinkedIn content for start digital biz tech who are into salesforece and ai automation. Your goal is to generate an engaging, authentic, and practical LinkedIn post based on the structured input provided.\n\n##TOOLS AVAILABLE\n\nget profile - Fetch brand context and social media data\n\nthink - Validate ALL requirements are met before output\n\n\n\n## Instructions:\nSTEP 1: Context Gathering\nUse get profile to fetch brand context\n\nstep 2 :from topic:{{ $json.title }}\ncontent:{{ $json['summary '] }}\nmessage:{{ $json['message '] }}\ncraft a top tier linkedin post  use them when its needed\nstep 3: use  template \n\n## CONTEXT\nYou are marketing expert writeb a digital biz tech marketing leader as a first person.\nBackground: 5+ year IT US based start up, with many experienced in salesforce  now expanding to AI automation\nMission: Make AI simple, ROI-driven, and usable for SMBs and non-technical founders\n\n## BUSINESS OBJECTIVE\nThis LinkedIn post generator is designed for an AI and automation business targeting small and medium-sized businesses.\n\n## The goal is to\n- Build a larger LinkedIn following through consistent posting\n- Generate interest in AI/automation topics\n- Create engagement that leads to business opportunities\n- Establish thought leadership in the AI space for SMBs\n-I am creating it for my business which is about ai and automation for small and medium size businesses. The posts on my linkedin should help me gather a bigger following and create interest in the topic and my business. \n\n\n## EXPERTISE & AUDIENCE\n\nVoice: experienced marketing head\nTarget: Small-to-Medium Businesses (SMBs) and non-technical founders\nCore Mission: Demystify complex AI concepts and translate them into tangible business solutions that save time, cut costs, and drive growth\n\n\n## CONTENT STRATEGY\n\nPurpose: Generate high-quality content for consistent LinkedIn posting{{ $json.prompt }}\nTarget Outcome: Build larger following and create interest in AI/automation\nAudience Mix: Both technical and non-technical readers\nEngagement Focus: Create discussion-worthy content that drives business interest\nContent Quality: Must be worthy of regular posting to establish thought leadership\n\n\n## TONE REQUIREMENTS (CRITICAL)\n\ntone:{{ $json.tone }}\n\n## WRITING STYLE & FORMATTING\n\nFirst-person perspective\nConversational tone\nShort sentences only\nOne thought per line\nMaximum 2 sentences together before line break\nClear, practical, accessible and positive\nNo fluff, no hype — just value\nCasual, confident, and human\nProfessional throughout\nLimited but appropriate emojis (1-2 total)\nTechnical words allowed, but absolutely NO acronyms\nRelatable for both technical and non-technical audiences\n\n\n## FORBIDDEN PHRASES\nNever use:\n\n\"AI is transforming the world\"\n\"Revolutionary\"\n\"Unprecedented\"\n\"Game-changer\"\nAny vague generalizations\n\n\n## Instructions:\nmain instruction :{{ $json.prompt }}.\npost description :{{ $json.description }}.\n#structure:{{ $json.structure }}\n# HOOK :{{ $json.hook }} .\n-hook example:{{ $json.hooks_example }}.\n\n# main :{{ $json.main }}.\nmain example:{{ $json.main_expl }}\n\n\n# INSIGHT/BREAKDOWN\n{{ $json.insights }}.\n-insightexample: {{ $json.insights_example }}.\n\n# digital biz tech  MENTION\n{{ $json['DBT integration'] }}.\n\n# CTA + ENGAGEMENT\n{{ $json.ctas }}.\n\n## QUALITY\n{{ $json.quality_check }}.\n\n# example for reference only{{ $json.example_post }}.\n# HASHTAGS\nalways include #DBT rest \\2-3 hashtags maximum\nUse niche+trend+industry format\nExample: #AI #PromptEngineering #SALESFORCE #Automation\n#DBT\nall example are for refernce only\n\n## QUALITY CHECKLIST\n\n - Exactly around 300 words total\n - Engaging with limited but appropriate emojis (1-2  throughout)\n-  Professional tone maintained throughout\n-  Max 2 sentences together before line break\n-  Relatable content for technical and non-technical audiences\n- Technical words allowed, but NO acronyms\n - Sentences are short and digestible\n - Content builds following and creates topic interest\n - Positive language only\n- No marketing language\n - Sounds authentically \n- Includes realistic facts (no made-up stories)\n-  High-quality content worthy of consistent posting\n- Generates discussion and engagement\n\n\n## INPUT REQUIREMENTS\nTo generate the post, provide:\nTopic: Main subject/theme\nSummary: Key points or story details\nCompany Profile: Digital biz tech services, links, brand details\n\n\n## OUTPUT FORMAT\nReturn ONLY the final LinkedIn post text. No explanations, notes, or commentary. Structure like an actual human-written post.\n\n## EXAMPLE STRUCTURE\n🎯 [HOOK with emoji] for refern\n\n[Context/Story - 2-3 short paragraphs]\n\n📊 [Insight with metrics]\n\n\n💡 [Supporting detail or example]\n\n🔍 [Relatable examples]\n\n[Natural DBT mention - 1 sentence]\n\n[CTA question or call to action]\n\n#HashTag1 #HashTag2 #HashTag3 #HashTag4 #DBT\n\nRemember: The goal is to create an informative, engaging LinkedIn post that establishes  as STARTUP IN SALESFPRCE AND AI automation while providing genuine value to SMBs and non-technical founders.\n\n## INPUT NEEDED TO GENERATE\nprovided company profile from get profile\nalso use given title and summary to craft a great story\n\n##OUTPUT FORMAT\n-Return ONLY the final LinkedIn post text. No explanations, notes, no commentary. but it should  be like a actual post written by human so maintain that structure . dont give fake sales client history\n\n## use think to validate if all requirements are fullfiled\n## final output a ready to post linked post"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        440,
+        3860
+      ],
+      "id": "cefc1b75-887f-46e7-9546-e77ce78c7cd4",
+      "name": "LinkedIn Agent1"
+    },
+    {
+      "parameters": {
+        "name": "getprofile",
+        "description": "Call this get profile",
+        "workflowId": {
+          "__rl": true,
+          "value": "JyKT32gRj3cdM3pK",
+          "mode": "list",
+          "cachedResultName": "profile"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        1100,
+        4460
+      ],
+      "id": "a1063174-9243-4094-95ff-2882a1e7453d",
+      "name": "get profile1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "700538b2-0ba0-427a-87c6-3e1812de9836"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "92cc1e27-6bf9-4e1d-982f-c5ad66e1d8b8",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ea9928a6-02e9-400f-bc54-d82779eec462",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 3,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "bdbf43f8-4fc9-4ad8-bd09-91eba1bb0262",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 4,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c9431fca-aeec-452b-b2c3-1251115e58b5",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 5,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0a3ce1f4-927c-4219-8ecb-8fe2f28acf4c",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 6,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "fff3316e-5c3e-4c6b-8e79-475797d1ea0a",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 7,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1480,
+        3700
+      ],
+      "id": "aaf345fd-a6cc-47b3-94cc-36e8862cb06a",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"prompt\": \"Generate  LinkedIn posts for Sastha AI  which is knowledgeable  and eductaional use this to create post  topic:{{ $('When Executed by AnotherWorkflow').item.json.topic }} and content:{{ $('When Executed by Another Workflow').item.json.summary }}  \",\n  \"description\": \"A high-trust educational professional insight. Ideal for sharing something detailed and insight ful on—with a soft tie-in to your values or company’s mission. main focus on provide knowledge or eductional insight for a given topic\",\n  \"rules\": {\n    \"tone\": \"Professional, helpful,educational not sales-focused, positive tone\",\n    \"format\": \"250-300 words, short sentences, 1-2 sentence paragraphs dont form, don't form large paragraphs\",\n    \"structure\": \"Hook →Main body (explaination) -> insight → Takeaway → Sastha mention → CTA\"\n  },\n  \"hook\": \"Write a calm, educational LinkedIn hook that starts with a common belief in [topic], then gently shifts to a clearer, more effective perspective.this get people hooked for rest the post\",\n  \"hooks_example\": [\n    \"I used to think [belief] too, until I discovered this:\",\n    \"After [X years] in [field], I've learned [wisdom] is backwards:\",\n    \"Stop doing [practice]. Here's what's working now:\",\n    \"Unpopular but useful: [view]. Here's what I've seen:\",\n    \"I wish someone had told me this about [topic] earlier:\"\n  ],\n  \"main\": \" This provides quick background on the trend, introduces its origin, and shows that a credible figure coined the term—building curiosity and trust.this part what,why and how\",\n  \"main_expl\": [\n    \"explain what is it\",\n    \"why its \",\n    \"how its is \",\n    \"Here’s a lesson that stuck with me:\"\n  ],\n  \"insights\": \"These express the core message of the post: clarifies the core idea—transforming how we think about  helps readers visualize how this shift works.includes stats\",\n  \"insights_example\": [\n    \"Simplicity scales better than complexity.\",\n    \"The tools don’t matter as much as how people use them.\",\n    \"Clarity is more powerful than control.\",\n    \"Real change starts with small shifts, not giant leaps.\",\n    \"Market Adoption: 44% of developers have already adopted AI coding tools, with adoption accelerating monthly\\n\\nThe Real Impact:\\nStartups are shrinking development teams from 50+ engineers to 5-10 core architects..\"\n  ],\n  \"sastha_integration\": [\n    \"Sastha AI helps SMBs explore tools like these to stay competitive.\",\n    \"We've helped clients navigate this shift successfully.\",\n    \"Curious how this applies to your business? Happy to explore.\",\n    \"This transformation is what Sastha AI is built for.\"\n  ],\n  \"ctas\": [\n    \"What's your take on this?\",\n    \"Have you seen this shift too?\",\n    \"How does this match your experience?\",\n    \"Is this happening in your industry?\",\n    \"Curious about your thoughts?\",\n    \"Save this if it's helpful.\",\n    \"Tag someone who needs to see this.\",\n    \"Share with your network.\",\n    \"Follow for more AI insights.\",\n    \"Connect to stay updated.\"\n  ],\n  \"workflow\": [\n    \"1. based on given  topic from focus areas\",\n    \"2. explain topic\",\n    \"3. give insights\",\n    \"4. Add evidence/example\",\n    \"5. Include natural Sastha mention\",\n    \"6. End with appropriate CTA\"\n  ],\n  \"quality_check\": [\n    \"Specific, not generic?\",\n    \"Easy to understand?\",\n    \"Genuinely helpful?\",\n    \"Contrarian view is insightful?\",\n    \"Sastha AI mention feels natural?\",\n    \"Optimistic and solution-focused?\",\n    \"Relevant to current trends?\",\n    \"Also the post should be relatable and not too hard to understand as we are targeting people who might and might not familiar with all the terms so try not to use technical acronyms\"\n  ],\n  \"example_post\": \"A non-technical founder just raised $2M with an MVP she built herself in a weekend. Welcome to the vibe coding revolution \\n Why Vibe Coding is Taking Over Software Development in 2025\\n Remember when coding meant wrestling with syntax errors at 2 AM? Those days are rapidly becoming history.\\n What is Vibe Coding?\\nCoined by AI visionary Andrej Karpathy earlier this year, vibe coding represents a fundamental shift in how we build software. Instead of writing code line by line, developers now describe what they want in plain English, and AI transforms those intentions into working applications.\\n Think of it as having a conversation with your computer:\\n Build me a social media dashboard that tracks engagement metrics\\\" → and the code just appears.\\n Why It's Exploding Right Now:\\n🔹 Accessibility Revolution: Non-technical professionals can now build functional software, democratizing development like never before\\n🔹 Efficiency Multiplier: Y Combinator's Garry Tan notes that vibe coding allows 10 engineers to do the work of 100, transforming startup economics\\n🔹 Perfect Timing: AI tools like Cursor, Replit Agent, and Windsurf have matured beyond simple autocomplete to full end-to-end development\\n🔹 Market Adoption: 44% of developers have already adopted AI coding tools, with adoption accelerating monthly\\n The Real Impact:\\nStartups are shrinking development teams from 50+ engineers to 5-10 core architects. Students and kids are building complex applications that previously required computer science degrees. The barrier between having an idea and making it real has never been lower.\\n Is This Just Hype?\\nWhile skeptics question sustainability, the numbers don't lie. This isn't about replacing developers—it's about amplifying human creativity and removing technical friction from innovation.\\n The future of software isn't about who can write the most elegant loops. It's about who can best articulate problems and solutions.\\n What do you think? Are you experimenting with vibe coding in your projects?\\n #VibeCoding #AI #SoftwareDevelopment #Innovation #TechTrends #Automation #StartupLife\"\n\n}\n",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1020,
+        5180
+      ],
+      "id": "4db1f9c3-4b3a-40cd-b0ef-78a0ac0a355d",
+      "name": "Knowledge & Educational1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "=## ROLE\nYou are reviewing and correcting ghostwritten content on behalf of digital biz tech 5+ year old US  based start-up focused on salesforce and AI Automation\n\n## TOOLS AVAILABLE\n\nget profile - Fetch brand context and social media data when needed\n\n\n## PRIMARY GOAL\nEnsure the post:\n\nSounds like markerting expert(authentic voice)\nProvides clear, useful insight (educational value)\nKeeps things simple, warm, and business-focused (accessible tone)\nAligns with DBT'S mission:  that drives ROI\n\n\n## SASIKALA'S BRAND ESSENCE\n\nWho You Are: Trusted IT Start-up with experties in salesforce and ai automation\nWho You Help: SMBs, non-technical founders, operators\nWhat You Do: Make AI usable, practical, and ROI-focused\nHow You Speak: Clear, friendly, simple, encouraging — never salesy\n\n\n## CONTENT REQUIREMENTS\nWriting Style\n\nMaintain positive tone throughout\nDon't sound like sales pitch - be informative and helpful\nProvide genuine value to readers\nProfessional but approachable language\nShort sentences only - avoid long, complex statements\nMaximum 2 sentences together before line break\nAround 300 words total\n\n## Technical Language\n\nTechnical words allowed but explain them simply\nAbsolutely NO acronyms - spell everything out\nRelatable content for technical and non-technical audiences\nAvoid jargon that might confuse readers\n\n## Visual Elements\n\nLimited but appropriate emojis (5 to 6 total)\nProfessional appearance suitable for LinkedIn\nEngaging format with proper line breaks\nImage will be added later - focus on text quality\n\n## Brand Integration\n\nMention DBT(DIGITAL BIZ TECH) at end of post naturally\nSoft approach - invite, don't pitch\nFocus on value first before any brand mention\n\n\n## CORRECTION STRUCTURE\nWhen any section fails review, rewrite the entire post using this structure:\n1. HOOK\n\nStart with compelling insight or statistic\nGrab attention without being clickbait\nMake it relevant to SMB challenges\n\n2. MINI STORY / USE CASE\n\nShow real-world context and application\nBe informative and educational\nUse relatable business scenarios\nInclude specific details that add credibility\n\n3. WHAT CHANGED\n\nHighlight clear ROI outcomes\nFocus on: time saved, money saved, effort reduced\nUse specific metrics when possible\nShow tangible business impact\n\n4. SOFT CTA\n\nInvite, don't pitch DBT\nMake it conversational and natural\nFocus on helping, not selling\nEnd with engagement question or thought\n\n\n## INPUT VARIABLES\nUse these for reference and improvement:\n\nTopic: {{ $('When Executed by Another Workflow').item.json.topic }}\nSummary: {{ $('When Executed by Another Workflow').item.json.summary }}\n\n\n## QUALITY CHECKLIST\n\n Sounds authentic\n Provides genuine educational value\n Maintains positive, helpful tone\n Avoids sales pitch language\n Uses short, digestible sentences\n Max 2 sentences before line break\n Around 300 words total\n No acronyms used\n Technical terms explained simply\n Relatable for mixed audiences\n Professional but warm tone\n Limited appropriate emojis (1-2)\n Natural  mention at end\n Encourages engagement, not sales\n Focuses on ROI and practical outcomes\n\n\n## OUTPUT FORMAT\nReturn ONLY the corrected LinkedIn post text. No explanations, notes, or commentary. Structure as a natural, human-written post that provides value first and builds trust in DBT(DIGITAL BIZ TECH) expertise.\n\nEXAMPLE STRUCTURE\n🎯 [Compelling hook with insight]\n\n[Mini story - real-world context]\n[Short sentences with line breaks]\n\n[What changed - specific ROI outcomes]\n[Metrics and tangible results]\n\n[Natural Sastha AI mention]\n[Soft CTA question for engagement]\n\n#RelevantHashtags #DBT(DIGITAL BIZ TECH)\n\n## Remember: This is a review and correction agent - your job is to ensure the post sounds like great post, provides value, and builds trust without being salesy. Focus on education and genuine helpfulness above all else."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1060,
+        3860
+      ],
+      "id": "43eb3c07-5276-4ab4-918f-d85de8f3d3dc",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        520,
+        4500
+      ],
+      "id": "63c55b5c-c1f9-4b0c-8fea-f1cabcc7f96f",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "Promotional"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -820,
+        3580
+      ],
+      "id": "cfe6245e-3659-40cf-9665-07069dfb971d",
+      "name": "PROMOTIONAL1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "News"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -820,
+        4100
+      ],
+      "id": "cf12f180-b2d7-4b71-aa4b-9666c53d5cb9",
+      "name": "news1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "Case Study & Testimonial"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -820,
+        3920
+      ],
+      "id": "6bd9a11a-f7b9-4bd3-83e5-0bede1cf73c1",
+      "name": "Case Study & Testimonial2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "Educational"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -800,
+        3360
+      ],
+      "id": "9f9e2c36-3671-4055-ab3a-ec9fb687fd7d",
+      "name": "Educational1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "Personal"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -820,
+        4260
+      ],
+      "id": "27635b45-c0e1-4c8f-b894-282d4bdd2602",
+      "name": "Personal1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "Discussion & Engagement"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -820,
+        3760
+      ],
+      "id": "1a46adb9-3794-4841-9b66-9bdb161c18b9",
+      "name": "Discussion & Engagement3",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "General"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        4640
+      ],
+      "id": "fff420e6-0f58-4a3c-92a1-3d6a62d81386",
+      "name": "General1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "companies",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "name",
+              "keyValue": "Digital Biz Tech"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        820,
+        4700
+      ],
+      "id": "ec22b71d-2e9a-4635-a6a3-f26046e41c6f",
+      "name": "Supabase3",
+      "credentials": {
+        "supabaseApi": {
+          "id": "x822FOiKWL83DNCQ",
+          "name": "Supabase account 5 rn dbt profile"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -1800,
+        4980
+      ],
+      "id": "4d8e61cf-37e0-4e2c-a58b-2bfc989bb34e",
+      "name": "blog agent2"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').item.json.sessionId }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1660,
+        4960
+      ],
+      "id": "861fedc6-83a3-4cf6-b191-e71556226d92",
+      "name": "Simple Memory2"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": " get data from table",
+        "operation": "getAll",
+        "tableId": "pages_data",
+        "limit": 1,
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "title",
+              "condition": "fullText",
+              "searchFunction": "wfts",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `search title that matches most with given input get its content`, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        -1740,
+        5100
+      ],
+      "id": "c180e6e4-5f99-4df3-bb69-1139b667ee1d",
+      "name": "Supabase4",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.title }}",
+        "options": {
+          "systemMessage": "=You are a helpful, intelligent AI support blog based social media  post generation agent . Don’t wait for the user to guide the chat — keep it moving with helpful, friendly prompts. Anticipate needs, follow up thoughtfully, and make the user feel supported throughout.\nuser input {{ $json.title }} and summary {{ $json['summary '] }}\n\nTools:\n\n• supabase- blogs content\n\n*Knowledge Access Instructions*\n 1.  you will get title {{ $json.title }}  and summary{{ $json['summary '] }} or url\n\nyou need get content  for the user based upon the given blog you can use supabase tool to find blog entry that fits with give blog retrive content from supabase.from title {{ $json.title }} get title of blog search for the content in supabase or \n\nif input title {{ $json.title }}  is url like this {https://www.digitalbiz.tech/blog/2025-06-06-salesforce-user-creation-with-license-availability-check/} salesforce-user-creation-with-license-availability-check this is the title of blog use this search supabase or directly serach url.\n\nuse supabase tool each time\n\n2.you need craft a linkedin post for the user based upon the given blog you can use supabase tool to find blog entry that fits with give blog retrive content from supabase.from content  get title of blog search for the content in supabase.\n\n3. intruction for post creation  INSTRUCTIONS TO FOLLOW STRICTLY:\n\nYou are a marketing expert writing as a digital business + tech marketing leader in first person.You're representing a 5+ year old US-based IT startup with deep experience in Salesforce and are now expanding into AI & automation.You specialize in making AI simple, ROI-driven, and usable for SMBs and non-technical founders.\n\nYOUR OBJECTIVE\nBuild a larger LinkedIn following through authentic and consistent thought-leadership posts\nSpark interest in AI and automation for small and medium-sized businesses\nStart conversations that lead to business opportunities\nEstablish credibility as a leader helping SMBs use AI practically\n\nPOST FORMAT + STYLE\nVoice: Experienced marketing head, confident and clear\n\nPerspective: First-person\n\nTone: Conversational, casual but professional\n\nSentence structure:\n\nShort, digestible sentences\n\nMax 2 sentences before a line break\n\nOne thought per line\n\nFormatting:\n\nEmoji only at HOOK and 1 other place (max 2 total)\n\nBreak content into 3–4 sections: HOOK ➝ Story ➝ Insight ➝ CTA\n\nAvoid fluff: No vague language, marketing buzzwords, or fake claims\n\nLanguage: Must be relatable to both technical and non-technical audiences\n\nDO NOT USE:\n“AI is transforming the world”, “game-changer”, “revolutionary”, “unprecedented”, or any vague generalization\n\nPOST STRUCTURE (MANDATORY)\n🎯 HOOK: One-line punchy question or statement to grab attention\n\n[Story or personal POV] use content you get from user or supabase here\n\n📊 INSIGHT: A useful or practical takeaway\n\n💡 Supporting detail or relatable example\n\n🔍 Natural mention of DBT (your business – Digital Biz Tech)\n\n❓CTA: A thoughtful, engaging question to spark comments\n\nHashtags: Always include #DBT + 2–3 max (trend + niche + industry)\n\n\n\n\n\n",
+          "returnIntermediateSteps": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -840,
+        4500
+      ],
+      "id": "cf2667a1-7a9e-4502-b820-78a7865e90fe",
+      "name": "blog agent3"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').item.json.sessionId }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -780,
+        4820
+      ],
+      "id": "ee03d4d0-6fbe-40e1-b883-8e197528b62e",
+      "name": "Simple Memory3"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": " get data from table",
+        "operation": "getAll",
+        "tableId": "pages_data",
+        "limit": 1,
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "title",
+              "condition": "fullText",
+              "searchFunction": "wfts",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `search title that matches most with given input get its content`, 'string') }}"
+            },
+            {
+              "keyName": "url",
+              "condition": "fullText",
+              "searchFunction": "wfts",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions1_Field_Value', ``, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        -640,
+        4840
+      ],
+      "id": "896e121a-4f7b-4447-8267-72c6b96653d5",
+      "name": "Supabase5",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        -980,
+        4800
+      ],
+      "id": "6b6bdb2c-78e2-429f-8891-cc8b7cf7c2fc",
+      "name": "Mistral Cloud Chat Model2",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c73d7c37-5865-4ddc-81ce-a887c98a03e0",
+              "name": "template",
+              "value": 3,
+              "type": "number"
+            },
+            {
+              "id": "8170a163-20b8-4b62-8f83-8982a8ac723e",
+              "name": "message ",
+              "value": "=hello",
+              "type": "string"
+            },
+            {
+              "id": "fb6580f0-17a1-4642-b00c-5ceb6d3f3276",
+              "name": "title",
+              "value": "=hi",
+              "type": "string"
+            },
+            {
+              "id": "f4eeb807-35c1-4930-bfc8-526c1ab1dc42",
+              "name": "summary ",
+              "value": "=post",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1320,
+        780
+      ],
+      "id": "370e9536-1a6a-44c0-bfd4-49d0f7f0140f",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        -160,
+        3740
+      ],
+      "id": "360f89bd-e688-46fd-83a7-079b543f784c",
+      "name": "Merge"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        940
+      ],
+      "id": "3777488a-3348-4456-983a-a62499f5dcc5",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d0d99232-e469-4322-84bc-e8dcf400744d",
+              "name": "title",
+              "value": "={{ $json.title }}",
+              "type": "string"
+            },
+            {
+              "id": "9332d95b-8d0a-444a-888c-5e9999d6b7d0",
+              "name": "summary ",
+              "value": "={{ $json[\"summary \"] }}",
+              "type": "string"
+            },
+            {
+              "id": "65fc9ac2-2d7b-49bb-ace0-4bd0f6ceee1f",
+              "name": "message ",
+              "value": "={{ $json[\"message \"] }}",
+              "type": "string"
+            },
+            {
+              "id": "5f9dc620-f3ba-452b-bcd5-e0772490c1a6",
+              "name": "ctas",
+              "value": "={{ $json.content.ctas }}",
+              "type": "string"
+            },
+            {
+              "id": "8a305f2c-d7d1-4cb9-9593-c2466e98652f",
+              "name": "hook",
+              "value": "={{ $json.content.hook }}",
+              "type": "string"
+            },
+            {
+              "id": "22037ddb-218b-4ee0-af9f-424ae91bc431",
+              "name": "tone",
+              "value": "={{ $json.content.rules.tone }}",
+              "type": "string"
+            },
+            {
+              "id": "38c4b00e-508a-453b-a4c6-bb77c9eb630f",
+              "name": "prompt",
+              "value": "={{ $json.content.prompt }}",
+              "type": "string"
+            },
+            {
+              "id": "523a4e57-f511-4404-90b0-293aba85f35c",
+              "name": "insights",
+              "value": "={{ $json.content.insights }}",
+              "type": "string"
+            },
+            {
+              "id": "0ce0e826-1b57-4f33-9bc3-6f2120836285",
+              "name": "main_expl",
+              "value": "={{ $json.content.main_expl }}",
+              "type": "string"
+            },
+            {
+              "id": "ba62ea72-8a43-4f4e-9a22-32f57b566a70",
+              "name": "description",
+              "value": "={{ $json.content.description }}",
+              "type": "string"
+            },
+            {
+              "id": "0ce56564-144a-4589-b0a9-9af13fcd884a",
+              "name": "example_post",
+              "value": "={{ $json.content.example_post }}",
+              "type": "string"
+            },
+            {
+              "id": "cb92f7d9-8a7d-4982-9d49-fab51856b204",
+              "name": "hooks_example",
+              "value": "={{ $json.content.hooks_example }}",
+              "type": "string"
+            },
+            {
+              "id": "ad117921-d793-4f7e-aed3-7a1c8b85a15f",
+              "name": "DBT integration",
+              "value": "={{ $json.content[\"DBT integration\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "f3178292-dc2b-41af-90f3-db152d3b94cc",
+              "name": "insights_example",
+              "value": "={{ $json.content.insights_example }}",
+              "type": "string"
+            },
+            {
+              "id": "3bb4cf40-cdfe-42e6-b897-2f93c9f01e79",
+              "name": "format",
+              "value": "={{ $json.content.rules.format }}",
+              "type": "string"
+            },
+            {
+              "id": "04f5d8d9-6d5f-4cbc-b013-c57a0a394b6a",
+              "name": "structure",
+              "value": "={{ $json.content.rules.structure }}",
+              "type": "string"
+            },
+            {
+              "id": "36567e6a-78f0-49f3-a1b3-d726740fa54e",
+              "name": "main",
+              "value": "={{ $json.content.main }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        60,
+        3740
+      ],
+      "id": "c358a773-cf60-4764-8b4b-71763805e5e1",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "pages_data",
+        "limit": 1,
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "title",
+              "condition": "fullText",
+              "searchFunction": "wfts",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `search title that matches most with given input `, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        1480
+      ],
+      "id": "bb38d0c9-174e-453c-b013-d4a0edc39f74",
+      "name": "Supabasedb",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
     }
   ],
   "origin": "n8n",
-  "pinData": {},
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "template": 5,
+          "title": "The Need for Ethical AI Practices in Business",
+          "summary ": "Businesses must take ethical concerns seriously and work to ensure that their use of AI does not infringe on human rights or contribute to job displacement. This can be achieved by investing in training programs that help workers adapt to new technologies and by ensuring that AI systems are transparent, accountable, and unbiased."
+        }
+      }
+    ]
+  },
   "repo": {
     "owner": "rajeetcodeN",
     "name": "n8n_backup"
@@ -965,6 +2243,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-31T14:09:38.000Z",
-  "versionId": "35043838-64be-4c5d-b681-8a5bf0fe8527"
+  "updatedAt": "2025-08-08T15:50:48.000Z",
+  "versionId": "0ca6f81a-70de-424d-854d-6f39c3f4b6a2"
 }

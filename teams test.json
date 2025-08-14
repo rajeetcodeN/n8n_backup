@@ -1,0 +1,76 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Microsoft Teams",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-13T14:02:45.943Z",
+  "id": "hGaJkeepM0vTXk4w",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "teams test",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "9b890558-4acd-4796-bfbf-1451ee69ca82",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "chatMessage",
+        "chatId": {
+          "__rl": true,
+          "value": "1755092839789",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.microsoftTeams",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "id": "60d00824-8051-4040-8785-862cb7c806f7",
+      "name": "Microsoft Teams",
+      "webhookId": "b640680d-cb5f-4e2d-8df6-eeae6f886ce2",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "hyEyXiOrNWnw9Q3f",
+          "name": "Microsoft Teams account"
+        }
+      }
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-14T06:32:36.000Z",
+  "versionId": "e18450dc-9304-453a-a086-507e1e0537cf"
+}

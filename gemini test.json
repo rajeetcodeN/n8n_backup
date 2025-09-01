@@ -1,0 +1,1558 @@
+{
+  "active": false,
+  "connections": {
+    "Loop Over Items2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Set File ID1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set File ID1": {
+      "main": [
+        [
+          {
+            "node": "Google Drive1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Code4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive1": {
+      "main": [
+        [
+          {
+            "node": "Mistral Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Upload": {
+      "main": [
+        [
+          {
+            "node": "Mistral Signed URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Signed URL": {
+      "main": [
+        [
+          {
+            "node": "Mistral DOC OCR3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Drive2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code3": {
+      "main": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Information Extractor": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Cloud Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Mistral Cloud": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral DOC OCR3": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code4": {
+      "main": [
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral DOC OCR4": {
+      "main": [
+        [
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        []
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Set File ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set File ID": {
+      "main": [
+        [
+          {
+            "node": "Google Drive3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive3": {
+      "main": [
+        [
+          {
+            "node": "Mistral Upload1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Upload1": {
+      "main": [
+        [
+          {
+            "node": "Mistral Signed URL1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Signed URL1": {
+      "main": [
+        [
+          {
+            "node": "Mistral DOC OCR6",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Mistral DOC OCR5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral DOC OCR": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-08-25T03:42:08.105Z",
+  "id": "LdW0ydAF4pGkQkIm",
+  "isArchived": false,
+  "meta": null,
+  "name": "gemini test",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1888,
+        384
+      ],
+      "id": "b72f7a34-cad9-4be1-a17b-ef1b5f7fc6fb",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "10646eae-ae46-4327-a4dc-9987c2d76173",
+              "name": "file_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "f4536df5-d0b1-4392-bf17-b8137fb31a44",
+              "name": "file_type",
+              "value": "={{ $json.mimeType }}",
+              "type": "string"
+            },
+            {
+              "id": "77d782de-169d-4a46-8a8e-a3831c04d90f",
+              "name": "file_title",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "9bde4d7f-e4f3-4ebd-9338-dce1350f9eab",
+              "name": "file_url",
+              "value": "={{ $json.webViewLink }}",
+              "type": "string"
+            },
+            {
+              "id": "fae402c8-c486-4b57-8d28-bf669db6b442",
+              "name": "last_modified_date",
+              "value": "={{ $json.modifiedTime }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b9d84587-5aee-477b-b1ec-552b21963cf2",
+      "name": "Set File ID1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1648,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5132d92c-41da-4a55-ad79-0c329ca7e626",
+              "name": "Document name",
+              "value": "={{ $('Google Drive1').item.json.file_title }}",
+              "type": "string"
+            },
+            {
+              "id": "c8160701-2be7-43c6-bcfa-295fbebe0e23",
+              "name": "Document data",
+              "value": "={{ $('Code1').item.json.pages }}",
+              "type": "string"
+            },
+            {
+              "id": "1087ab34-5643-4755-b545-cf34d0ae2cd2",
+              "name": " source",
+              "value": "={{ $('Google Drive1').item.json.file_id }}",
+              "type": "string"
+            },
+            {
+              "id": "4317aa31-d9fd-4adc-ab26-b48c208041b3",
+              "name": "ASSIGNEDTO",
+              "value": "={{ $json.output.assigned_to.split(\",\") }}",
+              "type": "string"
+            },
+            {
+              "id": "7a61d775-06b1-42e2-a82a-d8e756fa5586",
+              "name": "PROJECT",
+              "value": "={{ $json.output.project }}",
+              "type": "string"
+            },
+            {
+              "id": "300f49d6-8851-458d-a296-8ceb68ebdd5f",
+              "name": "DOCUMENT_TYPE",
+              "value": "={{ $json.output.document_type }}",
+              "type": "string"
+            },
+            {
+              "id": "7e0207f7-c5fe-4022-88c6-ba86146f8864",
+              "name": "last_edit",
+              "value": "={{ $('Set File ID1').item.json.last_modified_date }}",
+              "type": "string"
+            },
+            {
+              "id": "fe25b4b4-e547-4646-ae2e-7cf60d74fcb9",
+              "name": "source_url",
+              "value": "={{ $('Set File ID1').item.json.file_url }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        32,
+        400
+      ],
+      "id": "459be05a-65c4-4368-9aa9-fe38f248f60a",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d15e917b-43d2-40b8-8b49-af467ff63961",
+              "leftValue": "={{ $json.pages[0].embedding_text }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -576,
+        400
+      ],
+      "id": "f815a335-fac1-4671-adb5-85d896fdf208",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.content }}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "source",
+                "value": "={{ $('Code4').item.json[\"Document name\"] }}"
+              },
+              {
+                "name": "blobType",
+                "value": "application/jsonb"
+              },
+              {
+                "name": "source_url",
+                "value": "={{ $('Code4').item.json[\"Source_url\"] }}"
+              },
+              {
+                "name": "source_metadata_id",
+                "value": "={{ $('Code4').item.json.source }}"
+              },
+              {
+                "name": "department",
+                "value": "ai_automation"
+              },
+              {
+                "name": "PROJECT",
+                "value": "={{ $('Code4').item.json.PROJECT }}"
+              },
+              {
+                "name": "=DOCUMNENT_TYPE",
+                "value": "={{ $('Code4').item.json.DOCUMENT_TYPE }}"
+              },
+              {
+                "name": "ASSIGNED_TO",
+                "value": "={{ $('Code4').item.json.ASSIGNEDTO }}"
+              },
+              {
+                "name": "last_modified",
+                "value": "={{ $('Code4').item.json.Last_modified }}"
+              },
+              {
+                "name": "loc",
+                "value": "={{ $json.content.parseJson().metadata.loc }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "a6303f16-2476-4ab3-84b1-34ecdcbf2347",
+      "name": "Default Data Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        784,
+        720
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "7a96df67-e9f4-4117-a2e9-96b389e85767",
+      "name": "Character Text Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        560,
+        912
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "searchMethod": "query",
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1bjDZaCivRZ_UXP70folhExNIcq0I6bTA",
+            "mode": "list",
+            "cachedResultName": "Newkb",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1bjDZaCivRZ_UXP70folhExNIcq0I6bTA"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name",
+            "webViewLink",
+            "mimeType",
+            "*"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -2096,
+        432
+      ],
+      "id": "07293fef-1832-4268-9661-e03018583090",
+      "name": "Google Drive",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Set File ID1').item.json.file_url }}",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1456,
+        400
+      ],
+      "id": "d533edd2-a74b-4a9b-9ab6-a7526cdc64ff",
+      "name": "Google Drive1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/files",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "purpose",
+              "value": "ocr"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "70a8bf1c-44ea-43f6-bf1f-208039883aca",
+      "name": "Mistral Upload",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1296,
+        400
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.mistral.ai/v1/files/{{ $json.id }}/url",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "expiry",
+              "value": "1"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4c6cd5d8-9f04-4616-b0a2-4a78fab33971",
+      "name": "Mistral Signed URL",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1136,
+        400
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2144,
+        1200
+      ],
+      "id": "405e70ed-3948-4a4e-8fe3-d51336e99c7a",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get incoming data (first item)\nconst data = items[0].json;\n\n// If wrapped in an array, unwrap it\nconst input = Array.isArray(data) ? data[0] : data;\n\nlet output = [\n  {\n    content: input[\"Document data\"], // main text for embedding\n    metadata: {\n      document_name: input[\"Document name\"],\n      source_id: input[\" source\"], // note: there is a space before \"source\" in your key\n    }\n  }\n];\n\nreturn output.map(o => ({ json: o }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        384,
+        192
+      ],
+      "id": "f162d1d4-2c87-410f-a826-55985595029c",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const chunkSize = 1000;\nconst chunkOverlap = 100;\nconst imageBaseUrl = \"https://rmlkaysgqjrtjedpopha.supabase.co/storage/v1/object/public/chatbot/newextracted_imagesnew/\";\n\nlet newItems = [];\n\nfor (const item of items) {\n  const doc = item || {};\n  const sourceId = doc.source || \"unknown\";\n  let text = doc[\"Document data\"] || \"\";\n\n  if (!text.trim()) continue; // skip empty docs\n\n  // Split by page markers: \"Page X\"\n  const pageSplits = text.split(/Page\\s+(\\d+)/);\n\n  for (let i = 1; i < pageSplits.length; i += 2) {\n    const pageNumber = parseInt(pageSplits[i], 10);\n    let pageText = pageSplits[i + 1] || \"\";\n\n    if (!pageText.trim()) continue;\n\n    // Replace inline image refs with markdown links\n    pageText = pageText.replace(/Image\\s+\\[([^\\]]+)\\]/g, (match, p1) => {\n      return `![${p1}](${imageBaseUrl}${sourceId}_${p1})`;\n    });\n\n    // Split text into paragraphs/sentences\n    const parts = pageText.split(/(\\n+|\\.\\s+)/);\n    let currentChunk = \"\";\n    let chunkStart = 0;\n    let chunkIndex = 0;\n\n    for (const part of parts) {\n      if (currentChunk.length + part.length <= chunkSize) {\n        currentChunk += part;\n      } else {\n        // Push full chunk with metadata\n        const chunkEnd = chunkStart + currentChunk.length;\n        newItems.push({\n          json: {\n            content: currentChunk.trim(),\n            metadata: {\n              source: sourceId,\n              page: pageNumber,\n              loc: { start: chunkStart, end: chunkEnd },\n              chunk_id: `${sourceId}_p${pageNumber}_c${chunkIndex}`\n            }\n          }\n        });\n\n        // Overlap logic\n        currentChunk = currentChunk.slice(-chunkOverlap) + part;\n        chunkStart = chunkEnd - chunkOverlap;\n        if (chunkStart < 0) chunkStart = 0;\n        chunkIndex++;\n      }\n    }\n\n    // Push last chunk on page\n    if (currentChunk.trim()) {\n      const chunkEnd = chunkStart + currentChunk.length;\n      newItems.push({\n        json: {\n          content: currentChunk.trim(),\n          metadata: {\n            source: sourceId,\n            page: pageNumber,\n            loc: { start: chunkStart, end: chunkEnd },\n            chunk_id: `${sourceId}_p${pageNumber}_c${chunkIndex}`\n          }\n        }\n      });\n    }\n  }\n}\n\nreturn newItems;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        400
+      ],
+      "id": "076761ae-d5d2-4c34-bb01-26be9c5accbb",
+      "name": "Code3"
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "643c3b88-3dfc-4c6a-9545-4fce08df9650",
+      "name": "Embeddings OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1,
+      "position": [
+        48,
+        720
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "docragtest",
+          "mode": "list",
+          "cachedResultName": "docragtest"
+        },
+        "embeddingBatchSize": "=200",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        432
+      ],
+      "id": "6e0b8212-0de1-41c4-8b82-c67c4deefb90",
+      "name": "Qdrant Vector Store1",
+      "credentials": {
+        "qdrantApi": {
+          "id": "hBirQvCk1VaV8cfQ",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n    \"data\": \"{{ $json.image_base64 }}\", \n    \"data\": \"{{ $json.image_base64.split(\",\").pop() }}, \n     data: $json.base64Image.replace(/^data:image\\/\\w+;base64,/, \"\"),\ndata: $json[\"base64Image\"].replace(/^data:image\\/\\w+;base64,/, \"\"), \n    \"fileName\": \"{{ $json.id }}\", \n    \"mimeType\": \"image/png\"\n}\n\n\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1200,
+        224
+      ],
+      "id": "2f887351-ed14-432f-b538-6dc569fc883f",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const chunkSize = 1000; // characters\nconst chunkOverlap = 100; // characters\n\nlet newItems = [];\n\nfor (const item of items) {\n    let text = item.json.content; // <-- match your field name\n    if (!text || typeof text !== \"string\") continue; // skip if no text\n    \n    for (let i = 0; i < text.length; i += chunkSize - chunkOverlap) {\n        let chunk = text.slice(i, i + chunkSize);\n        newItems.push({\n            json: {\n                content: chunk,\n                metadata: item.json.metadata\n            }\n        });\n    }\n}\n\nreturn newItems;\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1280,
+        688
+      ],
+      "id": "a28e5bb3-f9ab-4ee0-b091-7433e87e52be",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "text": "=\n{{ $('Google Drive1').item.json.file_title }}",
+        "attributes": {
+          "attributes": [
+            {
+              "name": "document_type",
+              "description": "type of document this can be blog, user documentation, technical documentation, manual/guide, educational"
+            },
+            {
+              "name": "project",
+              "description": " from give project this can any one   nosta\n\n ,social/digimarketing , timesheet, chatbot, knowledge bot if nothing that its dbt "
+            },
+            {
+              "name": "assigned_to",
+              "description": "### Project Assignments  \n\n- **SASTHA AI**  \n  Handled by: [Rajeet]  \n  Files:  \n  - Sasthaireal-estate agent (5).docx.pdf  \n  - Sastha AI Utility Bill Management System - User Documentation.docx  \n\n- **NOSTA**  \n  Handled by: [Ayan, Anusha, Rajeet]  \n  Files:  \n  - NOSTA SD Agent Architecture with Google Drive Integration.docx  \n  - NOSTA Flows Document  \n  - NOSTA SD Agent – Risk Assessment Table  \n  - NOSTA SD Agent Architecture with Google Drive Integration  \n\n- **TIMESHEET**  \n  Handled by: [Anantha]  \n  Files:  \n  - Timesheet Blog.docx  \n\n- **DBT (Blogs)**  \n  Handled by: [DBT Team]  \n  Files:  \n  - (All remaining blog files)\n"
+            }
+          ]
+        },
+        "options": {
+          "systemPromptTemplate": "You are an expert extraction algorithm.  \nOnly extract relevant information from the text.  \n\n### Data  \n\n#### Project: Sastha AI  \n- Assigned to: Rajeet  \n- Files:  \n  - Sasthaireal-estate agent (5).docx.pdf  \n  - Sastha AI Utility Bill Management System - User Documentation.docx  \n\n#### Project: Nosta  \n- Assigned to: Ayan, Anusha, Rajeet  \n- Files:  \n  - NOSTA SD Agent Architecture with Google Drive Integration.docx  \n  - NOSTA Flows Document  \n  - NOSTA SD Agent – Risk Assessment Table  \n  - NOSTA SD Agent Architecture with Google Drive Integration  \n\n#### Project: Timesheet  \n- Assigned to: Anantha  \n- Files:  \n  - Timesheet Blog.docx  \n\n#### Project: DBT (Blogs)  \n- Assigned to: —  \n- Files:  \n  - (All remaining blog files)\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1,
+      "position": [
+        -384,
+        400
+      ],
+      "id": "345a199d-40bd-4812-ae27-9d63c58d93e0",
+      "name": "Information Extractor"
+    },
+    {
+      "parameters": {
+        "model": "mistral-medium-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        -368,
+        704
+      ],
+      "id": "53d68860-1186-4ebe-b0fc-49e7ebe18214",
+      "name": "Mistral Cloud Chat Model",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-embedding-001"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        288,
+        688
+      ],
+      "id": "9750ea00-f7d2-4f8b-a58b-0ec7cdea225d",
+      "name": "Embeddings Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "B9ddrzjSHIWASzvB",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        608,
+        688
+      ],
+      "id": "82d5860a-76fe-4f65-b17b-831f0437bc12",
+      "name": "Embeddings Mistral Cloud",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "categories": {
+          "categories": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1,
+      "position": [
+        0,
+        912
+      ],
+      "id": "4c09d4fc-269f-46ed-a8b1-e4a835aa4713",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1200,
+        400
+      ],
+      "id": "e30532b6-0fef-4585-a72f-45545349b206",
+      "name": "Wait",
+      "webhookId": "e95bcd72-217f-48e2-9eac-e9e5be04cc6a"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": { \"document_url\": \"{{ $json.url }}\" },\n  \"include_image_base64\": false,\n  \"image_limit\": 0\n}\n",
+        "options": {}
+      },
+      "id": "6dd5be8a-03a5-4152-add3-425acdd5fd2e",
+      "name": "Mistral DOC OCR1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -688,
+        720
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"document_url\": \"{{ $json.url }}\"\n  },\n  \"bbox_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"schema\": {\n        \"properties\": {\n          \"image_type\": { \"title\": \"Image_Type\", \"type\": \"string\", \"description\": \"type of image\" },\n          \"short_description\": { \"title\": \"Short_Description\", \"type\": \"string\", \"description\": \"short description\" },\n          \"summary\": { \"title\": \"Summary\", \"type\": \"string\", \"description\": \"summary of the image\" }\n        },\n        \"required\": [\"image_type\",\"short_description\",\"summary\"],\n        \"title\": \"BBOXAnnotation\",\n        \"type\": \"object\",\n        \"additionalProperties\": false\n      },\n      \"name\": \"bbox_annotation\",\n      \"strict\": true\n    }\n  },\n  \"include_image_base64\": true\n}\n\n",
+        "options": {}
+      },
+      "id": "54e84088-0c8c-4bf3-976b-157d8caa4303",
+      "name": "Mistral DOC OCR3",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -976,
+        400
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Gets the first input item\nconst item = items[0];\n\n// This new array will hold all the processed pages\nconst processedPages = [];\n\n// Loop through each page from the input\nfor (const page of item.json.pages) {\n  // Start with the original markdown text\n  let embeddingText = page.markdown;\n\n  // Use .replace() with a function to substitute each image tag in place.\n  // The regex captures the image ID (e.g., 'img-0.jpeg') from inside the parentheses.\n  embeddingText = embeddingText.replace(/!\\[.*?\\]\\((.*?)\\)/g, (match, imageId) => {\n    // Find the corresponding image object using the captured ID\n    const imageInfo = page.images.find(img => img.id === imageId);\n\n    // If the image is found and has an annotation, build the replacement string\n    if (imageInfo && imageInfo.image_annotation) {\n      try {\n        const ann = JSON.parse(imageInfo.image_annotation);\n        \n        // Construct the detailed annotation text\n        let annotationText = `\\n--- Image Details: [${imageInfo.id}] ---\\n`;\n        annotationText += `Type: ${ann.image_type}\\n`;\n        annotationText += `Description: ${ann.short_description}\\n`;\n        annotationText += `Summary: ${ann.summary}\\n`;\n        annotationText += `--- End Image Details ---\\n`;\n\n        return annotationText; // This string will replace the original ![...](...) tag\n      } catch (e) {\n        // Handle cases where the annotation isn't valid JSON\n        return `\\n[Error parsing annotation for ${imageId}]\\n`;\n      }\n    }\n    \n    // If no matching image or annotation is found, just remove the tag\n    return \"\";\n  });\n\n  // Add the processed page data to our new array\n  processedPages.push({\n    page_index: page.index,\n    embedding_text: `Page ${page.index}\\n\\n${embeddingText.trim()}`,\n    images: page.images,\n    markdown: page.markdown\n  });\n}\n\n// Create a single output item\nconst outputItem = {\n  json: {\n    ...item.json,\n    pages: processedPages\n  }\n};\n\n// Return the single item\nreturn [outputItem];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -800,
+        400
+      ],
+      "id": "1561b75a-4bcb-49dc-a400-f513d5caa381",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "include": "allFieldsExcept",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        832
+      ],
+      "id": "5a854d22-7c89-4c36-bc6a-7b07449212f5",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Input: Array of document objects (like in your example)\n// Output: Single merged JSON object\n\nconst docs = items.map(item => item.json);\n\n// Take metadata from the first document\nconst merged = {\n  \"Document name\": docs[0][\"Document name\"],\n  \"source\": docs[0][\" source\"], // note: key has leading space in input\n  \"ASSIGNEDTO\": docs[0][\"ASSIGNEDTO\"],\n  \"PROJECT\": docs[0][\"PROJECT\"],\n  \"DOCUMENT_TYPE\": docs[0][\"DOCUMENT_TYPE\"],\n   \"Source_url\": docs[0][\"source_url\"],\n    \"Last_modified\": docs[0][\"last_edit\"],\n  \"Document data\": docs.map(d => d[\"Document data\"]).join(\"\\n\\n---\\n\\n\") // merge all pages with separator\n};\n\nreturn [{ json: merged }];\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        400
+      ],
+      "id": "5ed4c2be-cb33-4a39-bf5e-3bcecd6243c1",
+      "name": "Code4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ed60e8c8-7371-43c1-b93a-7cc6986f9360",
+              "name": "image",
+              "value": "={{ ($json.pages||[]).flatMap(p => Object.values(p.images||{}).map(img => ({ name: img.id, base64: img.image_base64 }))) }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -304,
+        -144
+      ],
+      "id": "c8f186c7-3d89-4a35-b085-82ebc751ab6a",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"document_url\": \"https://mistralaifilesapiprodswe.blob.core.windows.net/fine-tune/1c76c963-f08f-4e59-b9c5-2f6a73e6bf32/de896c30-78ae-488e-815f-3310d955781a/fbb8862a18b24362966ed4df37ebf4ec.pdf?se=2025-08-25T06%3A04%3A03Z&sp=r&sv=2025-01-05&sr=b&sig=fxNGguYz2wsq0J3ioHZukhHvgB2J3CPl43PY2Sw1PHY%3D\"\n  },\n  \"bbox_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"schema\": {\n        \"properties\": {\n          \"image_type\": { \"title\": \"Image_Type\", \"type\": \"string\", \"description\": \"type of image\" },\n          \"short_description\": { \"title\": \"Short_Description\", \"type\": \"string\", \"description\": \"short description\" },\n          \"summary\": { \"title\": \"Summary\", \"type\": \"string\", \"description\": \"summary of the image\" }\n        },\n        \"required\": [\"image_type\",\"short_description\",\"summary\"],\n        \"title\": \"BBOXAnnotation\",\n        \"type\": \"object\",\n        \"additionalProperties\": false\n      },\n      \"name\": \"bbox_annotation\",\n      \"strict\": true\n    }\n  },\n  \"include_image_base64\": true\n}\n\n",
+        "options": {}
+      },
+      "id": "de7c8fe0-71ca-457b-9a64-9677e2d88d24",
+      "name": "Mistral DOC OCR4",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1424,
+        -80
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "image",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -96,
+        -144
+      ],
+      "id": "f1480208-dd02-4472-8acd-9e505bfca400",
+      "name": "Split Out1"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data",
+        "options": {
+          "fileName": "={{ $('Set File ID1').item.json.file_id  +\"_\"+ $json.fileName}}"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        592,
+        -144
+      ],
+      "id": "1b3c3569-1710-4934-ac04-125c5de3dde4",
+      "name": "Convert to File1"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"data\": \"{{$json['base64'].split(',').pop()}}\",\n  \"fileName\": \"{{ $json.name }}\",\n  \"mimeType\": \"image/jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        160,
+        -144
+      ],
+      "id": "17a2c363-b12b-45f0-a657-6b01a870819a",
+      "name": "Edit Fields6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "844266e8-1599-4d1b-b187-bc475838424e",
+              "name": "=pages",
+              "value": "={\n  pages: $items[0].json.pages.map(page => ({\n    index: page.index,\n    markdown: page.markdown\n  }))\n}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -944,
+        -208
+      ],
+      "id": "4046384e-b9b7-442e-9a8a-bc0b98aa127f",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8183ec18-1908-43f1-b317-6fcee5d6a8b6",
+              "leftValue": "={{ $json.pages[3].images[1].image_base64 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -944,
+        -64
+      ],
+      "id": "bce9a3aa-1a83-4b21-a8dd-835800eb1b6c",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the pages array from the first input item\nconst originalPages = $items[0].json.pages;\n\n// Create a new array, keeping only the 'index' and 'markdown' fields\nconst newPagesArray = originalPages.map(page => ({\n  index: page.index,\n  markdown: page.markdown\n}));\n\n// Create the final JSON object in the exact format you want\nconst finalOutput = {\n  pages: newPagesArray\n};\n\n// Return the new object as the output of this node\nreturn [{\n  json: finalOutput\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1200,
+        -80
+      ],
+      "id": "3ae4070f-b406-41e7-bcd6-ca23055cb938",
+      "name": "Code5"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1728,
+        1152
+      ],
+      "id": "744d0e56-60d9-4c92-be3a-43b9ada15a72",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "10646eae-ae46-4327-a4dc-9987c2d76173",
+              "name": "file_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "f4536df5-d0b1-4392-bf17-b8137fb31a44",
+              "name": "file_type",
+              "value": "={{ $json.mimeType }}",
+              "type": "string"
+            },
+            {
+              "id": "77d782de-169d-4a46-8a8e-a3831c04d90f",
+              "name": "file_title",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "9bde4d7f-e4f3-4ebd-9338-dce1350f9eab",
+              "name": "file_url",
+              "value": "={{ $json.webViewLink }}",
+              "type": "string"
+            },
+            {
+              "id": "fae402c8-c486-4b57-8d28-bf669db6b442",
+              "name": "last_modified_date",
+              "value": "={{ $json.modifiedTime }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "33b10e68-4285-4763-a17c-0a4e93ecd0f4",
+      "name": "Set File ID",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1488,
+        1168
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "searchMethod": "query",
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1jnZa-XZvoTzNgrjzYijWWPBST6-m6XuF",
+            "mode": "list",
+            "cachedResultName": "Nosta ocr test ",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1jnZa-XZvoTzNgrjzYijWWPBST6-m6XuF"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name",
+            "webViewLink",
+            "mimeType",
+            "*"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1936,
+        1200
+      ],
+      "id": "c233945d-ad32-4236-8d21-f1c1cd5ad87a",
+      "name": "Google Drive2",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Set File ID').item.json.file_url }}",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1296,
+        1168
+      ],
+      "id": "a815fe96-a55d-4432-9e21-6f64417f8555",
+      "name": "Google Drive3",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/files",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "purpose",
+              "value": "ocr"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "779e38b6-336f-4452-ad8b-7e88e2100049",
+      "name": "Mistral Upload1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1136,
+        1168
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.mistral.ai/v1/files/{{ $json.id }}/url",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "expiry",
+              "value": "1"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5d77e7e6-b661-424c-a4b4-6ec8fceeb00c",
+      "name": "Mistral Signed URL1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -976,
+        1168
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "instructions",
+              "value": "= {\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"document_url\": \"{{ $json.url }}\"\n  },\n  \"bbox_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"schema\": {\n        \"properties\": {\n          \"image_type\": { \"title\": \"Image_Type\", \"type\": \"string\", \"description\": \"type of image\" },\n          \"short_description\": { \"title\": \"Short_Description\", \"type\": \"string\", \"description\": \"short description\" },\n          \"summary\": { \"title\": \"Summary\", \"type\": \"string\", \"description\": \"summary of the image\" }\n        },\n        \"required\": [\"image_type\",\"short_description\",\"summary\"],\n        \"title\": \"BBOXAnnotation\",\n        \"type\": \"object\",\n        \"additionalProperties\": false\n      },\n      \"name\": \"bbox_annotation\",\n      \"strict\": true\n    }\n  },\n  \"include_image_base64\": true\n}   "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "88360c07-960c-40d5-9ffe-a4228bebdd18",
+      "name": "Mistral DOC OCR",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -768,
+        1440
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Gets the first input item\nconst item = items[0];\n\n// This new array will hold all the processed pages\nconst processedPages = [];\n\n// Loop through each page from the input\nfor (const page of item.json.pages) {\n  // Start with the original markdown text\n  let embeddingText = page.markdown;\n\n  // Use .replace() with a function to substitute each image tag in place.\n  // The regex captures the image ID (e.g., 'img-0.jpeg') from inside the parentheses.\n  embeddingText = embeddingText.replace(/!\\[.*?\\]\\((.*?)\\)/g, (match, imageId) => {\n    // Find the corresponding image object using the captured ID\n    const imageInfo = page.images.find(img => img.id === imageId);\n\n    // If the image is found and has an annotation, build the replacement string\n    if (imageInfo && imageInfo.image_annotation) {\n      try {\n        const ann = JSON.parse(imageInfo.image_annotation);\n        \n        // Construct the detailed annotation text\n        let annotationText = `\\n--- Image Details: [${imageInfo.id}] ---\\n`;\n        annotationText += `Type: ${ann.image_type}\\n`;\n        annotationText += `Description: ${ann.short_description}\\n`;\n        annotationText += `Summary: ${ann.summary}\\n`;\n        annotationText += `--- End Image Details ---\\n`;\n\n        return annotationText; // This string will replace the original ![...](...) tag\n      } catch (e) {\n        // Handle cases where the annotation isn't valid JSON\n        return `\\n[Error parsing annotation for ${imageId}]\\n`;\n      }\n    }\n    \n    // If no matching image or annotation is found, just remove the tag\n    return \"\";\n  });\n\n  // Add the processed page data to our new array\n  processedPages.push({\n    page_index: page.index,\n    embedding_text: `Page ${page.index}\\n\\n${embeddingText.trim()}`,\n    images: page.images,\n    markdown: page.markdown\n  });\n}\n\n// Create a single output item\nconst outputItem = {\n  json: {\n    ...item.json,\n    pages: processedPages\n  }\n};\n\n// Return the single item\nreturn [outputItem];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -32,
+        1520
+      ],
+      "id": "00a96521-50bb-40dd-ac6b-80539327c66f",
+      "name": "Code6"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-medium-latest\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"Extract order information from this document and return it as JSON with document info (date, customer_name, order_number) and requested_items array with pos, article_name, quantity, unit fields\\nCustomer Information,Type of document,Date,Customer no\\n,Order / RFQ Number\\nRequested Materials / Articles in the document\\nThere are different positions which contains different requested articles and their details, such as:\\nName,\\nSometimes nosta-material number / sometimes only customer material number,\\namount of parts with unit and delivery date\\n…\\nDifferent customers will have different formats\"\n        },\n        {\n          \"type\": \"document_url\",\n          \"document_url\": \"{{ $json.url }}\"\n        }\n      ]\n    }\n  ],\n  \"document_image_limit\": 8,\n  \"document_page_limit\": 64\n}\n",
+        "options": {}
+      },
+      "id": "d2281c5c-44ef-4d5f-ac8f-7ec127a69980",
+      "name": "Mistral DOC OCR5",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -672,
+        928
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"document_url\": \"{{ $json.url }}\"\n  },\n  \"bbox_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"schema\": {\n        \"properties\": {\n          \"image_type\": { \"title\": \"Image_Type\", \"type\": \"string\", \"description\": \"type of image\" },\n          \"short_description\": { \"title\": \"Short_Description\", \"type\": \"string\", \"description\": \"short description\" },\n          \"summary\": { \"title\": \"Summary\", \"type\": \"string\", \"description\": \"summary of the image\" }\n        },\n        \"required\": [\"image_type\",\"short_description\",\"summary\"],\n        \"title\": \"BBOXAnnotation\",\n        \"type\": \"object\",\n        \"additionalProperties\": false\n      },\n      \"name\": \"bbox_annotation\",\n      \"strict\": true\n    }\n  },\n  \"include_image_base64\": true\n}\n\n",
+        "options": {}
+      },
+      "id": "7cde6e6d-eecc-4b89-97ae-8230cf0a92bd",
+      "name": "Mistral DOC OCR6",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -656,
+        1200
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-25T03:42:08.111Z",
+      "updatedAt": "2025-08-25T03:42:08.111Z",
+      "role": "workflow:owner",
+      "workflowId": "LdW0ydAF4pGkQkIm",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-31T03:37:23.000Z",
+  "versionId": "d9def453-da76-4186-a36f-ad5b82dda6d3"
+}

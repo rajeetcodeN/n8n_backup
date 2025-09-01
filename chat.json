@@ -470,9 +470,9 @@
       "parameters": {
         "model": {
           "__rl": true,
-          "value": "gpt-4o-mini",
+          "value": "gpt-4.1-mini",
           "mode": "list",
-          "cachedResultName": "gpt-4o-mini"
+          "cachedResultName": "gpt-4.1-mini"
         },
         "options": {
           "temperature": 0.5
@@ -552,8 +552,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.9,
       "position": [
-        -240,
-        680
+        -180,
+        960
       ],
       "id": "bb2ef8c3-2976-4174-8332-f8d4939aa9a5",
       "name": "LinkedIn Agent1"
@@ -569,8 +569,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.9,
       "position": [
-        -760,
-        580
+        -500,
+        940
       ],
       "id": "f11fbb31-e981-47fb-a1fe-29b0712a180e",
       "name": "LinkedIn Agent2"
@@ -586,8 +586,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.9,
       "position": [
-        720,
-        600
+        620,
+        980
       ],
       "id": "69858fed-c538-4f2b-bd60-324450ecc279",
       "name": "LinkedIn Agent3"
@@ -603,8 +603,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.9,
       "position": [
-        200,
-        880
+        220,
+        960
       ],
       "id": "8281c546-144e-4371-b32f-2e7cc288e5e9",
       "name": "LinkedIn Agent4"
@@ -619,9 +619,18 @@
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-31T13:50:00.854Z",
+      "updatedAt": "2025-07-31T13:50:00.854Z",
+      "role": "workflow:owner",
+      "workflowId": "YtsEfenjpbkxPwbs",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-08-08T15:55:06.000Z",
-  "versionId": "a996a4c5-6a3a-4de4-8b27-dc7899ccea5b"
+  "updatedAt": "2025-08-20T08:59:54.000Z",
+  "versionId": "0552eafd-60b6-4a22-8ce8-bfa2282f1fed"
 }

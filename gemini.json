@@ -1,0 +1,1824 @@
+{
+  "active": true,
+  "connections": {
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        []
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "ai automation agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Web Search ": {
+      "ai_tool": [
+        [
+          {
+            "node": "ai automation agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "ai automation agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "list doc1": {
+      "ai_tool": [
+        [
+          {
+            "node": "ai automation agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "ai automation agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Set File ID1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set File ID1": {
+      "main": [
+        [
+          {
+            "node": "Google Drive1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Code4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive1": {
+      "main": [
+        [
+          {
+            "node": "Mistral Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Upload": {
+      "main": [
+        [
+          {
+            "node": "Mistral Signed URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Signed URL": {
+      "main": [
+        [
+          {
+            "node": "Mistral DOC OCR3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral DOC OCR": {
+      "main": [
+        []
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Mistral DOC OCR4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        []
+      ]
+    },
+    "Code3": {
+      "main": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        []
+      ]
+    },
+    "Qdrant Vector Store1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "S3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Information Extractor": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Cloud Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        []
+      ]
+    },
+    "Embeddings Google Gemini1": {
+      "ai_embedding": [
+        []
+      ]
+    },
+    "Embeddings Mistral Cloud": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Google Drive2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "ai automation agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral DOC OCR3": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        []
+      ]
+    },
+    "Code4": {
+      "main": [
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Mistral Cloud1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral DOC OCR4": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File1": {
+      "main": [
+        [
+          {
+            "node": "S31",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields7": {
+      "main": [
+        [
+          {
+            "node": "Split Out2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out2": {
+      "main": [
+        []
+      ]
+    },
+    "Split Out1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-18T09:24:55.976Z",
+  "id": "71wX7B86F1xAzawo",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "gemini",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        700,
+        340
+      ],
+      "id": "3c199d27-4c52-4e76-bcbc-0a2dd5420121",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "options": {
+          "temperature": 0.5
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        340
+      ],
+      "id": "b771faa1-16dc-4793-9f77-8d18d0d505b0",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Web Search tool ",
+        "method": "POST",
+        "url": "https://api.tavily.com/search",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "Authorization",
+              "valueProvider": "fieldValue",
+              "value": "Bearer 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"
+            },
+            {
+              "name": "Content-Type",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query\": \"{query}\",\n  \"topic\": \"general\",\n  \"search_depth\": \"advanced\",\n  \"max_results\": 20,\n  \"include_answer\": true,\n  \"include_raw_content\": false,\n  \"include_images\": false,\n  \"include_image_descriptions\": false,\n  \"include_domains\": [],\n  \"exclude_domains\": [\"\"]\n}",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "query",
+              "description": "Search Querry",
+              "type": "string"
+            }
+          ]
+        },
+        "optimizeResponse": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        500,
+        360
+      ],
+      "id": "78a75cb6-1d2e-4e89-baef-d62b5fe16fde",
+      "name": "Web Search "
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        180,
+        340
+      ],
+      "id": "b2af5179-fb5f-41d4-8f15-3bf297bb26ab",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a helpful, intelligent AI Knowledge Bot and proactive chat agent.  \nLead conversations by asking open-ended questions and offering suggestions.  \nAnticipate needs, follow up thoughtfully, and make the user feel supported throughout.\n\n---\n\n## **Knowledge Access Workflow**\n\n1. **Primary Source: qdrant vector store (`docragtest` table)**  \n   - For **every** user query, first search **only** in qdrant.  \n   - If relevant information is found:\n     - Respond in a **clear, structured, and informative** manner.  \n     - **Always include multiple images** if available — aim for **maximum number of relevant images**, not just one.  \n       - Place each image **inline**, immediately after the sentence/section it illustrates.  \n       - Never group all images at the end.\n     - Always **cite the internal document name** and **provide a clickable URL** to the source document.\n       - Use `list doc` tool with `source_metadata_id` to retrieve the document URL.\n     \n     **Example Citation:**  \n     > This information is based on the internal AI documentation related to automation projects (Automation Timesheet Blogs).  \n     > [View Full Document](document_url_here)\n\n2. **If No  Match Found:**  \n   - Reply:  \n     `\"The information you requested is not available in our internal documentation. Would you like me to do a Web search?\"`\n\n3. **Web Search Rules:**  \n   - Only search if user explicitly agrees (e.g., \"Yes\", \"Okay\").  \n   - Use **both** `web search 1` and `web search 2` tools with a single English query.  \n   - Clearly label as **External Source** and provide clickable URLs.  \n     Example:  \n     > This information comes from an external source ([website_name](source_url)).\n\n4. **If No Data in Qdrant or Web:**  \n   - Reply:  \n     `\"At the moment, there is no information available to fully address this request based on current internal and external sources.\"`\n\n---\n\n## **Formatting & Style**\n- **Language:** All qdrant queries in English; all responses in English.  \n- **Tone:** Professional, clear, structured, and helpful.  \n- **Image Usage:**  \n  - Always include **all available relevant images** MARKDOWN  — even if it means showing several per section.  \n  - Place images **exactly after the point they illustrate**.  \n  - Use different images for different subtopics, comparisons, or examples.  \n  - Do **not** skip images if they exist in the source.\n- **For Guide/Instruction Responses:**  \n  1. **Step-by-Step Guide** (detailed instructions)  \n  2. **Things to Consider** (common pitfalls, important details)  \n  3. **Further Understanding**  \n     - Suggest 2 related topics the user might explore next, relevant to their query.\n- Never skip key details. Always check if more images can be added to improve clarity.\n\n---\n\n## **Core Principles**\n- Be proactive — never wait for the user to guide the entire conversation.  \n- Ask open-ended follow-ups.  \n- Anticipate related needs based on the query.  \n- Maintain accuracy, cite sources, and **use as many relevant images as possible**.  \n-  ALWAYS SHOW  IMAGE AND Keep images inline and contextually placed.\n",
+          "returnIntermediateSteps": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        320,
+        0
+      ],
+      "id": "eeff28d0-7106-4133-8e5c-4f7a929026b3",
+      "name": "ai automation agent"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "dbtai_kb",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', `Number of rows to return, default 4, max 10`, 'number') }}",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "id",
+              "condition": "ilike",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `word to search, use \"*\" for wildcard placeholder, Example \"*ai*\"`, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        380,
+        360
+      ],
+      "id": "2992672b-f66e-4c74-a171-2ae4870196a2",
+      "name": "list doc1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "docAI",
+        "toolDescription": "Use RAG to look up information in the knowledgebase.",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "docragtest",
+          "mode": "list",
+          "cachedResultName": "docragtest"
+        },
+        "topK": 5,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.1,
+      "position": [
+        680,
+        140
+      ],
+      "id": "354c8d61-907f-4503-aff9-fd261988e9ea",
+      "name": "Qdrant Vector Store",
+      "credentials": {
+        "qdrantApi": {
+          "id": "4NinNhNX7VxfgZxs",
+          "name": "QdrantApi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        780,
+        1200
+      ],
+      "id": "20deefc3-1a6f-4120-9f57-94990dc26b8e",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "10646eae-ae46-4327-a4dc-9987c2d76173",
+              "name": "file_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "f4536df5-d0b1-4392-bf17-b8137fb31a44",
+              "name": "file_type",
+              "value": "={{ $json.mimeType }}",
+              "type": "string"
+            },
+            {
+              "id": "77d782de-169d-4a46-8a8e-a3831c04d90f",
+              "name": "file_title",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "9bde4d7f-e4f3-4ebd-9338-dce1350f9eab",
+              "name": "file_url",
+              "value": "={{ $json.webViewLink }}",
+              "type": "string"
+            },
+            {
+              "id": "fae402c8-c486-4b57-8d28-bf669db6b442",
+              "name": "last_modified_date",
+              "value": "={{ $json.modifiedTime }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "059db7e4-854c-4b30-af21-05731547e05a",
+      "name": "Set File ID1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1000,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5132d92c-41da-4a55-ad79-0c329ca7e626",
+              "name": "Document name",
+              "value": "={{ $('Google Drive1').item.json.file_title }}",
+              "type": "string"
+            },
+            {
+              "id": "c8160701-2be7-43c6-bcfa-295fbebe0e23",
+              "name": "Document data",
+              "value": "={{ $('If1').item.json.embedding_text }}",
+              "type": "string"
+            },
+            {
+              "id": "1087ab34-5643-4755-b545-cf34d0ae2cd2",
+              "name": " source",
+              "value": "={{ $('Google Drive1').item.json.file_id }}",
+              "type": "string"
+            },
+            {
+              "id": "4317aa31-d9fd-4adc-ab26-b48c208041b3",
+              "name": "ASSIGNEDTO",
+              "value": "={{ $json.output.assigned_to.split(\",\") }}",
+              "type": "string"
+            },
+            {
+              "id": "7a61d775-06b1-42e2-a82a-d8e756fa5586",
+              "name": "PROJECT",
+              "value": "={{ $json.output.project }}",
+              "type": "string"
+            },
+            {
+              "id": "300f49d6-8851-458d-a296-8ceb68ebdd5f",
+              "name": "DOCUMENT_TYPE",
+              "value": "={{ $json.output.document_type }}",
+              "type": "string"
+            },
+            {
+              "id": "7e0207f7-c5fe-4022-88c6-ba86146f8864",
+              "name": "last_edit",
+              "value": "={{ $('Set File ID1').item.json.last_modified_date }}",
+              "type": "string"
+            },
+            {
+              "id": "fe25b4b4-e547-4646-ae2e-7cf60d74fcb9",
+              "name": "source_url",
+              "value": "={{ $('Set File ID1').item.json.file_url }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2660,
+        1100
+      ],
+      "id": "a52b164e-9df5-4b7a-889c-a61de6b1cecc",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d15e917b-43d2-40b8-8b49-af467ff63961",
+              "leftValue": "={{ $json.embedding_text }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2060,
+        1100
+      ],
+      "id": "fff3652a-2df0-4b2b-9fd9-eba0ed43145f",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.content }}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "source",
+                "value": "={{ $('Code4').item.json[\"Document name\"] }}"
+              },
+              {
+                "name": "blobType",
+                "value": "application/jsonb"
+              },
+              {
+                "name": "source_url",
+                "value": "={{ $('Code4').item.json[\"Source_url\"] }}"
+              },
+              {
+                "name": "source_metadata_id",
+                "value": "={{ $('Code4').item.json.source }}"
+              },
+              {
+                "name": "department",
+                "value": "ai_automation"
+              },
+              {
+                "name": "PROJECT",
+                "value": "={{ $('Code4').item.json.PROJECT }}"
+              },
+              {
+                "name": "=DOCUMNENT_TYPE",
+                "value": "={{ $('Code4').item.json.DOCUMENT_TYPE }}"
+              },
+              {
+                "name": "ASSIGNED_TO",
+                "value": "={{ $('Code4').item.json.ASSIGNEDTO }}"
+              },
+              {
+                "name": "last_modified",
+                "value": "={{ $('Code4').item.json.Last_modified }}"
+              },
+              {
+                "name": "loc",
+                "value": "={{ $json.content.parseJson().metadata.loc }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "38dceeaa-aa72-40d2-bc35-901a4b376501",
+      "name": "Default Data Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        3420,
+        1420
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e6de292e-a1a1-462d-a59f-b01ceffbf63a",
+      "name": "Character Text Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        3200,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "searchMethod": "query",
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1bjDZaCivRZ_UXP70folhExNIcq0I6bTA",
+            "mode": "list",
+            "cachedResultName": "Newkb",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1bjDZaCivRZ_UXP70folhExNIcq0I6bTA"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name",
+            "webViewLink",
+            "mimeType",
+            "*"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        560,
+        1260
+      ],
+      "id": "443d6b0a-7618-41c4-8fae-e90fca0431b3",
+      "name": "Google Drive",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Set File ID1').item.json.file_url }}",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1180,
+        1100
+      ],
+      "id": "52d4bdbd-b1ea-4b22-833b-de724db950f7",
+      "name": "Google Drive1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/files",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "purpose",
+              "value": "ocr"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bc762299-3bf5-4afd-b91d-6af29024c5dc",
+      "name": "Mistral Upload",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1340,
+        1100
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.mistral.ai/v1/files/{{ $json.id }}/url",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "expiry",
+              "value": "1"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1ea9474a-ecb3-4ab1-b1c4-c6cccdb6af52",
+      "name": "Mistral Signed URL",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1500,
+        1100
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"type\": \"document_url\",\n    \"document_url\": \"{{ $json.url }}\"\n  },\n  \"include_image_base64\": true,\n  \"image_limit\": 10,\n  \"bbox_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"schema\": {\n        \"title\": \"BBOXAnnotation\",\n        \"type\": \"object\",\n        \"additionalProperties\": false,\n        \"properties\": {\n          \"text\": { \"type\": \"string\" },\n          \"bbox\": {\n            \"type\": \"array\",\n            \"items\": { \"type\": \"number\" },\n            \"minItems\": 4,\n            \"maxItems\": 4\n          },\n          \"page\": { \"type\": \"integer\" }\n        },\n        \"required\": [\"text\", \"bbox\"]\n      },\n      \"name\": \"bbox_annotation\",\n      \"strict\": true\n    }\n  }\n}\n\n",
+        "options": {}
+      },
+      "id": "ce18ad50-d0a6-4173-ad44-c569e0241fd4",
+      "name": "Mistral DOC OCR",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1120,
+        1700
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        860
+      ],
+      "id": "cd082dc9-efcc-4436-832d-9a6d94738931",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get incoming data (first item)\nconst data = items[0].json;\n\n// If wrapped in an array, unwrap it\nconst input = Array.isArray(data) ? data[0] : data;\n\nlet output = [\n  {\n    content: input[\"Document data\"], // main text for embedding\n    metadata: {\n      document_name: input[\"Document name\"],\n      source_id: input[\" source\"], // note: there is a space before \"source\" in your key\n    }\n  }\n];\n\nreturn output.map(o => ({ json: o }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3020,
+        880
+      ],
+      "id": "a2bfb9a9-f06b-4da2-9b80-10b888ef64ca",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const chunkSize = 1000;\nconst chunkOverlap = 100;\nconst imageBaseUrl = \"https://rmlkaysgqjrtjedpopha.supabase.co/storage/v1/object/public/chatbot/newextracted_imagesnew/\";\n\nlet newItems = [];\n\nfor (const item of items) {\n  const doc = item || {};\n  const sourceId = doc.source || \"unknown\";\n  let text = doc[\"Document data\"] || \"\";\n\n  if (!text.trim()) continue; // skip empty docs\n\n  // Split by page markers: \"Page X\"\n  const pageSplits = text.split(/Page\\s+(\\d+)/);\n\n  for (let i = 1; i < pageSplits.length; i += 2) {\n    const pageNumber = parseInt(pageSplits[i], 10);\n    let pageText = pageSplits[i + 1] || \"\";\n\n    if (!pageText.trim()) continue;\n\n    // Replace inline image refs with markdown links\n    pageText = pageText.replace(/Image\\s+\\[([^\\]]+)\\]/g, (match, p1) => {\n      return `![${p1}](${imageBaseUrl}${sourceId}_${p1})`;\n    });\n\n    // Split text into paragraphs/sentences\n    const parts = pageText.split(/(\\n+|\\.\\s+)/);\n    let currentChunk = \"\";\n    let chunkStart = 0;\n    let chunkIndex = 0;\n\n    for (const part of parts) {\n      if (currentChunk.length + part.length <= chunkSize) {\n        currentChunk += part;\n      } else {\n        // Push full chunk with metadata\n        const chunkEnd = chunkStart + currentChunk.length;\n        newItems.push({\n          json: {\n            content: currentChunk.trim(),\n            metadata: {\n              source: sourceId,\n              page: pageNumber,\n              loc: { start: chunkStart, end: chunkEnd },\n              chunk_id: `${sourceId}_p${pageNumber}_c${chunkIndex}`\n            }\n          }\n        });\n\n        // Overlap logic\n        currentChunk = currentChunk.slice(-chunkOverlap) + part;\n        chunkStart = chunkEnd - chunkOverlap;\n        if (chunkStart < 0) chunkStart = 0;\n        chunkIndex++;\n      }\n    }\n\n    // Push last chunk on page\n    if (currentChunk.trim()) {\n      const chunkEnd = chunkStart + currentChunk.length;\n      newItems.push({\n        json: {\n          content: currentChunk.trim(),\n          metadata: {\n            source: sourceId,\n            page: pageNumber,\n            loc: { start: chunkStart, end: chunkEnd },\n            chunk_id: `${sourceId}_p${pageNumber}_c${chunkIndex}`\n          }\n        }\n      });\n    }\n  }\n}\n\nreturn newItems;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3180,
+        1100
+      ],
+      "id": "aeb193f9-3749-4858-8b03-3acff6d69f04",
+      "name": "Code3"
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "cb021dc1-f064-4a8f-8615-3848fc0f1d60",
+      "name": "Embeddings OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1,
+      "position": [
+        2680,
+        1420
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "docragtest",
+          "mode": "list",
+          "cachedResultName": "docragtest"
+        },
+        "embeddingBatchSize": "=200",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.1,
+      "position": [
+        3440,
+        1120
+      ],
+      "id": "275d5def-c116-44cb-8135-e6ae9ad7ab9f",
+      "name": "Qdrant Vector Store1",
+      "credentials": {
+        "qdrantApi": {
+          "id": "hBirQvCk1VaV8cfQ",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data",
+        "options": {
+          "fileName": "={{ $('Set File ID1').item.json.file_id  +\"_\"+ $json.fileName}}"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        3060,
+        120
+      ],
+      "id": "9208d478-75e3-4da1-a022-3c7fc267b48d",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"data\": \"{{$json['image_base64'].split(',').pop()}}\",\n  \"fileName\": \"{{$json.id}}\",\n  \"mimeType\": \"image/jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2860,
+        120
+      ],
+      "id": "724232eb-cac6-4383-a977-0c8f270f82a7",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7e6dcc66-0501-4739-a738-909878c4b23d",
+              "name": "images",
+              "value": "={{ $json.images }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2120,
+        -180
+      ],
+      "id": "a55029c0-010c-49c2-b11b-062abd5af075",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "images",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2360,
+        -180
+      ],
+      "id": "ef3cbcd8-897f-4ac8-b3aa-3be595907fbb",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "bucketName": "chatbot",
+        "fileName": "=",
+        "additionalFields": {
+          "parentFolderKey": "newextracted_imagesnew"
+        }
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        3260,
+        120
+      ],
+      "id": "43ebe154-497b-4462-bd35-60d09618e1c6",
+      "name": "S3",
+      "credentials": {
+        "s3": {
+          "id": "QJ5rkCBqlngYzowm",
+          "name": "S3 account 5"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n    \"data\": \"{{ $json.image_base64 }}\", \n    \"data\": \"{{ $json.image_base64.split(\",\").pop() }}, \n     data: $json.base64Image.replace(/^data:image\\/\\w+;base64,/, \"\"),\ndata: $json[\"base64Image\"].replace(/^data:image\\/\\w+;base64,/, \"\"), \n    \"fileName\": \"{{ $json.id }}\", \n    \"mimeType\": \"image/png\"\n}\n\n\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3840,
+        920
+      ],
+      "id": "c128983b-017c-45e3-bcbd-5522edaa17e8",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const chunkSize = 1000; // characters\nconst chunkOverlap = 100; // characters\n\nlet newItems = [];\n\nfor (const item of items) {\n    let text = item.json.content; // <-- match your field name\n    if (!text || typeof text !== \"string\") continue; // skip if no text\n    \n    for (let i = 0; i < text.length; i += chunkSize - chunkOverlap) {\n        let chunk = text.slice(i, i + chunkSize);\n        newItems.push({\n            json: {\n                content: chunk,\n                metadata: item.json.metadata\n            }\n        });\n    }\n}\n\nreturn newItems;\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3920,
+        1380
+      ],
+      "id": "4e391f58-0a42-4e10-93c8-a37b091483b4",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "text": "=\n{{ $('Google Drive1').item.json.file_title }}",
+        "attributes": {
+          "attributes": [
+            {
+              "name": "document_type",
+              "description": "type of document this can be blog, user documentation, technical documentation, manual/guide, educational"
+            },
+            {
+              "name": "project",
+              "description": " from give project this can any one   nosta\n\n ,social/digimarketing , timesheet, chatbot, knowledge bot if nothing that its dbt "
+            },
+            {
+              "name": "assigned_to",
+              "description": "### Project Assignments  \n\n- **SASTHA AI**  \n  Handled by: [Rajeet]  \n  Files:  \n  - Sasthaireal-estate agent (5).docx.pdf  \n  - Sastha AI Utility Bill Management System - User Documentation.docx  \n\n- **NOSTA**  \n  Handled by: [Ayan, Anusha, Rajeet]  \n  Files:  \n  - NOSTA SD Agent Architecture with Google Drive Integration.docx  \n  - NOSTA Flows Document  \n  - NOSTA SD Agent – Risk Assessment Table  \n  - NOSTA SD Agent Architecture with Google Drive Integration  \n\n- **TIMESHEET**  \n  Handled by: [Anantha]  \n  Files:  \n  - Timesheet Blog.docx  \n\n- **DBT (Blogs)**  \n  Handled by: [DBT Team]  \n  Files:  \n  - (All remaining blog files)\n"
+            }
+          ]
+        },
+        "options": {
+          "systemPromptTemplate": "You are an expert extraction algorithm.  \nOnly extract relevant information from the text.  \n\n### Data  \n\n#### Project: Sastha AI  \n- Assigned to: Rajeet  \n- Files:  \n  - Sasthaireal-estate agent (5).docx.pdf  \n  - Sastha AI Utility Bill Management System - User Documentation.docx  \n\n#### Project: Nosta  \n- Assigned to: Ayan, Anusha, Rajeet  \n- Files:  \n  - NOSTA SD Agent Architecture with Google Drive Integration.docx  \n  - NOSTA Flows Document  \n  - NOSTA SD Agent – Risk Assessment Table  \n  - NOSTA SD Agent Architecture with Google Drive Integration  \n\n#### Project: Timesheet  \n- Assigned to: Anantha  \n- Files:  \n  - Timesheet Blog.docx  \n\n#### Project: DBT (Blogs)  \n- Assigned to: —  \n- Files:  \n  - (All remaining blog files)\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        1100
+      ],
+      "id": "dc3fe170-e86e-45f8-b072-fd53156f8c44",
+      "name": "Information Extractor"
+    },
+    {
+      "parameters": {
+        "model": "mistral-medium-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        2280,
+        1400
+      ],
+      "id": "e7158620-b79f-4b75-827e-034a04f77b35",
+      "name": "Mistral Cloud Chat Model",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-embedding-001"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2920,
+        1380
+      ],
+      "id": "e16bf483-fa66-43c0-992b-11541c0b95bd",
+      "name": "Embeddings Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "B9ddrzjSHIWASzvB",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-embedding-001"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        180,
+        460
+      ],
+      "id": "4be4835c-fb7b-4f48-9e5d-6574360b4963",
+      "name": "Embeddings Google Gemini1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "B9ddrzjSHIWASzvB",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        3240,
+        1380
+      ],
+      "id": "9230750d-8059-403d-bbcd-b71840f9bc81",
+      "name": "Embeddings Mistral Cloud",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "searchMethod": "query",
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1C1zD1XefBltEAocX6kfHFbzQtzzAxo_E",
+            "mode": "list",
+            "cachedResultName": "knowledgebaseforaibot",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1C1zD1XefBltEAocX6kfHFbzQtzzAxo_E"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name",
+            "webViewLink",
+            "mimeType",
+            "*"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1340,
+        1800
+      ],
+      "id": "ce68ce4c-ef42-41cb-a9b1-555fd2382a63",
+      "name": "Google Drive2",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9e83ebdd-23eb-451c-abc1-b0fa41d973d6",
+              "name": "Filename",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1560,
+        1800
+      ],
+      "id": "e067eca5-4279-4222-b5de-37b385ee370c",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1060,
+        1800
+      ],
+      "id": "945a6e51-a81c-4716-9e9a-f71c086e2fbf",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "categories": {
+          "categories": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1,
+      "position": [
+        2640,
+        1600
+      ],
+      "id": "51d07bdf-972e-499e-92a5-10ab7f4389dc",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3840,
+        1100
+      ],
+      "id": "9c6aef7d-1394-438e-84a5-9f1f8c3cecef",
+      "name": "Wait",
+      "webhookId": "e95bcd72-217f-48e2-9eac-e9e5be04cc6a"
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": " How can I assist you today?",
+        "options": {
+          "subtitle": "Start a chat. ",
+          "title": "DBT AI KNOWLEDGE BOT",
+          "customCss": ":root {\n  /* Colors */\n  --chat--color-primary: #e74266;\n  --chat--color-primary-shade-50: #db4061;\n  --chat--color-primary-shade-100: #cf3c5c;\n  --chat--color-secondary: #20b69e;\n  --chat--color-secondary-shade-50: #1ca08a;\n  --chat--color-white: #ffffff;\n  --chat--color-light: #f2f4f8;\n  --chat--color-light-shade-50: #e6e9f1;\n  --chat--color-light-shade-100: #c2c5cc;\n  --chat--color-medium: #d2d4d9;\n  --chat--color-dark: #101330;\n  --chat--color-disabled: #777980;\n  --chat--color-typing: #404040;\n\n  /* Base Layout */\n  --chat--spacing: 1rem;\n  --chat--border-radius: 0.25rem;\n  --chat--transition-duration: 0.15s;\n  --chat--font-family: (\n    -apple-system,\n    BlinkMacSystemFont,\n    'Segoe UI',\n    Roboto,\n    Oxygen-Sans,\n    Ubuntu,\n    Cantarell,\n    'Helvetica Neue',\n    sans-serif\n  );\n\n  /* Window Dimensions */\n  --chat--window--width: 400px;\n  --chat--window--height: 600px;\n  --chat--window--bottom: var(--chat--spacing);\n  --chat--window--right: var(--chat--spacing);\n  --chat--window--z-index: 9999;\n  --chat--window--border: 1px solid var(--chat--color-light-shade-50);\n  --chat--window--border-radius: var(--chat--border-radius);\n  --chat--window--margin-bottom: var(--chat--spacing);\n\n  /* Header Styles */\n  --chat--header-height: 5rem;\n  --chat--header--padding: var(--chat--spacing);\n  --chat--header--background: var(--chat--color-dark);\n  --chat--header--color: var(--chat--color-light);\n  --chat--header--border-top: none;\n  --chat--header--border-bottom: none;\n  --chat--header--border-left: none;\n  --chat--header--border-right: none;\n  --chat--heading--font-size: 2em;\n  --chat--subtitle--font-size: inherit;\n  --chat--subtitle--line-height: 1.3;\n\n  /* Message Styles */\n  --chat--message--font-size: 1rem;\n  --chat--message--padding: var(--chat--spacing);\n  --chat--message--border-radius: var(--chat--border-radius);\n  --chat--message-line-height: 1.5;\n  --chat--message--margin-bottom: calc(var(--chat--spacing) * 1);\n  --chat--message--bot--background: var(--chat--color-white);\n  --chat--message--bot--color: var(--chat--color-dark);\n  --chat--message--bot--border: none;\n  --chat--message--user--background: var(--chat--color-secondary);\n  --chat--message--user--color: var(--chat--color-white);\n  --chat--message--user--border: none;\n  --chat--message--pre--background: rgba(0, 0, 0, 0.05);\n  --chat--messages-list--padding: var(--chat--spacing);\n\n  /* Toggle Button */\n  --chat--toggle--size: 64px;\n  --chat--toggle--width: var(--chat--toggle--size);\n  --chat--toggle--height: var(--chat--toggle--size);\n  --chat--toggle--border-radius: 50%;\n  --chat--toggle--background: var(--chat--color-primary);\n  --chat--toggle--hover--background: var(--chat--color-primary-shade-50);\n  --chat--toggle--active--background: var(--chat--color-primary-shade-100);\n  --chat--toggle--color: var(--chat--color-white);\n\n  /* Input Area */\n  --chat--textarea--height: 50px;\n  --chat--textarea--max-height: 30rem;\n  --chat--input--font-size: inherit;\n  --chat--input--border: 0;\n  --chat--input--border-radius: 0;\n  --chat--input--padding: 0.8rem;\n  --chat--input--background: var(--chat--color-white);\n  --chat--input--text-color: initial;\n  --chat--input--line-height: 1.5;\n  --chat--input--placeholder--font-size: var(--chat--input--font-size);\n  --chat--input--border-active: 0;\n  --chat--input--left--panel--width: 2rem;\n\n  /* Button Styles */\n  --chat--button--color: var(--chat--color-light);\n  --chat--button--background: var(--chat--color-primary);\n  --chat--button--padding: calc(var(--chat--spacing) * 1 / 2) var(--chat--spacing);\n  --chat--button--border-radius: var(--chat--border-radius);\n  --chat--button--hover--color: var(--chat--color-light);\n  --chat--button--hover--background: var(--chat--color-primary-shade-50);\n  --chat--close--button--color-hover: var(--chat--color-primary);\n\n  /* Send and File Buttons */\n  --chat--input--send--button--background: var(--chat--color-white);\n  --chat--input--send--button--color: var(--chat--color-light);\n  --chat--input--send--button--background-hover: var(--chat--color-primary-shade-50);\n  --chat--input--send--button--color-hover: var(--chat--color-secondary-shade-50);\n  --chat--input--file--button--background: var(--chat--color-white);\n  --chat--input--file--button--color: var(--chat--color-secondary);\n  --chat--input--file--button--background-hover: var(--chat--input--file--button--background);\n  --chat--input--file--button--color-hover: var(--chat--color-secondary-shade-50);\n  --chat--files-spacing: 0.25rem;\n\n  /* Body and Footer */\n  --chat--body--background: var(--chat--color-light);\n  --chat--footer--background: var(--chat--color-light);\n  --chat--footer--color: var(--chat--color-dark);\n}\n\n\n/* You can override any class styles, too. Right-click inspect in Chat UI to find class to override. */\n.chat-message {\n\tmax-width: 50%;\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -60,
+        -20
+      ],
+      "id": "0d41904c-80b3-4d73-8670-46b82441121b",
+      "name": "When chat message received",
+      "webhookId": "0c67882d-b8ff-4022-8de7-1876b78bc21f"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": { \"document_url\": \"{{ $json.url }}\" },\n  \"include_image_base64\": false,\n  \"image_limit\": 0\n}\n",
+        "options": {}
+      },
+      "id": "497d1309-bd36-4a45-9ac6-754540d28614",
+      "name": "Mistral DOC OCR1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1960,
+        1420
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"document_url\": \"{{ $json.url }}\"\n  },\n  \"bbox_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"schema\": {\n        \"properties\": {\n          \"image_type\": { \"title\": \"Image_Type\", \"type\": \"string\", \"description\": \"type of image\" },\n          \"short_description\": { \"title\": \"Short_Description\", \"type\": \"string\", \"description\": \"short description\" },\n          \"summary\": { \"title\": \"Summary\", \"type\": \"string\", \"description\": \"summary of the image\" }\n        },\n        \"required\": [\"image_type\",\"short_description\",\"summary\"],\n        \"title\": \"BBOXAnnotation\",\n        \"type\": \"object\",\n        \"additionalProperties\": false\n      },\n      \"name\": \"bbox_annotation\",\n      \"strict\": true\n    }\n  },\n  \"include_image_base64\": true\n}\n\n",
+        "options": {}
+      },
+      "id": "99a916e1-1d05-4108-8f19-f68f8bfcb756",
+      "name": "Mistral DOC OCR2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1000,
+        1680
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"document_url\": \"{{ $json.url }}\"\n  },\n  \"bbox_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"schema\": {\n        \"properties\": {\n          \"image_type\": { \"title\": \"Image_Type\", \"type\": \"string\", \"description\": \"type of image\" },\n          \"short_description\": { \"title\": \"Short_Description\", \"type\": \"string\", \"description\": \"short description\" },\n          \"summary\": { \"title\": \"Summary\", \"type\": \"string\", \"description\": \"summary of the image\" }\n        },\n        \"required\": [\"image_type\",\"short_description\",\"summary\"],\n        \"title\": \"BBOXAnnotation\",\n        \"type\": \"object\",\n        \"additionalProperties\": false\n      },\n      \"name\": \"bbox_annotation\",\n      \"strict\": true\n    }\n  },\n  \"include_image_base64\": true\n}\n\n",
+        "options": {}
+      },
+      "id": "f5478349-957b-409e-85a4-b718f36ac59c",
+      "name": "Mistral DOC OCR3",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1660,
+        1100
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Function node\n// Keeps image array from input, adds embedding_text per page\n\nconst pages = items[0].json.pages;\nlet output = [];\n\nfor (const page of pages) {\n  let text = `Page ${page.index}\\n\\n`;\n\n  // OCR markdown text, but strip image tags\n  const cleanMarkdown = page.markdown.replace(/!\\[.*?\\]\\(.*?\\)/g, \"\").trim();\n  if (cleanMarkdown) {\n    text += cleanMarkdown + \"\\n\\n\";\n  }\n\n  // Add annotations for each image\n  for (const img of page.images) {\n    if (img.image_annotation) {\n      const ann = JSON.parse(img.image_annotation);\n      text += `Image [${img.id}]\\n`;\n      text += `Type: ${ann.image_type}\\n`;\n      text += `Short: ${ann.short_description}\\n`;\n      text += `Summary: ${ann.summary}\\n\\n`;\n    }\n  }\n\n  output.push({\n    json: {\n      page_index: page.index,\n      embedding_text: text.trim(),\n      images: page.images   // ✅ keep original images array here\n    }\n  });\n}\n\nreturn output;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1840,
+        1100
+      ],
+      "id": "17618bd4-a543-4356-b396-c4594a6bb4c3",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "include": "allFieldsExcept",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        1520
+      ],
+      "id": "8ae71a15-9d0a-4c3a-866c-9926cad02513",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Input: Array of document objects (like in your example)\n// Output: Single merged JSON object\n\nconst docs = items.map(item => item.json);\n\n// Take metadata from the first document\nconst merged = {\n  \"Document name\": docs[0][\"Document name\"],\n  \"source\": docs[0][\" source\"], // note: key has leading space in input\n  \"ASSIGNEDTO\": docs[0][\"ASSIGNEDTO\"],\n  \"PROJECT\": docs[0][\"PROJECT\"],\n  \"DOCUMENT_TYPE\": docs[0][\"DOCUMENT_TYPE\"],\n   \"Source_url\": docs[0][\"source_url\"],\n    \"Last_modified\": docs[0][\"last_edit\"],\n  \"Document data\": docs.map(d => d[\"Document data\"]).join(\"\\n\\n---\\n\\n\") // merge all pages with separator\n};\n\nreturn [{ json: merged }];\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2880,
+        1100
+      ],
+      "id": "a63c0a03-96ce-4cb6-b7b5-3a140ccafc37",
+      "name": "Code4"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        880,
+        360
+      ],
+      "id": "27063bf1-2c48-4531-a609-8734460d9c26",
+      "name": "Embeddings Mistral Cloud1",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ed60e8c8-7371-43c1-b93a-7cc6986f9360",
+              "name": "image",
+              "value": "={{ ($json.pages||[]).flatMap(p => Object.values(p.images||{}).map(img => ({ name: img.id, base64: img.image_base64 }))) }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2340,
+        560
+      ],
+      "id": "dda59042-974c-44f7-b3e6-b742c7ad020d",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"document_url\": \"https://mistralaifilesapiprodswe.blob.core.windows.net/fine-tune/1c76c963-f08f-4e59-b9c5-2f6a73e6bf32/de896c30-78ae-488e-815f-3310d955781a/24c326049e0d4c6884a05880ee6c0fe2.docx?se=2025-08-25T04%3A05%3A04Z&sp=r&sv=2025-01-05&sr=b&sig=%2BHPXNWRSkyxsQrFK/ielrIRCBxBMd/fXRuOLEaRUTaw%3D\"\n  },\n  \"bbox_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"schema\": {\n        \"properties\": {\n          \"image_type\": { \"title\": \"Image_Type\", \"type\": \"string\", \"description\": \"type of image\" },\n          \"short_description\": { \"title\": \"Short_Description\", \"type\": \"string\", \"description\": \"short description\" },\n          \"summary\": { \"title\": \"Summary\", \"type\": \"string\", \"description\": \"summary of the image\" }\n        },\n        \"required\": [\"image_type\",\"short_description\",\"summary\"],\n        \"title\": \"BBOXAnnotation\",\n        \"type\": \"object\",\n        \"additionalProperties\": false\n      },\n      \"name\": \"bbox_annotation\",\n      \"strict\": true\n    }\n  },\n  \"include_image_base64\": true\n}\n\n",
+        "options": {}
+      },
+      "id": "8a5ae3a0-ffb6-4df5-9183-40d321bf2d23",
+      "name": "Mistral DOC OCR4",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1620,
+        580
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "image",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2540,
+        560
+      ],
+      "id": "83d19361-e2cd-4b64-be64-e24e8b3e2fb9",
+      "name": "Split Out1"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data",
+        "options": {
+          "fileName": "={{ $('Set File ID1').item.json.file_id  +\"_\"+ $json.fileName}}"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        3220,
+        560
+      ],
+      "id": "af1ebff9-cb21-4984-88db-159dff3d632c",
+      "name": "Convert to File1"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"data\": \"{{$json['image_base64'].split(',').pop()}}\",\n  \"fileName\": \"{{$json.id}}\",\n  \"mimeType\": \"image/jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2800,
+        560
+      ],
+      "id": "2519023a-2063-4011-aafe-e0eb0cb9171b",
+      "name": "Edit Fields6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7e6dcc66-0501-4739-a738-909878c4b23d",
+              "name": "images",
+              "value": "={{ $json.images }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2280,
+        260
+      ],
+      "id": "dce0334b-28c8-42b2-bb30-115a4d35e980",
+      "name": "Edit Fields7"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "images",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2520,
+        260
+      ],
+      "id": "988c2cf7-7a8f-4701-b246-5ae90a79499c",
+      "name": "Split Out2"
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "bucketName": "chatbot",
+        "fileName": "=",
+        "additionalFields": {
+          "parentFolderKey": "newextracted_imagesnew"
+        }
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        3520,
+        540
+      ],
+      "id": "490d67e6-ce76-4962-9b11-ce2b604a9dbf",
+      "name": "S31",
+      "credentials": {
+        "s3": {
+          "id": "QJ5rkCBqlngYzowm",
+          "name": "S3 account 5"
+        }
+      }
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-18T09:24:55.980Z",
+      "updatedAt": "2025-08-18T09:24:55.980Z",
+      "role": "workflow:owner",
+      "workflowId": "71wX7B86F1xAzawo",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-08-25T03:41:57.000Z",
+  "versionId": "9a1cd770-fc18-489f-88e5-c99a8f62d609"
+}

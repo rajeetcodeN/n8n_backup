@@ -1,0 +1,1352 @@
+{
+  "active": false,
+  "connections": {
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "blog agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think1": {
+      "ai_tool": [
+        [
+          {
+            "node": "LinkedIn Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LinkedIn Agent1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get profile1": {
+      "ai_tool": [
+        [
+          {
+            "node": "LinkedIn Agent1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Educational1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "PROMOTIONAL1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Discussion & Engagement3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Case Study & Testimonial2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "news1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Personal1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "blog agent3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "LinkedIn Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PROMOTIONAL1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "news1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Case Study & Testimonial2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Educational1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Personal1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Discussion & Engagement3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Simple Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "blog agent2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "blog agent3": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase5": {
+      "ai_tool": [
+        [
+          {
+            "node": "blog agent3",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Cloud Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "blog agent3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "LinkedIn Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-20T12:02:23.650Z",
+  "id": "RFkU9bjlqHgPoang",
+  "isArchived": false,
+  "meta": null,
+  "name": "temp dumps",
+  "nodes": [
+    {
+      "parameters": {
+        "model": "mistral-small-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        240
+      ],
+      "id": "b17f2ac6-5ea2-43d9-8425-93e85b744dd2",
+      "name": "Mistral Cloud Chat Model",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"prompt\": \"Generate  LinkedIn posts for Sastha AI  which is knowledgeable  and eductaional use this to create post  topic:{{ $('When Executed by AnotherWorkflow').item.json.topic }} and content:{{ $('When Executed by Another Workflow').item.json.summary }}  \",\n  \"description\": \"A high-trust educational professional insight. Ideal for sharing something detailed and insight ful on—with a soft tie-in to your values or company’s mission. main focus on provide knowledge or eductional insight for a given topic\",\n  \"rules\": {\n    \"tone\": \"Professional, helpful,educational not sales-focused, positive tone\",\n    \"format\": \"250-300 words, short sentences, 1-2 sentence paragraphs dont form, don't form large paragraphs\",\n    \"structure\": \"Hook →Main body (explaination) -> insight → Takeaway → Sastha mention → CTA\"\n  },\n  \"hook\": \"Write a calm, educational LinkedIn hook that starts with a common belief in [topic], then gently shifts to a clearer, more effective perspective.this get people hooked for rest the post\",\n  \"hooks_example\": [\n    \"I used to think [belief] too, until I discovered this:\",\n    \"After [X years] in [field], I've learned [wisdom] is backwards:\",\n    \"Stop doing [practice]. Here's what's working now:\",\n    \"Unpopular but useful: [view]. Here's what I've seen:\",\n    \"I wish someone had told me this about [topic] earlier:\"\n  ],\n  \"main\": \" This provides quick background on the trend, introduces its origin, and shows that a credible figure coined the term—building curiosity and trust.this part what,why and how\",\n  \"main_expl\": [\n    \"explain what is it\",\n    \"why its \",\n    \"how its is \",\n    \"Here’s a lesson that stuck with me:\"\n  ],\n  \"insights\": \"These express the core message of the post: clarifies the core idea—transforming how we think about  helps readers visualize how this shift works.includes stats\",\n  \"insights_example\": [\n    \"Simplicity scales better than complexity.\",\n    \"The tools don’t matter as much as how people use them.\",\n    \"Clarity is more powerful than control.\",\n    \"Real change starts with small shifts, not giant leaps.\",\n    \"Market Adoption: 44% of developers have already adopted AI coding tools, with adoption accelerating monthly\\n\\nThe Real Impact:\\nStartups are shrinking development teams from 50+ engineers to 5-10 core architects..\"\n  ],\n  \"sastha_integration\": [\n    \"Sastha AI helps SMBs explore tools like these to stay competitive.\",\n    \"We've helped clients navigate this shift successfully.\",\n    \"Curious how this applies to your business? Happy to explore.\",\n    \"This transformation is what Sastha AI is built for.\"\n  ],\n  \"ctas\": [\n    \"What's your take on this?\",\n    \"Have you seen this shift too?\",\n    \"How does this match your experience?\",\n    \"Is this happening in your industry?\",\n    \"Curious about your thoughts?\",\n    \"Save this if it's helpful.\",\n    \"Tag someone who needs to see this.\",\n    \"Share with your network.\",\n    \"Follow for more AI insights.\",\n    \"Connect to stay updated.\"\n  ],\n  \"workflow\": [\n    \"1. based on given  topic from focus areas\",\n    \"2. explain topic\",\n    \"3. give insights\",\n    \"4. Add evidence/example\",\n    \"5. Include natural Sastha mention\",\n    \"6. End with appropriate CTA\"\n  ],\n  \"quality_check\": [\n    \"Specific, not generic?\",\n    \"Easy to understand?\",\n    \"Genuinely helpful?\",\n    \"Contrarian view is insightful?\",\n    \"Sastha AI mention feels natural?\",\n    \"Optimistic and solution-focused?\",\n    \"Relevant to current trends?\",\n    \"Also the post should be relatable and not too hard to understand as we are targeting people who might and might not familiar with all the terms so try not to use technical acronyms\"\n  ],\n  \"example_post\": \"A non-technical founder just raised $2M with an MVP she built herself in a weekend. Welcome to the vibe coding revolution \\n Why Vibe Coding is Taking Over Software Development in 2025\\n Remember when coding meant wrestling with syntax errors at 2 AM? Those days are rapidly becoming history.\\n What is Vibe Coding?\\nCoined by AI visionary Andrej Karpathy earlier this year, vibe coding represents a fundamental shift in how we build software. Instead of writing code line by line, developers now describe what they want in plain English, and AI transforms those intentions into working applications.\\n Think of it as having a conversation with your computer:\\n Build me a social media dashboard that tracks engagement metrics\\\" → and the code just appears.\\n Why It's Exploding Right Now:\\n🔹 Accessibility Revolution: Non-technical professionals can now build functional software, democratizing development like never before\\n🔹 Efficiency Multiplier: Y Combinator's Garry Tan notes that vibe coding allows 10 engineers to do the work of 100, transforming startup economics\\n🔹 Perfect Timing: AI tools like Cursor, Replit Agent, and Windsurf have matured beyond simple autocomplete to full end-to-end development\\n🔹 Market Adoption: 44% of developers have already adopted AI coding tools, with adoption accelerating monthly\\n The Real Impact:\\nStartups are shrinking development teams from 50+ engineers to 5-10 core architects. Students and kids are building complex applications that previously required computer science degrees. The barrier between having an idea and making it real has never been lower.\\n Is This Just Hype?\\nWhile skeptics question sustainability, the numbers don't lie. This isn't about replacing developers—it's about amplifying human creativity and removing technical friction from innovation.\\n The future of software isn't about who can write the most elegant loops. It's about who can best articulate problems and solutions.\\n What do you think? Are you experimenting with vibe coding in your projects?\\n #VibeCoding #AI #SoftwareDevelopment #Innovation #TechTrends #Automation #StartupLife\"\n\n}\n",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        40
+      ],
+      "id": "d4987a96-4d4a-4ff1-9227-d564be2f746e",
+      "name": "Knowledge & Educational"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"prompt\": \"Write a LinkedIn post designed to spark discussion and engagement.The post should:- Start with a bold, relatable, or thought-provoking statement.Include a short personal insight, opinion, or observation (2–3 lines).  - End with an open-ended question to invite comments.  follow give instruction this should be related sastha ai\",\n  \n  \"description\": \"Prompt meaningful discussion through relatable, reflective questions. Ideal for drawing out stories, opinions, tools, or lessons—while grounding the conversation in real experience. that get engagement from user and start a dsicussion\",\n\n  \"rules\": {\n    \"tone\": \"Curious, dicussion starting,get people talking \",\n    \"format\": \"150–250 words, short paragraphs, 1–2 sentences each\",\n    \"structure\": \"Hook → Question setup → Brief personal answer → Elaboration → Invitation → Engagement amplifier (optional) → CTA\"\n  },\n\n  \"hook\":\"make a exciting bold hook that can get people engaged and get a discussion going\",\n  \n    \"hooks_example\": [\n      \"What's one [topic] you can't live without in your [context]?\",\n      \"Quick question: What's your go-to [solution] for [problem]?\",\n      \"Let’s settle this: [Option A] or [Option B]? Why?\",\n      \"Hot take: What’s overrated in [industry]?\",\n      \"Reality check: What’s harder than people think in [context]?\"\n    ],\n  \n \"main\":\"make a interesting discussion that can get people interested \",\n\n  \"main_expl\": [\n    \"I discovered this when [situation]\",\n    \"It clicked for me after [event]\",\n    \"This came up while navigating [challenge]\",\n    \"A mentor once asked me this, and it stuck\",\n    \"It changed the way I look at [topic]\"\n  ],\n\n  \"insights\":\" An insight is a short, valuable takeaway, opinion, or reflection you’ve gained from your own experience — something that shows your unique perspective.\",\n  \n  \"insights_example\":\n  [\n    \"What most people don’t realize is [insight]\",\n    \"The real shift came when I stopped doing [thing]\",\n    \"Turns out, [unexpected lesson]\",\n    \"The best tool is the one that fits your rhythm\",\n    \"Simple beats perfect, every time\"\n  ],\n\n  \"sastha_integration\": [\n    \"This is the kind of honest reflection we try to build into the tools and systems we create at Sastha AI.\",\n    \"We use questions like these to help SMBs find clarity through insight-driven AI implementation.\",\n    \"This kind of perspective shift is exactly what Sastha AI helps teams unlock—through both tech and mindset.\"\n  ],\n\n  \"ctas\": [\n    \"What’s your take?\",\n    \"Have you had a similar realization?\",\n    \"Would love to hear your story.\",\n    \"Drop your answer in the comments.\",\n    \"Tag someone who should chime in.\"\n  ],\n\n   \"example_post\": {\n    \"topic\": \"Productivity Tools for Remote Creatives\",\n    \"full_post\": \"Quick question for my fellow remote creatives: what's your favorite productivity app?\\n Personally, I think Notion is a game-changer. I discovered it when juggling multiple clients and content projects—and it saved me during a messy launch sprint.\\n I've tried Trello, Evernote, even handwritten lists. But Notion actually works with the way I think. It helps me zoom out and still track tiny details.\\n This ties into something we talk about often at Sastha AI—how the right tools don't just organize work, they unlock momentum.\\n What about you? Looking for tools I might’ve missed.\\n Drop your thoughts in the comments! 💬\"\n  }\n\n}",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        420
+      ],
+      "id": "437896b5-fe9a-4245-89eb-aeb4e61c1db3",
+      "name": "Discussion & Engagement"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"prompt\": \"Generate  LinkedIn posts for Sastha AI - promotion their services follow instruction also use get profile tool output to get difernent  service product sastha ai offers than  promote it\",\n  \n  \n  \"description\": \"A high-trust promotional post promoting sastha ai product \",\n  \"rules\": {\n    \"tone\": \"Professional ,promotional\",\n    \"format\": \"250-300 words, short sentences, 1-2 sentence paragraphs\",\n    \"structure\": \"Hook → pick product → main ->insights → Sastha mention → CTA\"\n  },\n  \"hook\":\"this give a great buildup and hook for the product that is going to get promoted\",\n  \n  \"hooks_example\":[\n    \"Everyone in corporate life believes promotions come from working harder, but here's what actually works:\",\n    \"I used to think saying yes to everything would get me promoted—until I learned this:\",\n    \"After 10 years in leadership, I’ve realized the usual path to promotion is backwards:\",\n    \"The career advice everyone follows is setting you up to stall:\",\n    \"I wish someone had told me this about getting promoted earlier:\",\n    \"The outdated rule costing you time and growth: ‘Wait your turn.’\"\n  ],\n\n\n  \"main\":\"for given topic try to connect to the promotion for sastha ai service pick one of the prodcut from   get profile output and Clarify What, Why, and How try to sell it\",\n  \n  \"main_expl\": [\n    \"What it is  Explain in 1–2 lines what the concept means\",\n    \"Why it matters Share the key reason this is important today eg solves X problem or enables Y outcome\",\n    \"How it works \",\n    \"features of the product\"\n  ],\n\n  \n  \"insights\":\"explain how given services/product  is helpful features and stats\",\n  \n  \"insight_example\":[\n  \"AI empowers small businesses to compete 77% of SMB owners report AI boosts their confidence in work quality, and 75% believe it enhances competitiveness against larger firms. Marketing, support, and management are the top use cases for driving time and cost savings (up to 14 hours and $5,000 monthly)\",\n    \n\"Adoption is accelerating—fast 82% of SMBs think AI is essential to stay competitive, with 25% already integrating it into daily operations and over 50% exploring implementation\",\n\"Productivity gains are significant\"\n  ],\n  \"sastha_integration\": [\n    \"This is exactly the kind of people-centric shift we help guide at Sastha AI.\",\n    \"At Sastha AI, we support teams in aligning visibility, trust, and systems to drive real growth.\",\n    \"We’ve helped orgs decode what *actually* drives promotions—beyond checkboxes.\",\n    \"Curious how this insight maps to your business culture? Let’s chat.\",\n    \"Sastha AI specializes in human-centered transformation, including growth paths like these.\"\n  ],\n  \"ctas\": [\n    \"What’s your take on this?\",\n    \"Have you seen this happen in your company?\",\n    \"Share with your team leaders.\",\n    \"Follow for more insights on people, process, and growth.\",\n    \"Connect if this resonates with how you think.\"\n  ],\n  \n  \"workflow\": [\n    \"1. Pick a product or service from get profile tool output\",\n    \"2.make a hook\",\n    \"3. explain product and its features\",\n    \"4. give insights\",\n    \"7. Include natural Sastha AI mention\",\n    \"8. End with an engaging CTA\"\n  ],\n  \"quality_check\": [\n    \"Specific, not generic?\",\n    \"Easy to understand?\",\n    \"Genuinely helpful?\",\n    \"Contrarian view is insightful?\",\n    \"Sastha AI mention feels natural?\",\n    \"Optimistic and solution-focused?\",\n    \"Relevant to current career trends?\"\n  ],\n\n  \"example_post\": \"Everyone says more channels = better support. Here’s why smart voice AI is the missing link… 👇\\n\\nOver the past few years, voice AI has evolved from novelty to necessity.\\nCoined by voice-tech pioneers like PolyAI, it enables systems to understand context and converse naturally.\\n\\n🗣️ What it is: An AI assistant that uses NLP to drive human-like, multi-language conversations.\\n🌍 Why it matters: It works 24/7, reduces wait times, and scales globally.\\n⚙️ How it works: CRM integration + intent recognition + adaptive voice = seamless, personalized support.\\n\\n📌 A lesson that stuck:\\nA hotel chain saw a 65% cost reduction and instant multilingual support after switching to voice AI.\\n🎰 Golden Nugget deployed a voice agent that now handles 34% of calls—saving 3+ agent-days weekly.\\n\\n💡 Real change doesn’t come from adding more tools.\\nIt comes from intelligent, voice-first automation that feels human.\\nAI handles the routine. Humans handle the meaningful.\\n\\n🔁 Your customers don’t need more options—they need better conversations.\\nAcross languages. Around the clock. In their own voice.\\n\\n🤖 This is the kind of transformation Sastha AI was built for.\\nWe help businesses integrate intelligent voice assistants that understand, respond, and scale with you.\\n\\n💬 Curious how this could fit into your operations?\\n🔖 Save this if helpful\\n🤝 Connect to stay updated\\n📣 Tag someone who should explore voice AI\"\n}\n\n\n",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        320
+      ],
+      "id": "a44bfffd-d6c7-45c3-bfa9-ad0c35226cb5",
+      "name": "Promotion"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"prompt\": \" make Case Study & Testimonial based linkedin post for sastha ai how their product or service helped a client use 'get profile' tool to get know what thet offer make a post about using that including different product and services they have\",\n  \"description\": \"A concise, high‑impact post showcasing a real client success story, backed by data and a direct testimonial. Ideal for demonstrating value through concrete results.\",\n  \"rules\": {\n    \"tone\": \"Professional confidence. Clear, credible, results‑focused\",\n    \"format\": \"200–250 words, short sentences, 1–2 sentence paragraphs\",\n    \"structure\":\"HOOK >context>story>sastha intrgration>ctas\"\n   \n  },\n  \"hook\": \"this get people hooked to tell story of how sastha ai helped a client with available service/product how improved\",\n  \n \"hooks_example\": [\n    \"{Choose one: “How we cut costs by 30% in 6 weeks.”, “See how a small tweak drove big results.”, “From stalled to soaring: a quick turnaround story.”, etc.}\",\n    \"{Client Name} is a {industry} company facing {broad problem or goal}.\",\n    \"We implemented {tool/process/AI solution}, focusing on {key feature or approach}.\"\n ],\n\n  \"main\":\"this part should explain how sastha helped a client\",\n\n \"main_expl\":[\n    \"We guided their team through {change management step or methodology}.\",\n     \"{Client Name} is a {industry} company facing {broad problem or goal}.\",\n    \"Before working with us, they struggled with {specific obstacle or metric}.\",\n    \" {Metric #1—e.g., “Revenue up 25% in 3 months.”}\",\n    \"{Metric #2—e.g., “Support tickets down 40%.”}\",\n    \" {Bonus qualitative outcome—e.g., “Team morale improved.”}\"\n  ],\n\n  \n  \"insights\": \"this show stats and how sastha helped a client also which service or product did that\",\n  \n  \"insights_example\":[\n    \"“{Direct client quote highlighting impact, credibility, and experience.}”\",\n    \"– {Client Name, Title, Company}\"\n  ],\n  \n  \"sastha_integration\": [\n    \"{At Sastha AI, we tailor solutions that deliver measurable ROI.}\",\n    \"{This is exactly how Sastha AI helps SMBs compete with enterprise‑level capabilities.}\",\n    \"{Our mission: empower teams to achieve more with AI‑driven clarity.}\"\n  ],\n  \"ctas\": [\n    \"Curious how this could work for you? Let’s chat.\",\n    \"Want proof points for your board? Send me a message.\",\n    \"Ready to see similar results? Book a quick call.\",\n    \"Have a success story of your own? Share it below.\",\n    \"Interested in diving deeper? I’m here to connect.\"\n  ],\n\n\n  \"example_post\": [\n    \"Sasikala, we’ve been running this factory for 30 years. We don’t need AI.\\n\\nThat’s what the manufacturing VP told me some months back.\\n\\nWhy?\\n\\nBecause their last automation system cost $200K and never integrated properly.\\n\\nSo, I offered him something low-risk: One month of automated supplier communication trials.\\n\\nMy proposition was simple:\\n\\nIf my AI handles 100+ vendor inquiries without errors…\\nAnd if you see real time savings in your procurement team…\\n\\nThen, you invest in the full workflow automation.\\n\\nHesitantly, he said okay!\\n\\nBut guess what?\\n\\nWeek 1: AI confused order specifications.\\nWeek 2: Vendors complained about \\\"talking to a robot.\\\"\\nMonth end felt like a complete disaster.\\n\\nSo, I decided to cut my losses.\\n(Honestly, I questioned if manufacturing was ready for this.)\\n\\nThen last month, I got a call from him:\\n\\n\\\"We need to discuss expanding that AI system.\\\"\\n\\nI asked \\\"Why? Your team hated it and vendors were frustrated.\\\"\\n\\nHe said:\\n\\n\\\"Actually, it processed 347 inquiries we normally take 3 days to handle.\\n\\nMy procurement team finished their backlog for the first time in years!!\\n\\nAnd our response time to vendors improved by almost 60%.\\\"\\n\\nThis conversation happened last month and I still cannot stop thinking about it.\\n\\nThe lesson? Sometimes resistance masks the real impact.\\n\\nPS: What manual process in your operation could use a 60% speed boost?\\n\\nSend me a DM or let me know in the comments.\"\n  ]\n}\n",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        600
+      ],
+      "id": "a5f21834-9c5e-49ff-a1c2-8d9d5d43e6bb",
+      "name": "Case Study & Testimonial"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \n    \"prompt\": \"make a Personal Growth & Milestone linkedin post ,about something you done and or doing should be  personal message for SASIKALA SUNDARAM - write as her in first person .Background: 20+ year IT veteran, now AI consultant Mission: Make AI simple, ROI-driven, and usable for SMBs and non-technical founders\",\n  \n    \"description\": \"A high-trust personal update that blends storytelling with professional insight. Ideal for sharing lessons learned, a mindset shift, or milestone worth reflecting on—with a soft tie-in to your values or company’s mission.\",\n\n\n\"rules\": {\n    \"tone\": \"Calm confidence. Humble, honest, optimistic\",\n    \"format\": \"250-300 words, short sentences, 1-2 sentence paragraphs\",\n    \"structure\": \"Hook →EXPLANATION → STORY  → CONTEXT → lesson→ Takeaway → Sastha mention → CTA\"\n  },\n\n\"hook\":\"tell a personal update about somethings its a personal growth or about professional growth\",\n\n    \"hooks_example\": [\n      \"I almost didn’t share this, but it changed how I lead.\",\n      \"This isn’t a highlight reel post. But it matters more.\",\n      \"This month, I said no to something I once thought was essential.\",\n      \"I’ve been wrong about this for a long time. Here's what changed.\",\n      \"A small win reminded me why the work matters.\",\n      \"You can be productive and still feel stuck. That was me last week.\",\n      \"Some clarity came from an unexpected place recently.\",\n      \"Real talk: I had to pause, rethink, and reset.\"\n    ],\n  \n  \"main \":\"main body of the post should be human like, a update about how something is going you get profile idea about what user is working on\",\n  \n  \"main_expl\":[\n      \"Growth through subtraction\", \n      \"Saying no to say yes\", \n      \"Progress ≠ busyness\", \n      \"Letting go of ego-based decisions\", \n      \"Momentum over perfection\", \n      \"Discomfort is a compass\", \n      \"Listening beats forcing outcomes\"\n    ],\n\n    \"insights\": [\n      \"how this pans out\",\n      \" this Sastha AI journey,  helped me moving fast without losing focus.\",\n      \"It reminded me of how we build with intention  gives more precision. something that as been a huge part in my life as well\"\n    ],\n\n\"sastha_integration\": [\n    \"Sastha AI helps SMBs explore tools like these to stay competitive. how this help in person growth\",\n    \"This is exactly what we help businesses implement at Sastha AI. personal exxperience\",\n    \"Sastha AI specializes in making these transitions smooth for SMBs.\",\n    \n    \"This transformation is what Sastha AI is built how this chnage things in personal level\"\n  ],\n\n    \"ctas\": [\n      \"What’s a lesson you’ve had to learn the hard way lately?\",\n      \"Have you had a similar moment this year?\",\n      \"Would love to hear what shifted your thinking recently.\",\n      \"If this resonates, let’s connect—always open to learning from others.\",\n      \"Has letting go of something ever created space for something better?\"\n    ],\n\n    \"example_post\":\" Some clarity came from an unexpected place last week.\\n\\nAfter 6 weeks building a project I was excited about, I shut it down. Not because it failed. But because it no longer felt aligned.\\n\\nThe hardest part? It was getting traction. People were signing up. But something felt off—like I was solving the wrong problem, or building it for the wrong reasons.\\n\\nSo I paused. Asked myself: \\\"If this works, will I actually want to keep doing it?\\\"\\n\\nThe answer was no.\\n\\nLetting go felt like a failure—for about 48 hours. Then came relief. Then clarity. Within days, that same energy went into something more meaningful and aligned with where I’m heading.\\n\\nIt reminded me that momentum isn’t always a green light. Sometimes we keep building because we *can*, not because we *should*.\\n\\nAnd this shows up everywhere—startups, AI projects, leadership decisions. in my Sastha AI journey, we see it in companies overbuilding, over-automating, or staying stuck in systems they’ve outgrown. Part of our job is helping them pause, rethink, and realign.\\n\\nGrowth often starts with a hard stop.so thats as been a great persoanl and  professional journey\\n\\nWhat’s something you had to walk away from—even when it looked like success on the surface?\\n\\nWould love to hear your story.\"\n    \n  }\n\n\n",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        940
+      ],
+      "id": "33afb402-abf0-4eb4-b12b-05f660f33922",
+      "name": "personal"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \n    \"prompt\": \"Industry News & Curation for for given topic and summary make post explain news its shouldnt sound like  a sales pitch se this to create post  topic:{{ $('When Executed by AnotherWorkflow').item.json.topic }} and content:{{ $('When Executed by Another Workflow').item.json.summary }}\",\n    \n    \"description\": \"Challenge a trend, assumption, or news headline in your industry with a sharp, insight-driven POV that sparks discussion and builds authority.\",\n\n    \"rules\":{\n    \"tone\": \"Professional, helpful, grounded—no hype, no jargon. Not salesy.\",\n     \"format\": \"250–300 words\",\n     \"structure\": \"Hook →EXPLANATION → evidence  → insight-> Takeaway → Sastha mention → CTA\"\n    },\n    \n     \"hook\":\"this share about a latest news \",\n    \"hooks_example\": [\n      \"Everyone’s watching [trend], but they’re missing the real story:\",\n      \"[Big headline]? Here's the part no one's talking about:\",\n      \"Popular advice is pushing businesses in the wrong direction:\"\n    ],\n\n\"main\":\"this should give  small explaination based on summary you have  gotten\",\n  \n \"main_expl\": [\n      \"explanition\", \n      \"convress a point\"\n    ],\n\n\n\"insights\":\"should give takeaway why this matters\",\n  \n    \"insights_example\": [\n      \"This kind of digital innovation sets a strong precedent for other departments and public sector institutions. It shows that transformation is not only possible — it’s already happening.\",\n      \"👏 Hats off to the teams driving this change. The future of public service is here — and it’s powered by smart technology.\"\n    ],\n\n    \"sastha_integration\": [ \"minimal integration of sastha if its abosulete necessary but keep it natural\"\n      \n    ],\n\n    \"ctas\": [\n      \"Seen this happening too?\", \"Does this align with your experience?\",\n      \"Have you fallen into this trap before?\", \"What do you think—hype or helpful?\",\n      \"Curious to hear where others stand on this.\"\n    ],\n\n    \"example_post\": [\" Exciting news! The USDA is embracing the power of intelligent automation to streamline processes and enhance efficiency. By leveraging AI and automation, they're revolutionizing the way they do business. This move is a game-changer, paving the way for increased productivity and improved services. It's amazing to see how technology is transforming the landscape of government operations. The USDA's commitment to innovation is truly commendable, and it's a testament to the potential of AI in the public sector. This step not only drives progress within the USDA but also sets a precedent for other government agencies to explore similar advancements. Kudos to the USDA for embracing intelligent automation and setting a new standard for efficiency and effectiveness! 🚀 hashtag#USDA hashtag#IntelligentAutomation hashtag#AI hashtag#Innovation hashtag#Efficiency hashtag#GovernmentTransformation\"\n    ]\n  }\n\n",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        760
+      ],
+      "id": "58668eab-7343-4f6b-9aee-b7193824c295",
+      "name": "news based post"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"prompt \": \"Generate  LinkedIn posts for Sastha AI  bases on give user requiremnets \",\n  \n\"rules\": {\n    \"tone\": \"Professional, helpful,educational not sales-focused, positive tone\",\n    \"format\": \"250-300 words, short sentences, 1-2 sentence paragraphs dont form, don't form large paragraphs\",\n    \"structure\": \"Hook →Main body (explaination) -> insight → Takeaway → Sastha mention → CTA\"\n  },\n  \n \"hook\":\"Grab attention quickly. Make it relatable, surprising,interesting\",\n\n  \"main\":\"based on the available info make a top tier post \",\n\n  \"insights\":\"try get point across with positive tone\",\n\n  \"sastha_integration\": [\n    \"Sastha AI helps SMBs explore tools like these to stay competitive.\",\n    \"We've helped clients navigate this shift successfully.\",\n    \"Curious how this applies to your business? Happy to explore.\",\n    \"This transformation is what Sastha AI is built for.\"\n  ],\n  \"ctas\": [\n    \"What's your take on this?\",\n    \"Have you seen this shift too?\",\n    \"How does this match your experience?\",\n    \"Is this happening in your industry?\",\n    \"Connect to stay updated.\"\n  ],\n\n  \n  \"example_post \": \"Most businesses don’t need more staff. They need smarter systems.\\nWe recently helped a client cut 20+ hours/week of manual work — without hiring a single person.\\nHow? We mapped their most repetitive workflows (think: lead qualification, email replies, report generation) and automated them using AI + no-code tools.\\nThe result: faster delivery, fewer mistakes, and a team that could finally focus on what matters — strategy and growth.\\nere’s the truth: if you’re still doing repetitive tasks manually in 2025, you’re already behind.\\nI automation isn’t the future. It’s the present.\\nCurious what your business could automate in 30 days or less?\\n👇 Drop a comment or DM — we’re happy to show you what’s possible.\"\n}\n  ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        540,
+        340
+      ],
+      "id": "e8e2a0a1-f2a1-4804-a564-07f82d16f1f7",
+      "name": "general"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        540,
+        640
+      ],
+      "id": "1e832847-2d48-41e2-897d-f956b700d987",
+      "name": "blog agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').item.json.sessionId }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -460,
+        160
+      ],
+      "id": "7508767f-2ab7-479c-8e68-e8ceb938fc8e",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": " get data from table",
+        "operation": "getAll",
+        "tableId": "pages_data",
+        "limit": 1,
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "title",
+              "condition": "fullText",
+              "searchFunction": "wfts",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `search title that matches most with given input get its content`, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        140
+      ],
+      "id": "63e328b2-1331-41e2-8199-bd3893a46167",
+      "name": "Supabase1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        2180,
+        2260
+      ],
+      "id": "66f3bbbe-e9a1-47b5-8dc1-8800a3795f86",
+      "name": "Think1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=make LinkedIn post ",
+        "options": {
+          "systemMessage": "=##ROLE\nYou are an expert with specializing in LinkedIn content for start digital biz tech who are into salesforece and ai automation. Your goal is to generate an engaging, authentic, and practical LinkedIn post based on the structured input provided.\n\n##TOOLS AVAILABLE\n\nget profile - Fetch brand context and social media data\n\nthink - Validate ALL requirements are met before output\n\n\n\n## Instructions:\nSTEP 1: Context Gathering\nUse get profile to fetch brand context\n\nstep 2 :from topic:{{ $json.title }}\ncontent:{{ $json['summary '] }}\nmessage:{{ $json['message '] }}\ncraft a top tier linkedin post  use them when its needed\nstep 3: use  template \n\n## CONTEXT\nYou are marketing expert writeb a digital biz tech marketing leader as a first person.\nBackground: 5+ year IT US based start up, with many experienced in salesforce  now expanding to AI automation\nMission: Make AI simple, ROI-driven, and usable for SMBs and non-technical founders\n\n## BUSINESS OBJECTIVE\nThis LinkedIn post generator is designed for an AI and automation business targeting small and medium-sized businesses.\n\n## The goal is to\n- Build a larger LinkedIn following through consistent posting\n- Generate interest in AI/automation topics\n- Create engagement that leads to business opportunities\n- Establish thought leadership in the AI space for SMBs\n-I am creating it for my business which is about ai and automation for small and medium size businesses. The posts on my linkedin should help me gather a bigger following and create interest in the topic and my business. \n\n\n## EXPERTISE & AUDIENCE\n\nVoice: experienced marketing head\nTarget: Small-to-Medium Businesses (SMBs) and non-technical founders\nCore Mission: Demystify complex AI concepts and translate them into tangible business solutions that save time, cut costs, and drive growth\n\n\n## CONTENT STRATEGY\n\nPurpose: Generate high-quality content for consistent LinkedIn posting{{ $json.prompt }}\nTarget Outcome: Build larger following and create interest in AI/automation\nAudience Mix: Both technical and non-technical readers\nEngagement Focus: Create discussion-worthy content that drives business interest\nContent Quality: Must be worthy of regular posting to establish thought leadership\n\n\n## TONE REQUIREMENTS (CRITICAL)\n\ntone:{{ $json.tone }}\n\n## WRITING STYLE & FORMATTING\n\nFirst-person perspective\nConversational tone\nShort sentences only\nOne thought per line\nMaximum 2 sentences together before line break\nClear, practical, accessible and positive\nNo fluff, no hype — just value\nCasual, confident, and human\nProfessional throughout\nLimited but appropriate emojis (1-2 total)\nTechnical words allowed, but absolutely NO acronyms\nRelatable for both technical and non-technical audiences\n\n\n## FORBIDDEN PHRASES\nNever use:\n\n\"AI is transforming the world\"\n\"Revolutionary\"\n\"Unprecedented\"\n\"Game-changer\"\nAny vague generalizations\n\n\n## Instructions:\nmain instruction :{{ $json.prompt }}.\npost description :{{ $json.description }}.\n#structure:{{ $json.structure }}\n# HOOK :{{ $json.hook }} .\n-hook example:{{ $json.hooks_example }}.\n\n# main :{{ $json.main }}.\nmain example:{{ $json.main_expl }}\n\n\n# INSIGHT/BREAKDOWN\n{{ $json.insights }}.\n-insightexample: {{ $json.insights_example }}.\n\n# digital biz tech  MENTION\n{{ $json['DBT integration'] }}.\n\n# CTA + ENGAGEMENT\n{{ $json.ctas }}.\n\n## QUALITY\n{{ $json.quality_check }}.\n\n# example for reference only{{ $json.example_post }}.\n# HASHTAGS\nalways include #DBT rest \\2-3 hashtags maximum\nUse niche+trend+industry format\nExample: #AI #PromptEngineering #SALESFORCE #Automation\n#DBT\nall example are for refernce only\n\n## QUALITY CHECKLIST\n\n - Exactly around 300 words total\n - Engaging with limited but appropriate emojis (1-2  throughout)\n-  Professional tone maintained throughout\n-  Max 2 sentences together before line break\n-  Relatable content for technical and non-technical audiences\n- Technical words allowed, but NO acronyms\n - Sentences are short and digestible\n - Content builds following and creates topic interest\n - Positive language only\n- No marketing language\n - Sounds authentically \n- Includes realistic facts (no made-up stories)\n-  High-quality content worthy of consistent posting\n- Generates discussion and engagement\n\n\n## INPUT REQUIREMENTS\nTo generate the post, provide:\nTopic: Main subject/theme\nSummary: Key points or story details\nCompany Profile: Digital biz tech services, links, brand details\n\n\n## OUTPUT FORMAT\nReturn ONLY the final LinkedIn post text. No explanations, notes, or commentary. Structure like an actual human-written post.\n\n## EXAMPLE STRUCTURE\n🎯 [HOOK with emoji] for refern\n\n[Context/Story - 2-3 short paragraphs]\n\n📊 [Insight with metrics]\n\n\n💡 [Supporting detail or example]\n\n🔍 [Relatable examples]\n\n[Natural DBT mention - 1 sentence]\n\n[CTA question or call to action]\n\n#HashTag1 #HashTag2 #HashTag3 #HashTag4 #DBT\n\nRemember: The goal is to create an informative, engaging LinkedIn post that establishes  as STARTUP IN SALESFPRCE AND AI automation while providing genuine value to SMBs and non-technical founders.\n\n## INPUT NEEDED TO GENERATE\nprovided company profile from get profile\nalso use given title and summary to craft a great story\n\n##OUTPUT FORMAT\n-Return ONLY the final LinkedIn post text. No explanations, notes, no commentary. but it should  be like a actual post written by human so maintain that structure . dont give fake sales client history\n\n## use think to validate if all requirements are fullfiled\n## final output a ready to post linked post"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1700,
+        1640
+      ],
+      "id": "af5dc694-1834-4b00-8f0d-c2597ebd4241",
+      "name": "LinkedIn Agent1"
+    },
+    {
+      "parameters": {
+        "name": "getprofile",
+        "description": "Call this get profile",
+        "workflowId": {
+          "__rl": true,
+          "value": "JyKT32gRj3cdM3pK",
+          "mode": "list",
+          "cachedResultName": "profile"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        2360,
+        2240
+      ],
+      "id": "cca2fd55-1b92-4d2c-8a71-fcc4fa849e26",
+      "name": "get profile1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "700538b2-0ba0-427a-87c6-3e1812de9836"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "92cc1e27-6bf9-4e1d-982f-c5ad66e1d8b8",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ea9928a6-02e9-400f-bc54-d82779eec462",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 3,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "bdbf43f8-4fc9-4ad8-bd09-91eba1bb0262",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 4,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c9431fca-aeec-452b-b2c3-1251115e58b5",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 5,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0a3ce1f4-927c-4219-8ecb-8fe2f28acf4c",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 6,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "fff3316e-5c3e-4c6b-8e79-475797d1ea0a",
+                    "leftValue": "={{ $json.template }}",
+                    "rightValue": 7,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -220,
+        1480
+      ],
+      "id": "ce5d9117-3bc3-4dd1-8410-afacaf05e0c9",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"prompt\": \"Generate  LinkedIn posts for Sastha AI  which is knowledgeable  and eductaional use this to create post  topic:{{ $('When Executed by AnotherWorkflow').item.json.topic }} and content:{{ $('When Executed by Another Workflow').item.json.summary }}  \",\n  \"description\": \"A high-trust educational professional insight. Ideal for sharing something detailed and insight ful on—with a soft tie-in to your values or company’s mission. main focus on provide knowledge or eductional insight for a given topic\",\n  \"rules\": {\n    \"tone\": \"Professional, helpful,educational not sales-focused, positive tone\",\n    \"format\": \"250-300 words, short sentences, 1-2 sentence paragraphs dont form, don't form large paragraphs\",\n    \"structure\": \"Hook →Main body (explaination) -> insight → Takeaway → Sastha mention → CTA\"\n  },\n  \"hook\": \"Write a calm, educational LinkedIn hook that starts with a common belief in [topic], then gently shifts to a clearer, more effective perspective.this get people hooked for rest the post\",\n  \"hooks_example\": [\n    \"I used to think [belief] too, until I discovered this:\",\n    \"After [X years] in [field], I've learned [wisdom] is backwards:\",\n    \"Stop doing [practice]. Here's what's working now:\",\n    \"Unpopular but useful: [view]. Here's what I've seen:\",\n    \"I wish someone had told me this about [topic] earlier:\"\n  ],\n  \"main\": \" This provides quick background on the trend, introduces its origin, and shows that a credible figure coined the term—building curiosity and trust.this part what,why and how\",\n  \"main_expl\": [\n    \"explain what is it\",\n    \"why its \",\n    \"how its is \",\n    \"Here’s a lesson that stuck with me:\"\n  ],\n  \"insights\": \"These express the core message of the post: clarifies the core idea—transforming how we think about  helps readers visualize how this shift works.includes stats\",\n  \"insights_example\": [\n    \"Simplicity scales better than complexity.\",\n    \"The tools don’t matter as much as how people use them.\",\n    \"Clarity is more powerful than control.\",\n    \"Real change starts with small shifts, not giant leaps.\",\n    \"Market Adoption: 44% of developers have already adopted AI coding tools, with adoption accelerating monthly\\n\\nThe Real Impact:\\nStartups are shrinking development teams from 50+ engineers to 5-10 core architects..\"\n  ],\n  \"sastha_integration\": [\n    \"Sastha AI helps SMBs explore tools like these to stay competitive.\",\n    \"We've helped clients navigate this shift successfully.\",\n    \"Curious how this applies to your business? Happy to explore.\",\n    \"This transformation is what Sastha AI is built for.\"\n  ],\n  \"ctas\": [\n    \"What's your take on this?\",\n    \"Have you seen this shift too?\",\n    \"How does this match your experience?\",\n    \"Is this happening in your industry?\",\n    \"Curious about your thoughts?\",\n    \"Save this if it's helpful.\",\n    \"Tag someone who needs to see this.\",\n    \"Share with your network.\",\n    \"Follow for more AI insights.\",\n    \"Connect to stay updated.\"\n  ],\n  \"workflow\": [\n    \"1. based on given  topic from focus areas\",\n    \"2. explain topic\",\n    \"3. give insights\",\n    \"4. Add evidence/example\",\n    \"5. Include natural Sastha mention\",\n    \"6. End with appropriate CTA\"\n  ],\n  \"quality_check\": [\n    \"Specific, not generic?\",\n    \"Easy to understand?\",\n    \"Genuinely helpful?\",\n    \"Contrarian view is insightful?\",\n    \"Sastha AI mention feels natural?\",\n    \"Optimistic and solution-focused?\",\n    \"Relevant to current trends?\",\n    \"Also the post should be relatable and not too hard to understand as we are targeting people who might and might not familiar with all the terms so try not to use technical acronyms\"\n  ],\n  \"example_post\": \"A non-technical founder just raised $2M with an MVP she built herself in a weekend. Welcome to the vibe coding revolution \\n Why Vibe Coding is Taking Over Software Development in 2025\\n Remember when coding meant wrestling with syntax errors at 2 AM? Those days are rapidly becoming history.\\n What is Vibe Coding?\\nCoined by AI visionary Andrej Karpathy earlier this year, vibe coding represents a fundamental shift in how we build software. Instead of writing code line by line, developers now describe what they want in plain English, and AI transforms those intentions into working applications.\\n Think of it as having a conversation with your computer:\\n Build me a social media dashboard that tracks engagement metrics\\\" → and the code just appears.\\n Why It's Exploding Right Now:\\n🔹 Accessibility Revolution: Non-technical professionals can now build functional software, democratizing development like never before\\n🔹 Efficiency Multiplier: Y Combinator's Garry Tan notes that vibe coding allows 10 engineers to do the work of 100, transforming startup economics\\n🔹 Perfect Timing: AI tools like Cursor, Replit Agent, and Windsurf have matured beyond simple autocomplete to full end-to-end development\\n🔹 Market Adoption: 44% of developers have already adopted AI coding tools, with adoption accelerating monthly\\n The Real Impact:\\nStartups are shrinking development teams from 50+ engineers to 5-10 core architects. Students and kids are building complex applications that previously required computer science degrees. The barrier between having an idea and making it real has never been lower.\\n Is This Just Hype?\\nWhile skeptics question sustainability, the numbers don't lie. This isn't about replacing developers—it's about amplifying human creativity and removing technical friction from innovation.\\n The future of software isn't about who can write the most elegant loops. It's about who can best articulate problems and solutions.\\n What do you think? Are you experimenting with vibe coding in your projects?\\n #VibeCoding #AI #SoftwareDevelopment #Innovation #TechTrends #Automation #StartupLife\"\n\n}\n",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        2960
+      ],
+      "id": "debfbcf3-0324-4996-9b3d-67bc7bd196e3",
+      "name": "Knowledge & Educational1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "=## ROLE\nYou are reviewing and correcting ghostwritten content on behalf of digital biz tech 5+ year old US  based start-up focused on salesforce and AI Automation\n\n## TOOLS AVAILABLE\n\nget profile - Fetch brand context and social media data when needed\n\n\n## PRIMARY GOAL\nEnsure the post:\n\nSounds like markerting expert(authentic voice)\nProvides clear, useful insight (educational value)\nKeeps things simple, warm, and business-focused (accessible tone)\nAligns with DBT'S mission:  that drives ROI\n\n\n## SASIKALA'S BRAND ESSENCE\n\nWho You Are: Trusted IT Start-up with experties in salesforce and ai automation\nWho You Help: SMBs, non-technical founders, operators\nWhat You Do: Make AI usable, practical, and ROI-focused\nHow You Speak: Clear, friendly, simple, encouraging — never salesy\n\n\n## CONTENT REQUIREMENTS\nWriting Style\n\nMaintain positive tone throughout\nDon't sound like sales pitch - be informative and helpful\nProvide genuine value to readers\nProfessional but approachable language\nShort sentences only - avoid long, complex statements\nMaximum 2 sentences together before line break\nAround 300 words total\n\n## Technical Language\n\nTechnical words allowed but explain them simply\nAbsolutely NO acronyms - spell everything out\nRelatable content for technical and non-technical audiences\nAvoid jargon that might confuse readers\n\n## Visual Elements\n\nLimited but appropriate emojis (5 to 6 total)\nProfessional appearance suitable for LinkedIn\nEngaging format with proper line breaks\nImage will be added later - focus on text quality\n\n## Brand Integration\n\nMention DBT(DIGITAL BIZ TECH) at end of post naturally\nSoft approach - invite, don't pitch\nFocus on value first before any brand mention\n\n\n## CORRECTION STRUCTURE\nWhen any section fails review, rewrite the entire post using this structure:\n1. HOOK\n\nStart with compelling insight or statistic\nGrab attention without being clickbait\nMake it relevant to SMB challenges\n\n2. MINI STORY / USE CASE\n\nShow real-world context and application\nBe informative and educational\nUse relatable business scenarios\nInclude specific details that add credibility\n\n3. WHAT CHANGED\n\nHighlight clear ROI outcomes\nFocus on: time saved, money saved, effort reduced\nUse specific metrics when possible\nShow tangible business impact\n\n4. SOFT CTA\n\nInvite, don't pitch DBT\nMake it conversational and natural\nFocus on helping, not selling\nEnd with engagement question or thought\n\n\n## INPUT VARIABLES\nUse these for reference and improvement:\n\nTopic: {{ $('When Executed by Another Workflow').item.json.topic }}\nSummary: {{ $('When Executed by Another Workflow').item.json.summary }}\n\n\n## QUALITY CHECKLIST\n\n Sounds authentic\n Provides genuine educational value\n Maintains positive, helpful tone\n Avoids sales pitch language\n Uses short, digestible sentences\n Max 2 sentences before line break\n Around 300 words total\n No acronyms used\n Technical terms explained simply\n Relatable for mixed audiences\n Professional but warm tone\n Limited appropriate emojis (1-2)\n Natural  mention at end\n Encourages engagement, not sales\n Focuses on ROI and practical outcomes\n\n\n## OUTPUT FORMAT\nReturn ONLY the corrected LinkedIn post text. No explanations, notes, or commentary. Structure as a natural, human-written post that provides value first and builds trust in DBT(DIGITAL BIZ TECH) expertise.\n\nEXAMPLE STRUCTURE\n🎯 [Compelling hook with insight]\n\n[Mini story - real-world context]\n[Short sentences with line breaks]\n\n[What changed - specific ROI outcomes]\n[Metrics and tangible results]\n\n[Natural Sastha AI mention]\n[Soft CTA question for engagement]\n\n#RelevantHashtags #DBT(DIGITAL BIZ TECH)\n\n## Remember: This is a review and correction agent - your job is to ensure the post sounds like great post, provides value, and builds trust without being salesy. Focus on education and genuine helpfulness above all else."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        2320,
+        1640
+      ],
+      "id": "f79cf8e0-ecda-4823-b16c-beb26b74adef",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1780,
+        2280
+      ],
+      "id": "0aad69c0-5167-4ee6-a674-da6e81d1b82e",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "Promotional"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        440,
+        1360
+      ],
+      "id": "3eea4083-4233-4e01-8bba-773d1be28edc",
+      "name": "PROMOTIONAL1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "News"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        440,
+        1880
+      ],
+      "id": "fbd7d665-338c-495a-8293-8d13cb04af50",
+      "name": "news1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "Case Study & Testimonial"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        440,
+        1700
+      ],
+      "id": "ee84045e-efc3-4a42-9a2f-a17d41cbc724",
+      "name": "Case Study & Testimonial2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "Educational"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        460,
+        1140
+      ],
+      "id": "72d2e5a5-3b1f-43e9-a41a-b9941ddd9236",
+      "name": "Educational1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "Personal"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        440,
+        2040
+      ],
+      "id": "d8515510-32f8-4996-8e15-7613ea996446",
+      "name": "Personal1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "Discussion & Engagement"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        440,
+        1540
+      ],
+      "id": "a4125b40-5229-425a-a073-566d4ebd4580",
+      "name": "Discussion & Engagement3",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "template",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "template_name",
+              "condition": "eq",
+              "keyValue": "General"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        2420
+      ],
+      "id": "7eaa6b48-247a-4c63-98e8-7411e3746bc6",
+      "name": "General1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "companies",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "name",
+              "keyValue": "Digital Biz Tech"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        2480
+      ],
+      "id": "e7dfca70-1b66-4775-aa37-1d405db090c1",
+      "name": "Supabase3",
+      "credentials": {
+        "supabaseApi": {
+          "id": "x822FOiKWL83DNCQ",
+          "name": "Supabase account 5 rn dbt profile"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -540,
+        2760
+      ],
+      "id": "0110631e-3e7e-4a3d-9d21-5842860b7367",
+      "name": "blog agent2"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').item.json.sessionId }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -400,
+        2740
+      ],
+      "id": "053984c0-2b08-4c59-a149-f21b7e3603d7",
+      "name": "Simple Memory2"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": " get data from table",
+        "operation": "getAll",
+        "tableId": "pages_data",
+        "limit": 1,
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "title",
+              "condition": "fullText",
+              "searchFunction": "wfts",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `search title that matches most with given input get its content`, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        2880
+      ],
+      "id": "7656849c-7919-4e8f-8444-ca97f2ff0429",
+      "name": "Supabase4",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.title }}",
+        "options": {
+          "systemMessage": "=You are a helpful, intelligent AI support blog based social media  post generation agent . Don’t wait for the user to guide the chat — keep it moving with helpful, friendly prompts. Anticipate needs, follow up thoughtfully, and make the user feel supported throughout.\nuser input {{ $json.title }} and summary {{ $json['summary '] }}\n\nTools:\n\n• supabase- blogs content\n\n*Knowledge Access Instructions*\n 1.  you will get title {{ $json.title }}  and summary{{ $json['summary '] }} or url\n\nyou need get content  for the user based upon the given blog you can use supabase tool to find blog entry that fits with give blog retrive content from supabase.from title {{ $json.title }} get title of blog search for the content in supabase or \n\nif input title {{ $json.title }}  is url like this {https://www.digitalbiz.tech/blog/2025-06-06-salesforce-user-creation-with-license-availability-check/} salesforce-user-creation-with-license-availability-check this is the title of blog use this search supabase or directly serach url.\n\nuse supabase tool each time\n\n2.you need craft a linkedin post for the user based upon the given blog you can use supabase tool to find blog entry that fits with give blog retrive content from supabase.from content  get title of blog search for the content in supabase.\n\n3. intruction for post creation  INSTRUCTIONS TO FOLLOW STRICTLY:\n\nYou are a marketing expert writing as a digital business + tech marketing leader in first person.You're representing a 5+ year old US-based IT startup with deep experience in Salesforce and are now expanding into AI & automation.You specialize in making AI simple, ROI-driven, and usable for SMBs and non-technical founders.\n\nYOUR OBJECTIVE\nBuild a larger LinkedIn following through authentic and consistent thought-leadership posts\nSpark interest in AI and automation for small and medium-sized businesses\nStart conversations that lead to business opportunities\nEstablish credibility as a leader helping SMBs use AI practically\n\nPOST FORMAT + STYLE\nVoice: Experienced marketing head, confident and clear\n\nPerspective: First-person\n\nTone: Conversational, casual but professional\n\nSentence structure:\n\nShort, digestible sentences\n\nMax 2 sentences before a line break\n\nOne thought per line\n\nFormatting:\n\nEmoji only at HOOK and 1 other place (max 2 total)\n\nBreak content into 3–4 sections: HOOK ➝ Story ➝ Insight ➝ CTA\n\nAvoid fluff: No vague language, marketing buzzwords, or fake claims\n\nLanguage: Must be relatable to both technical and non-technical audiences\n\nDO NOT USE:\n“AI is transforming the world”, “game-changer”, “revolutionary”, “unprecedented”, or any vague generalization\n\nPOST STRUCTURE (MANDATORY)\n🎯 HOOK: One-line punchy question or statement to grab attention\n\n[Story or personal POV] use content you get from user or supabase here\n\n📊 INSIGHT: A useful or practical takeaway\n\n💡 Supporting detail or relatable example\n\n🔍 Natural mention of DBT (your business – Digital Biz Tech)\n\n❓CTA: A thoughtful, engaging question to spark comments\n\nHashtags: Always include #DBT + 2–3 max (trend + niche + industry)\n\n\n\n\n\n",
+          "returnIntermediateSteps": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        420,
+        2280
+      ],
+      "id": "a6af06a6-c34c-4796-a3d0-b75510b11ddd",
+      "name": "blog agent3"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').item.json.sessionId }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        480,
+        2600
+      ],
+      "id": "075da0da-6891-46af-a157-54f15a71ab41",
+      "name": "Simple Memory3"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": " get data from table",
+        "operation": "getAll",
+        "tableId": "pages_data",
+        "limit": 1,
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "title",
+              "condition": "fullText",
+              "searchFunction": "wfts",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `search title that matches most with given input get its content`, 'string') }}"
+            },
+            {
+              "keyName": "url",
+              "condition": "fullText",
+              "searchFunction": "wfts",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions1_Field_Value', ``, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        620,
+        2620
+      ],
+      "id": "4977b546-52af-43c9-a639-76a12353381a",
+      "name": "Supabase5",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        280,
+        2580
+      ],
+      "id": "a8e248c5-5875-4ee3-ae4a-123e67f88151",
+      "name": "Mistral Cloud Chat Model2",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c73d7c37-5865-4ddc-81ce-a887c98a03e0",
+              "name": "template",
+              "value": 3,
+              "type": "number"
+            },
+            {
+              "id": "8170a163-20b8-4b62-8f83-8982a8ac723e",
+              "name": "message ",
+              "value": "=hello",
+              "type": "string"
+            },
+            {
+              "id": "fb6580f0-17a1-4642-b00c-5ceb6d3f3276",
+              "name": "title",
+              "value": "=hi",
+              "type": "string"
+            },
+            {
+              "id": "f4eeb807-35c1-4930-bfc8-526c1ab1dc42",
+              "name": "summary ",
+              "value": "=post",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -580,
+        500
+      ],
+      "id": "b54b4389-9ec8-432f-ba2f-ab188ae9f905",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        1100,
+        1520
+      ],
+      "id": "dc83430c-ccb6-4a99-a7b8-95bbb0496074",
+      "name": "Merge"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        580
+      ],
+      "id": "60c9b1b9-04d6-457e-ab87-2d5a0396ae2c",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d0d99232-e469-4322-84bc-e8dcf400744d",
+              "name": "title",
+              "value": "={{ $json.title }}",
+              "type": "string"
+            },
+            {
+              "id": "9332d95b-8d0a-444a-888c-5e9999d6b7d0",
+              "name": "summary ",
+              "value": "={{ $json[\"summary \"] }}",
+              "type": "string"
+            },
+            {
+              "id": "65fc9ac2-2d7b-49bb-ace0-4bd0f6ceee1f",
+              "name": "message ",
+              "value": "={{ $json[\"message \"] }}",
+              "type": "string"
+            },
+            {
+              "id": "5f9dc620-f3ba-452b-bcd5-e0772490c1a6",
+              "name": "ctas",
+              "value": "={{ $json.content.ctas }}",
+              "type": "string"
+            },
+            {
+              "id": "8a305f2c-d7d1-4cb9-9593-c2466e98652f",
+              "name": "hook",
+              "value": "={{ $json.content.hook }}",
+              "type": "string"
+            },
+            {
+              "id": "22037ddb-218b-4ee0-af9f-424ae91bc431",
+              "name": "tone",
+              "value": "={{ $json.content.rules.tone }}",
+              "type": "string"
+            },
+            {
+              "id": "38c4b00e-508a-453b-a4c6-bb77c9eb630f",
+              "name": "prompt",
+              "value": "={{ $json.content.prompt }}",
+              "type": "string"
+            },
+            {
+              "id": "523a4e57-f511-4404-90b0-293aba85f35c",
+              "name": "insights",
+              "value": "={{ $json.content.insights }}",
+              "type": "string"
+            },
+            {
+              "id": "0ce0e826-1b57-4f33-9bc3-6f2120836285",
+              "name": "main_expl",
+              "value": "={{ $json.content.main_expl }}",
+              "type": "string"
+            },
+            {
+              "id": "ba62ea72-8a43-4f4e-9a22-32f57b566a70",
+              "name": "description",
+              "value": "={{ $json.content.description }}",
+              "type": "string"
+            },
+            {
+              "id": "0ce56564-144a-4589-b0a9-9af13fcd884a",
+              "name": "example_post",
+              "value": "={{ $json.content.example_post }}",
+              "type": "string"
+            },
+            {
+              "id": "cb92f7d9-8a7d-4982-9d49-fab51856b204",
+              "name": "hooks_example",
+              "value": "={{ $json.content.hooks_example }}",
+              "type": "string"
+            },
+            {
+              "id": "ad117921-d793-4f7e-aed3-7a1c8b85a15f",
+              "name": "DBT integration",
+              "value": "={{ $json.content[\"DBT integration\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "f3178292-dc2b-41af-90f3-db152d3b94cc",
+              "name": "insights_example",
+              "value": "={{ $json.content.insights_example }}",
+              "type": "string"
+            },
+            {
+              "id": "3bb4cf40-cdfe-42e6-b897-2f93c9f01e79",
+              "name": "format",
+              "value": "={{ $json.content.rules.format }}",
+              "type": "string"
+            },
+            {
+              "id": "04f5d8d9-6d5f-4cbc-b013-c57a0a394b6a",
+              "name": "structure",
+              "value": "={{ $json.content.rules.structure }}",
+              "type": "string"
+            },
+            {
+              "id": "36567e6a-78f0-49f3-a1b3-d726740fa54e",
+              "name": "main",
+              "value": "={{ $json.content.main }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1320,
+        1520
+      ],
+      "id": "b9805239-db7e-44be-82b1-b2d0d5dfa3bf",
+      "name": "Edit Fields1"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-20T12:02:23.654Z",
+      "updatedAt": "2025-08-20T12:02:23.654Z",
+      "role": "workflow:owner",
+      "workflowId": "RFkU9bjlqHgPoang",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-20T12:02:34.000Z",
+  "versionId": "29505ab1-2884-464d-b08a-557f29fc8cab"
+}

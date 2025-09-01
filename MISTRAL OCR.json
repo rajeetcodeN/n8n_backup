@@ -406,8 +406,8 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        580,
-        20
+        640,
+        -420
       ],
       "id": "6a4c1adf-487f-4a07-8a14-f62044287a38",
       "name": "Convert to File"
@@ -421,8 +421,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        380,
-        20
+        400,
+        -420
       ],
       "id": "38159ba0-9669-4e45-b944-9642be94ad28",
       "name": "Edit Fields"
@@ -444,8 +444,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -80,
-        20
+        -160,
+        -380
       ],
       "id": "6ed9982d-2714-4e52-9545-687e6c3d91d1",
       "name": "Edit Fields3"
@@ -458,8 +458,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        160,
-        20
+        140,
+        -380
       ],
       "id": "89b07c6e-62b0-4645-94f8-0cbdca361f27",
       "name": "Split Out"
@@ -476,8 +476,8 @@
       "type": "n8n-nodes-base.s3",
       "typeVersion": 1,
       "position": [
-        780,
-        20
+        920,
+        -660
       ],
       "id": "1aa0653f-02a0-42c2-a520-ff8dba475dbf",
       "name": "S3",
@@ -555,8 +555,8 @@
       "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
       "typeVersion": 1,
       "position": [
-        820,
-        580
+        1000,
+        620
       ]
     },
     {
@@ -569,8 +569,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
       "typeVersion": 1,
       "position": [
-        660,
-        560
+        800,
+        600
       ],
       "credentials": {
         "openAiApi": {
@@ -586,8 +586,8 @@
       "type": "@n8n/n8n-nodes-langchain.textSplitterCharacterTextSplitter",
       "typeVersion": 1,
       "position": [
-        820,
-        760
+        1000,
+        780
       ]
     },
     {
@@ -608,8 +608,8 @@
       "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
       "typeVersion": 1,
       "position": [
-        880,
-        960
+        920,
+        1240
       ],
       "credentials": {
         "supabaseApi": {
@@ -625,8 +625,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        260,
-        860
+        280,
+        1200
       ],
       "id": "ad90531c-4f69-4a6a-8dfc-b05f8df147a9",
       "name": "Code"
@@ -863,8 +863,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        0,
-        960
+        20,
+        1020
       ],
       "id": "aa3f0d02-2aa1-4761-ad21-b759652d3744",
       "name": "Code1"
@@ -940,8 +940,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsMistralCloud",
       "typeVersion": 1,
       "position": [
-        280,
-        600
+        460,
+        520
       ],
       "id": "86e3c944-0c77-4e49-ac16-947793273995",
       "name": "Embeddings Mistral Cloud",
@@ -959,8 +959,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        620,
-        300
+        640,
+        320
       ],
       "id": "c8f54d2a-a232-4a08-8fac-d4799341c810",
       "name": "Code3"
@@ -972,8 +972,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsHuggingFaceInference",
       "typeVersion": 1,
       "position": [
-        620,
-        900
+        640,
+        1200
       ],
       "id": "d4fc25c5-c783-44d3-bb36-345fce4b5a87",
       "name": "Embeddings HuggingFace Inference"
@@ -985,8 +985,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
       "typeVersion": 1,
       "position": [
-        680,
-        960
+        780,
+        1280
       ],
       "id": "ec111b61-9c30-400f-8d66-9b064ec1cc21",
       "name": "Embeddings Google Gemini",
@@ -1002,8 +1002,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
       "typeVersion": 1,
       "position": [
-        1240,
-        680
+        480,
+        1080
       ],
       "id": "1a92f91e-36ec-4dd1-8926-a01df420fd70",
       "name": "Embeddings Ollama"
@@ -1018,9 +1018,18 @@
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-08-12T22:24:08.493Z",
+      "updatedAt": "2025-08-12T22:24:08.493Z",
+      "role": "workflow:owner",
+      "workflowId": "FQx50R7T7CVp1AOJ",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-08-14T11:10:02.000Z",
-  "versionId": "abcb4450-8976-47cf-b8ef-f8f80b7b3acf"
+  "updatedAt": "2025-08-14T12:27:40.000Z",
+  "versionId": "0e85d487-d36f-4be9-a2df-3cdd7c39f636"
 }

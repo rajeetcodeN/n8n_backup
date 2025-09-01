@@ -1301,8 +1301,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -760,
-        -460
+        -920,
+        -640
       ],
       "id": "1bdbc7d2-f2a7-4e4e-9197-74124dbd636f",
       "name": "Edit Fields4"
@@ -2008,9 +2008,18 @@
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-08-10T20:12:56.568Z",
+      "updatedAt": "2025-08-10T20:12:56.568Z",
+      "role": "workflow:owner",
+      "workflowId": "7LK5iH1nFokxOhr1",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-08-13T10:09:39.000Z",
-  "versionId": "df64940d-68fa-4875-8f63-6a446c0ccb4e"
+  "updatedAt": "2025-08-17T10:55:32.000Z",
+  "versionId": "52fd0d85-a817-4a72-b6b6-fa79b989d111"
 }

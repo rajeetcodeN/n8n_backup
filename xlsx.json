@@ -1,0 +1,758 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Drive5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Set File ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set File ID": {
+      "main": [
+        [
+          {
+            "node": "Google Drive3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive3": {
+      "main": [
+        [
+          {
+            "node": "Mistral Upload1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Upload1": {
+      "main": [
+        [
+          {
+            "node": "Mistral Signed URL1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Signed URL1": {
+      "main": [
+        [
+          {
+            "node": "Mistral DOC OCR8",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Mistral DOC OCR6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral DOC OCR6": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code10": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral DOC OCR8": {
+      "main": [
+        []
+      ]
+    },
+    "Code1": {
+      "main": [
+        []
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Set File ID2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set File ID2": {
+      "main": [
+        [
+          {
+            "node": "Google Drive6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive6": {
+      "main": [
+        [
+          {
+            "node": "Read Spreadsheet File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Spreadsheet File": {
+      "main": [
+        [
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Google Drive2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Cloud Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-02T16:44:34.513Z",
+  "id": "UJu3WxYNmcRVXu2Q",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "xlsx",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1536,
+        2256
+      ],
+      "id": "abe62162-f4c1-46ba-8615-bff012c0ec96",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1840,
+        528
+      ],
+      "id": "58bd466b-193d-42c9-8627-f19080c2a3dd",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "10646eae-ae46-4327-a4dc-9987c2d76173",
+              "name": "file_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "f4536df5-d0b1-4392-bf17-b8137fb31a44",
+              "name": "file_type",
+              "value": "={{ $json.mimeType }}",
+              "type": "string"
+            },
+            {
+              "id": "77d782de-169d-4a46-8a8e-a3831c04d90f",
+              "name": "file_title",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "9bde4d7f-e4f3-4ebd-9338-dce1350f9eab",
+              "name": "file_url",
+              "value": "={{ $json.webViewLink }}",
+              "type": "string"
+            },
+            {
+              "id": "fae402c8-c486-4b57-8d28-bf669db6b442",
+              "name": "last_modified_date",
+              "value": "={{ $json.modifiedTime }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d0d04c99-2361-4a0a-8df1-f1003650f85c",
+      "name": "Set File ID",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1600,
+        528
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "searchMethod": "query",
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1rO7L_kOg5AJhTmOre_Wuvyu6N6QkqqKT",
+            "mode": "list",
+            "cachedResultName": "Test mistral pdf",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1rO7L_kOg5AJhTmOre_Wuvyu6N6QkqqKT"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name",
+            "webViewLink",
+            "mimeType",
+            "*"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -2080,
+        528
+      ],
+      "id": "bc3f55c2-eb6d-4521-a6e0-a0476afdbc2e",
+      "name": "Google Drive2",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Set File ID').item.json.file_url }}",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1408,
+        528
+      ],
+      "id": "34e00887-45df-4727-90aa-5435a4cfb318",
+      "name": "Google Drive3",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/files",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "purpose",
+              "value": "ocr"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "046d3dd5-5da0-422a-9016-7fe7f35b8f6e",
+      "name": "Mistral Upload1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1248,
+        528
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.mistral.ai/v1/files/{{ $json.id }}/url",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "expiry",
+              "value": "1"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1ccfa58c-b2da-4095-ab5b-b931f6fae5db",
+      "name": "Mistral Signed URL1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1088,
+        528
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"document_url\": \"{{ $json.url }}\"\n  },\n  \"bbox_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"schema\": {\n        \"properties\": {\n          \"image_type\": { \"title\": \"Image_Type\", \"type\": \"string\", \"description\": \"type of image\" },\n          \"short_description\": { \"title\": \"Short_Description\", \"type\": \"string\", \"description\": \"short description\" },\n          \"summary\": { \"title\": \"Summary\", \"type\": \"string\", \"description\": \"summary of the image\" }\n        },\n        \"required\": [\"image_type\",\"short_description\",\"summary\"],\n        \"title\": \"BBOXAnnotation\",\n        \"type\": \"object\",\n        \"additionalProperties\": false\n      },\n      \"name\": \"bbox_annotation\",\n      \"strict\": true\n    }\n  },\n  \"include_image_base64\": false\n}\n",
+        "options": {}
+      },
+      "id": "5ae7cb85-57e9-4954-9eda-23cc636e5df9",
+      "name": "Mistral DOC OCR6",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -864,
+        736
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c8160701-2be7-43c6-bcfa-295fbebe0e23",
+              "name": "ocr output",
+              "value": "={{ $json.embedding_text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -432,
+        832
+      ],
+      "id": "85ed3b97-600e-4521-a194-496d63420b04",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Function node\n// Keeps image array from input, inserts embedding_text inline with images\n\nconst pages = items[0].json.pages;\nlet output = [];\n\nfor (const page of pages) {\n  let text = `Page ${page.index}\\n\\n`;\n  let markdown = page.markdown;\n\n  // Replace each image markdown with annotation text if available\n  markdown = markdown.replace(/!\\[(.*?)\\]\\((.*?)\\)/g, (match, alt, src) => {\n    const img = page.images.find(i => i.id === src || i.fileName === src);\n    if (img && img.image_annotation) {\n      const ann = JSON.parse(img.image_annotation);\n      return (\n        '{' +\n        `Image: [${img.id}]\\n` +\n        `Type: ${ann.image_type}\\n` +\n        `Short: ${ann.short_description}\\n` +\n        `Summary: ${ann.summary}\\n` +\n        '}'\n      );\n    }\n    return \"\"; // if no annotation, strip it\n  });\n\n  text += markdown.trim();\n\n  output.push({\n    json: {\n      page_index: page.index,\n      embedding_text: text,\n      images: page.images   // ✅ keep original images array\n    }\n  });\n}\n\nreturn output;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -608,
+        832
+      ],
+      "id": "30be473c-392a-4f53-a73c-6f475d018a3f",
+      "name": "Code10"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-medium-latest\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an expert AI for extracting structured data from OCR timesheets. Your ONLY output must be a single, valid JSON object (no prose, no markdown, no code fences). TARGET SCHEMA (and nothing else): { \\\"timesheet_info\\\": { \\\"employee_name\\\": \\\"string\\\", \\\"week_start\\\": \\\"YYYY-MM-DD\\\", \\\"week_end\\\": \\\"YYYY-MM-DD\\\", \\\"week_number\\\": \\\"string\\\", \\\"total_hours\\\": number }, \\\"entries\\\": [ { \\\"date\\\": \\\"YYYY-MM-DD\\\", \\\"day\\\": \\\"string\\\", \\\"project\\\": \\\"string\\\", \\\"hours\\\": number } ] } RULES: 1) Do not add extra fields. Unknown values -> null. 2) Normalize all dates to YYYY-MM-DD (accept DD.MM.YYYY, DD/MM/YYYY, MM/DD/YYYY, YYYY/MM/DD, month names). Use week header + weekday to compute missing dates. 3) employee_name: extract from document (e.g., 'Adri Tom'). 4) week_start and week_end: extract from header (e.g., '12 MAY TO 18 MAY 2025'). 5) week_number: extract if present (e.g., 'Week 20'), else null. 6) total_hours: extract from 'MY TOTAL HOURS FOR THIS WEEK'. Normalize to number. Also cross-check: sum of entries.hours must equal total_hours. If mismatch, prefer the per-day values. 7) entries: Must include all 7 days between week_start and week_end in correct order (Mon–Sun). If a day is missing, include it with hours = 0. 8) For each entry: date = computed full date; day = weekday name; project = cleaned project string (remove duplicates, trailing noise, OCR artifacts); hours = numeric hours (convert '8 Hits' -> 8, '0 Hits' -> 0). 9) If multiple projects logged on the same day, return separate entries for each project with the same date/day. 10) Remove duplicates, mis-OCR days (e.g., two Fridays), and garbage tokens (e.g., long sequences of numbers). 11) Validate before returning: JSON must parse; numbers must be numeric; week total must reconcile. 12) If no valid entries found, return entries: []. 13) Output strictly the JSON object—no explanations. 14) You must respond ONLY with valid raw rendered JSON. Do NOT include the word 'json'. Do NOT include the word '```json'. Do NOT use triple backticks or markdown formatting. Do NOT wrap the response in any key like 'output'. Do NOT write anything starting at output — directly start with valid root-level JSON object.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"Extract timesheet data from this document and return only valid JSON with this structure:\\n{\\n  \\\"timesheet_info\\\": {\\n    \\\"employee_name\\\": \\\"string\\\",\\n    \\\"week_start\\\": \\\"YYYY-MM-DD\\\",\\n    \\\"week_end\\\": \\\"YYYY-MM-DD\\\",\\n    \\\"week_number\\\": \\\"string\\\",\\n    \\\"total_hours\\\": number\\n  },\\n  \\\"entries\\\": [\\n    { \\\"date\\\": \\\"YYYY-MM-DD\\\", \\\"day\\\": \\\"string\\\", \\\"project\\\": \\\"string\\\", \\\"hours\\\": number }\\n  ]\\n}\\nReturn JUST the JSON—no extra text.\"\n        },\n        {\n          \"type\": \"document_url\",\n          \"document_url\": \"{{ $json.url }}\"\n        }\n      ]\n    }\n  ],\n  \"document_image_limit\": 8,\n  \"document_page_limit\": 64\n}\n\n",
+        "options": {}
+      },
+      "id": "7764a98a-2f7a-4248-ad0a-5cc4ab7663ec",
+      "name": "Mistral DOC OCR8",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -848,
+        528
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Combine all incoming items into ONE item\nconst pages = items\n  .map(i => String(i.json['ocr output'] || ''))\n  .filter(s => s.trim().length > 0);\n\nreturn [\n  {\n    json: {\n      pages,                 // array of page strings (if you want per-page access)\n      text: pages.join('\\n\\n') // single combined string for AI prompt\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -224,
+        832
+      ],
+      "id": "40363499-f52d-4d17-9cd2-e66b9ac663b8",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1184,
+        2256
+      ],
+      "id": "ff5ef278-23b6-4ec2-a045-620d42d3a450",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "10646eae-ae46-4327-a4dc-9987c2d76173",
+              "name": "file_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "f4536df5-d0b1-4392-bf17-b8137fb31a44",
+              "name": "file_type",
+              "value": "={{ $json.mimeType }}",
+              "type": "string"
+            },
+            {
+              "id": "77d782de-169d-4a46-8a8e-a3831c04d90f",
+              "name": "file_title",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "9bde4d7f-e4f3-4ebd-9338-dce1350f9eab",
+              "name": "file_url",
+              "value": "={{ $json.webViewLink }}",
+              "type": "string"
+            },
+            {
+              "id": "fae402c8-c486-4b57-8d28-bf669db6b442",
+              "name": "last_modified_date",
+              "value": "={{ $json.modifiedTime }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "936f4bc2-b138-4662-b036-42a51cbf07ac",
+      "name": "Set File ID2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -992,
+        2272
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "searchMethod": "query",
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1pkqFQ5rugmd9ZjIip4YnEIR76SCVCpvA",
+            "mode": "list",
+            "cachedResultName": "Test mistral ocr dbt",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1pkqFQ5rugmd9ZjIip4YnEIR76SCVCpvA"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name",
+            "webViewLink",
+            "mimeType",
+            "*"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1344,
+        2240
+      ],
+      "id": "54e37291-8493-4485-8a9d-8e5624de854a",
+      "name": "Google Drive5",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Set File ID2').item.json.file_url }}",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -736,
+        2272
+      ],
+      "id": "9592366a-087e-44c6-8792-da4f414b55b6",
+      "name": "Google Drive6",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "headerRow": true
+        }
+      },
+      "id": "7596fcde-bda9-438e-8bdc-44ee84c2ed2c",
+      "name": "Read Spreadsheet File",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "position": [
+        -544,
+        2288
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsCode": "// Convert Excel serial date -> YYYY-MM-DD\nconst base = new Date(Date.UTC(1899, 11, 30));\nfunction fromSerial(s) {\n  if (!s || isNaN(Number(s))) return s; // skip if not a number\n  const ms = Number(s) * 86400 * 1000;\n  return new Date(base.getTime() + ms).toISOString().slice(0, 10);\n}\n\nreturn items.map(item => {\n  let row = { ...item.json };\n\n  // Convert possible date fields\n  if (row.__EMPTY && !isNaN(row.__EMPTY)) {\n    row.__EMPTY = fromSerial(row.__EMPTY);\n  }\n  if (row.__EMPTY_1 && !isNaN(row.__EMPTY_1) && row[\" Contractor Timesheet\"]?.includes(\"Weekending\")) {\n    row.__EMPTY_1 = fromSerial(row.__EMPTY_1);\n  }\n\n  return { json: row };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -336,
+        2288
+      ],
+      "id": "7ebb1164-e081-422e-acea-0242f9db22e3",
+      "name": "Code5"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -2336,
+        448
+      ],
+      "id": "e0e9814b-a05d-4fe9-ad37-dc8d53995149",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You must respond ONLY with valid raw rendered JSON.\n- Do NOT include the word \"json\".\n- Do NOT include the word \"```json\".\n- Do NOT use triple backticks or markdown formatting.\n- Do NOT wrap the response in any key like \"output\".\n- Do NOT write anything starting at output directly start with valid root-level JSON.\n- Only respond with a valid, root-level JSON object.\n- Do NOT skip any line item. Continue extracting all line items until the sum of all line_total values exactly equals the total sale amount extracted from the invoice. This verification ensures that all items are fully extracted and no entries are missed. If the totals do not match, keep parsing and extracting additional line items until they do. Only then stop.\n\n\n\n{{ $json.text }}",
+        "options": {
+          "systemMessage": "You are a document parsing assistant designed to extract structured data from purchase orders and RFQs for automated uploading and validation in a procurement system.\n\nExtract the following fields from the text:\n\nsupplier_name: Name of the supplier issuing the RFQ/order. If the supplier is Nosta GmbH, return \"Nosta GmbH\" here.\n\ncustomer_name: Name of the customer (the company placing the order / requesting quotation).\n\nImportant rule: Never return \"Nosta\" or \"Nosta GmbH\" as the customer. If the only detected name is Nosta, set customer_name to null.\n\ntype_of_document: Type of document (e.g., purchase order, RFQ).\n\ndate: Document date in YYYY-MM-DD format.\n\ncustomer_number: Customer number.\n\norder_or_rfq_number: Order number or RFQ number.\n\nrequested_items: List of all requested materials/articles in the document. For each item, extract:\n\npos: Position number (if available).\n\narticle_name: Name/description of the material (do not include codes inside description).\n\nsupplier_material_number: Supplier’s material number if present, else null.\n\ncustomer_material_number: Customer’s material number if present, else null.\n\nquantity: Number of parts requested.\n\nunit: Unit of measure (pcs, kg, etc.).\n\ndelivery_date: Delivery date in YYYY-MM-DD format if present, else null.\n\nImportant rules:\n\nIgnore “Nosta” as customer; it can only appear under supplier_name.\n\nDo not skip any requested item.\n\nIf a field is missing, return it as null.\n\nExtract values exactly as shown in the document (no rounding, no assumptions).\n\nDates must always be normalized to YYYY-MM-DD.\n\nAlways return a single valid JSON object with the exact key names above.\n\nDo not skip any requested item.\n\n✨ If an item is split across multiple pages (for example, position number and article number appear on one page and the description or customer article number appears on the next page), merge them into a single requested_items entry.\n\n✨ Ensure all position numbers (pos) are in sequence. If a pos is found without a description or with incomplete data, continue scanning later pages until all fields are filled.\n\noutput format\n\nYou must respond ONLY with valid raw rendered JSON.\n- Do NOT include the word \"json\".\n- Do NOT include the word \"```json\".\n- Do NOT use triple backticks or markdown formatting.\n- Do NOT wrap the response in any key like \"output\".\n- Do NOT write anything starting at output directly start with valid root-level JSON.\n- Only respond with a valid, root-level JSON object.\n- Do NOT skip any line item. Continue extracting all line items until the sum of all line_total values exactly equals the total sale amount extracted from the invoice. This verification ensures that all items are fully extracted and no entries are missed. If the totals do not match, keep parsing and extracting additional line items until they do. Only then stop.\n\n\n[\n  {\n    \"document_info\": {\n      \"type\": null,\n      \"date\": null,\n      \"customer_name\": null,\n      \"customer_number\": null,\n      \"supplier_number\": null,\n      \"order_number\": null\n    },\n    \"requested_items\": [\n      {\n        \"pos\": null,\n        \"article_number\": null,\n        \"customer_article_number\": null,\n        \"article_name\": null,\n        \"quantity\": null,\n        \"unit\": null,\n        \"delivery_date\": null\n      }\n    ]\n  }\n]\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        208,
+        784
+      ],
+      "id": "3b8730c0-6e4b-429e-aa10-602097b231a9",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": "mistral-small-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        288,
+        1440
+      ],
+      "id": "f44f66b2-c3e2-48de-a713-120d20c7e3c2",
+      "name": "Mistral Cloud Chat Model2"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-02T16:44:34.521Z",
+      "updatedAt": "2025-09-02T16:44:34.521Z",
+      "role": "workflow:owner",
+      "workflowId": "UJu3WxYNmcRVXu2Q",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-04T07:48:22.000Z",
+  "versionId": "1cad6943-8df4-4266-944a-5adbfe0268ed"
+}

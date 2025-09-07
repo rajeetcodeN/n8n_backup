@@ -1,0 +1,434 @@
+{
+  "active": true,
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Direct": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Vector Store1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-03T11:54:21.529Z",
+  "id": "XCNMKbf0hDlbuBp6",
+  "isArchived": false,
+  "meta": null,
+  "name": "dbt website chat bot",
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "options": {
+          "frequencyPenalty": 1,
+          "presencePenalty": 1,
+          "temperature": 0.5
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        384,
+        224
+      ],
+      "id": "17fc4caa-6157-49c8-adb0-a39a2849a628",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-ada-002",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        784,
+        624
+      ],
+      "id": "ca93f33f-dbc1-4c1b-89ac-c53cefa4861b",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fefb9175-75ea-4fbd-8725-d2a10a675dac",
+              "leftValue": "={{ $json.chatInput }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -224,
+        112
+      ],
+      "id": "6d51f019-bdda-4b8c-8af8-b2a245b43bc2",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "93dbee73-1e37-4377-91df-73eb3760d4b9",
+              "name": "que",
+              "value": "={{ $json.chatInput }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "282fd4ed-2ffa-406f-b2ff-18fd3a29998d",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8c5bd4cb-7170-4b98-9201-a96efa313c67",
+              "name": "que",
+              "value": "={{ $json.message }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        208
+      ],
+      "id": "7eac653e-c7d4-49a8-a5dc-a4e19a1a1fbb",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        608,
+        288
+      ],
+      "id": "71c09e41-e3a8-40bb-bbad-615a0ca8089d",
+      "name": "Simple Memory",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', `website url`, 'string') }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1168,
+        320
+      ],
+      "id": "ee4f6a42-6026-45b4-9b67-5ccc0d07d258",
+      "name": "HTTP Request",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "n8n_test",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', `Number of rows to return, default 4, max 10`, 'number') }}",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "content",
+              "condition": "ilike",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `word to search, use \"*\" for wildcard placeholder, Example \"*ai*\"`, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        624
+      ],
+      "id": "2046279a-1cd5-46fb-9fa1-d9c84657d98e",
+      "name": "Supabase Direct",
+      "credentials": {
+        "supabaseApi": {
+          "id": "9dYMIwoCFFwT3ZmR",
+          "name": "Supabase account 6 ayan"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        224,
+        112
+      ],
+      "id": "600c409f-0a21-42ff-8b03-b7a4b54d9ffb",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.que }}",
+        "options": {
+          "systemMessage": "You are a website-embedded AI assistant.\n\nAlways follow these strict rules:\n\n1. First, use Supabase vector search (dense retrieval) to find related website content.\n2. Second, use Supabase direct search (sparse retrieval) to find exact match content.\n3. Both searches use the same website content database. Always perform both.\n4. Answer only using the site’s content. Keep answers very short and precise.\n5. If the user **explicitly mentions a blog** (e.g., \"send the blog on X\" or \"blog about Y\"), include a direct clickable link to that blog.\n6. If the user provides a URL, fetch and summarize or answer based on that page’s content.\n7. If the information is not found, say exactly: **“I couldn’t find that on this site.”**\n8. If the user asks a general question unrelated to the website, respond briefly and conversationally.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        688,
+        112
+      ],
+      "id": "ff5bac9a-0380-4a1e-920e-0b0d934aa22c",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "n8n_test",
+        "toolDescription": "Get website related Data",
+        "tableName": {
+          "__rl": true,
+          "value": "n8n_test",
+          "mode": "list",
+          "cachedResultName": "n8n_test"
+        },
+        "options": {
+          "queryName": "match5_documents"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.1,
+      "position": [
+        704,
+        480
+      ],
+      "id": "5b08d65a-e804-40c4-98c2-40b9f6a4c75a",
+      "name": "Supabase Vector Store1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "9dYMIwoCFFwT3ZmR",
+          "name": "Supabase account 6 ayan"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "public": true,
+        "mode": "webhook",
+        "options": {
+          "responseMode": "lastNode"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -464,
+        112
+      ],
+      "id": "223b03c1-185b-414a-ac28-9c502e1f4cdc",
+      "name": "When chat message received",
+      "webhookId": "04e8a67f-1efe-4ece-82ef-791554d25862"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-03T11:54:21.536Z",
+      "updatedAt": "2025-09-03T11:54:21.536Z",
+      "role": "workflow:owner",
+      "workflowId": "XCNMKbf0hDlbuBp6",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-03T13:47:41.000Z",
+  "versionId": "93d5b474-7225-4310-bde0-a2e3eaa3f84e"
+}

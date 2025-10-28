@@ -68,16 +68,6 @@
             "node": "Supabase2",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Supabase3",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Supabase4",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -117,24 +107,12 @@
     },
     "Filter Fields 7": {
       "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 2
-          }
-        ]
+        []
       ]
     },
     "Filter Fields 8": {
       "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 3
-          }
-        ]
+        []
       ]
     },
     "google news": {
@@ -298,7 +276,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -680,
+        -688,
         -80
       ],
       "id": "2f7a3a71-0f54-43d8-84b1-5eb6c7a4a81f",
@@ -322,7 +300,7 @@
       "name": "GET TITLE AND DESCRIPTION FROM REALTED N8N VIDEO",
       "type": "n8n-nodes-base.youTube",
       "position": [
-        -900,
+        -896,
         -80
       ],
       "typeVersion": 1,
@@ -349,7 +327,7 @@
       "type": "n8n-nodes-base.reddit",
       "position": [
         -1120,
-        120
+        128
       ],
       "typeVersion": 1,
       "credentials": {
@@ -397,8 +375,8 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        -900,
-        120
+        -896,
+        128
       ],
       "id": "02cbcfd7-efbc-4094-b547-2ae460feb5a9",
       "name": "Filter2"
@@ -444,8 +422,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -680,
-        120
+        -688,
+        128
       ],
       "id": "9e140761-1790-4937-b2c3-651abb416a35",
       "name": "Edit Fields2"
@@ -461,8 +439,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -1740,
-        140
+        -1744,
+        144
       ],
       "id": "0ab94580-da78-4aab-8803-f855fee67cad",
       "name": "Schedule Trigger"
@@ -475,8 +453,8 @@
       "name": "Merge",
       "type": "n8n-nodes-base.merge",
       "position": [
-        -460,
-        199
+        -464,
+        208
       ],
       "typeVersion": 3.1
     },
@@ -526,8 +504,8 @@
       "name": "Remove Certain Content",
       "type": "n8n-nodes-base.filter",
       "position": [
-        -20,
-        220
+        -16,
+        224
       ],
       "typeVersion": 2.2
     },
@@ -541,7 +519,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
       "position": [
         288,
-        440
+        448
       ],
       "typeVersion": 1,
       "credentials": {
@@ -590,8 +568,8 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        1016,
-        220
+        1024,
+        224
       ],
       "id": "527b259f-f3c0-4926-b833-848da4dff26b",
       "name": "Supabase",
@@ -631,7 +609,7 @@
       "typeVersion": 2.2,
       "position": [
         576,
-        220
+        224
       ],
       "id": "4dad4788-5a0b-433d-b120-4ed094c0242a",
       "name": "empty new filter"
@@ -677,8 +655,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        796,
-        220
+        800,
+        224
       ],
       "id": "f7ec660c-adac-4a74-8326-6925b0bfa0b2",
       "name": "prep for db"
@@ -712,7 +690,7 @@
       "type": "n8n-nodes-base.filter",
       "position": [
         -240,
-        220
+        224
       ],
       "typeVersion": 2.2
     },
@@ -758,7 +736,7 @@
       "name": "Filter Fields 7",
       "type": "n8n-nodes-base.set",
       "position": [
-        -820,
+        -816,
         320
       ],
       "typeVersion": 3.4
@@ -805,8 +783,8 @@
       "name": "Filter Fields 8",
       "type": "n8n-nodes-base.set",
       "position": [
-        -780,
-        520
+        -784,
+        528
       ],
       "typeVersion": 3.4
     },
@@ -818,7 +796,7 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.1,
       "position": [
-        -1000,
+        -1008,
         320
       ],
       "id": "4da0164e-6312-4cdd-8090-796d06f7c737",
@@ -832,8 +810,8 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.1,
       "position": [
-        -1000,
-        520
+        -1008,
+        528
       ],
       "id": "114be391-d7ef-4c43-ad68-2adf57b2f05a",
       "name": "google search"
@@ -860,8 +838,8 @@
       "type": "@n8n/n8n-nodes-langchain.textClassifier",
       "typeVersion": 1,
       "position": [
-        200,
-        220
+        208,
+        224
       ],
       "id": "75c7b658-93a1-4db0-a99a-dd4715390166",
       "name": "Text Classifier1"
@@ -912,8 +890,8 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -1340,
-        120
+        -1344,
+        128
       ],
       "id": "6f8026b1-843a-4ed6-8896-2206973b67a3",
       "name": "Supabase2",
@@ -941,7 +919,7 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -1180,
+        -1184,
         320
       ],
       "id": "212fde70-cbf6-4675-837e-202e22142a9f",
@@ -970,8 +948,8 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -1180,
-        520
+        -1184,
+        528
       ],
       "id": "410ca69a-ec25-4809-b248-1c9474129695",
       "name": "Supabase4",
@@ -1004,6 +982,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-28T06:17:49.000Z",
-  "versionId": "a0db6a5d-4c96-41b6-b5af-abc5a5d28de5"
+  "updatedAt": "2025-10-12T19:56:48.000Z",
+  "versionId": "f49278aa-9ee0-4ee8-989e-6383cca03853"
 }

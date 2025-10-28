@@ -325,17 +325,6 @@
         ]
       ]
     },
-    "Schedule Trigger": {
-      "main": [
-        [
-          {
-            "node": "Google Drive2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Wait": {
       "main": [
         [
@@ -488,8 +477,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
       "typeVersion": 1.2,
       "position": [
-        700,
-        340
+        704,
+        352
       ],
       "id": "3c199d27-4c52-4e76-bcbc-0a2dd5420121",
       "name": "Embeddings OpenAI1",
@@ -516,7 +505,7 @@
       "typeVersion": 1.2,
       "position": [
         0,
-        340
+        352
       ],
       "id": "b771faa1-16dc-4793-9f77-8d18d0d505b0",
       "name": "OpenAI Chat Model1",
@@ -564,8 +553,8 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        500,
-        360
+        512,
+        368
       ],
       "id": "78a75cb6-1d2e-4e89-baef-d62b5fe16fde",
       "name": "Web Search "
@@ -575,8 +564,8 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        180,
-        340
+        192,
+        352
       ],
       "id": "b2af5179-fb5f-41d4-8f15-3bf297bb26ab",
       "name": "Simple Memory1"
@@ -615,8 +604,8 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        380,
-        360
+        384,
+        368
       ],
       "id": "2992672b-f66e-4c74-a171-2ae4870196a2",
       "name": "list doc1",
@@ -644,8 +633,8 @@
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
       "typeVersion": 1.1,
       "position": [
-        680,
-        140
+        688,
+        144
       ],
       "id": "354c8d61-907f-4503-aff9-fd261988e9ea",
       "name": "Qdrant Vector Store",
@@ -663,7 +652,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        780,
+        784,
         1200
       ],
       "id": "20deefc3-1a6f-4120-9f57-94990dc26b8e",
@@ -712,8 +701,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1000,
-        1100
+        1008,
+        1104
       ]
     },
     {
@@ -775,8 +764,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2660,
-        1100
+        2672,
+        1104
       ],
       "id": "a52b164e-9df5-4b7a-889c-a61de6b1cecc",
       "name": "Edit Fields2"
@@ -810,8 +799,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2060,
-        1100
+        2064,
+        1104
       ],
       "id": "fff3652a-2df0-4b2b-9fd9-eba0ed43145f",
       "name": "If1"
@@ -872,8 +861,8 @@
       "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
       "typeVersion": 1,
       "position": [
-        3420,
-        1420
+        3424,
+        1424
       ]
     },
     {
@@ -914,7 +903,7 @@
       "typeVersion": 3,
       "position": [
         560,
-        1260
+        1264
       ],
       "id": "443d6b0a-7618-41c4-8fae-e90fca0431b3",
       "name": "Google Drive",
@@ -938,8 +927,8 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        1180,
-        1100
+        1184,
+        1104
       ],
       "id": "52d4bdbd-b1ea-4b22-833b-de724db950f7",
       "name": "Google Drive1",
@@ -977,8 +966,8 @@
       "name": "Mistral Upload",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1340,
-        1100
+        1344,
+        1104
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -1017,8 +1006,8 @@
       "name": "Mistral Signed URL",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1500,
-        1100
+        1504,
+        1104
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -1044,7 +1033,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "position": [
         1120,
-        1700
+        1712
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -1059,8 +1048,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        1260,
-        860
+        1264,
+        864
       ],
       "id": "cd082dc9-efcc-4436-832d-9a6d94738931",
       "name": "When clicking ‘Test workflow’"
@@ -1072,7 +1061,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3020,
+        3024,
         880
       ],
       "id": "a2bfb9a9-f06b-4da2-9b80-10b888ef64ca",
@@ -1085,8 +1074,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3180,
-        1100
+        3184,
+        1104
       ],
       "id": "aeb193f9-3749-4858-8b03-3acff6d69f04",
       "name": "Code3"
@@ -1101,8 +1090,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
       "typeVersion": 1,
       "position": [
-        2680,
-        1420
+        2688,
+        1424
       ],
       "credentials": {
         "openAiApi": {
@@ -1149,8 +1138,8 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        3060,
-        120
+        3072,
+        128
       ],
       "id": "9208d478-75e3-4da1-a022-3c7fc267b48d",
       "name": "Convert to File"
@@ -1164,8 +1153,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2860,
-        120
+        2864,
+        128
       ],
       "id": "724232eb-cac6-4383-a977-0c8f270f82a7",
       "name": "Edit Fields"
@@ -1187,8 +1176,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2120,
-        -180
+        2128,
+        -176
       ],
       "id": "a55029c0-010c-49c2-b11b-062abd5af075",
       "name": "Edit Fields3"
@@ -1201,8 +1190,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        2360,
-        -180
+        2368,
+        -176
       ],
       "id": "ef3cbcd8-897f-4ac8-b3aa-3be595907fbb",
       "name": "Split Out"
@@ -1219,8 +1208,8 @@
       "type": "n8n-nodes-base.s3",
       "typeVersion": 1,
       "position": [
-        3260,
-        120
+        3264,
+        128
       ],
       "id": "43ebe154-497b-4462-bd35-60d09618e1c6",
       "name": "S3",
@@ -1241,7 +1230,7 @@
       "typeVersion": 3.4,
       "position": [
         3840,
-        920
+        928
       ],
       "id": "c128983b-017c-45e3-bcbd-5522edaa17e8",
       "name": "Edit Fields1"
@@ -1254,7 +1243,7 @@
       "typeVersion": 2,
       "position": [
         3920,
-        1380
+        1392
       ],
       "id": "4e391f58-0a42-4e10-93c8-a37b091483b4",
       "name": "Code"
@@ -1285,8 +1274,8 @@
       "type": "@n8n/n8n-nodes-langchain.informationExtractor",
       "typeVersion": 1,
       "position": [
-        2260,
-        1100
+        2272,
+        1104
       ],
       "id": "dc3fe170-e86e-45f8-b072-fd53156f8c44",
       "name": "Information Extractor"
@@ -1299,8 +1288,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
       "typeVersion": 1,
       "position": [
-        2280,
-        1400
+        2288,
+        1408
       ],
       "id": "e7158620-b79f-4b75-827e-034a04f77b35",
       "name": "Mistral Cloud Chat Model",
@@ -1318,8 +1307,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2920,
-        1380
+        2928,
+        1392
       ],
       "id": "e16bf483-fa66-43c0-992b-11541c0b95bd",
       "name": "Embeddings Google Gemini",
@@ -1337,8 +1326,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
       "typeVersion": 1,
       "position": [
-        180,
-        460
+        192,
+        464
       ],
       "id": "4be4835c-fb7b-4f48-9e5d-6574360b4963",
       "name": "Embeddings Google Gemini1",
@@ -1356,8 +1345,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsMistralCloud",
       "typeVersion": 1,
       "position": [
-        3240,
-        1380
+        3248,
+        1392
       ],
       "id": "9230750d-8059-403d-bbcd-b71840f9bc81",
       "name": "Embeddings Mistral Cloud",
@@ -1394,8 +1383,8 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        1340,
-        1800
+        1344,
+        1808
       ],
       "id": "ce68ce4c-ef42-41cb-a9b1-555fd2382a63",
       "name": "Google Drive2",
@@ -1423,28 +1412,11 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1560,
-        1800
+        1568,
+        1808
       ],
       "id": "e067eca5-4279-4222-b5de-37b385ee370c",
       "name": "Edit Fields4"
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {}
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        1060,
-        1800
-      ],
-      "id": "945a6e51-a81c-4716-9e9a-f71c086e2fbf",
-      "name": "Schedule Trigger"
     },
     {
       "parameters": {
@@ -1473,7 +1445,7 @@
       "typeVersion": 1.1,
       "position": [
         3840,
-        1100
+        1104
       ],
       "id": "9c6aef7d-1394-438e-84a5-9f1f8c3cecef",
       "name": "Wait",
@@ -1492,8 +1464,8 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.1,
       "position": [
-        -60,
-        -20
+        -64,
+        -16
       ],
       "id": "0d41904c-80b3-4d73-8670-46b82441121b",
       "name": "When chat message received",
@@ -1514,8 +1486,8 @@
       "name": "Mistral DOC OCR1",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1960,
-        1420
+        1968,
+        1424
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -1540,7 +1512,7 @@
       "name": "Mistral DOC OCR2",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1000,
+        1008,
         1680
       ],
       "typeVersion": 4.2,
@@ -1566,8 +1538,8 @@
       "name": "Mistral DOC OCR3",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1660,
-        1100
+        1664,
+        1104
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -1585,7 +1557,7 @@
       "typeVersion": 2,
       "position": [
         1840,
-        1100
+        1104
       ],
       "id": "17618bd4-a543-4356-b396-c4594a6bb4c3",
       "name": "Code1"
@@ -1613,7 +1585,7 @@
       "typeVersion": 2,
       "position": [
         2880,
-        1100
+        1104
       ],
       "id": "a63c0a03-96ce-4cb6-b7b5-3a140ccafc37",
       "name": "Code4"
@@ -1626,7 +1598,7 @@
       "typeVersion": 1,
       "position": [
         880,
-        360
+        368
       ],
       "id": "27063bf1-2c48-4531-a609-8734460d9c26",
       "name": "Embeddings Mistral Cloud1",
@@ -1654,7 +1626,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2340,
+        2352,
         560
       ],
       "id": "dda59042-974c-44f7-b3e6-b742c7ad020d",
@@ -1675,8 +1647,8 @@
       "name": "Mistral DOC OCR4",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1620,
-        580
+        1632,
+        592
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -1694,7 +1666,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        2540,
+        2544,
         560
       ],
       "id": "83d19361-e2cd-4b64-be64-e24e8b3e2fb9",
@@ -1711,7 +1683,7 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        3220,
+        3232,
         560
       ],
       "id": "af1ebff9-cb21-4984-88db-159dff3d632c",
@@ -1749,8 +1721,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2280,
-        260
+        2288,
+        272
       ],
       "id": "dce0334b-28c8-42b2-bb30-115a4d35e980",
       "name": "Edit Fields7"
@@ -1763,8 +1735,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        2520,
-        260
+        2528,
+        272
       ],
       "id": "988c2cf7-7a8f-4701-b246-5ae90a79499c",
       "name": "Split Out2"
@@ -1782,7 +1754,7 @@
       "typeVersion": 1,
       "position": [
         3520,
-        540
+        544
       ],
       "id": "490d67e6-ce76-4962-9b11-ce2b604a9dbf",
       "name": "S31",
@@ -1818,7 +1790,7 @@
     }
   },
   "tags": [],
-  "triggerCount": 2,
-  "updatedAt": "2025-08-25T03:41:57.000Z",
-  "versionId": "9a1cd770-fc18-489f-88e5-c99a8f62d609"
+  "triggerCount": 1,
+  "updatedAt": "2025-09-25T08:11:51.000Z",
+  "versionId": "8e6feebc-7509-4d2b-b67f-ebba4ce566c4"
 }

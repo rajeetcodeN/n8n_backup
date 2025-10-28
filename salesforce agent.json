@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Embeddings OpenAI": {
       "ai_embedding": [
@@ -446,6 +446,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-08-12T13:20:01.000Z",
+  "updatedAt": "2025-10-27T13:27:29.000Z",
   "versionId": "54c1cebb-dee0-4098-89f2-06e935ccb8a5"
 }

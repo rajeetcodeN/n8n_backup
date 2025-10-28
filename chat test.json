@@ -267,17 +267,6 @@
         ]
       ]
     },
-    "Schedule Trigger": {
-      "main": [
-        [
-          {
-            "node": "Google Drive",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Wait": {
       "main": [
         [
@@ -1064,23 +1053,6 @@
       ]
     },
     {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {}
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        -1312,
-        640
-      ],
-      "id": "5e8a9948-1846-41f5-9c61-d3842c75544f",
-      "name": "Schedule Trigger"
-    },
-    {
       "parameters": {},
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
@@ -1638,7 +1610,7 @@
     }
   },
   "tags": [],
-  "triggerCount": 2,
-  "updatedAt": "2025-09-04T11:16:25.000Z",
-  "versionId": "ed36df81-ece4-492a-a9a6-5b3e92af7d91"
+  "triggerCount": 1,
+  "updatedAt": "2025-09-25T08:12:52.000Z",
+  "versionId": "b746d497-4213-4030-a2db-397de33af7f7"
 }

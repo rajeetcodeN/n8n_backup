@@ -80,13 +80,7 @@
     },
     "Filter1": {
       "main": [
-        [
-          {
-            "node": "Merge1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Merge1": {
@@ -127,11 +121,6 @@
         [
           {
             "node": "Fetch Reddit Posts",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "daily ai",
             "type": "main",
             "index": 0
           },
@@ -353,7 +342,7 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        220,
+        224,
         0
       ],
       "id": "0bf3f70b-4389-47ee-89d2-0b9cca47408d",
@@ -382,7 +371,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        440,
+        448,
         0
       ],
       "id": "96261da6-daac-4160-a9f7-48fcf61b9ee8",
@@ -405,7 +394,7 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        660,
+        672,
         0
       ],
       "id": "15be957d-b621-4108-af86-c198a6bd7669",
@@ -424,8 +413,8 @@
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
-        -220,
-        1160
+        -224,
+        1168
       ],
       "id": "e79bbd37-4ea0-406b-8765-84adfa865d40",
       "name": "When Executed by Another Workflow"
@@ -438,7 +427,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
       "typeVersion": 1,
       "position": [
-        580,
+        592,
         560
       ],
       "id": "5542ae05-7cdb-48d5-a6b8-a6253a1feb22",
@@ -457,7 +446,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
       "position": [
-        1480,
+        1488,
         400
       ],
       "id": "4d3b499e-f11d-441a-a664-89a4c65bc978",
@@ -471,7 +460,7 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        1660,
+        1664,
         400
       ],
       "id": "83ab87f4-cf60-4d09-80fb-5c64d3a896dc",
@@ -494,7 +483,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2260,
+        2272,
         400
       ],
       "id": "7fbb0a84-db9c-46eb-83e0-ed5cdc389245",
@@ -523,8 +512,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        120,
-        580
+        128,
+        592
       ],
       "id": "07e8ed70-da84-41e6-be8b-cd1fe17f2071",
       "name": "Edit Fields"
@@ -536,8 +525,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        120,
-        820
+        128,
+        832
       ],
       "id": "2adc4395-136b-40fa-a826-896968b25015",
       "name": "Code2"
@@ -579,8 +568,8 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        340,
-        820
+        352,
+        832
       ],
       "id": "a3dc69da-5f1c-4701-942c-7ff17166ce4e",
       "name": "Filter"
@@ -595,15 +584,6 @@
             "version": 2
           },
           "conditions": [
-            {
-              "id": "47778cd8-503c-49d3-9155-d1e81d993eea",
-              "leftValue": "={{ $json.content }}",
-              "rightValue": "ai",
-              "operator": {
-                "type": "string",
-                "operation": "regex"
-              }
-            },
             {
               "id": "4f54181f-3292-4822-a93b-e8f210925ed9",
               "leftValue": "={{ $json.title }}",
@@ -621,8 +601,8 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        340,
-        580
+        352,
+        592
       ],
       "id": "3b841e9e-b8fd-43b7-b1ae-3756c76e6e11",
       "name": "Filter1"
@@ -655,7 +635,7 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        780,
+        784,
         720
       ],
       "id": "ba50471e-5ce6-490a-acf8-5305fd57c222",
@@ -686,7 +666,7 @@
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
       "typeVersion": 1.1,
       "position": [
-        920,
+        928,
         560
       ],
       "id": "722c19a5-a080-436d-8f91-315432ad2b72",
@@ -700,7 +680,7 @@
       "typeVersion": 1,
       "position": [
         1760,
-        700
+        704
       ],
       "id": "ed6ffe8c-5fec-430a-937c-a37bee7c5870",
       "name": "Mistral Cloud Chat Model1",
@@ -720,7 +700,7 @@
       "typeVersion": 1,
       "position": [
         880,
-        220
+        224
       ],
       "id": "b5c8c4be-87cd-4e4f-b26d-34201b760109",
       "name": "Mistral Cloud Chat Model2",
@@ -789,8 +769,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -660,
-        380
+        -656,
+        384
       ],
       "id": "7f099016-6e1a-4edf-a536-c2c72593211d",
       "name": "Schedule Trigger"
@@ -803,8 +783,8 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.1,
       "position": [
-        -100,
-        580
+        -96,
+        592
       ],
       "id": "9f113e4c-9366-4b44-b900-c8029403a49e",
       "name": "daily ai"
@@ -819,8 +799,8 @@
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.1,
       "position": [
-        -100,
-        820
+        -96,
+        832
       ],
       "id": "8776f0fd-fd76-460c-ad45-763d7e51f86b",
       "name": "tech crunch"
@@ -836,8 +816,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.9,
       "position": [
-        500,
-        360
+        512,
+        368
       ],
       "id": "68847880-72ee-43db-ba09-2820984d2fbc",
       "name": "AI Agent1"
@@ -865,14 +845,16 @@
     },
     {
       "parameters": {
+        "promptType": "define",
+        "text": "You are a data collector and summarizer.",
         "options": {
-          "systemMessage": "=# Overview\nYou are a data collector and summarizer. \n#important use all the data given below\nYou have access to two sets of input data:  \n- Reddit data: {{ $json.data[0].output.text }}  \n- News data: {{ $json.data[0].output }}\n-RSS feed data :{{ $json.data[2].output.text }}\n## Instruction\n \nBased on the recent Reddit data, News data and RSS feed data on the given topic:AI ( Artificial Inteligence)\n\n- FIRST TAKE SUMMARY FROM REDDIT  \n- Focus on any one or two emerging trends, insights, or shifts  \n- Write like a **smart, well-informed human** would — not robotic  summary base on details you got \n- Make it useful and easy to read by a business audience\n-AVOID NEGATIVE ,RELIGIOUS AND RANT , HATE SPEECH.\n- give title and suammry \n\ndo they same rss and news as well\n\n\n- Do keep headings, bullet points, citations, links, or tool names  and stats important\n-  Write a **natural-sounding, well-written paragraph** with title  \n- It should feel fresh, insightful, and clear — like a trend summary or market readout\n\n\n## Content Quality Rules (Must Follow)\n\n- Avoid generic or vague statements.\n- Make every post **focused on one strong idea**, based on a real, current topic.\n- The post should feel **fresh, specific, and valuable to the reader** — especially founders, ops, and tech leaders.\n- Use trending or **recently discussed AI topics** as the foundation for the post.\n- The message must be **catchy and informative**, not just filler.\n- Think of it as something a smart peer would share on LinkedIn — short, useful, and relevant.\n- Consider anchoring in a current stat, use case, or recent shift (e.g., real-time LLM-driven customer intent recognition)this is very important.\n-dont summary multiple topic together pic or one 1 or 2 topic give summary  about them so final outpuy will have a topic summary\n-i need about 5 to 6 such summary 1 or 2 from each news,rss and news \n\n## Output Format\n\n```yaml\nsummary: >\n  [title:\nsource :\nsummary:]"
+          "systemMessage": "=# Overview\nYou are a data collector and summarizer. \n#important use all the data given below\nYou have access to two sets of input data:  \n- Reddit data: {{ $json.data[0].output.text }}  \n- News data: {{ $json.data[0].output }}\n-RSS feed data :{{ $json.data[2].output.text }}\n## Instruction\n\nBased on the recent Reddit data, News data and RSS feed data on the given topic:AI ( Artificial Inteligence)\n\n- FIRST TAKE SUMMARY FROM REDDIT  \n- Focus on any one or two emerging trends, insights, or shifts  \n- Write like a **smart, well-informed human** would — not robotic  summary base on details you got \n- Make it useful and easy to read by a business audience\n-AVOID NEGATIVE ,RELIGIOUS AND RANT , HATE SPEECH.\n- give title and suammry \n\ndo they same rss and news as well\n\n\n- Do keep headings, bullet points, citations, links, or tool names  and stats important\n-  Write a **natural-sounding, well-written paragraph** with title  \n- It should feel fresh, insightful, and clear — like a trend summary or market readout\n\n\n## Content Quality Rules (Must Follow)\n\n- Avoid generic or vague statements.\n- Make every post **focused on one strong idea**, based on a real, current topic.\n- The post should feel **fresh, specific, and valuable to the reader** — especially founders, ops, and tech leaders.\n- Use trending or **recently discussed AI topics** as the foundation for the post.\n- The message must be **catchy and informative**, not just filler.\n- Think of it as something a smart peer would share on LinkedIn — short, useful, and relevant.\n- Consider anchoring in a current stat, use case, or recent shift (e.g., real-time LLM-driven customer intent recognition)this is very important.\n-dont summary multiple topic together pic or one 1 or 2 topic give summary  about them so final outpuy will have a topic summary\n-i need about 5 to 6 such summary 1 or 2 from each news,rss and news \n\n## Output Format\n\n```yaml\nsummary: >\n  [title:\nsource :\nsummary:]"
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.9,
       "position": [
-        1820,
+        1824,
         400
       ],
       "id": "74fee0cd-7359-45a1-8c83-c1074766162c",
@@ -900,6 +882,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-31T11:14:01.000Z",
-  "versionId": "11c4d535-8f17-4627-b476-5f1d0a36ddf5"
+  "updatedAt": "2025-10-12T19:50:44.000Z",
+  "versionId": "0f9e92e5-fba5-4150-aa60-f3dc684a8eea"
 }

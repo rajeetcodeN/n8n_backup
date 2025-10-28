@@ -393,9 +393,7 @@
       "parameters": {
         "public": true,
         "mode": "webhook",
-        "options": {
-          "responseMode": "lastNode"
-        }
+        "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.3,
@@ -429,6 +427,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-09-03T13:47:41.000Z",
-  "versionId": "93d5b474-7225-4310-bde0-a2e3eaa3f84e"
+  "updatedAt": "2025-10-26T05:30:57.000Z",
+  "versionId": "cb0d8aa4-24ee-4722-a4b6-454a2eb4e91d"
 }

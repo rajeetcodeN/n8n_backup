@@ -1,0 +1,965 @@
+{
+  "active": false,
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Split Binary Attachments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Binary Attachments": {
+      "main": [
+        [
+          {
+            "node": "Loop: Process Each Attachment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop: Process Each Attachment": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Switch File Type1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Spreadsheet File1": {
+      "main": [
+        [
+          {
+            "node": "Code6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code6": {
+      "main": [
+        [
+          {
+            "node": "Aggregate3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Set Timesheet JSON Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Cloud Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch File Type1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields10",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Read Spreadsheet File1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields7": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields8": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Upload1": {
+      "main": [
+        [
+          {
+            "node": "Mistral Signed URL1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Signed URL1": {
+      "main": [
+        [
+          {
+            "node": "Mistral DOC OCR1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral DOC OCR1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields9",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Mistral file delete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields9": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code10": {
+      "main": [
+        []
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields10": {
+      "main": [
+        [
+          {
+            "node": "Mistral Upload1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Timesheet JSON Fields": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-09-09T14:20:37.314Z",
+  "id": "I9hHLTXghmNlgGVM",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 27",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {
+          "q": "=has:attachment (filename:timesheet OR subject:timesheet)",
+          "readStatus": "unread"
+        },
+        "options": {
+          "downloadAttachments": true
+        }
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -4800,
+        -416
+      ],
+      "id": "d09f50c0-d0e6-4886-a3bd-e7e0da0785a8",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "GjmgJcRU3g4v3mEv",
+          "name": "Gmail account 5"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const newItems = [];\n\nconst binary = items[0].binary;\n\nfor (const key in binary) {\n  newItems.push({\n    json: {},\n    binary: {\n      [key]: binary[key]\n    }\n  });\n}\n\nreturn newItems;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -4576,
+        -416
+      ],
+      "id": "d9980dab-991f-4dd9-973e-78c073325fdf",
+      "name": "Split Binary Attachments"
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -4336,
+        -432
+      ],
+      "id": "8a78de9b-aaf6-45ac-bea5-8c880952dd63",
+      "name": "Loop: Process Each Attachment",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12c3738c-4b46-44fe-a482-efeb1beda924",
+              "name": "=Employee Name",
+              "value": "={{ JSON.parse($json[\"output\"])[0].document_info.employee_name }}\n\n\n",
+              "type": "string"
+            },
+            {
+              "id": "b6bdd6c3-f57d-4695-9863-68e37b3bf10b",
+              "name": "=Total Billable hours",
+              "value": "={{ JSON.parse($json[\"output\"])[0].document_info.total_hours }}\n\n\n",
+              "type": "string"
+            },
+            {
+              "id": "f826dc43-34ca-47bf-a823-9e21c0a46df8",
+              "name": "Week Start Date",
+              "value": "={{ JSON.parse($json[\"output\"])[0].document_info.week_start_date.trim() }}\n",
+              "type": "string"
+            },
+            {
+              "id": "faf34b88-5e61-4c15-97b6-7c933d69c279",
+              "name": "Week End Date",
+              "value": "={{ JSON.parse($json[\"output\"])[0].document_info.week_end_date.trim() }}\n",
+              "type": "string"
+            },
+            {
+              "id": "95dd93b1-8e25-422f-b6fb-73bf65aa792e",
+              "name": "Client Name",
+              "value": "={{ JSON.parse($json[\"output\"])[0].document_info.client_name.trim() }}",
+              "type": "string"
+            },
+            {
+              "id": "8c92f891-1393-4199-b9ba-3683750455f1",
+              "name": "Current Year",
+              "value": "={{ new Date(JSON.parse($json[\"output\"])[0].document_info.week_start_date).getFullYear() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2480,
+        -400
+      ],
+      "id": "59902239-0022-442c-9639-a21ab63bb09f",
+      "name": "Set Timesheet JSON Fields"
+    },
+    {
+      "parameters": {
+        "options": {
+          "headerRow": true
+        }
+      },
+      "id": "8b47cf18-d720-499f-ac1f-0531c0c7377c",
+      "name": "Read Spreadsheet File1",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "position": [
+        -3760,
+        -416
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsCode": "// Convert Excel serial date -> YYYY-MM-DD\nconst base = new Date(Date.UTC(1899, 11, 30));\nfunction fromSerial(s) {\n  if (!s || isNaN(Number(s))) return s; // skip if not a number\n  const ms = Number(s) * 86400 * 1000;\n  return new Date(base.getTime() + ms).toISOString().slice(0, 10);\n}\n\nreturn items.map(item => {\n  let row = { ...item.json };\n\n  // Convert possible date fields\n  if (row.__EMPTY && !isNaN(row.__EMPTY)) {\n    row.__EMPTY = fromSerial(row.__EMPTY);\n  }\n  if (row.__EMPTY_1 && !isNaN(row.__EMPTY_1) && row[\" Contractor Timesheet\"]?.includes(\"Weekending\")) {\n    row.__EMPTY_1 = fromSerial(row.__EMPTY_1);\n  }\n\n  return { json: row };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -3520,
+        -416
+      ],
+      "id": "eab8acf6-9472-464c-b0df-74d2bcbb29d5",
+      "name": "Code6"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You must respond ONLY with valid raw rendered JSON.\n- Do NOT include the word \"json\".\n- Do NOT include the word \"```json\".\n- Do NOT use triple backticks or markdown formatting.\n- Do NOT wrap the response in any key like \"output\".\n- Do NOT write anything starting at output directly start with valid root-level JSON.\n- Only respond with a valid, root-level JSON object.\n- Do NOT skip any line item. \n\n\n{{ $json.content }}\n",
+        "options": {
+          "systemMessage": "=Your sole function is to be a meticulous data extraction AI. Your task is to analyze the provided timesheet documents (images, PDFs, etc.) and convert the information into a structured JSON format with absolute precision, following the rules below.  \n\nFor each timesheet, first extract all summary-level information into the `document_info` object. This includes:  \n\n- Employee Name  \n- Week Starting Date  \n- Week Ending Date  \n- Total Working Hours  \n- Client Name  \n\n### Rules\n\n\nInstructions:\n\n- For Week Starting Date:  \n  - If a phrase like \"Period from ... to ...\" is present, extract the **first date** from it. Use the date exactly as written.  \n  - If no such phrase is found, and there is a row with weekdays like \"Monday Tuesday...\" followed by short-form dates like \"Mar-17\", \"May-5\", etc., extract the **first date** in that row.  \n  - Convert the short-form date into full format: **MM/DD/YYYY**.  \n    Example: \"Mar-17\" → \"03/17/2025\", \"May-5\" → \"05/05/2025\".  \n  - Do not return \"Mar-17\", \"May-5\", or any partial date format. Always return the full date in MM/DD/YYYY.\n\n- For Week Ending Date:  \n  - If a phrase like \"Period from ... to ...\" is present, extract the **second date**.  \n  - If weekday headers with short-form dates are present, extract the **last date** in that row.  \n  - Again, convert to **MM/DD/YYYY** format.  \n    Example: \"May-11\" → \"05/11/2025\".\n\n- Do not calculate, assume, or guess dates. Only convert short-form dates to MM/DD/YYYY format using the correct month and year from the timesheet.\n- Look for a label such as:\n - \"Total Hours\",  \n   - \"Total Billable Hours\", \n  - \"Total Number of Hours Worked\"  \n   - or any clearly indicated **total row or cell** at the bottom of the table.\n\n- Do not sum individual daily entries.\n- Return numbers exactly as shown (e.g., 40.00).\n\n---\n\n### Output Format  \n\n# You must respond ONLY with valid raw rendered JSON.  \n\n- Do NOT include the word `\"json\"`.  \n- Do NOT include ```json.  \n- Do NOT use triple backticks or markdown formatting.  \n- Do NOT wrap the response in any key like `\"output\"`.  \n- Do NOT write anything before the opening `[` of the JSON array.  \n\n---\n\nvery important - Only respond with a valid, root-level JSON array.  \nNo \"output\" wrapper.\nNo backticks.\nNo \"json\" label\n\nspecial instruction \n\nExtract the value after \"Period ending\". \nThe date may contain spaces or OCR errors (e.g. \"8/1 0/2025\", \"8/1/0/2025\"). \nAlways normalize it to the format YYYY-MM-DD. \nIf you see \"8/1 0/2025\", interpret it as 2025-08-10.\n\n\n### Final JSON Schema  \n\n[\n  {\n    \"document_info\": {\n      \"employee_name\": null,\n      \"week_start_date\": null,\n      \"week_end_date\": null,\n      \"total_hours\": null,\n      \"client_name\": null\n    }\n  }\n]\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        -2896,
+        -400
+      ],
+      "id": "dc6b1cb5-4ab2-4a45-bf73-e18b70c39cfb",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "mistral-small-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        -2800,
+        -176
+      ],
+      "id": "6d1bfd8b-a4c3-455a-ba52-69d20368ae4b",
+      "name": "Mistral Cloud Chat Model",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "application/pdf",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "509a71b4-8c1b-419b-8d8b-fc2c68b86bf2"
+                  },
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "application/msword",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "e492cbb6-eaca-42fa-95b6-8cb1363b1ead"
+                  },
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "44e10cb4-4d6a-41f4-a34d-f9f635e6c998"
+                  },
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "application/vnd.google-apps.document",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "33eaa3dd-d6c6-4fbb-a625-9db12fd6b13c"
+                  }
+                ],
+                "combinator": "or"
+              },
+              "renameOutput": true,
+              "outputKey": "pdf/doc"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "application/vnd.ms-excel",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  },
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  },
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "application/vnd.google-apps.spreadsheet",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "or"
+              },
+              "renameOutput": true,
+              "outputKey": "excel"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "image/jpeg",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  },
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "image/png",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  },
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "image/tiff",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  },
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "image/gif",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  },
+                  {
+                    "leftValue": "={{ $binary[Object.keys($binary)[0]].mimeType }}",
+                    "rightValue": "image/bmp",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "or"
+              },
+              "renameOutput": true,
+              "outputKey": "image"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "none"
+        }
+      },
+      "id": "fedcfddd-3da5-4208-92d1-719b6b9d2b30",
+      "name": "Switch File Type1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        -4080,
+        -448
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "530eae36-2bc2-4f6f-8755-73b44da913e4",
+              "name": "content",
+              "value": "={{ $json.data }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3152,
+        -416
+      ],
+      "id": "5da78cf9-3567-42f2-9865-5fd38c0efb60",
+      "name": "Edit Fields7"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cefc6cbe-dcc3-4cd5-bf3c-735320ece1fe",
+              "name": "content",
+              "value": "={{ JSON.parse($json[\"data\"][0]).blocks[0].content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3216,
+        -160
+      ],
+      "id": "1bf4f056-7e22-497f-a8ad-af249abdc6cb",
+      "name": "Edit Fields8"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/files",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "purpose",
+              "value": "ocr"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "12f5d5f3-d316-461f-9c77-e1143ead6fe7",
+      "name": "Mistral Upload1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -3632,
+        -592
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.mistral.ai/v1/files/{{ $json.id }}/url",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "expiry",
+              "value": "1"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9e718852-b567-47c9-8aa5-19f083cdb299",
+      "name": "Mistral Signed URL1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -3408,
+        -592
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"document_url\": \"{{ $json.url }}\"\n  },\n  \"bbox_annotation_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"schema\": {\n        \"properties\": {\n          \"image_type\": { \"title\": \"Image_Type\", \"type\": \"string\", \"description\": \"type of image\" },\n          \"short_description\": { \"title\": \"Short_Description\", \"type\": \"string\", \"description\": \"short description\" },\n          \"summary\": { \"title\": \"Summary\", \"type\": \"string\", \"description\": \"summary of the image\" }\n        },\n        \"required\": [\"image_type\",\"short_description\",\"summary\"],\n        \"title\": \"BBOXAnnotation\",\n        \"type\": \"object\",\n        \"additionalProperties\": false\n      },\n      \"name\": \"bbox_annotation\",\n      \"strict\": true\n    }\n  },\n  \"include_image_base64\": false\n}\n",
+        "options": {}
+      },
+      "id": "be175e77-f5d6-4efe-9beb-493924fffff0",
+      "name": "Mistral DOC OCR1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -3184,
+        -592
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cefc6cbe-dcc3-4cd5-bf3c-735320ece1fe",
+              "name": "content",
+              "value": "={{ $json.pages[0].markdown }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3008,
+        -560
+      ],
+      "id": "80093da8-cc9c-45f1-9e48-fb8e0af2af9f",
+      "name": "Edit Fields9"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -3312,
+        -416
+      ],
+      "id": "5718cdf9-0382-47f3-96db-fa7d4c5db049",
+      "name": "Aggregate3"
+    },
+    {
+      "parameters": {
+        "jsCode": "// input[0].json contains your JSON\nconst outputString = $json[\"output\"];\n\n// Parse the string\nconst parsedJSON = JSON.parse(outputString);\n\n// Return as n8n items\nreturn parsedJSON.map(item => ({ json: item }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1616,
+        32
+      ],
+      "id": "580dd6d0-369d-4571-a2f5-eaad544c4b3a",
+      "name": "Code10"
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "=https://api.mistral.ai/v1/files/{{ $('Mistral Upload1').item.json.id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "id": "34679c68-7d9f-422d-931d-5782b4da4691",
+      "name": "Mistral file delete",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -2832,
+        -864
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://universal-file-to-text-extractor.vercel.app/extract",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "mode",
+              "value": "single"
+            },
+            {
+              "name": "output_type",
+              "value": "jsonl"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "files",
+              "inputDataFieldName": "data"
+            },
+            {
+              "name": "include_images",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -3472,
+        -160
+      ],
+      "id": "8a62ec2f-1a13-43e1-8958-bd6c8aaa7eab",
+      "name": "HTTP Request3",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e5bd95ba-8269-404a-bf9d-fa0d25398b59",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3856,
+        -592
+      ],
+      "id": "bad94b47-40a7-43ec-aabc-3ddd87028b26",
+      "name": "Edit Fields10"
+    },
+    {
+      "parameters": {
+        "jsCode": "return items.map(item => {\n  const firstKey = Object.keys(item.binary || {})[0];\n\n  if (!firstKey) return item;\n\n  return {\n    json: item.json,\n    binary: { data: item.binary[firstKey] },\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -3728,
+        -176
+      ],
+      "id": "f088394c-d337-4c61-b728-ced337df34a3",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12c3738c-4b46-44fe-a482-efeb1beda924",
+              "name": "=Employee Name",
+              "value": "={{ JSON.parse($json[\"output\"])[0].document_info.employee_name }}\n\n\n",
+              "type": "string"
+            },
+            {
+              "id": "b6bdd6c3-f57d-4695-9863-68e37b3bf10b",
+              "name": "=Total Billable hours",
+              "value": "={{ JSON.parse($json[\"choices\"][0][\"message\"][\"content\"])[\"Total Working Hours\"].replace(/[\\n\\r]/g, '').trim() }}\n\n",
+              "type": "string"
+            },
+            {
+              "id": "f826dc43-34ca-47bf-a823-9e21c0a46df8",
+              "name": "Week Start Date",
+              "value": "={{ JSON.parse($json[\"choices\"][0][\"message\"][\"content\"])[\"Week Starting Date\"].replace(/[\\n\\r]/g, '').replaceAll('/', '-') .trim() }}\n",
+              "type": "string"
+            },
+            {
+              "id": "faf34b88-5e61-4c15-97b6-7c933d69c279",
+              "name": "Week End Date",
+              "value": "={{ JSON.parse($json[\"choices\"][0][\"message\"][\"content\"])[\"Week Ending Date\"].replaceAll('/', '-').trim().replace(/[\\n\\r]/g, '')}}\n",
+              "type": "string"
+            },
+            {
+              "id": "95dd93b1-8e25-422f-b6fb-73bf65aa792e",
+              "name": "Client Name",
+              "value": "={{ JSON.parse($json[\"choices\"][0][\"message\"][\"content\"].replaceAll('\\n', '').replaceAll('\\r', ''))[\"Client Name\"].trim() }}\n",
+              "type": "string"
+            },
+            {
+              "id": "8c92f891-1393-4199-b9ba-3683750455f1",
+              "name": "Current Year",
+              "value": "={{ JSON.parse($json[\"choices\"][0][\"message\"][\"content\"])[\"Week Starting Date\"].split('/')[2] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2176,
+        112
+      ],
+      "id": "fbaa56b4-6368-41d2-a60d-0f830df79ded",
+      "name": "Set Timesheet JSON Fields1"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-09T14:20:37.321Z",
+      "updatedAt": "2025-09-09T14:20:37.321Z",
+      "role": "workflow:owner",
+      "workflowId": "I9hHLTXghmNlgGVM",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-09T14:58:02.000Z",
+  "versionId": "a7a7efdf-f1b5-4930-95d3-46f0a41f29d2"
+}

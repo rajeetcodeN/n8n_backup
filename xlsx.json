@@ -72,11 +72,6 @@
       "main": [
         [
           {
-            "node": "Mistral DOC OCR8",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "Mistral DOC OCR6",
             "type": "main",
             "index": 0
@@ -446,8 +441,8 @@
       "name": "Mistral DOC OCR6",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -864,
-        736
+        -880,
+        560
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -508,8 +503,8 @@
       "name": "Mistral DOC OCR8",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -848,
-        528
+        -464,
+        448
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -753,6 +748,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-09-04T07:48:22.000Z",
-  "versionId": "1cad6943-8df4-4266-944a-5adbfe0268ed"
+  "updatedAt": "2025-09-09T15:50:10.000Z",
+  "versionId": "59fa1186-d209-4465-81b7-dcea74f102c6"
 }

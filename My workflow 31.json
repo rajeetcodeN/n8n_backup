@@ -1,0 +1,597 @@
+{
+  "active": false,
+  "connections": {
+    "Supabase Vector Store1": {
+      "ai_tool": [
+        [
+          {
+            "node": "ai agent cost estimate",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Cloud Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "ai agent cost estimate",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "ai agent cost estimate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Mistral Cloud3": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "ai agent cost estimate",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "ai agent cost estimate",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "button",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Cloud Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "button",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "button": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "ai agent cost estimate",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "ai agent cost estimate": {
+      "main": [
+        [
+          {
+            "node": "button",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "ai agent cost estimate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-22T14:34:30.725Z",
+  "id": "o8Hp8T0kzBxj2xt4",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 31",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "documents",
+        "toolDescription": "Use RAG to look up information in the knowledgebase.",
+        "tableName": {
+          "__rl": true,
+          "value": "products",
+          "mode": "list",
+          "cachedResultName": "products"
+        },
+        "topK": 10,
+        "options": {
+          "queryName": "match_product"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1,
+      "position": [
+        480,
+        720
+      ],
+      "id": "fc3e72e6-de7b-47c9-94f6-4aad241d6717",
+      "name": "Supabase Vector Store1"
+    },
+    {
+      "parameters": {
+        "model": "mistral-medium-latest",
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        656
+      ],
+      "id": "8b7c3d2d-1eef-42df-9b68-e7c0ecaadb1e",
+      "name": "Mistral Cloud Chat Model1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9a9a245e-f1a1-4282-bb02-a81ffe629f0f",
+              "name": "chatInput",
+              "value": "={{ $json.chatInput || $json.body[0].chatInput }}",
+              "type": "string"
+            },
+            {
+              "id": "b80831d8-c653-4203-8706-adedfdb98f77",
+              "name": "sessionId",
+              "value": "={{ $json.sessionId || $json.body[0].sessionId }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "36866415-8495-44c6-b6cb-06df7aeb90ef",
+      "name": "Edit Fields5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -16,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        496,
+        848
+      ],
+      "id": "acaebc27-f6d3-4126-82ed-8a80bd338b73",
+      "name": "Embeddings Mistral Cloud3"
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Nosta cost calculations\n",
+        "options": {
+          "subtitle": "",
+          "title": "Nosta cost calculations",
+          "customCss": ":root {\n  /* Brand Colors (Nosta) */\n  --chat--color-primary: #009EE3; /* Nosta Azure‑blue */\n  --chat--color-primary-shade-50: #007bb8;\n  --chat--color-primary-shade-100: #005d8f;\n  --chat--color-secondary: #582DC6; /* Nosta Violet accent */\n  --chat--color-secondary-shade-50: #461fa1;\n  --chat--color-secondary-shade-100: #36197a;\n  --chat--color-white: #FFFFFF;\n  --chat--color-light: #E4E4E4; /* light grey surfaces & borders */\n  --chat--color-light-shade-50: #d1d1d1;\n  --chat--color-light-shade-100: #bdbdbd;\n  --chat--color-medium: #B5BCC9;\n  --chat--color-dark: #000000; /* solid black text */\n  --chat--color-disabled: #9FA6B2;\n  --chat--color-typing: #555555;\n  --chat--header-height: 4rem;\n\n  /* Layout & Fonts */\n  --chat--spacing: 1rem;\n  --chat--border-radius: 0.5rem;\n  --chat--font-family: 'Roboto', system-ui, sans-serif;\n  --chat--heading-font-family: 'Poppins', system-ui, sans-serif;\n\n  /* Window */\n  --chat--window--width: 420px;\n  --chat--window--height: 600px;\n  --chat--window--z-index: 9999;\n  --chat--window--border: 1px solid var(--chat--color-light-shade-100);\n  --chat--window--border-radius: var(--chat--border-radius);\n\n  /* Header */\n  --chat--header--padding: 0.75rem;                    /* 50% less height */\n  --chat--header--background: var(--chat--color-primary-shade-100); /* deeper blue */\n  --chat--header--color: var(--chat--color-white);\n  --chat--heading--font-size: 1.8em;\n  --chat--subtitle--font-size: 1rem;\n  --chat--subtitle--line-height: 1.5;\n\n  /* Messages */\n  --chat--message--font-size: 1rem;\n  --chat--message--padding: 0.8rem 1rem;\n  --chat--message--border-radius: var(--chat--border-radius);\n  --chat--message--margin-bottom: 0.35rem; /* less spacing */\n  --chat--message-line-height: 1.6;\n  --chat--message--bot--background: #97979738;\n  --chat--message--bot--color: var(--chat--color-dark);\n  --chat--message--user--background: var(--chat--color-primary);\n  --chat--message--user--color: var(--chat--color-white);\n  --chat--message--pre--background: #e8ecf1;\n\n  /* Input */\n  --chat--textarea--height: 52px;\n  --chat--input--background: var(--chat--color-white);\n  --chat--input--text-color: var(--chat--color-dark);\n  --chat--input--padding: 0.75rem 1rem;\n  --chat--input--border: 1px solid var(--chat--color-light-shade-50);\n  --chat--input--border-radius: var(--chat--border-radius);\n\n  /* Buttons */\n  --chat--button--background: var(--chat--color-secondary);\n  --chat--button--color: var(--chat--color-white);\n  --chat--button--hover--background: var(--chat--color-secondary-shade-50);\n  --chat--button--hover--color: var(--chat--color-white);\n  --chat--button--padding: 0.5rem 1.2rem;\n  --chat--button--border-radius: var(--chat--border-radius);\n\n  /* Footer */\n  --chat--body--background: var(--chat--color-light);\n  --chat--footer--background: var(--chat--color-white);\n  --chat--footer--color: var(--chat--color-dark);\n}\n\n/* Structure */\nbody {\n  margin: 0;\n  font-family: var(--chat--font-family);\n  background: var(--chat--body--background);\n}\n\n.chat-window {\n  width: var(--chat--window--width);\n  height: var(--chat--window--height);\n  margin: 2rem auto;\n  border: var(--chat--window--border);\n  border-radius: var(--chat--window--border-radius);\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);\n}\n\n.chat-layout .chat-header {\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: right center;\n    background-image: url(https://www.nosta.com/wp-content/themes/kd-theme/resources/img/nosta.jpg);\n    display: flex;\n    flex-direction: row;\n    justify-content: space-evenly;\n    align-items: center;\n    gap: 1em;\n    height: var(--chat--header-height);\n    padding: var(--chat--header--padding);\n    background-color: var(--chat--header--background);\n    color: var(--chat--header--color);\n    border-top: var(--chat--header--border-top);\n    border-bottom: var(--chat--header--border-bottom);\n    border-left: var(--chat--header--border-left);\n    border-right: var(--chat--header--border-right);\n}\n\n.chat-logo {\n  height: 40px;\n  width: auto;\n}\n\n.chat-header-text h1 {\n  margin: 0;\n  font-family: var(--chat--heading-font-family);\n  font-weight: 600;\n  font-size: var(--chat--heading--font-size);\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n\n.chat-header-text p {\n  margin: 0.25rem 0 0;\n  font-size: var(--chat--subtitle--font-size);\n  line-height: var(--chat--subtitle--line-height);\n}\n\n/* Chat body */\n.chat-body {\n  flex: 1;\n  padding: var(--chat--spacing);\n  background: var(--chat--body--background);\n  overflow-y: auto;\n}\n\n.chat-message {\n  padding: var(--chat--message--padding);\n  margin-bottom: var(--chat--message--margin-bottom);\n  border-radius: var(--chat--message--border-radius);\n  font-size: var(--chat--message--font-size);\n  line-height: var(--chat--message-line-height);\n  max-width: 80%;\n  box-shadow: 0px 5px 9px 3px rgb(0 0 0 / 12%);\n  width: fit-content;\n}\n\n.chat-message.bot {\n  background: var(--chat--message--bot--background);\n  color: var(--chat--message--bot--color);\n  border-left: 3px solid var(--chat--color-primary);\n}\n\n.chat-message.user {\n  background: var(--chat--message--user--background);\n  color: var(--chat--message--user--color);\n  border-left: 3px solid var(--chat--color-secondary);\n  margin-left: auto;\n}\n\n/* Footer */\n.chat-footer {\n  background: var(--chat--footer--background);\n  padding: 0.5rem 1rem;\n  border-top: 1px solid var(--chat--color-light-shade-100);\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n\n.chat-footer textarea {\n  flex-grow: 1;\n  resize: none;\n  padding: var(--chat--input--padding);\n  height: var(--chat--textarea--height);\n  border: var(--chat--input--border);\n  border-radius: var(--chat--input--border-radius);\n  font-family: var(--chat--font-family);\n  font-size: 1rem;\n  color: var(--chat--input--text-color);\n  background: var(--chat--input--background);\n}\n\n.chat-send-button {\n  background: var(--chat--button--background);\n  color: var(--chat--button--color);\n  border: none;\n  padding: var(--chat--button--padding);\n  border-radius: var(--chat--button--border-radius);\n  font-size: 1.25rem;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n\n.chat-send-button:hover {\n  background: var(--chat--button--hover--background);\n}\n\n/* USE THIS UPDATED RULE FOR THE IMAGE */\n.chat-message-markdown img {\n  display: block;       /* Treat the image as a block element */\n  margin-left: auto;    /* Automatically calculate left margin */\n  margin-right: auto;   /* Automatically calculate right margin */\n  max-width: 95%;\n  max-height: 350px;\n  height: auto;\n  border-radius: var(--chat--border-radius);\n  margin-top: 0.5rem;\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -416,
+        336
+      ],
+      "id": "fec2d4cc-ea5e-4f80-b4b7-21cf11d0139f",
+      "name": "When chat message received",
+      "webhookId": "0bd23e9c-d53d-47af-bcf6-9ca810ca6a54"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{json.sessionId}}",
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        496
+      ],
+      "id": "102c8f0b-a2fc-4d6a-817b-75a9e323b270",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "b4c843be-698d-40c6-8e31-9370f5e165e0",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -272,
+        48
+      ],
+      "id": "773b9e2e-9027-40b1-9119-7cbe9b554b4f",
+      "name": "Webhook",
+      "webhookId": "b4c843be-698d-40c6-8e31-9370f5e165e0"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        1856,
+        224
+      ],
+      "id": "d3280d0f-4852-42b4-b7f0-f7b2425eb11f",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "[\"Option1,Option2,Option3\"]"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1040,
+        576
+      ],
+      "id": "18d2fa4a-5d94-480e-a12c-7b95209852df",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "model": "mistral-medium-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        912,
+        560
+      ],
+      "id": "e56da664-5e2b-412c-921f-ed6446420d14",
+      "name": "Mistral Cloud Chat Model2"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1648,
+        192
+      ],
+      "id": "4cc25b9a-1dcc-4b31-85af-df90d361209a",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Chatbot response:  {{ $json.output }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=# Role\nYou are an AI assistant specialized in generating concise, highly relevant follow-up prompts (auto-suggestion responses) for the **Nosta GmbH support system**.  \nYour objective is to enhance user engagement by suggesting what the user might naturally want to do next, based on the chatbot’s latest response and the conversation history.\n\n# Context\nThe chatbot handles:  \n- **Cost Estimation Form guidance**  \n- **Cost Calculations**  \n- **Product Catalog navigation**  \n\nYou will receive:  \n- The final chatbot response (the most recent message sent by the bot to the user).  \n- The complete conversation history up to that point.  \n\nYour task is to analyze both to understand the user’s needs, intentions, and possible next steps.  \nThe follow-up prompts you generate should help the user continue seamlessly, clarify information, or explore related options.  \n\n---\n\n# Examples\n\n#### Example 1\n**Final bot response:**  \n\"Perfect! Step 1: Please choose a Product Group: Passfeder, Scheibenfeder, or Nutenstein.\"  \n**Generated follow-up prompts:**  \n```json\n[\n  \"Choose Passfeder\",\n  \"Choose Scheibenfeder\",\n  \"Choose Nutenstein\"\n]\nExample 2\nFinal bot response:\n\"You’ve configured your Passfeder. Next, please choose your Bore size (M1–M12) and Number of Bores (1–10).\"\nGenerated follow-up prompts:\n\njson\n[\n  \"Select Bore size\",\n  \"Set number of bores\",\n  \"Go back to material\"\n]\nExample 3\nFinal bot response:\n\"Here’s your cost breakdown. Total per unit = 131.20 EUR. Total for 10 units = 1,312.00 EUR.\"\nGenerated follow-up prompts:\n\njson\n\n[\n  \"Change quantity\",\n  \"Adjust material\",\n  \"Finalize quote\"\n]\nExample 4\nFinal bot response:\n\"You selected Aluminium. Please enter the part’s weight in grams.\"\nGenerated follow-up prompts:\n\njson\n\n[\n  \"Enter weight\",\n  \"Change material\",\n  \"View cost impact\"\n]\nExample 5\nFinal bot response:\n\"The item you requested is not available in our internal catalog.\"\nGenerated follow-up prompts:\n\njson\n\n[\n  \"Search again\",\n  \"Browse catalog\",\n  \"Contact support\"\n]\nExample 6\nFinal bot response:\n\"Great! You’ve entered all details. The final step is to click Add to Quote.\"\nGenerated follow-up prompts:\n\njson\n\n[\n  \"Add to quote\",\n  \"Review details\",\n  \"Start new product\"\n]\nExample 7\nFinal bot response:\n\"Please choose a tolerance class for your part.\"\nGenerated follow-up prompts:\n\njson\n\n[\n  \"Select tolerance\",\n  \"Change dimension\",\n  \"Skip tolerance\"\n]\nExample 8\nFinal bot response:\n\"Would you like to add hardening to this part?\"\nGenerated follow-up prompts:\n\njson\n\n[\n  \"Add hardening\",\n  \"No hardening\",\n  \"More info on hardening\"\n]\nExample 9\nFinal bot response:\n\"Please select a coating option: Zinc, Nickel, or None.\"\nGenerated follow-up prompts:\n\njson\nCopy code\n[\n  \"Choose Zinc\",\n  \"Choose Nickel\",\n  \"No coating\"\n]\nExample 10\nFinal bot response:\n\"Do you want to proceed with a standard part or configure a custom part?\"\nGenerated follow-up prompts:\n\njson\n\n[\n  \"Standard part\",\n  \"Custom part\",\n  \"Compare options\"\n\n]\n\n\n\nfinal output should only be this [\"prompt 1\", \"prompt 2\", \"prompt 3\"]    nothing else\nStrict Rules & Boundaries\nContext Awareness: Prompts must always relate to cost estimation, catalog, or configuration.\n\nRelevance: Suggestions should reflect what the user is most likely to do next (e.g., select, change, review, or continue).\n\nBrevity: Each prompt ≤ 5 words.\n\nActionable: Write prompts as clickable next steps.\n\nFormat: Output only a JSON array of exactly 3 strings.\n\nNo Repetition: Do not repeat prompts already present in the conversation.\n\nNo Out-of-Scope: Avoid generic/unrelated prompts (e.g., orders, delivery, weather).\n\nLimit: Always return exactly 3 prompts.\n\nDo you want me to **expand this list to cover every Nosta form field** (material, quantity, notes, cost per bore, etc.) so you’ll have a full workflow library of examples?\n\nAlways return JSON only.\n\nDo not add any explanation, greeting, or extra text.\n\nUse placeholders for all fields, even if empty.\n\nKeep the separator • exactly as shown.\n\nSkip or leave placeholder for non-applicable fields.\n\nAlways maintain the exact JSON structure.\n\n\nThis ensures the output will **always be valid JSON** and nothing else.  \n\nIf you want, I can make a **ready-to-use “empty placeholders JSON”** without the markdown, just pure JSON you can directly send in your system.  \n\nDo you want me to do that?"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        880,
+        336
+      ],
+      "id": "83406322-18c4-4e9e-a777-78f4b5f79bd0",
+      "name": "button",
+      "retryOnFail": false,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "42fdd7cc-065a-48e3-8f33-c05c950bf141",
+              "name": "button",
+              "value": "={{ $json.output.join(',') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1408,
+        304
+      ],
+      "id": "508307cb-754d-4649-b09e-cf4f802ce0e0",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        352,
+        640
+      ],
+      "id": "956aa0dd-5821-4bd6-8b6c-da8776d6b7b1",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "42fdd7cc-065a-48e3-8f33-c05c950bf141",
+              "name": "button",
+              "value": "=i need more info,what is next step",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1424,
+        464
+      ],
+      "id": "efaf1807-b35e-4862-afc9-1309db48773d",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "=## Persona\nYou are a helpful, intelligent AI support agent for **Nosta GmbH**.  \nYour role is to assist **customers and employees** by:\n\n- Guiding them to fill out the **Cost Estimation Form**  \n- Performing **Cost Calculations**  \n- Navigating the **Product Catalog** for live information and support  \n- provide alternative when a config or material is not available\n- Always incorporate the user’s requested material in the output where possible.\n\nYou must lead the conversation proactively:\n- Ask open-ended questions  \n- Offer suggestions  \n- Anticipate needs and follow up thoughtfully  \n- Keep the conversation moving in a **friendly, professional, and supportive** way  \n\n---\n\n\n## Instruction Set for task\n\n### 1. Form Filling Guide (Interactive)\nYou can act as a **chat-based form** or **UI guide** depending on how the user interacts.  \n\n- **UI mode**: Tell the user where to click and what to select.  \n- **Chat mode**: Collect answers step by step like a form.  \n\n#### Step 1: Choose Product Group\nOptions:  \n- **Passfeder (Keyway)**  \n- **Scheibenfeder (Disc Spring)**  \n- **Nutenstein (T-Slot Nut)**  \n\n#### If Passfeder (Keyway) is selected\n- DIN / Norm: `DIN 6885` | `Keine Norm`  \n- Material: `C45` | `Edelstahl (Stainless Steel)` | `Aluminium`  \n- Width, Height, Depth: `4 – 18`  \n- Weight: grams per part  \n- Bore (Thread): `M1 – M12`  \n- Number of Bores: `1 – 10`  \n- Coating: `Typ 1 – Typ 12`  \n- Hardening: `HRC 40 – HRC 58`  \n- Tolerance (Width & Height): `h4 – h17` | `None`  \n\n#### If Scheibenfeder (Disc Spring) is selected\n- DIN / Norm: `DIN 6888` | `Keine Norm`  \n- Material: `Aluminium`  \n- Width, Height, Depth: `4 – 7` or `16 – 21`  \n- Weight: grams per part  \n- Bore & Number of Bores: Not applicable  \n- Coating: `Typ 1 – Typ 12`  \n- Hardening: `HRC 40 – HRC 58`  \n- Tolerance: `h13 – h17` | `None`  \n\n#### If Nutenstein (T-Slot Nut) is selected\n- DIN / Norm: `Keine Norm`  \n- Material: `Aluminium` | `Messing (Brass)`  \n- Width, Height, Depth: `3 – 7`, `16 – 18`, `22 – 29`  \n- Weight: grams per part  \n- Bore (Thread): `M13 – M21`  \n- Number of Bores: `1 – 10`  \n- Coating: `Typ 1 – Typ 6`, `Typ 13 – Typ 17`  \n- Hardening: `HRC 40 – HRC 58`  \n- Tolerance: `h13 – h17` | `None`  \n\n#### Step 4: Finalize & Add to Quote\n- Quantity: enter total number of parts  \n- Action: click **Add to Quote**  \n- Product gets added to **Current Quote**  \n\n\n\n### important for  unavailable choise this is steps you need to follow .\n\nask what is their requiremnt also  accept the user’s requested material, even if it is not listed in the form.\n\nexample If a user requests a related grade (e.g., C35, C40, C50, C55, etc.) Identify the Nearest Baseline,Find the closest available baseline grade and use its cost for calculationsb but give them, a result.\nIf the requested grade is within ±5% of the baseline cost → accept it and proceed with the calculation.\nIf the requested grade is outside ±5% → still perform the calculation and display the cost.\n---\n\n### 2. Handling User Queries with Current Data\nIf the user is **partway through filling**:  \n- Acknowledge what they have done  \n- Guide them to the **next missing step**  \n\n**Example 1 (Step 2 help)**  \n> You’ve filled in the properties for Passfeder. Great!  \n> Next, please choose your Bore size (M1–M12) and Number of Bores (1–10).  \n\n**Example 2 (Step 4 help)**  \n> You’ve configured your product and set the quantity. Perfect!  \n> The final step is to click **Add to Quote** to include it in your Current Quote.  \n\n---\n\n### 3. Cost Calculation\n\nbased on user input you need make cost calculation\n\n#tool\nCalculator = in case you have issue in calculation use this 'calculator tool'\n\nconst COST_DATA = {\n  MATERIAL_COSTS_PER_GRAM: {\n    C45: 1.5,\n    C60: 2.5,\n    Edelstahl: 3.0,\n    Aluminium: 4.5,\n    Messing: 6.0\n  },\n  BORE_COSTS: {\n    M1: 10, M2: 11, M3: 12, M4: 13, M5: 14, M6: 15, M7: 16, M8: 17, M9: 18,\n    M10: 19, M11: 20, M12: 21, M13: 22, M14: 23, M15: 24, M16: 25, M17: 26,\n    M18: 27, M19: 28, M20: 29, M21: 30\n  },\n  COATING_COSTS: {\n    \"Typ 1\": 3.2, \"Typ 2\": 3.4, \"Typ 3\": 3.6, \"Typ 4\": 3.8, \"Typ 5\": 4.0,\n    \"Typ 6\": 4.2, \"Typ 7\": 4.4, \"Typ 8\": 4.6, \"Typ 9\": 4.8, \"Typ 10\": 5.0,\n    \"Typ 11\": 5.2, \"Typ 12\": 5.4, \"Typ 13\": 5.6, \"Typ 14\": 5.8, \"Typ 15\": 6.0,\n    \"Typ 16\": 6.2, \"Typ 17\": 6.4\n  },\n  TOLERANCE_COSTS: {\n    h4: 1.5, h5: 1.6, h6: 1.7, h7: 1.8, h8: 1.9, h9: 2.0, h10: 2.1, h11: 2.2,\n    h12: 2.3, h13: 2.4, h14: 2.5, h15: 2.6, h16: 2.7, h17: 2.8, none: 0\n  },\n  HARDENING_COSTS: {\n    \"HRC 40\": 50, \"HRC 41\": 60, \"HRC 42\": 70, \"HRC 43\": 80, \"HRC 44\": 90,\n    \"HRC 45\": 100, \"HRC 46\": 110, \"HRC 47\": 120, \"HRC 48\": 130, \"HRC 49\": 140,\n    \"HRC 50\": 150, \"HRC 51\": 160, \"HRC 52\": 170, \"HRC 53\": 180, \"HRC 54\": 190,\n    \"HRC 55\": 200, \"HRC 56\": 210, \"HRC 57\": 220, \"HRC 58\": 230\n  },\n  MATERIAL_DENSITY: {\n    C45: 7.85,\n    C60: 7.84,\n    Edelstahl: 7.95,\n    Aluminium: 2.70,\n    Messing: 8.50\n  }\n};\n\n// Weight calculator — handles mm inputs (missing dim = 1 mm)\nconst calculateWeightFromDimensions = (data) => {\n  const { width, height, depth, material } = data;\n  const density = COST_DATA.MATERIAL_DENSITY[material] || 0;\n\n  // Replace missing or zero values with 1 mm, then convert mm → cm\n  const w = (width && width > 0 ? width : 1) / 10;\n  const h = (height && height > 0 ? height : 1) / 10;\n  const d = (depth && depth > 0 ? depth : 1) / 10;\n\n  // Volume (cm³)\n  const volume = w * h * d;\n\n  // Weight = Volume × Density (g/cm³)\n  return volume * density;\n};\n\n//  Main cost calculation\nconst calculateUnitCost = (data) => {\n  let total = 0;\n\n  // Calculate or use provided weight\n  const weight = data.weight && data.weight > 0 \n    ? data.weight \n    : calculateWeightFromDimensions(data);\n\n  // Material cost\n  total += (COST_DATA.MATERIAL_COSTS_PER_GRAM[data.material] || 0) * weight;\n\n  // Bore cost\n  total += (COST_DATA.BORE_COSTS[data.bore] || 0) * (data.numberOfBores || 0);\n\n  // Coating cost\n  total += COST_DATA.COATING_COSTS[data.coating] || 0;\n\n  // Hardening cost\n  total += COST_DATA.HARDENING_COSTS[data.hardening] || 0;\n\n  // Tolerance costs\n  total += (COST_DATA.TOLERANCE_COSTS[data.toleranceBreite] || 0);\n  total += (COST_DATA.TOLERANCE_COSTS[data.toleranceHohe] || 0);\n\n  return total;\n};\n\nexample\n\nUser’s Input\n\nmaterial: C45  \nweight: 10  \nbore: M1  \nnumberOfBores: 1  \ncoating: Typ 1  \nhardening: HRC 45  \ntoleranceBreite: h4  \ntoleranceHohe: h4  \nquantity: 10  \n\n\nResponse\nHere’s your cost breakdown:\n\nMaterial: 10g × 1.5 EUR/g = 15.00 EUR\n\nBore: 1 × 10 EUR = 10.00 EUR\n\nCoating: Typ 1 = 3.20 EUR\n\nHardening: HRC 45 = 100.00 EUR\n\nTolerance (Width): h4 = 1.50 EUR\n\nTolerance (Height): h4 = 1.50 EUR\n\nTotal per unit = 131.20 EUR\nTotal for 10 units = 1,312.00 EUR\n\n##4. Catalog Suggestions\n\nWhen asked for suggestions/catalog info:\n\n## Knowledge Access Instructions\n- **Primary Source**: Always use the **Supabase store (products)** as the catalog reference.  \n- Query Supabase **only when the user asks for product suggestions or catalog info**.  \n\nIf a product is **found in Supabase**, display:  \n- Item name  \n- Item number  \n- Technical specifications  \n- Dimensions  \n- Product image  \n- Technical drawing link (URL)  \n\n\n\n---\n\n\n\nDisplay Results:\n\nAlways show the user’s chosen grade wherever possible.guide and help user and Incorporate theiur choice. \n\n\nConversation Flow Template\n\nAgent (Greeting)\n\"Hello! 👋 I can help you configure products, calculate costs, or browse the catalog.\nWould you like to start with filling the cost estimation form, or do you want to explore product suggestions?\"\n\nUser (Form start)\n\"Yes, let’s configure a product.\"\n\nAgent\n\"Perfect! Step 1: Please choose a Product Group: Passfeder, Scheibenfeder, or Nutenstein?\"\n\n→ Continue guiding step by step, until all values are collected.\n→ Once all values + quantity are provided, auto-run cost calculation.\n→ If the user asks for suggestions, query Supabase.\n\n\n---\n### instruction for reply\n**Primary focus:** Perform cost calculation whenever the user provides any configuration details — even if some inputs are missing.\n\nIf certain values or configurations are unavailable, make reasonable assumptions and continue the calculation. Do not repeatedly ask for the same details.\n\nGuide the user through the **Cost Estimation Form** only when necessary to complete or confirm key inputs even than do cost calculation.\n\n\n\n",
+          "returnIntermediateSteps": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        224,
+        288
+      ],
+      "id": "1cffb14c-690b-4716-97c6-ddfd63ed030e",
+      "name": "ai agent cost estimate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9a9a245e-f1a1-4282-bb02-a81ffe629f0f",
+              "name": "chatInput",
+              "value": "={{ $json?.chatInput || $json.body.chatInput }}",
+              "type": "string"
+            },
+            {
+              "id": "b80831d8-c653-4203-8706-adedfdb98f77",
+              "name": "sessionId",
+              "value": "={{ $json?.sessionId || $json.body.sessionId}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b746cc09-8f8f-4c20-aaa1-dd89cff55482",
+      "name": "Edit Fields6",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        0
+      ]
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "nosta.app.n8n.cloud",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0",
+            "content-length": "108",
+            "accept": "*/*",
+            "accept-encoding": "gzip, br",
+            "accept-language": "en-US,en;q=0.9",
+            "cdn-loop": "cloudflare; loops=1; subreqs=1",
+            "cf-connecting-ip": "103.211.112.209",
+            "cf-ew-via": "15",
+            "cf-ipcountry": "IN",
+            "cf-ray": "9900127907d44013-BOM",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "cf-worker": "n8n.cloud",
+            "content-type": "application/json",
+            "origin": "https://costcalculation.vercel.app",
+            "priority": "u=1, i",
+            "referer": "https://costcalculation.vercel.app/",
+            "sec-ch-ua": "\"Microsoft Edge\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "103.211.112.209, 172.69.95.169",
+            "x-forwarded-host": "nosta.app.n8n.cloud",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "traefik-prod-users-gwc-39-c65d8f959-mhfpb",
+            "x-is-trusted": "yes",
+            "x-real-ip": "103.211.112.209"
+          },
+          "params": {},
+          "query": {},
+          "body": [
+            {
+              "sessionId": "4ebb34a0958349bf023b97e51a2f284f",
+              "action": "sendMessage",
+              "chatInput": "Choose Scheibenfeder"
+            }
+          ],
+          "webhookUrl": "https://nosta.app.n8n.cloud/webhook/b4c843be-698d-40c6-8e31-9370f5e165e0",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-22T14:34:30.728Z",
+      "updatedAt": "2025-10-22T14:34:30.728Z",
+      "role": "workflow:owner",
+      "workflowId": "o8Hp8T0kzBxj2xt4",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-22T14:34:30.725Z",
+  "versionId": "9cc586a8-e322-405f-8b05-3fbac506628d"
+}

@@ -453,7 +453,13 @@
         -256
       ],
       "id": "b5527b66-2f03-42ac-bb59-3a76fabe9b12",
-      "name": "Supabase4"
+      "name": "Supabase4",
+      "credentials": {
+        "supabaseApi": {
+          "id": "9dYMIwoCFFwT3ZmR",
+          "name": "Supabase account 6 ayan"
+        }
+      }
     },
     {
       "parameters": {},
@@ -718,10 +724,8 @@
         },
         "folderId": {
           "__rl": true,
-          "value": "1eW5r0x6mSG0xnfq-Hjuc49AbDUg-dgf_",
-          "mode": "list",
-          "cachedResultName": "Companies_profiles",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1eW5r0x6mSG0xnfq-Hjuc49AbDUg-dgf_"
+          "value": "=",
+          "mode": "url"
         },
         "options": {}
       },
@@ -732,7 +736,13 @@
         -560
       ],
       "id": "2beb0004-5196-44d6-aec6-0a493f49a0e4",
-      "name": "Google Drive2"
+      "name": "Google Drive2",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
     },
     {
       "parameters": {
@@ -997,10 +1007,8 @@
         },
         "folderId": {
           "__rl": true,
-          "value": "1eW5r0x6mSG0xnfq-Hjuc49AbDUg-dgf_",
-          "mode": "list",
-          "cachedResultName": "Companies_profiles",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1eW5r0x6mSG0xnfq-Hjuc49AbDUg-dgf_"
+          "value": "=",
+          "mode": "url"
         },
         "options": {}
       },
@@ -1011,7 +1019,13 @@
         -1088
       ],
       "id": "2d7ff3e1-b712-4c66-948f-4887bd5693f2",
-      "name": "save to Google Drive1"
+      "name": "save to Google Drive1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
     },
     {
       "parameters": {
@@ -1112,6 +1126,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-25T05:07:15.000Z",
-  "versionId": "52185635-c0d6-4a90-a5b5-9cda25c42fd1"
+  "updatedAt": "2025-10-29T06:24:24.000Z",
+  "versionId": "13f33516-4857-451f-96c9-574eea7af86e"
 }

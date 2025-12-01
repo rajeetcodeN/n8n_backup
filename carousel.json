@@ -1,0 +1,976 @@
+{
+  "active": true,
+  "connections": {
+    "Mistral Cloud Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "Google Drive3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "S32": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields7",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields10",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields7": {
+      "main": [
+        [
+          {
+            "node": "Google Drive2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "S3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Edit Fields10": {
+      "main": [
+        [
+          {
+            "node": "Google Drive1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "S34": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Google Drive1": {
+      "main": [
+        [
+          {
+            "node": "S34",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive2": {
+      "main": [
+        [
+          {
+            "node": "Edit Image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive3": {
+      "main": [
+        [
+          {
+            "node": "Edit Image2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Image2": {
+      "main": [
+        [
+          {
+            "node": "S32",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Image1": {
+      "main": [
+        [
+          {
+            "node": "S3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields12": {
+      "main": [
+        [
+          {
+            "node": "Google Drive4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Image3": {
+      "main": [
+        [
+          {
+            "node": "S35",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive4": {
+      "main": [
+        [
+          {
+            "node": "Edit Image3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "S35": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-03T22:03:30.924Z",
+  "id": "GbXJy6P2mz21LPYZ",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "carousel",
+  "nodes": [
+    {
+      "parameters": {
+        "model": "mistral-small-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        -432,
+        496
+      ],
+      "id": "21db8ba5-9288-4a11-80b9-1cb19a13baf1",
+      "name": "Mistral Cloud Chat Model",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee05a8b8-0010-4f6a-ae59-9acd4cda9c5c",
+              "name": "title",
+              "value": "={{ $json.output.title1 }}",
+              "type": "string"
+            },
+            {
+              "id": "d7579879-3c87-47bf-904e-fd984265631a",
+              "name": "safeName",
+              "value": "={{ $('AI Agent').item.json.output.title1.split(' ')[0].replace(/[^a-zA-Z0-9]/g, '') + '_' + new Date().toISOString().slice(0,10).replace(/-/g, '') }}1",
+              "type": "string"
+            },
+            {
+              "id": "9d254a6b-e6eb-4df4-a771-e03a829ac4d8",
+              "name": "subtext",
+              "value": "={{ $json.output.subtext1 }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        112,
+        48
+      ],
+      "id": "411d4659-e98a-40af-afa4-63e5806d0068",
+      "name": "Edit Fields6"
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "bucketName": "dbtdigi",
+        "fileName": "={{ $json.safeName }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        784,
+        48
+      ],
+      "id": "51689585-30d2-4bf5-a2ec-0e6b972d5f40",
+      "name": "S32",
+      "credentials": {
+        "s3": {
+          "id": "V2cAkPAhH1poyCLK",
+          "name": "S3 account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=##Role\nYou are an assistant with the role of data formatter and banner caption creator.\n\n##Instructions\n1. For any given user query or post, remove only formatting issues such as \\n, **. The output should be clean, grammatically correct, and naturally readable. Important: don't remove emojis.\n2. Based on the cleaned input, create a catchy, relevant, and impactful carousel style text.\n   -If the title should be text is 5 words or less, it will be a single line. all should be different and interesting its should be like carousel style text post in LinkedIn\n   - followed by 1 or 2   sentence of subtext that intersinting and knowledge able also provide value to user ,quotes even steps format you need do this 3 times \n   ### important title and subtext should be max 5 or 7 words,that one sentence of lines\n3. Respond ONLY with a JSON object.\n\n\nExample Input:\n\"This is a **really** awesome new product launch! Get ready for innovation!\\n🚀\"\n\nExample Output:\n```json\n{\n  \"postclean\": \"This is a really awesome new product launch!  ready innovation! \",\n  \"banner_text\": {\n    \"title1\": \"title1 \"\n    \"subtext1\":\"sentence \"\n     \"title2\": \"\"\n    \"subtext2\":\"\"\n      \"title3\": \"\"\n    \"subtext3\":\"\"\n  }\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -416,
+        288
+      ],
+      "id": "5766eea4-1a76-44a1-8902-b5d84db75559",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"postclean\": \"\",\n  \"title1\":\"\",\n  \"subtext1\":\"\",\n    \"title2\":\"\",\n  \"subtext2\":\"\",\n    \"title3\":\"\",\n  \"subtext3\":\"\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        -272,
+        496
+      ],
+      "id": "8000c745-6365-454d-b220-ebb950181431",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e2489da8-e91b-4513-a423-2aea1238e67c",
+              "name": "image1",
+              "value": "=![image1](https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtdigi/{{ $('Edit Fields6').item.json.safeName }})",
+              "type": "string"
+            },
+            {
+              "id": "b5b9cb99-ae50-494c-b13c-8fbf2ba809b3",
+              "name": "",
+              "value": "https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtdigi/3",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        960,
+        48
+      ],
+      "id": "157d8fa3-9b61-41c5-b08b-a83434ccff6f",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee05a8b8-0010-4f6a-ae59-9acd4cda9c5c",
+              "name": "title",
+              "value": "={{ $json.output.title2 }}",
+              "type": "string"
+            },
+            {
+              "id": "d7579879-3c87-47bf-904e-fd984265631a",
+              "name": "safeName",
+              "value": "={{ $('AI Agent').item.json.output.title2.split(' ')[0].replace(/[^a-zA-Z0-9]/g, '') + '_' + new Date().toISOString().slice(0,10).replace(/-/g, '') }}2",
+              "type": "string"
+            },
+            {
+              "id": "9d254a6b-e6eb-4df4-a771-e03a829ac4d8",
+              "name": "subtext",
+              "value": "={{ $json.output.subtext2 }}\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        96,
+        320
+      ],
+      "id": "6ca61daa-54bc-4975-9ab3-6aa0dcd45913",
+      "name": "Edit Fields7"
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "bucketName": "dbtdigi",
+        "fileName": "={{ $json.safeName }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        720,
+        320
+      ],
+      "id": "411b6d5a-a43b-40d3-a7dd-f07fe2a53a8e",
+      "name": "S3",
+      "credentials": {
+        "s3": {
+          "id": "V2cAkPAhH1poyCLK",
+          "name": "S3 account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e2489da8-e91b-4513-a423-2aea1238e67c",
+              "name": "image2",
+              "value": "=![image2](https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtdigi/{{ $('Edit Fields7').item.json.safeName }})",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        960,
+        320
+      ],
+      "id": "15105547-aa85-42f2-bdf2-0d26ee7cf91c",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d7579879-3c87-47bf-904e-fd984265631a",
+              "name": "safeName",
+              "value": "={{ $('AI Agent').item.json.output.title1.split(' ')[0].replace(/[^a-zA-Z0-9]/g, '') + '_' + new Date().toISOString().slice(0,10).replace(/-/g, '') }}4",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        64,
+        896
+      ],
+      "id": "57c2d808-a2c4-4053-96a9-f0a926c965ba",
+      "name": "Edit Fields10"
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "bucketName": "dbtdigi",
+        "fileName": "={{ $json.safeName }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        624,
+        896
+      ],
+      "id": "d72de335-2bc2-4254-bfec-ee544433d99c",
+      "name": "S34",
+      "credentials": {
+        "s3": {
+          "id": "V2cAkPAhH1poyCLK",
+          "name": "S3 account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e2489da8-e91b-4513-a423-2aea1238e67c",
+              "name": "image4",
+              "value": "=![image4](https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtdigi/{{ $('Edit Fields10').item.json.safeName }})",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        896
+      ],
+      "id": "9b4aa6ac-52a0-4564-951c-04577759fb84",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1232,
+        432
+      ],
+      "id": "5e5169d4-42f4-47a0-a00f-06a03c2c409f",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1-HBBTKrPMidW9GQ-cjgifVFYoWlAHbmQ",
+          "mode": "list",
+          "cachedResultName": "Dbtnew4.png",
+          "cachedResultUrl": "https://drive.google.com/file/d/1-HBBTKrPMidW9GQ-cjgifVFYoWlAHbmQ/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        352,
+        896
+      ],
+      "id": "8acdbbd1-33b6-4b6b-9463-0eaf12838d7c",
+      "name": "Google Drive1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "multiStep",
+        "operations": {
+          "operations": [
+            {
+              "operation": "text",
+              "text": "={{ $json.title }}",
+              "fontSize": 45,
+              "fontColor": "#F3EFEF",
+              "positionY": 550,
+              "lineLength": 35,
+              "font": "/usr/share/fonts/truetype/msttcorefonts/Arial_Bold.ttf"
+            },
+            {
+              "operation": "text",
+              "text": "={{ $json.subtext }}",
+              "fontSize": 35,
+              "fontColor": "#F3DFDF",
+              "positionY": 700,
+              "lineLength": 60,
+              "font": "/usr/share/fonts/truetype/msttcorefonts/Arial.ttf"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        496,
+        320
+      ],
+      "id": "4b915644-1e30-47c7-8cd5-ec2c44c94426",
+      "name": "Edit Image1"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1-Memcw2XP20Ozn8rlCDC2mYiLr-Dx3Ru",
+          "mode": "list",
+          "cachedResultName": "Dbtnew2.png",
+          "cachedResultUrl": "https://drive.google.com/file/d/1-Memcw2XP20Ozn8rlCDC2mYiLr-Dx3Ru/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        304,
+        320
+      ],
+      "id": "0a55948d-a12b-41d7-8ec4-9a0261764a4e",
+      "name": "Google Drive2",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "multiStep",
+        "operations": {
+          "operations": [
+            {
+              "operation": "text",
+              "text": "={{ $json.title }}",
+              "fontSize": 45,
+              "fontColor": "#F3EFEF",
+              "positionY": 550,
+              "lineLength": 30,
+              "font": "/usr/share/fonts/truetype/msttcorefonts/Arial_Bold.ttf"
+            },
+            {
+              "operation": "text",
+              "text": "={{ $json.subtext }}",
+              "fontSize": 35,
+              "fontColor": "#F3DFDF",
+              "positionY": 700,
+              "lineLength": 60,
+              "font": "/usr/share/fonts/truetype/msttcorefonts/Arial.ttf"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        576,
+        48
+      ],
+      "id": "1239d3d6-c6d6-4fc5-988a-a2d3803c28c3",
+      "name": "Edit Image2"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1-B_FDsHUy7Ams95mttQIeytIf6MsQ4jB",
+          "mode": "list",
+          "cachedResultName": "Dbtnew1.png",
+          "cachedResultUrl": "https://drive.google.com/file/d/1-B_FDsHUy7Ams95mttQIeytIf6MsQ4jB/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        336,
+        48
+      ],
+      "id": "ff2bfd3c-3035-42b4-ae40-1610ab5c152c",
+      "name": "Google Drive3",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee05a8b8-0010-4f6a-ae59-9acd4cda9c5c",
+              "name": "title",
+              "value": "={{ $json.output.title3 }}",
+              "type": "string"
+            },
+            {
+              "id": "d7579879-3c87-47bf-904e-fd984265631a",
+              "name": "safeName",
+              "value": "={{ $('AI Agent').item.json.output.title2.split(' ')[0].replace(/[^a-zA-Z0-9]/g, '') + '_' + new Date().toISOString().slice(0,10).replace(/-/g, '') }}3",
+              "type": "string"
+            },
+            {
+              "id": "9d254a6b-e6eb-4df4-a771-e03a829ac4d8",
+              "name": "subtext",
+              "value": "={{ $json.output.subtext3 }}\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        96,
+        592
+      ],
+      "id": "73cb4bb5-e947-4762-875c-f9e7d63342bd",
+      "name": "Edit Fields12"
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "bucketName": "dbtdigi",
+        "fileName": "={{ $json.safeName }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [
+        752,
+        592
+      ],
+      "id": "5bb9604c-6829-4ae6-8da9-03ac05b2d121",
+      "name": "S35",
+      "credentials": {
+        "s3": {
+          "id": "V2cAkPAhH1poyCLK",
+          "name": "S3 account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "multiStep",
+        "operations": {
+          "operations": [
+            {
+              "operation": "text",
+              "text": "={{ $json.title }}",
+              "fontSize": 45,
+              "fontColor": "#F3EFEF",
+              "positionY": 550,
+              "lineLength": 35,
+              "font": "/usr/share/fonts/truetype/msttcorefonts/Arial_Bold.ttf"
+            },
+            {
+              "operation": "text",
+              "text": "={{ $json.subtext }}",
+              "fontSize": 35,
+              "fontColor": "#F3DFDF",
+              "positionY": 700,
+              "lineLength": 60,
+              "font": "/usr/share/fonts/truetype/msttcorefonts/Arial.ttf"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        560,
+        592
+      ],
+      "id": "ac3730c3-a1ca-4484-a6ad-d312613be016",
+      "name": "Edit Image3"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1-Is1Ke2PKT-t5wlHvzYjnK31g8lr87PG",
+          "mode": "list",
+          "cachedResultName": "Dbtnew3.png",
+          "cachedResultUrl": "https://drive.google.com/file/d/1-Is1Ke2PKT-t5wlHvzYjnK31g8lr87PG/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        304,
+        592
+      ],
+      "id": "67bccd27-f3bd-41ec-a87b-140052a5b01f",
+      "name": "Google Drive4",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xS6kSuLaEkasxHtm",
+          "name": "Google Drive account 6 rn dbt"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e2489da8-e91b-4513-a423-2aea1238e67c",
+              "name": "image3",
+              "value": "=![image2](https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtdigi/{{ $('Edit Fields12').item.json.safeName }})",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        944,
+        576
+      ],
+      "id": "7890fd41-df42-4841-a224-c4cb6ff68406",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "hi paste your post",
+        "options": {
+          "subtitle": "Start a chat. ",
+          "title": "carousel generator",
+          "customCss": ":root {\n  /* Colors */\n  --chat--color-primary: #e74266;\n  --chat--color-primary-shade-50: #db4061;\n  --chat--color-primary-shade-100: #cf3c5c;\n  --chat--color-secondary: #20b69e;\n  --chat--color-secondary-shade-50: #1ca08a;\n  --chat--color-white: #ffffff;\n  --chat--color-light: #f2f4f8;\n  --chat--color-light-shade-50: #e6e9f1;\n  --chat--color-light-shade-100: #c2c5cc;\n  --chat--color-medium: #d2d4d9;\n  --chat--color-dark: #101330;\n  --chat--color-disabled: #777980;\n  --chat--color-typing: #404040;\n\n  /* Base Layout */\n  --chat--spacing: 1rem;\n  --chat--border-radius: 0.25rem;\n  --chat--transition-duration: 0.15s;\n  --chat--font-family: (\n    -apple-system,\n    BlinkMacSystemFont,\n    'Segoe UI',\n    Roboto,\n    Oxygen-Sans,\n    Ubuntu,\n    Cantarell,\n    'Helvetica Neue',\n    sans-serif\n  );\n\n  /* Window Dimensions */\n  --chat--window--width: 400px;\n  --chat--window--height: 600px;\n  --chat--window--bottom: var(--chat--spacing);\n  --chat--window--right: var(--chat--spacing);\n  --chat--window--z-index: 9999;\n  --chat--window--border: 1px solid var(--chat--color-light-shade-50);\n  --chat--window--border-radius: var(--chat--border-radius);\n  --chat--window--margin-bottom: var(--chat--spacing);\n\n  /* Header Styles */\n  --chat--header--padding: 0.75rem;                    /* 50% less height */\n  --chat--header--background: var(--chat--color-primary-shade-100); /* deeper blue */\n  --chat--header--color: var(--chat--color-white);\n  --chat--heading--font-size: 1.8em;\n  --chat--subtitle--font-size: 1rem;\n  --chat--subtitle--line-height: 1.5;\n  /* Message Styles */\n  --chat--message--font-size: 1rem;\n  --chat--message--padding: var(--chat--spacing);\n  --chat--message--border-radius: var(--chat--border-radius);\n  --chat--message-line-height: 1.5;\n  --chat--message--margin-bottom: calc(var(--chat--spacing) * 1);\n  --chat--message--bot--background: var(--chat--color-white);\n  --chat--message--bot--color: var(--chat--color-dark);\n  --chat--message--bot--border: none;\n  --chat--message--user--background: var(--chat--color-secondary);\n  --chat--message--user--color: var(--chat--color-white);\n  --chat--message--user--border: none;\n  --chat--message--pre--background: rgba(0, 0, 0, 0.05);\n  --chat--messages-list--padding: var(--chat--spacing);\n\n  /* Toggle Button */\n  --chat--toggle--size: 64px;\n  --chat--toggle--width: var(--chat--toggle--size);\n  --chat--toggle--height: var(--chat--toggle--size);\n  --chat--toggle--border-radius: 50%;\n  --chat--toggle--background: var(--chat--color-primary);\n  --chat--toggle--hover--background: var(--chat--color-primary-shade-50);\n  --chat--toggle--active--background: var(--chat--color-primary-shade-100);\n  --chat--toggle--color: var(--chat--color-white);\n\n  /* Input Area */\n  --chat--textarea--height: 50px;\n  --chat--textarea--max-height: 30rem;\n  --chat--input--font-size: inherit;\n  --chat--input--border: 0;\n  --chat--input--border-radius: 0;\n  --chat--input--padding: 0.8rem;\n  --chat--input--background: var(--chat--color-white);\n  --chat--input--text-color: initial;\n  --chat--input--line-height: 1.5;\n  --chat--input--placeholder--font-size: var(--chat--input--font-size);\n  --chat--input--border-active: 0;\n  --chat--input--left--panel--width: 2rem;\n\n  /* Button Styles */\n  --chat--button--color: var(--chat--color-light);\n  --chat--button--background: var(--chat--color-primary);\n  --chat--button--padding: calc(var(--chat--spacing) * 1 / 2) var(--chat--spacing);\n  --chat--button--border-radius: var(--chat--border-radius);\n  --chat--button--hover--color: var(--chat--color-light);\n  --chat--button--hover--background: var(--chat--color-primary-shade-50);\n  --chat--close--button--color-hover: var(--chat--color-primary);\n\n  /* Send and File Buttons */\n  --chat--input--send--button--background: var(--chat--color-white);\n  --chat--input--send--button--color: var(--chat--color-light);\n  --chat--input--send--button--background-hover: var(--chat--color-primary-shade-50);\n  --chat--input--send--button--color-hover: var(--chat--color-secondary-shade-50);\n  --chat--input--file--button--background: var(--chat--color-white);\n  --chat--input--file--button--color: var(--chat--color-secondary);\n  --chat--input--file--button--background-hover: var(--chat--input--file--button--background);\n  --chat--input--file--button--color-hover: var(--chat--color-secondary-shade-50);\n  --chat--files-spacing: 0.25rem;\n\n  /* Body and Footer */\n  --chat--body--background: var(--chat--color-light);\n  --chat--footer--background: var(--chat--color-light);\n  --chat--footer--color: var(--chat--color-dark);\n}\n\n\n/* You can override any class styles, too. Right-click inspect in Chat UI to find class to override. */\n.chat-message {\n\tmax-width: 50%;\n  \n}\n\n.chat-message-markdown img {\n  display: block;\n  margin: 0.4rem auto;\n  width: 70% !important;        /* doubled from 35% */\n  max-width: 420px !important;  /* doubled approximate cap */\n  max-height: 380px !important; /* doubled height cap */\n  height: auto;\n  border-radius: var(--chat--border-radius);\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -608,
+        288
+      ],
+      "id": "8eb57038-3391-4e1c-9150-2f22f9fe6c2e",
+      "name": "When chat message received",
+      "webhookId": "7d54619a-49b9-4138-9c6c-50c23affa1f0"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        464
+      ],
+      "id": "94e2fca9-6d6e-403c-af93-93dd751cdd8c",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0b6bf5a8-001b-4f78-9cbf-13eb0a731dc2",
+              "name": "message",
+              "value": "=image 1 : {{ $json.data[0].image1 }}\ndownload link: [Click here to download]({{ $json.data[0].image1.match(/\\((.*?)\\)/)[1] }}?download={{ $json.data[0].image1.match(/\\((.*?)\\)/)[1].split('/').pop() }}.png)\n\n\nimage 2 : {{ $json.data[1].image2 }}\ndownload link: [Click here to download]({{ $json.data[1].image2.match(/\\((.*?)\\)/)[1] }}?download={{ $json.data[1].image2.match(/\\((.*?)\\)/)[1].split('/').pop() }}.png)\n\n\n\n\nimage 3 : {{ $json.data[2].image3 }}\ndownload link: [Click here to download]({{ $json.data[2].image3.match(/\\((.*?)\\)/)[1] }}?download={{ $json.data[2].image3.match(/\\((.*?)\\)/)[1].split('/').pop() }}.png)\n\n\nimage 4 : {{ $json.data[3].image4 }}\ndownload link: [Click here to download]({{ $json.data[3].image4.match(/\\((.*?)\\)/)[1] }}?download={{ $json.data[3].image4.match(/\\((.*?)\\)/)[1].split('/').pop() }}.png)\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1616,
+        464
+      ],
+      "id": "70ca3f44-ffd2-4019-933b-8ad75a5fc4f5",
+      "name": "Edit Fields13"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-03T22:03:30.930Z",
+      "updatedAt": "2025-11-03T22:03:30.930Z",
+      "role": "workflow:owner",
+      "workflowId": "GbXJy6P2mz21LPYZ",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-11-04T13:19:23.000Z",
+  "versionId": "d4896bf7-c19a-4b18-ae87-6931b0063989"
+}

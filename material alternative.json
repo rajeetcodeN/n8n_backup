@@ -1,0 +1,33 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-11-04T12:18:59.779Z",
+  "id": "5WaS9ocomYkWv3uL",
+  "isArchived": false,
+  "meta": null,
+  "name": "material alternative",
+  "nodes": [],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-11-04T12:18:59.785Z",
+      "updatedAt": "2025-11-04T12:18:59.785Z",
+      "role": "workflow:owner",
+      "workflowId": "5WaS9ocomYkWv3uL",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-04T12:18:59.000Z",
+  "versionId": "243708b8-58be-4441-8a48-57d1ac70eb2d"
+}

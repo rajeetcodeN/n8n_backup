@@ -188,7 +188,7 @@
       "main": [
         [
           {
-            "node": "Mistral DOC OCR4",
+            "node": "Google Drive",
             "type": "main",
             "index": 0
           }
@@ -349,13 +349,7 @@
     },
     "Mistral DOC OCR3": {
       "main": [
-        [
-          {
-            "node": "Code1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Code1": {
@@ -883,10 +877,10 @@
         "filter": {
           "folderId": {
             "__rl": true,
-            "value": "1bjDZaCivRZ_UXP70folhExNIcq0I6bTA",
+            "value": "1TbzN8Af2XDCCrTH2qTrESmcLiUvkU6eW",
             "mode": "list",
-            "cachedResultName": "Newkb",
-            "cachedResultUrl": "https://drive.google.com/drive/folders/1bjDZaCivRZ_UXP70folhExNIcq0I6bTA"
+            "cachedResultName": "Traveldoc",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1TbzN8Af2XDCCrTH2qTrESmcLiUvkU6eW"
           }
         },
         "options": {
@@ -1048,8 +1042,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        1264,
-        864
+        64,
+        1280
       ],
       "id": "cd082dc9-efcc-4436-832d-9a6d94738931",
       "name": "When clicking ‘Test workflow’"
@@ -1791,6 +1785,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-09-25T08:11:51.000Z",
-  "versionId": "8e6feebc-7509-4d2b-b67f-ebba4ce566c4"
+  "updatedAt": "2025-11-07T13:47:12.000Z",
+  "versionId": "cb094d76-8b52-4711-adbc-c2b760e6e309"
 }

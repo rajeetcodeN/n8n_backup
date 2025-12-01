@@ -272,6 +272,17 @@
           }
         ]
       ]
+    },
+    "Reranker Cohere1": {
+      "ai_reranker": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_reranker",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-10-22T06:42:36.191Z",
@@ -394,6 +405,7 @@
           "cachedResultName": "docaiauto"
         },
         "topK": 3,
+        "useReranker": true,
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
@@ -496,10 +508,8 @@
         "filter": {
           "folderId": {
             "__rl": true,
-            "value": "1C1zD1XefBltEAocX6kfHFbzQtzzAxo_E",
-            "mode": "list",
-            "cachedResultName": "knowledgebaseforaibot",
-            "cachedResultUrl": "https://drive.google.com/drive/folders/1C1zD1XefBltEAocX6kfHFbzQtzzAxo_E"
+            "value": "=",
+            "mode": "url"
           }
         },
         "options": {
@@ -1195,6 +1205,28 @@
       "typeVersion": 1,
       "id": "83726285-3bfd-4d22-ad35-39a5ff3ef414",
       "name": "Sticky Note14"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.rerankerCohere",
+      "typeVersion": 1,
+      "position": [
+        2784,
+        1488
+      ],
+      "id": "66078ff3-9a4b-417d-9f13-91661c92762e",
+      "name": "Reranker Cohere"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.rerankerCohere",
+      "typeVersion": 1,
+      "position": [
+        1632,
+        512
+      ],
+      "id": "809b4dc9-44da-419e-bbcc-a143380e84a3",
+      "name": "Reranker Cohere1"
     }
   ],
   "origin": "n8n",
@@ -1218,6 +1250,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-23T12:24:30.000Z",
-  "versionId": "4e1770ef-0f61-4f2c-b35c-7a8e7401dc88"
+  "updatedAt": "2025-11-18T12:17:54.000Z",
+  "versionId": "feff6057-614b-4961-bf88-d1c91a1c6a3f"
 }

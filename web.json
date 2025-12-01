@@ -714,10 +714,9 @@
         "filter": {
           "folderId": {
             "__rl": true,
-            "value": "1o3DK9Ceka5Lqb8irvFSfEeB8SVGG_OL7",
-            "mode": "list",
-            "cachedResultName": "Website kb",
-            "cachedResultUrl": "https://drive.google.com/drive/folders/1o3DK9Ceka5Lqb8irvFSfEeB8SVGG_OL7"
+            "mode": "url",
+            "value": "",
+            "__regex": "https:\\/\\/drive\\.google\\.com(?:\\/.*|)\\/folders\\/([0-9a-zA-Z\\-_]+)(?:\\/.*|)"
           }
         },
         "options": {
@@ -1000,6 +999,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-25T05:39:05.000Z",
-  "versionId": "a5bf7a00-f7aa-4a87-86fe-bf44ee0e62db"
+  "updatedAt": "2025-10-29T06:21:54.000Z",
+  "versionId": "1c9726ab-bec3-454a-abd9-6547a96358a9"
 }

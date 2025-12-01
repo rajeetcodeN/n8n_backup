@@ -68,6 +68,16 @@
             "node": "Supabase2",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Supabase3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Supabase4",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -107,12 +117,24 @@
     },
     "Filter Fields 7": {
       "main": [
-        []
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
       ]
     },
     "Filter Fields 8": {
       "main": [
-        []
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
       ]
     },
     "google news": {
@@ -276,8 +298,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -688,
-        -80
+        -720,
+        -240
       ],
       "id": "2f7a3a71-0f54-43d8-84b1-5eb6c7a4a81f",
       "name": "Edit Fields1"
@@ -300,8 +322,8 @@
       "name": "GET TITLE AND DESCRIPTION FROM REALTED N8N VIDEO",
       "type": "n8n-nodes-base.youTube",
       "position": [
-        -896,
-        -80
+        -944,
+        -240
       ],
       "typeVersion": 1,
       "credentials": {
@@ -439,8 +461,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -1744,
-        144
+        -1696,
+        128
       ],
       "id": "0ab94580-da78-4aab-8803-f855fee67cad",
       "name": "Schedule Trigger"
@@ -453,8 +475,8 @@
       "name": "Merge",
       "type": "n8n-nodes-base.merge",
       "position": [
-        -464,
-        208
+        -400,
+        192
       ],
       "typeVersion": 3.1
     },
@@ -861,8 +883,8 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -1120,
-        -80
+        -1200,
+        -240
       ],
       "id": "f50b2db5-bf5e-484b-91e1-025d55275f3d",
       "name": "Supabase1",
@@ -982,6 +1004,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-12T19:56:48.000Z",
-  "versionId": "f49278aa-9ee0-4ee8-989e-6383cca03853"
+  "updatedAt": "2025-11-30T11:12:30.000Z",
+  "versionId": "b7414108-3831-460c-926f-571a1bcb3c22"
 }

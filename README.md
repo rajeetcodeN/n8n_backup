@@ -1,170 +1,302 @@
 # n8n_backup
 
-Comprehensive backup of exported n8n workflows and related workflow assets. This repository stores exported workflow JSON files that can be imported back into an n8n instance for restoration, reuse, or documentation purposes.
----
+Versioned backups of exported n8n workflows and related workflow assets.
 
-Table of contents
-- About
-- Repository structure and purpose
-- Per-file summary (inferred)
-- How to restore/import a workflow into n8n
-- Automating backups (examples: script + GitHub Actions)
-- Security and handling secrets
-- Recommended naming and versioning conventions
-- Maintenance and validation checks
-- Troubleshooting
-- Contributing
-- License and notes
+This repository contains exported n8n workflow JSON files that can be imported back into an n8n instance for restoration, reuse, inspection, or documentation. The primary goal is to keep human-readable, auditable backups of real production and experimental workflows.
 
 ---
 
-About
+## Table of contents
 
-This repository (n8n_backup) is a collection of exported n8n workflow JSON files and workflow folders. Each JSON file is typically an export of a single n8n workflow that contains the workflow metadata, nodes, connections and (sometimes) credentials references. The goal of this README is to provide:
-- A clear description of what lives in this repo;
-- Per-file explanations (inferred from filenames) so you can quickly identify important workflows;
-- Practical instructions for importing these workflows into an n8n instance;
-- Recommendations for automating, securing and maintaining backups.
+* About this repository
+* What lives here and why
+* Repository structure
+* Workflow summaries (inferred from filenames)
+* Inspecting a workflow JSON
+* Restoring / importing workflows into n8n
+* Automating backups
+* Security and secrets handling
+* Naming and versioning conventions
+* Maintenance and validation
+* Troubleshooting
+* Contributing
+* Notes
 
-Repository structure and purpose
+---
 
-- Location: root of repository contains exported .json workflow files and a few directories.
-- Purpose: human-readable, versioned backups of n8n workflows. These backups allow you to:
-  - Restore workflows to a running n8n instance;
-  - Inspect workflow logic offline;
-  - Share or template automations between environments.
+## About this repository
 
-Note about API listing used to create this README
-- The file list used to build the per-file summary was obtained via the GitHub Contents API call and may be incomplete due to API limitations. Verify the repository contents on GitHub: https://github.com/rajeetcodeN/n8n_backup/tree/main
+`n8n_backup` is a structured backup of exported n8n workflows. Each `.json` file is typically a single workflow export containing:
 
-Per-file summary (inferred from filenames)\n
-Below are the files and directories found when listing the repository root. Descriptions are inferred from the file names and typical n8n use-cases. For exact details (nodes, triggers, credentials) open the JSON and inspect its top-level fields (name, nodes, connections, credentials).
+* Workflow metadata
+* Nodes and connections
+* Settings
+* References to credentials (not secret values)
 
-Files (selected list with short descriptions)
-- Brand profiler.json — Workflow likely used to gather and profile brand information (scrape, enrich, store).
-- COST CALCULATION.json — Workflow to compute costs; could be invoice processing or aggregate cost calculations.
-- Internal knowledge RAG and chat agent.json — Retrieval-augmented-generation pipeline integrated with a chat agent and knowledge storage.
-- MISTRAL OCR.json — OCR processing workflow (image/PDF -> text) using Mistral or another OCR provider.
-- agent.json — Generic orchestration agent workflow (API calls, multi-step automation).
-- ai chat.json / chat.json / chat test.json — Chatbot or AI integration workflows (LLM interaction, message routing).
-- analytics.json — Ingest or transform analytics events or metrics for a dashboard.
-- backup.json — Possibly a workflow that exports workflows or triggers backups.
-- banner.json — Automation for generating or posting banners (marketing).
-- blogs agent.json — Blog publication, scraping, or drafting automation.
-- carousel.json / carousel n8n.json — Posting image carousels to social platforms.
-- community temp.json — Temporary or experimental community-related workflow.
-- dashboard.json — Prepares and pushes data to dashboards or monitoring systems.
-- data loader.json — ETL-style workflow to load data into databases or storage.
-- dbt ai knowledge bot.json & other dbt-related files — dbt-related automations (documentation, model checks, notifications).
-- emai send.json — Sends email messages (typo in filename 'emai' — verify content).
-- facebook.json / fb.json — Facebook posting or ingestion flows.
-- gemini.json / gemini test.json — Integrations/testing with 'Gemini' or an LLM API.
-- git hub backup.json — Workflow that likely backs up repositories or pushes exports to GitHub.
-- image.json — Image processing workflow (resize, OCR, thumbnailing).
-- intsa.json — Instagram automation (posting, fetching).
-- knowledge.json — Build or query a knowledge base.
-- legal.json — Legal document ingestion/processing.
-- linkedmulti call.json — Performs multiple linked API calls in sequence.
-- linkprof.json / linkurl.json — URL/link profiling and metadata extraction.
-- master.json / master linked in.json — Master orchestration workflows (possibly for LinkedIn).
-- material alternative.json — Small template or alternative material workflow.
-- posting.json — Social posting pipeline.
-- product.json — Product data ingestion or updates.
-- profile.json — Profile update/management workflow.
-- ref.json — Reference or utility workflow.
-- rss ref.json — RSS feed ingestion.
-- salesforce agent.json — Salesforce integration (create/update records).
-- scheduler.json — Cron or schedule-based triggers for periodic tasks.
-- search.json — Indexing or search automation.
-- sharepoint.json — SharePoint file/item automation.
-- supbase trigger.json — Supabase-triggered workflow (note name typo 'supbase' — likely 'supabase').
-- teams test.json — MS Teams testing automation.
-- temp dumps.json — Large interim dump(s) / temp exports; possibly bulk exports.
-- template.json — Template workflow(s) to copy/start from.
-- testrag.json / testrag.json — Tests for RAG (retrieval-augmented generation).
-- timesheetprocess.json — Timesheet ingestion and approval process automation.
-- travel agent.json — Travel booking or itinerary automation.
-- web.json — Webhook, scraping or web integration workflow.
-- xlsx.json — Excel (.xlsx) read/write workflow.
+This repo is meant to be:
 
-Directories noted in the listing:
-- ocr/ — folder for OCR workflows or assets (API listing showed directory, but not its files).
-- real_estateworkflow/ — folder likely containing real estate related workflows.
+* A restore point if workflows are deleted or broken
+* A reference library for reusable automation patterns
+* A lightweight documentation layer for complex automations
+* A transport mechanism between environments (local → staging → prod)
 
-How to inspect a workflow JSON
-1. Open the JSON in a text editor or JSON viewer.
-2. Look at top-level keys: name, id, nodes, connections, settings, and credentials.
-3. Nodes: each entry has a type (e.g., "httpRequest", "cron", "webhook", "function"), parameters and name.
-4. Triggers: identify which node is the starting trigger (cron, webhook, etc.).
-5. Credentials: check the credentials array. Most public backups should avoid including secret values; however some exports reference credential IDs/names only.
+This is not intended to be a runnable n8n instance by itself.
 
-How to restore/import a workflow into n8n (manual)
-1. In n8n UI: Workflows → Import → Upload the JSON or paste the raw JSON content.
-2. After import, review nodes and reattach credentials in the n8n credentials manager.
-3. Save and activate the workflow when ready.
+---
 
-How to restore/import a workflow into n8n (API/automated)
-- n8n exposes HTTP API endpoints for creating workflows (depending on n8n version).
-- General approach: POST the JSON representation of the workflow to the appropriate endpoint (authenticate using your n8n credentials or API key).
-- Always test imports against a staging n8n instance before importing into production.
+## What lives here and why
 
-Automating backups (recommended approaches)\nOption 1 — Scripted export + Git commit (recommended)
-- Script responsibilities:
-  1. Call n8n API to list all workflows.
-  2. Export each workflow as JSON with a deterministic filename: e.g. <name>__id-<id>__YYYYMMDD-HHMM.json
-  3. Optionally sanitize credentials (remove secrets) before writing to disk.
-  4. Commit and push changes to this repository (or a private repo).
+* **Exported workflows (`.json`)**
+  Each file represents one workflow as exported from n8n (UI or API).
 
-Option 2 — GitHub Actions (cron)
-- A GitHub Actions workflow can run on a schedule, call your n8n instance, export workflows and push them back to this repo.
-- Essential steps: Checkout repo → Run export script (with secrets stored in GitHub Actions secrets) → Commit and push.
+* **Folders**
+  Used to group workflows by domain (e.g. OCR, real estate, etc.).
 
-Example shell script (conceptual)
-#!/usr/bin/env bash
-set -euo pipefail
-N8N_BASE_URL=${N8N_BASE_URL:-"https://n8n.example.com"}
-N8N_TOKEN=${N8N_TOKEN:-""}
-OUT_DIR=exports
-mkdir -p "$OUT_DIR"
-# 1) list workflows (API endpoint depends on n8n version)
-# 2) for each workflow: curl to get JSON and save to file with timestamp
-# 3) git add/commit/push
+* **No credentials or secrets**
+  Any workflow that depends on credentials must be re-wired after import.
 
-(Provide your n8n API path and auth approach — I can generate a concrete script for your n8n version.)
+The emphasis is on clarity and traceability rather than minimal file count.
 
-Security and handling secrets
-- Treat exported workflow JSON as potentially sensitive. Do not commit files containing secrets to a public repository.
-- Recommended practices:
-  - Use a private repository for backups containing credentials.
-  - Sanitize or redact credentials before committing.
-  - Use environment variables and secret stores (HashiCorp Vault, GitHub Secrets) for CI/CD scripts.
-  - Consider encrypting files at rest (gpg) if you must store secrets in the repo.
+---
 
-Suggested .gitignore entries
-- .env
-- credentials.json
-- private-*.json
-- secret-*.json
-- *.key
+## Repository structure
 
-Naming and versioning conventions
-- Filename format: <workflow-name>__id-<id>__YYYYMMDD-HHMM.json
-- Keep each workflow in its own file; for major changes create a new file with a timestamp.
-- Optionally maintain an index file (backups/index.json) that lists workflow metadata and latest backup timestamp.
+* Root directory contains exported workflow JSON files
+* Some workflows are grouped into subfolders
+* Filenames are descriptive and usually reflect the business purpose
 
-Maintenance & validation checks
-- Add CI checks to ensure: valid JSON, presence of top-level name and nodes fields, and no embedded secrets (basic heuristics).
-- Periodically prune or archive very old backups.
+---
 
-Troubleshooting
-- Import errors: check for missing credentials and reattach them after import.
-- Webhook trigger problems: webhooks may generate new IDs on import, you might need to re-create webhook endpoints or update downstream integrations.
-- Large files or embedded binary blobs: identify which nodes generate big data and consider externalizing output to storage.
+## Workflow summaries (inferred from filenames)
 
-Contributing
-- Workflow export process:
-  1. Export from n8n UI (Workflows → Export) or via API.
-  2. Sanitize credentials.
-  3. Create a descriptive commit and file name.
-- If you want more structured docs, add a markdown file per workflow in a docs/ or workflows/ folder describing purpose, trigger, inputs, outputs, and credentials used.
+Descriptions below are inferred from filenames and common n8n usage patterns. For exact behavior, inspect the JSON directly (nodes, triggers, credentials).
 
+### Selected workflows
+
+* **Brand profiler.json**
+  Brand data extraction and enrichment workflow.
+
+* **COST CALCULATION.json**
+  Cost computation logic (likely RFQ, pricing, or invoice-related).
+
+* **Internal knowledge RAG and chat agent.json**
+  RAG-based internal knowledge system with a chat interface.
+
+* **MISTRAL OCR.json**
+  OCR pipeline for PDFs/images using Mistral or a similar provider.
+
+* **agent.json**
+  Generic agent/orchestration workflow.
+
+* **ai chat.json / chat.json / chat test.json**
+  LLM chat integrations and test variants.
+
+* **analytics.json**
+  Analytics ingestion or transformation workflow.
+
+* **backup.json**
+  Likely exports or synchronizes workflows for backup purposes.
+
+* **blogs agent.json**
+  Blog drafting, scraping, or publishing automation.
+
+* **carousel.json / carousel n8n.json**
+  Carousel-based social media posting workflows.
+
+* **dashboard.json**
+  Data preparation for dashboards or reporting tools.
+
+* **data loader.json**
+  ETL-style ingestion into databases or storage layers.
+
+* **dbt ai knowledge bot.json** (and other dbt-related files)
+  dbt-related automation: docs, checks, alerts, or AI summaries.
+
+* **emai send.json**
+  Email sending workflow (filename typo noted).
+
+* **facebook.json / fb.json**
+  Facebook posting or data ingestion.
+
+* **gemini.json / gemini test.json**
+  Gemini or LLM API integrations and tests.
+
+* **git hub backup.json**
+  Automation related to GitHub backups or sync.
+
+* **image.json**
+  Image processing (resize, OCR, generation, etc.).
+
+* **intsa.json**
+  Instagram automation.
+
+* **knowledge.json**
+  Knowledge base creation or querying.
+
+* **legal.json**
+  Legal document ingestion or processing.
+
+* **linkedmulti call.json**
+  Chained or dependent API call workflow.
+
+* **master.json / master linked in.json**
+  High-level orchestration workflows, likely LinkedIn-related.
+
+* **rss ref.json**
+  RSS feed ingestion.
+
+* **salesforce agent.json**
+  Salesforce integration (create/update/query records).
+
+* **scheduler.json**
+  Cron or scheduled triggers.
+
+* **sharepoint.json**
+  SharePoint file or item automation.
+
+* **supbase trigger.json**
+  Supabase-triggered workflow (filename typo noted).
+
+* **timesheetprocess.json**
+  Timesheet ingestion and processing.
+
+* **travel agent.json**
+  Travel booking or itinerary automation.
+
+* **xlsx.json**
+  Excel read/write automation.
+
+### Directories
+
+* **ocr/**
+  OCR-related workflows or assets.
+
+* **real_estateworkflow/**
+  Real estate domain workflows.
+
+---
+
+## Inspecting a workflow JSON
+
+1. Open the file in a text editor or JSON viewer.
+2. Check top-level fields: `name`, `nodes`, `connections`, `settings`.
+3. Identify trigger nodes (`cron`, `webhook`, etc.).
+4. Review node parameters for external dependencies.
+5. Inspect the `credentials` section to see what needs reattachment.
+
+---
+
+## Restoring / importing workflows into n8n
+
+### Manual import (UI)
+
+1. n8n UI → **Workflows → Import**
+2. Upload the JSON file or paste its contents
+3. Reattach credentials in the credentials manager
+4. Save and activate
+
+### API-based import
+
+* Use n8n’s workflow API (endpoint varies by version)
+* POST the workflow JSON with proper authentication
+* Always test imports in a non-production environment first
+
+---
+
+## Automating backups
+
+### Option 1 — Scripted export + Git (recommended)
+
+Typical flow:
+
+1. Call n8n API to list workflows
+2. Export each workflow as JSON
+3. Sanitize credentials
+4. Save with deterministic filenames
+5. Commit and push to this repo
+
+Example filename:
+
+```
+<workflow-name>__id-<id>__YYYYMMDD-HHMM.json
+```
+
+### Option 2 — GitHub Actions (scheduled)
+
+* Run on cron
+* Export workflows via API
+* Commit and push automatically
+* Store secrets in GitHub Actions secrets
+
+---
+
+## Security and secrets
+
+* Treat workflow exports as sensitive artifacts
+* Never commit secret values to a public repo
+* Prefer:
+
+  * Private repositories
+  * Credential sanitization
+  * Environment variables
+  * Secret managers
+* Consider encrypting exports if secrets must exist at rest
+
+### Suggested `.gitignore`
+
+```
+.env
+credentials.json
+private-*.json
+secret-*.json
+*.key
+```
+
+---
+
+## Naming and versioning conventions
+
+* One workflow per file
+* Descriptive filenames
+* Timestamped backups for major changes
+* Optionally maintain an index file with latest versions
+
+---
+
+## Maintenance and validation
+
+* Periodically validate:
+
+  * JSON integrity
+  * Presence of `name` and `nodes`
+  * No embedded secrets
+* Archive or prune outdated backups
+* Prefer adding docs for complex workflows
+
+---
+
+## Troubleshooting
+
+* **Import failures** → usually missing credentials
+* **Webhook issues** → webhook URLs/IDs may change after import
+* **Large files** → consider external storage instead of embedding data
+
+---
+
+## Contributing
+
+1. Export workflow from n8n (UI or API)
+2. Remove or sanitize credentials
+3. Use clear filenames and commit messages
+4. For complex workflows, add a short markdown doc describing:
+
+   * Purpose
+   * Trigger
+   * Inputs / outputs
+   * External systems used
+
+---
+
+## Notes
+
+This repository reflects real-world workflows: some experimental, some production-tested and all workflows are clean templates. 

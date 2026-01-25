@@ -1,9 +1,6 @@
 # n8n_backup
 
 Comprehensive backup of exported n8n workflows and related workflow assets. This repository stores exported workflow JSON files that can be imported back into an n8n instance for restoration, reuse, or documentation purposes.
-
-IMPORTANT: The repository contents were inspected via the GitHub Contents API when creating this README; that listing may have been incomplete. Always confirm the full repository contents in the GitHub web UI: https://github.com/rajeetcodeN/n8n_backup/tree/main
-
 ---
 
 Table of contents

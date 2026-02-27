@@ -1,0 +1,79 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get many subscribers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-18T10:10:01.950Z",
+  "id": "2R0Xp0tGPeFpAzd4",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 40",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c52366de-e77b-4a18-85dc-e35df30150c2",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.mailerLite",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "b6cbc5c9-3097-41b3-a88b-16f140aa1d65",
+      "name": "Get many subscribers",
+      "credentials": {
+        "mailerLiteApi": {
+          "id": "7tYMeOVy5fzKKpz5",
+          "name": "Mailer Lite account"
+        }
+      }
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-12-18T10:10:01.956Z",
+      "updatedAt": "2025-12-18T10:10:01.956Z",
+      "role": "workflow:owner",
+      "workflowId": "2R0Xp0tGPeFpAzd4",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-18T10:10:01.950Z",
+  "versionId": "b5952a87-f90e-4954-81e5-127187374d78"
+}

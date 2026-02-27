@@ -1,0 +1,529 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get many rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader1": {
+      "ai_document": [
+        [
+          {
+            "node": "Insert into Supabase Vectorstore",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Character Text Splitter1": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader1",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Mistral Cloud2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Insert into Supabase Vectorstore",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert into Supabase Vectorstore": {
+      "main": [
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Cloud Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "ai",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Mistral Cloud": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "ai",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "ai",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many rows": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Insert into Supabase Vectorstore",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date": {
+      "ai_tool": [
+        [
+          {
+            "node": "ai",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase": {
+      "ai_tool": [
+        [
+          {
+            "node": "ai",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-17T13:34:23.219Z",
+  "id": "3k5xZEaYoco8vG5T",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "timesheetai",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e450ea5b-b895-40f1-ac98-f05e42d174c7",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        480,
+        0
+      ],
+      "id": "a32aff95-cb33-481b-a563-7b332aed6282",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.employee_data }}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "employee_name",
+                "value": "={{ $('Code1').item.json.employee_data.employee_name }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "887932ba-e563-4af9-83f1-91d5f4dd15c7",
+      "name": "Default Data Loader1",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        1392,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "chunkSize": 100000
+      },
+      "id": "955362bb-47c7-40b6-b0b7-75f014d1006a",
+      "name": "Character Text Splitter1",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        1232,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        1088,
+        304
+      ],
+      "id": "e91956bc-ea47-493b-883c-020287d3af5a",
+      "name": "Embeddings Mistral Cloud2",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "tableName": {
+          "__rl": true,
+          "value": "monthly_employee_ai_summary_vector",
+          "mode": "list",
+          "cachedResultName": "monthly_employee_ai_summary_vector"
+        },
+        "options": {
+          "queryName": "match_monthly_employee_ai_summary"
+        }
+      },
+      "id": "db271d7a-d620-49ae-8d9f-1f650dd633cb",
+      "name": "Insert into Supabase Vectorstore",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1,
+      "position": [
+        1376,
+        0
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1696,
+        16
+      ],
+      "id": "4c543f64-4c01-4446-9f49-344f99c76719",
+      "name": "Wait4",
+      "webhookId": "2e21183b-4e03-4dc1-aef7-b9805cf93a22"
+    },
+    {
+      "parameters": {
+        "model": "mistral-medium-latest",
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        1440
+      ],
+      "id": "a3477648-c891-42ae-9cb5-7205f99b6e1f",
+      "name": "Mistral Cloud Chat Model4",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        1904,
+        1600
+      ],
+      "id": "dc591a83-8d77-4efa-a0a7-0792b18a52b6",
+      "name": "Embeddings Mistral Cloud",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1648,
+        1472
+      ],
+      "id": "b898560d-cda9-4ce9-b509-429ab1a6d5e6",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        1184
+      ],
+      "id": "8d033fd1-a31b-4cfe-a1ef-9fb49aac6183",
+      "name": "When chat message received",
+      "webhookId": "eb68e2a8-279c-4e95-8c06-43e93c1a41aa"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "monthly_employee_ai_summary",
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "ee9a60b4-c4a8-4631-85e9-fd4c708db10e",
+      "name": "Get many rows",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\n// If only one record exists, still normalize it\nconst record = items[0].json;\n\nconst employee_data = {\n  employee_name: record.employee_name,\n  period: {\n    month_start: record.month_start,\n    month_end: record.month_end,\n  },\n  projects: record.projects_summary,\n  total_hours: record.total_hours,\n  created_at: record.created_at,\n};\n\n// Return as a single merged JSON\nreturn [\n  {\n    json: {\n      employee_data,\n    },\n  },\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        752,
+        0
+      ],
+      "id": "cb4badcf-db4e-4989-a134-ca8ac708f632",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d815fa13-2273-4176-b295-df62012491ec",
+              "name": "employee_data",
+              "value": "={{ $json.employee_data }}",
+              "type": "string"
+            },
+            {
+              "id": "7e9e75ef-b99d-41d9-aecc-2e6688de6b7d",
+              "name": "employee_name ",
+              "value": "={{ $json.employee_data.employee_name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        960,
+        0
+      ],
+      "id": "d6a6e5d5-89fd-411a-b311-0a9c5aeeddbe",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "outputFieldName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Output_Field_Name', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTimeTool",
+      "typeVersion": 2,
+      "position": [
+        1664,
+        1616
+      ],
+      "id": "2ccc380f-0b72-45c0-8bb9-9c98b97820c1",
+      "name": "Date"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "=## Persona: Timesheet Summary Agent\n\nYou are a helpful, intelligent AI assistant working for DBT.\nYour mission is to automatically generate clear monthly timesheet overviews for management and reporting.\n\nYou summarize who worked on what, for how long, and on which activities, using already aggregated data.\n\n---\n\n## Core Objective\n\nFor each request, provide a concise monthly or multi-month overview that includes:\n\n- Employee name\n- Month or derived date range\n- Projects worked on\n- Total hours per project\n- Activity-wise breakdown per project\n- Overall total hours for the period\n\nThe output must be easy to read, decision focused, and free of raw noise.\n\n---\n\n## Date and Time Handling (Mandatory)\n\n- Always use the Date tool to get the current date.\n- When the user asks for relative ranges such as:\n  - last 6 months\n  - last 3 months\n  - previous quarter\n- Convert them into explicit month ranges before querying data.\n\nExample:\nIf today is 2025-03-10 and the user asks for last 6 months, resolve the range as:\n2024-09 to 2025-02\n\nNever assume dates without using the Date tool.\n\n---\n\n## Knowledge Access Instructions\n\n- Primary and only source: Supabase tool\n  Supabase table monthly_employee_ai_summary_vector\n\n- Use vector similarity search to:\n  - Match employee name\n  - Match resolved month or date range\n  - Retrieve the most relevant monthly summary records\n\n- Never infer or fabricate data\n- Never query raw timesheet tables\n\n---\n\n## Output Format\n\n### Monthly Timesheet Overview\n\nEmployee: EMPLOYEE_NAME  \nPeriod Covered: START_MONTH to END_MONTH  \nTotal Hours (All Projects): TOTAL_HOURS\n\n---\n\n### Project-wise Breakdown\n\n| Project Name | Total Hours | Key Activities |\n|-------------|------------|----------------|\n| Project A | Hours | Activity: Hours |\n| Project B | Hours | Activity: Hours |\n\nEnsure spacing is sufficient for readability.\n\n---\n\n### Activity Summary (Across All Projects)\n\n| Activity | Total Hours |\n|---------|-------------|\n| Development | Hours |\n| Testing | Hours |\n| Support | Hours |\n\n---\n\n### Insight Summary\n\n- Main time consumer: PROJECT_NAME\n- Dominant activity: ACTIVITY\n- Workload trend: increasing, stable, or decreasing\n- Any unusual pattern, if present\n\nKeep this section short, factual, and neutral.\n\n---\n\n## Behavior Rules\n\n1. Always use the Date tool to resolve relative time ranges\n2. Always query Supabase monthly_employee_ai_summary_vector\n3. Never mix months outside the resolved range\n4. Never show raw or daily timesheet entries\n5. Prefer structured tables over paragraphs\n6. If no data is found, respond with:\n   No timesheet data available for the requested employee and period.\n7. Use simple, neutral, professional language\n8. Output must be readable in dashboards and reports\n\n---\n\n## Optimized For\n\n- Executive summaries\n- AI reporting agents\n- Monthly and multi-month reviews\n- RAG-based querying\n- High signal, low noise outputs\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        1712,
+        1168
+      ],
+      "id": "4af654d7-c3ae-4dbd-bce7-e58eefcae770",
+      "name": "ai"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "documents",
+        "toolDescription": "Use RAG to look up information in the knowledgebase.",
+        "tableName": {
+          "__rl": true,
+          "value": "monthly_employee_ai_summary_vector",
+          "mode": "list",
+          "cachedResultName": "monthly_employee_ai_summary_vector"
+        },
+        "topK": 15,
+        "options": {
+          "queryName": "match_monthly_employee_ai_summary"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        1424
+      ],
+      "id": "fa7f8892-1d8b-413e-a98f-291633747cf2",
+      "name": "Supabase",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-12-17T13:34:23.224Z",
+      "updatedAt": "2025-12-17T13:34:23.224Z",
+      "role": "workflow:owner",
+      "workflowId": "3k5xZEaYoco8vG5T",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-17T15:09:22.000Z",
+  "versionId": "d5162284-a461-4068-a27a-ed9ed7c44280"
+}

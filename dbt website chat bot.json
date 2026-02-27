@@ -3,7 +3,13 @@
   "connections": {
     "OpenAI Chat Model": {
       "ai_languageModel": [
-        []
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
       ]
     },
     "Embeddings OpenAI": {
@@ -125,10 +131,15 @@
     },
     "Mistral Cloud Chat Model": {
       "ai_languageModel": [
+        []
+      ]
+    },
+    "Webhook": {
+      "main": [
         [
           {
-            "node": "AI Agent1",
-            "type": "ai_languageModel",
+            "node": "If",
+            "type": "main",
             "index": 0
           }
         ]
@@ -160,8 +171,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        208,
-        368
+        416,
+        352
       ],
       "id": "17fc4caa-6157-49c8-adb0-a39a2849a628",
       "name": "OpenAI Chat Model",
@@ -420,8 +431,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
       "typeVersion": 1,
       "position": [
-        416,
-        320
+        352,
+        512
       ],
       "id": "20cd9872-fce1-4354-aef6-fa6ef4c96d9d",
       "name": "Mistral Cloud Chat Model",
@@ -431,6 +442,22 @@
           "name": "Mistral Cloud account 2 dbt rn"
         }
       }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "488406a9-e2ec-406b-9616-bd648f801d7a",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -576,
+        384
+      ],
+      "id": "8d805e5b-9e4e-42b3-9b8a-a377749425d4",
+      "name": "Webhook",
+      "webhookId": "488406a9-e2ec-406b-9616-bd648f801d7a"
     }
   ],
   "origin": "n8n",
@@ -453,7 +480,7 @@
   ],
   "staticData": null,
   "tags": [],
-  "triggerCount": 1,
-  "updatedAt": "2025-11-21T07:40:50.000Z",
-  "versionId": "ce5ab2b9-7ca6-4777-bdec-08e8a83214ba"
+  "triggerCount": 2,
+  "updatedAt": "2025-12-19T13:50:26.000Z",
+  "versionId": "2b32d6b3-77d2-4d14-b7b8-d99d8bab7a84"
 }

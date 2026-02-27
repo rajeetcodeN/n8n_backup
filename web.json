@@ -57,22 +57,11 @@
         ]
       ]
     },
-    "Default Data Loader": {
-      "ai_document": [
-        [
-          {
-            "node": "Qdrant Vector Store1",
-            "type": "ai_document",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Character Text Splitter": {
       "ai_textSplitter": [
         [
           {
-            "node": "Default Data Loader",
+            "node": "Default Data Loader1",
             "type": "ai_textSplitter",
             "index": 0
           }
@@ -189,7 +178,7 @@
       "main": [
         [
           {
-            "node": "If2",
+            "node": "Code",
             "type": "main",
             "index": 0
           }
@@ -253,6 +242,39 @@
           {
             "node": "website chat agent",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader1": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_document",
             "index": 0
           }
         ]
@@ -353,42 +375,6 @@
     },
     {
       "parameters": {
-        "jsonMode": "expressionData",
-        "jsonData": "={{ $json.content.parseJson().pageContent.toJsonString() }}",
-        "options": {
-          "metadata": {
-            "metadataValues": [
-              {
-                "name": "source",
-                "value": "={{ $json.content.parseJson().metadata.source }}"
-              },
-              {
-                "name": "blobType",
-                "value": "application/jsonb"
-              },
-              {
-                "name": "loc",
-                "value": "={{ $json.content.parseJson().metadata.loc }}"
-              },
-              {
-                "name": "source_metadata_id",
-                "value": "={{ $json.content.parseJson().metadata.source_metadata_id }}"
-              }
-            ]
-          }
-        }
-      },
-      "id": "bab90cc7-5a3c-426d-8c84-c813bf037e76",
-      "name": "Default Data Loader",
-      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
-      "typeVersion": 1,
-      "position": [
-        1296,
-        1584
-      ]
-    },
-    {
-      "parameters": {
         "chunkSize": 10000000
       },
       "id": "5349c366-6b07-4838-824e-b0192070de44",
@@ -412,11 +398,11 @@
           "conditions": [
             {
               "id": "d15e917b-43d2-40b8-8b49-af467ff63961",
-              "leftValue": "={{ $json.data[0].parseJson().skipped }}",
+              "leftValue": "={{ $json.embedding_text }}",
               "rightValue": "",
               "operator": {
-                "type": "string",
-                "operation": "notExists",
+                "type": "array",
+                "operation": "notEmpty",
                 "singleValue": true
               }
             }
@@ -429,7 +415,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        640,
+        752,
         1328
       ],
       "id": "53158770-6435-4615-8c52-9499004d365f",
@@ -440,9 +426,9 @@
         "mode": "insert",
         "qdrantCollection": {
           "__rl": true,
-          "value": "docragtestkb",
+          "value": "documents",
           "mode": "list",
-          "cachedResultName": "docragtestkb"
+          "cachedResultName": "documents"
         },
         "embeddingBatchSize": "=200",
         "options": {}
@@ -450,15 +436,15 @@
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
       "typeVersion": 1.1,
       "position": [
-        1344,
+        1360,
         1312
       ],
       "id": "9a5aa2c1-de3b-43b3-941d-eac3a9aa01c2",
       "name": "Qdrant Vector Store1",
       "credentials": {
         "qdrantApi": {
-          "id": "hBirQvCk1VaV8cfQ",
-          "name": "QdrantApi account"
+          "id": "eVJuiWMoonLN7ReR",
+          "name": "QdrantApi account 3"
         }
       }
     },
@@ -612,8 +598,8 @@
       "name": "Mistral Upload",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -96,
-        1344
+        -160,
+        1360
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -652,8 +638,8 @@
       "name": "Mistral Signed URL",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        144,
-        1344
+        16,
+        1360
       ],
       "typeVersion": 4.2,
       "credentials": {
@@ -678,8 +664,8 @@
       "name": "Mistral DOC OCR",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        400,
-        1344
+        208,
+        1360
       ],
       "typeVersion": 4.2,
       "retryOnFail": true,
@@ -695,12 +681,12 @@
       "parameters": {
         "content": "## MISTRAL OCR\n [OCR Guide](https://mistral.ai/news/mistral-ocr)\n1. UPLOAD FILE\n2. GET SIGNED URL\n3. GET EXTRACT DATA AFTER USING MISTRAL OCR",
         "height": 304,
-        "width": 688,
+        "width": 576,
         "color": 5
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -144,
+        -192,
         1200
       ],
       "typeVersion": 1,
@@ -714,9 +700,10 @@
         "filter": {
           "folderId": {
             "__rl": true,
-            "mode": "url",
-            "value": "",
-            "__regex": "https:\\/\\/drive\\.google\\.com(?:\\/.*|)\\/folders\\/([0-9a-zA-Z\\-_]+)(?:\\/.*|)"
+            "value": "1rO7L_kOg5AJhTmOre_Wuvyu6N6QkqqKT",
+            "mode": "list",
+            "cachedResultName": "Test mistral pdf",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1rO7L_kOg5AJhTmOre_Wuvyu6N6QkqqKT"
           }
         },
         "options": {
@@ -802,7 +789,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// 0. Parse the incoming Document data\nlet raw = $input.first().json['Document data'];\nlet arr = typeof raw === 'string' ? JSON.parse(raw) : raw;\n\n// If document name exists, use it — else fallback\nlet source = $input.first().json['Document name'] || 'unknown_source';\n\n// If your workflow previously had a reference like $('Insert Document Metadata1')\n// and it caused an \"unexecuted\" error, we replace it with a safe null or fetch from input\nlet source_id = $input.first().json['source_metadata_id'] || $input.first().json['source'] || $input.first().json[' source'] || null;\n\n// Helper: return character length of an array object\nfunction getObjLength(obj) {\n  return (obj.content || '').length;\n}\n\nfunction getObjLengthofTextOnly(obj) {\n  // Ignore OCR images for character count\n  if (obj.type === 'image_ocr') return 0;\n  return (obj.content || '').length;\n}\n\n// Split any single item whose content is > chunkSize into multiple items\nfunction splitOversizedItems(arr, chunkSize) {\n  const result = [];\n  for (const item of arr) {\n    const content = item.content || '';\n    if (content.length <= chunkSize) {\n      result.push(item);\n    } else {\n      for (let start = 0; start < content.length; start += chunkSize) {\n        const part = content.slice(start, start + chunkSize);\n        result.push({ ...item, content: part });\n      }\n    }\n  }\n  return result;\n}\n\n// Chunking function\nfunction chunkByCharLength(arr, source, chunkSize = 1000) {\n  const flat = splitOversizedItems(arr, chunkSize);\n  const response = [];\n  let idx = 0;\n  let charPos = 0;\n\n  while (idx < flat.length) {\n    const a = [];\n    let sum = 0;\n    const from = charPos;\n\n    while (idx < flat.length && sum < chunkSize) {\n      const item = flat[idx];\n      const len = getObjLength(item);\n      const text_len = getObjLengthofTextOnly(item);\n      a.push(item);\n      sum += len;\n      charPos += text_len;\n      idx++;\n    }\n\n    const to = charPos;\n    const metadata = {\n      source: source,\n      source_metadata_id: source_id,\n      loc: { Characters: { from, to } }\n    };\n\n    response.push({\n      content: JSON.stringify({\n        pageContent: a,\n        metadata\n      })\n    });\n  }\n  return response;\n}\n\n// 1. Run chunking\nconst chunks = chunkByCharLength(arr, source, 1000);\n\n// 2. Return in n8n-compatible format\nreturn chunks.map(c => ({ json: c }));\n"
+        "jsCode": "// 0. Get document data\nlet raw = $input.first().json['Document data'];   // raw should be array of pages\nlet source = $input.first().json['Document name'];\nlet source_id = $('Google Drive(load file)').first().json.file_id;\n\n// Normalize raw into an array\nif (!raw) {\n  raw = [];\n} else if (typeof raw === 'string') {\n  try {\n    const parsed = JSON.parse(raw);\n    raw = Array.isArray(parsed) ? parsed : [parsed];\n  } catch (e) {\n    raw = [raw];\n  }\n} else if (!Array.isArray(raw)) {\n  raw = [String(raw)];\n}\n\n// Helper: return character length of an object's content\nfunction getObjLength(obj) {\n  return (obj.content || '').length;\n}\n\nfunction getObjLengthofTextOnly(obj) {\n  if (obj.type === 'image_ocr') return 0;\n  return (obj.content || '').length;\n}\n\n// Split oversized items by char length\nfunction splitOversizedItems(arr, chunkSize) {\n  const result = [];\n  for (const item of arr) {\n    const content = item.content || '';\n    if (content.length <= chunkSize) {\n      result.push(item);\n    } else {\n      for (let start = 0; start < content.length; start += chunkSize) {\n        const part = content.slice(start, start + chunkSize);\n        result.push({ ...item, content: part });\n      }\n    }\n  }\n  return result;\n}\n\n// Chunking function (per page)\nfunction chunkByCharLength(arr, source, pageNum, chunkSize = 1000) {\n  const flat = splitOversizedItems(arr, chunkSize);\n  const response = [];\n  let idx = 0;\n  let charPos = 0;\n\n  while (idx < flat.length) {\n    const a = [];\n    let sum = 0;\n    const from = charPos;\n\n    while (idx < flat.length && sum < chunkSize) {\n      const item = flat[idx];\n      const len = getObjLength(item);\n      const text_len = getObjLengthofTextOnly(item);\n      a.push(item);\n      sum += len;\n      charPos += text_len;\n      idx++;\n    }\n\n    const to = charPos;\n    const metadata = {\n      source: source,\n      source_metadata_id: source_id,\n      loc: { \n        page: pageNum,\n        Characters: { from, to } \n      }\n    };\n\n    response.push({\n      content: JSON.stringify({\n        pageContent: a,\n        metadata\n      })\n    });\n  }\n\n  return response;\n}\n\n// 1. Run chunking page by page\nlet chunks = [];\nraw.forEach((pageText, pageIndex) => {\n  const arr = [{ type: \"text\", content: pageText }];\n  const pageChunks = chunkByCharLength(arr, source, pageIndex + 1, 2000);\n  chunks.push(...pageChunks);\n});\n\n// 2. Return in n8n format\nreturn chunks.map(c => ({ json: c }));\n\n\n\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -820,19 +807,19 @@
             {
               "id": "5132d92c-41da-4a55-ad79-0c329ca7e626",
               "name": "Document name",
-              "value": "={{ $('HTTP Request2').item.json.data[0].parseJson().source }}",
+              "value": "={{ $('Google Drive(load file)').item.json.file_title }}",
               "type": "string"
             },
             {
               "id": "c8160701-2be7-43c6-bcfa-295fbebe0e23",
               "name": "Document data",
-              "value": "={{ $('HTTP Request2').item.json.data[0].parseJson().blocks }}",
+              "value": "={{ $json.embedding_text }}",
               "type": "string"
             },
             {
               "id": "1087ab34-5643-4755-b545-cf34d0ae2cd2",
               "name": " source",
-              "value": "={{ $('Google Drive(load file)').item.json.id }}",
+              "value": "={{ $('Google Drive(load file)').item.json.file_url }}",
               "type": "string"
             }
           ]
@@ -976,6 +963,91 @@
       "typeVersion": 1,
       "id": "21ecc7c5-7c25-4f5f-8aec-7d437d66e7c8",
       "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Function node\n// Keeps image array from input, inserts embedding_text inline with images\n\nconst pages = items[0].json.pages;\nlet output = [];\n\nfor (const page of pages) {\n  let text = `Page ${page.index}\\n\\n`;\n  let markdown = page.markdown;\n\n  // Replace each image markdown with annotation text if available\n  markdown = markdown.replace(/!\\[(.*?)\\]\\((.*?)\\)/g, (match, alt, src) => {\n    const img = page.images.find(i => i.id === src || i.fileName === src);\n    if (img && img.image_annotation) {\n      const ann = JSON.parse(img.image_annotation);\n      return (\n        '{' +\n        `Image: [${img.id}]\\n` +\n        `Type: ${ann.image_type}\\n` +\n        `Short: ${ann.short_description}\\n` +\n        `Summary: ${ann.summary}\\n` +\n        '}'\n      );\n    }\n    return \"\"; // if no annotation, strip it\n  });\n\n  text += markdown.trim();\n\n  output.push({\n    json: {\n      page_index: page.index,\n      embedding_text: text,\n      images: page.images   // ✅ keep original images array\n    }\n  });\n}\n\nreturn output;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        432,
+        1328
+      ],
+      "id": "42a011e3-d1d5-4589-8957-ff58ab6b303e",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "embedding_text"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        592,
+        1328
+      ],
+      "id": "f2f01629-6ea8-4c91-abc4-6a3af68a812b",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.content.parseJson().pageContent.toJsonString() }}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "source",
+                "value": "={{ $('Google Drive(load file)').item.json.file_url }}"
+              },
+              {
+                "name": "blobType",
+                "value": "application/jsonb"
+              },
+              {
+                "name": "loc",
+                "value": "={{ $json.content.parseJson().metadata.loc }}"
+              },
+              {
+                "name": "source_metadata_id",
+                "value": "={{ $json.content.parseJson().metadata.source_metadata_id }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "3fe5e311-dab8-4fa6-8c5d-7840f8ea87d8",
+      "name": "Default Data Loader1",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        1408,
+        1536
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## combine output fromm all pages",
+        "height": 240,
+        "width": 320,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        400,
+        1216
+      ],
+      "typeVersion": 1,
+      "id": "586b9191-4a7c-4a5a-afbf-19c338a6c643",
+      "name": "Sticky Note9"
     }
   ],
   "origin": "n8n",
@@ -999,6 +1071,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-10-29T06:21:54.000Z",
-  "versionId": "1c9726ab-bec3-454a-abd9-6547a96358a9"
+  "updatedAt": "2025-12-04T02:48:25.000Z",
+  "versionId": "3b80f13f-01c8-4387-bb3d-fde620b39736"
 }

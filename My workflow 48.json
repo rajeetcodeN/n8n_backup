@@ -1,0 +1,129 @@
+{
+  "active": false,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get many products",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many products": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-02-03T17:29:48.254Z",
+  "id": "1Cf4Khf8z2ikSBLR",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 48",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c9d48293-6282-41f2-b921-f07d90e6aa1f",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "resource": "product",
+        "operation": "getAll",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.shopify",
+      "typeVersion": 1,
+      "position": [
+        240,
+        0
+      ],
+      "id": "05a96fe9-0fb1-4999-aba9-c5163c400310",
+      "name": "Get many products",
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "ACFB1H7KkPByan6l",
+          "name": "Shopify Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5c94f638-b1ac-47ca-b891-68c90940727d",
+              "leftValue": "={{ $json.variants[0].inventory_quantity }}",
+              "rightValue": 10,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "61c15b3f-cdd3-4ba4-ba29-5f7faec90e38",
+      "name": "If"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2026-02-03T17:29:48.261Z",
+      "updatedAt": "2026-02-03T17:29:48.261Z",
+      "role": "workflow:owner",
+      "workflowId": "1Cf4Khf8z2ikSBLR",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-02-03T17:29:48.254Z",
+  "versionId": "9c7c0576-6b8c-4681-98fd-24066f933ab6"
+}

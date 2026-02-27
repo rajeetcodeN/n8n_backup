@@ -165,8 +165,8 @@
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
-        -2500,
-        500
+        -2240,
+        560
       ],
       "id": "5d8573e3-b0c7-497b-8e9a-588d435c3d27",
       "name": "When Executed by Another Workflow"
@@ -213,7 +213,7 @@
       "type": "n8n-nodes-base.gmail",
       "position": [
         560,
-        200
+        208
       ],
       "webhookId": "a23938a4-fc6c-4445-8dee-17e501e92e06",
       "typeVersion": 2.1,
@@ -305,8 +305,8 @@
       "name": "Approval Result1",
       "type": "n8n-nodes-base.switch",
       "position": [
-        780,
-        200
+        784,
+        208
       ],
       "typeVersion": 3.2
     },
@@ -320,8 +320,8 @@
       "name": "Revision based on feedback",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "position": [
-        1000,
-        300
+        1008,
+        304
       ],
       "typeVersion": 1.9
     },
@@ -334,19 +334,21 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
       "position": [
-        1380,
+        1392,
         160
       ],
       "id": "744fe983-a5f4-4170-ae81-d8120e944239",
       "name": "Merge"
     },
     {
-      "parameters": {},
+      "parameters": {
+        "options": {}
+      },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2,
       "position": [
-        200,
-        180
+        208,
+        192
       ],
       "id": "e9e3949f-1d4e-43ea-92ef-0b21333c9f7f",
       "name": "text to html"
@@ -386,8 +388,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        1380,
-        300
+        1392,
+        304
       ],
       "id": "2877bbb9-ac9d-4fdd-addc-d9f28c00f26c",
       "name": "Execute Workflow2"
@@ -410,7 +412,7 @@
       "typeVersion": 3.4,
       "position": [
         1120,
-        180
+        192
       ],
       "id": "2b8e7dbc-01a0-4d58-b7d0-781c78dcab8e",
       "name": "Edit Fields8"
@@ -425,7 +427,7 @@
       "type": "n8n-nodes-base.linkedIn",
       "typeVersion": 1,
       "position": [
-        1580,
+        1584,
         240
       ],
       "id": "0a3b293d-b1e6-4a82-8bac-38ac35b1e57e",
@@ -462,7 +464,7 @@
       "type": "n8n-nodes-base.editImage",
       "typeVersion": 1,
       "position": [
-        -1380,
+        -1376,
         560
       ],
       "id": "f60cbc0e-2af3-4614-9c39-0e2b45ad6082",
@@ -483,7 +485,7 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        -1540,
+        -1536,
         560
       ],
       "id": "f6babc24-263c-4a65-b872-481a36405ae6",
@@ -503,8 +505,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
       "typeVersion": 1,
       "position": [
-        -2060,
-        740
+        -2064,
+        752
       ],
       "id": "f0a12fb4-3678-4bea-bacf-d29aa09001db",
       "name": "Mistral Cloud Chat Model1",
@@ -544,8 +546,8 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.2,
       "position": [
-        -1900,
-        760
+        -1904,
+        768
       ],
       "id": "41dd20f4-be2c-45bb-aa31-43c6c36c3dbc",
       "name": "Structured Output Parser1"
@@ -567,7 +569,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1020,
+        -1024,
         560
       ],
       "id": "8b281f13-9f19-4428-9d83-18cb5ec57fdc",
@@ -598,8 +600,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -2100,
-        440
+        -2096,
+        448
       ],
       "typeVersion": 1,
       "id": "e0c3c22e-4ec3-4391-b1db-2e5302770b18",
@@ -649,8 +651,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1560,
-        440
+        -1568,
+        448
       ],
       "typeVersion": 1,
       "id": "6b5e72b4-df85-4791-9c2c-93f89e32c0d0",
@@ -665,8 +667,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1240,
-        440
+        -1248,
+        448
       ],
       "typeVersion": 1,
       "id": "e5516652-374f-4038-a0fb-b1b0e126b604",
@@ -684,8 +686,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.9,
       "position": [
-        -2060,
-        520
+        -2064,
+        560
       ],
       "id": "77be4578-131e-4196-99ed-598872f13748",
       "name": "AI Agent db"
@@ -725,8 +727,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -2220,
-        900
+        800,
+        896
       ],
       "id": "2154ca2f-caa1-4efb-bd40-94bed0a3de69",
       "name": "Edit Fields"
@@ -753,6 +755,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-31T15:05:37.000Z",
-  "versionId": "e58bbdf8-1712-4d50-b4f2-e0e83195d2f3"
+  "updatedAt": "2025-12-08T07:57:49.000Z",
+  "versionId": "fe4dff41-0539-4ebb-8dbc-ee8afbbbf789"
 }

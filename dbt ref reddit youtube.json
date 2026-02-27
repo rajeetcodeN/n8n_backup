@@ -194,24 +194,12 @@
     },
     "Supabase3": {
       "main": [
-        [
-          {
-            "node": "google news",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Supabase4": {
       "main": [
-        [
-          {
-            "node": "google search",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Mistral Cloud Chat Model3": {
@@ -1004,6 +992,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-11-30T11:12:30.000Z",
-  "versionId": "b7414108-3831-460c-926f-571a1bcb3c22"
+  "updatedAt": "2026-01-06T17:15:55.000Z",
+  "versionId": "e068790b-aa23-43f3-9279-c5e1b9686878"
 }

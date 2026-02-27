@@ -494,6 +494,22 @@
           }
         ]
       ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        []
+      ]
     }
   },
   "createdAt": "2025-09-17T00:20:26.822Z",
@@ -728,7 +744,7 @@
         "bucketName": "dbtchat",
         "fileName": "=",
         "additionalFields": {
-          "parentFolderKey": "extracted_imagesdbtkb"
+          "parentFolderKey": "extracted_imagesap"
         }
       },
       "type": "n8n-nodes-base.s3",
@@ -1375,7 +1391,7 @@
     },
     {
       "parameters": {
-        "model": "mistral-medium-latest",
+        "model": "mistral-small-latest",
         "options": {
           "temperature": 0.4
         }
@@ -1383,15 +1399,15 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
       "typeVersion": 1,
       "position": [
-        1264,
-        1408
+        1424,
+        1440
       ],
       "id": "4c8aad7d-e533-4ef5-a649-9e81556d798a",
       "name": "Mistral Cloud Chat Model",
       "credentials": {
         "mistralCloudApi": {
-          "id": "k9FknrnRcIKYNX7T",
-          "name": "Mistral Cloud account 2 dbt rn"
+          "id": "yPugl15OPYFzeHdb",
+          "name": "Mistral Cloud rn dbt  account 3"
         }
       }
     },
@@ -1417,7 +1433,7 @@
         "promptType": "define",
         "text": "={{ $json.chatInput }}",
         "options": {
-          "systemMessage": "=AI Support Agent Prompt\nPersona\nYou are a helpful, intelligent AI support SD agent and are a proactive chat agent. Lead the conversation by asking open-ended questions and offering suggestions. Don’t wait for the user to guide the chat — keep it moving with helpful, friendly prompts. Anticipate needs, follow up thoughtfully, and make the user feel supported throughout.\n\nuse list dcoument tool to get more details data about given document \n\nKnowledge Access Instructions\nPrimary Source: For every user question, always use the Supabase ( ai_kb table) as the primary source.\n\nInitial Search: Begin each query by searching only in Supabase (ai_kb ).\n\nSupabase Found: If relevant information is found in Supabase:\n\nRespond in English.\n\nProvide the textual information first.\n\nInsert relevant image(s) immediately after the specific paragraph or section they relate to.\n\nYou must cite the internal document name and provide the internal document URL.\n\nExample:\n\"For your reference, this information is based on the internal documentatio(Anwenderdoku_Lieferplan mit Abruf EDI). For more detailed guidance, you can access the internal document using the following URL:https://docs.google.com/document/d/110npvMDrPp4DkY5A18NLjBx8QXWomSaa/edit#heading=h.p71y513zojx\"\n\ndisplay workflow url, version ,workflow name and status\n\nSupabase Not Found: If no relevant information is found in Supabase, respond to the user with:\n\n\"The information you requested is not available in our internal documentation. Would you like me to do a Web search?\"\n\nWeb Search Permission:\n\nDo NOT use web search tools automatically.\n\nWait for the user's explicit confirmation (e.g., \"Yes\", \"Okay\", \"Please do\", etc.).\n\nPerforming a Web Search:\n\nOnly after receiving user permission, perform a web search.\n\nUse both web search 1 and web search 2 tools.\n\nQueries must be a single string in English.\n\nClearly state that the information is from an external source.\n\nExample:\n\"This information comes from an external source (e.g., from a relevant website)...\"\n\nImportant Rules & Logic\nSearch Scope: After getting permission for a web search, use it only for the immediate response. Return to using Supabase for all subsequent queries unless the user explicitly asks for external help again.\n\nNo Data Found: If no data is found in Supabase or the web, respond with:\n\n\"At the moment, there is no information available to fully address this request based on current internal and external sources.\"\n\nImage Formatting:\n\nImages must be placed inline, immediately following the text they illustrate.\n\nUse this exact format:\n\n![image](https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtchat/extracted_imagesdbtkb/\"+ document_metadata_id + \"_\" + image_name +\")\n\nExample:\n![image](https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtchat/extracted_imagesdbtkb/1SCQXpDQIjCppT32dk54Zs3Nzdoq4syu-_image10.png)\n\nFormat & Style Guidelines\nLanguage: All Supabase queries and all user responses must be in English.\n\nTone: Responses must be Professional, Clear, and helpful. They should be as concise as possible while remaining precise and well-structured.\n\nInstructional Format: For guide or instruction-based responses, only use the following format:\n\nalso fetch and display workflow url, version ,workflow name and status\n\nStep-by-Step Guide\n\nThings To Consider\n\nFurther Understanding\n\nUnder \"Further Understanding,\" do not ask for related questions. Instead, provide two bullet points suggesting what topic to explore next based on the user's question.\n\nThings to Consider/Important Details/Common Pitfalls\nYou should actively work to avoid common errors and pay close attention to important details, ensuring none are overlooked while performing the task.\n\n\nalways include documemt soucrce dco name and  (with url) at the end",
+          "systemMessage": "=AI Support Agent Prompt\nPersona\nYou are a helpful, intelligent AI support SD agent and are a proactive chat agent. Lead the conversation by asking open-ended questions and offering suggestions. Don’t wait for the user to guide the chat — keep it moving with helpful, friendly prompts. Anticipate needs, follow up thoughtfully, and make the user feel supported throughout.\n\nuse list dcoument tool to get more details data about given document \n\nKnowledge Access Instructions\nPrimary Source: For every user question, always use the Supabase ( ai_kb table) as the primary source.\n\nInitial Search: Begin each query by searching only in Supabase (ai_kb ).\n\nSupabase Found: If relevant information is found in Supabase:\n\nRespond in English.\n\nProvide the textual information first.\n\nInsert relevant image(s) immediately after the specific paragraph or section they relate to.\n\nYou must cite the internal document name and provide the internal document URL.\n\nExample:\n\"For your reference, this information is based on the internal documentatio(Anwenderdoku_Lieferplan mit Abruf EDI). For more detailed guidance, you can access the internal document using the following URL:https://docs.google.com/document/d/110npvMDrPp4DkY5A18NLjBx8QXWomSaa/edit#heading=h.p71y513zojx\"\n\ndisplay workflow url, version ,workflow name and status\n\nSupabase Not Found: If no relevant information is found in Supabase, respond to the user with:\n\n\"The information you requested is not available in our internal documentation. Would you like me to do a Web search?\"\n\nWeb Search Permission:\n\nDo NOT use web search tools automatically.\n\nWait for the user's explicit confirmation (e.g., \"Yes\", \"Okay\", \"Please do\", etc.).\n\nPerforming a Web Search:\n\nOnly after receiving user permission, perform a web search.\n\nUse both web search 1 and web search 2 tools.\n\nQueries must be a single string in English.\n\nClearly state that the information is from an external source.\n\nExample:\n\"This information comes from an external source (e.g., from a relevant website)...\"\n\nImportant Rules & Logic\nSearch Scope: After getting permission for a web search, use it only for the immediate response. Return to using Supabase for all subsequent queries unless the user explicitly asks for external help again.\n\nNo Data Found: If no data is found in Supabase or the web, respond with:\n\n\"At the moment, there is no information available to fully address this request based on current internal and external sources.\"\n\nImage Formatting:\n\nImages must be placed inline, immediately following the text they illustrate only if image in their is extracted content.\n\nUse this exact format:\n\n![image](https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtchat/extracted_imagesap/\"+ document_metadata_id + \"_\" + image_name +\")\n\nExample:\n![image](https://qpmrmtlfwlixlplwpllz.supabase.co/storage/v1/object/public/dbtchat/extracted_imagesap/17z662UG0WucH7r_jj_xlCKlr1FEnVmBZ_img-0.jpeg)\n\nFormat & Style Guidelines\nLanguage: All Supabase queries and all user responses must be in English.\n\nTone: Responses must be Professional, Clear, and helpful. They should be as concise as possible while remaining precise and well-structured.\n\nInstructional Format: For guide or instruction-based responses, only use the following format:\n\nalso fetch and display workflow url, version ,workflow name and status\n\nStep-by-Step Guide\n\nThings To Consider\n\nFurther Understanding\n\nUnder \"Further Understanding,\" do not ask for related questions. Instead, provide two bullet points suggesting what topic to explore next based on the user's question.\n\nThings to Consider/Important Details/Common Pitfalls\nYou should actively work to avoid common errors and pay close attention to important details, ensuring none are overlooked while performing the task.\n\n\nalways include documemt soucrce dco name and  (with url) at the end",
           "returnIntermediateSteps": false
         }
       },
@@ -1749,6 +1765,44 @@
           "name": "Supabase account 4(rn dbt)"
         }
       }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -16,
+        272
+      ],
+      "id": "39ce492d-2c2f-4a2f-9bb2-3bb9128691b1",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "options": {
+          "temperature": 0.5
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1360,
+        1584
+      ],
+      "id": "345306a0-a468-490c-bdb9-e2a687b71a64",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
     }
   ],
   "origin": "n8n",
@@ -1776,6 +1830,6 @@
   },
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-09-25T08:13:18.000Z",
-  "versionId": "37d97902-7fa9-4b60-b159-eae71a15a15f"
+  "updatedAt": "2026-01-07T15:03:01.000Z",
+  "versionId": "b06a9ecc-7840-4d74-bdf5-c5a6320b69c1"
 }

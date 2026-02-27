@@ -1,0 +1,675 @@
+{
+  "active": false,
+  "connections": {
+    "Order Created": {
+      "main": [
+        [
+          {
+            "node": "Workflow Configuration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Configuration": {
+      "main": [
+        []
+      ]
+    },
+    "Get Order Details": {
+      "main": [
+        [
+          {
+            "node": "Get Invoice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get Order Details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Abandoned Cart Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Cloud Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Discount Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get many products",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many products": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch All Customers": {
+      "main": [
+        [
+          {
+            "node": "Calculate Customer Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Customer Metrics": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2026-01-12T12:34:50.500Z",
+  "id": "fGo8aSPfkGR5g9F1",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Shopify",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "topic": "orders/create"
+      },
+      "id": "885214ff-0a50-4209-b1ef-21956375dbe9",
+      "name": "Order Created",
+      "type": "n8n-nodes-base.shopifyTrigger",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        1056
+      ],
+      "webhookId": "6e837f97-89c6-4436-ad54-0f6510ba5d9d",
+      "credentials": {
+        "shopifyOAuth2Api": {
+          "id": "tcMEUjeS4ejcxfIl",
+          "name": "Shopify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "slackChannel",
+              "value": "<__PLACEHOLDER_VALUE__Slack channel ID or name__>",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "fdbc2426-b453-4c9b-a3ec-9d00a35ae57f",
+      "name": "Workflow Configuration",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "operation": "getAll",
+        "options": {}
+      },
+      "id": "76bb4f74-d444-44db-b158-f53c31e47deb",
+      "name": "Get Order Details",
+      "type": "n8n-nodes-base.shopify",
+      "typeVersion": 1,
+      "position": [
+        432,
+        -224
+      ],
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "ACFB1H7KkPByan6l",
+          "name": "Shopify Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "operation": "get",
+        "orderId": "={{ $('Get Order Details').first().json.id }}",
+        "options": {}
+      },
+      "id": "399f9fbf-a9d8-4726-bb5a-da2fad5034e1",
+      "name": "Get Invoice",
+      "type": "n8n-nodes-base.shopify",
+      "typeVersion": 1,
+      "position": [
+        624,
+        -224
+      ],
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "ACFB1H7KkPByan6l",
+          "name": "Shopify Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "select": "user",
+        "user": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "text": "hi",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        1120,
+        928
+      ],
+      "id": "b833c66f-1805-4938-b018-35b622cf1a58",
+      "name": "Send a message",
+      "webhookId": "dc591db8-2273-439b-854b-15cb8b60726b",
+      "credentials": {
+        "slackApi": {
+          "id": "v2KGjR2a3ctfoLVF",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        224,
+        -224
+      ],
+      "id": "ebb49ab1-642c-47d0-bb45-e488a44db350",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "topic": "carts/update"
+      },
+      "id": "4351c7c6-e65b-4746-88e3-b0a7ca9a1b94",
+      "name": "Abandoned Cart Trigger",
+      "type": "n8n-nodes-base.shopifyTrigger",
+      "typeVersion": 1,
+      "position": [
+        192,
+        -16
+      ],
+      "webhookId": "f0b2def2-cb8b-424f-b546-6db40ef0ec4e",
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "ACFB1H7KkPByan6l",
+          "name": "Shopify Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Analyzes cart value and determines appropriate discount percentage (5%, 10%, or 15%) based on cart total",
+        "jsCode": "// Calculate discount based on cart total\nconst cartTotal = parseFloat(query);\n\nif (cartTotal >= 200) {\n  return '15% discount';\n} else if (cartTotal >= 100) {\n  return '10% discount';\n} else {\n  return '5% discount';\n}"
+      },
+      "id": "f74141ff-6619-4b00-bbc6-9061ff51d909",
+      "name": "Calculate Discount Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.3,
+      "position": [
+        608,
+        192
+      ]
+    },
+    {
+      "parameters": {
+        "content": "prompt Abandoned cart detected. Cart total: ${{ $json.total_price }}. Customer email: {{ $json.customer.email }}. Items: {{ JSON.stringify($json.line_items) }}\n\n\nsystem : You are a cart recovery specialist AI. Your task is to:\n1. Analyze the abandoned cart data\n2. Use the Calculate_Discount tool to determine the best discount percentage based on cart value\n3. Create a personalized, compelling recovery email\n4. Return a JSON object with these fields: discount_percent (number), email_subject (string), email_body (HTML string)\n\nMake the email warm, personal, and highlight the value of completing the purchase.",
+        "height": 384,
+        "width": 544
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        112,
+        736
+      ],
+      "typeVersion": 1,
+      "id": "e6b36b2b-05b2-4e5b-aa98-89dff59575ed",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Abandoned cart detected. Cart total: ${{ $json.total_price }}. Customer email: {{ $json.customer.email }}. Items: {{ JSON.stringify($json.line_items) }}",
+        "options": {
+          "systemMessage": "You are a cart recovery specialist AI. Your task is to:\n1. Analyze the abandoned cart data\n2. Use the Calculate_Discount tool to determine the best discount percentage based on cart value\n3. Create a personalized, compelling recovery email\n4. Return a JSON object with these fields: discount_percent (number), email_subject (string), email_body (HTML string)\n\nMake the email warm, personal, and highlight the value of completing the purchase."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        400,
+        -16
+      ],
+      "id": "1015e6a1-68fc-41ad-99e0-0417b5fe69ad",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Abandoned Cart Trigger').first().json.customer.email }}",
+        "subject": "={{ $('Cart Recovery AI Agent').first().json.email_subject }}",
+        "message": "={{ $('Cart Recovery AI Agent').first().json.email_body }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        752,
+        -16
+      ],
+      "id": "502745eb-091b-463f-ae13-3a2ae79b1b7c",
+      "name": "Send a message1",
+      "webhookId": "aba58874-4496-4fc6-8f5a-a1a5b5627b09",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "ZO3gtTRUqebHPkmQ",
+          "name": "Gmail account 7"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        368,
+        176
+      ],
+      "id": "5037281f-c7d1-48aa-b2f6-257d899d2bd5",
+      "name": "Mistral Cloud Chat Model",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "yPugl15OPYFzeHdb",
+          "name": "Mistral Cloud rn dbt  account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1168,
+        -80
+      ],
+      "id": "be53c2ef-463a-4999-8c59-a4f8659254fe",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "resource": "product",
+        "operation": "getAll",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.shopify",
+      "typeVersion": 1,
+      "position": [
+        1408,
+        -80
+      ],
+      "id": "5c03dc6c-edf3-459f-8bcb-8edf09487125",
+      "name": "Get many products",
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "ACFB1H7KkPByan6l",
+          "name": "Shopify Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5c94f638-b1ac-47ca-b891-68c90940727d",
+              "leftValue": "={{ $json.variants[0].inventory_quantity }}",
+              "rightValue": 10,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1616,
+        -80
+      ],
+      "id": "4c338fda-de1e-4008-91d4-7e11d99348a6",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "id": "54d93a86-41ea-4838-82eb-af3addd5f2f6",
+      "name": "OpenAI Chat Model 3",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1536,
+        336
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"category\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"enum\": [\"billing\", \"technical\", \"shipping\", \"product_inquiry\", \"complaint\", \"other\"],\n\t\t\t\"description\": \"The support request category\"\n\t\t},\n\t\t\"priority\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"enum\": [\"high\", \"medium\", \"low\"],\n\t\t\t\"description\": \"Priority level of the request\"\n\t\t},\n\t\t\"summary\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Brief summary of the customer issue\"\n\t\t}\n\t},\n\t\"required\": [\"category\", \"priority\", \"summary\"]\n}"
+      },
+      "id": "7bd160df-70a7-4b33-a418-c4bc9bdaaa8c",
+      "name": "Triage Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1664,
+        336
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0e2cbaae-4543-47c8-90bc-8d4b99f967e4",
+      "name": "Check Priority",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1872,
+        208
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "d01c805f-e941-4774-8cf1-432e8f877d68",
+      "name": "Alert High Priority",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        2096,
+        144
+      ],
+      "webhookId": "60589acc-5ea1-49b4-b605-8676e551754e"
+    },
+    {
+      "parameters": {},
+      "id": "c308596c-e995-4907-b24d-df90b7b72001",
+      "name": "Response Generator AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2320,
+        208
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b1d416c5-210b-4523-8800-058fa5070fa0",
+      "name": "OpenAI Chat Model 4",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2336,
+        432
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "f66d37f3-accd-441c-bcfa-3cb85e892bdf",
+      "name": "Gmail Send Tool",
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.2,
+      "position": [
+        2464,
+        432
+      ],
+      "webhookId": "c2a21eae-6c81-4e3a-821c-a4cc2b39cfdf"
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "resource": "__CUSTOM_API_CALL__"
+      },
+      "id": "43db6ca9-f485-4ab4-aaee-3c9401115855",
+      "name": "Fetch All Customers",
+      "type": "n8n-nodes-base.shopify",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        1408
+      ],
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "ACFB1H7KkPByan6l",
+          "name": "Shopify Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate customer lifetime value and purchase frequency\nconst customers = $input.all();\n\nconst enrichedCustomers = customers.map(customer => {\n  const totalSpent = parseFloat(customer.json.total_spent) || 0;\n  const ordersCount = parseInt(customer.json.orders_count) || 0;\n  const avgOrderValue = ordersCount > 0 ? totalSpent / ordersCount : 0;\n  \n  return {\n    json: {\n      id: customer.json.id,\n      email: customer.json.email,\n      first_name: customer.json.first_name,\n      last_name: customer.json.last_name,\n      total_spent: totalSpent,\n      orders_count: ordersCount,\n      avg_order_value: avgOrderValue,\n      created_at: customer.json.created_at\n    }\n  };\n});\n\nreturn enrichedCustomers;"
+      },
+      "id": "e22c4bc8-2e65-46c8-a071-6b03845639a1",
+      "name": "Calculate Customer Metrics",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1824,
+        1408
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "779cc9a0-3fa5-4dce-aa86-586ef3da8c57",
+      "name": "OpenAI Chat Model 5",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2064,
+        1520
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"segment\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"enum\": [\"vip\", \"loyal\", \"at_risk\", \"new\", \"inactive\"],\n\t\t\t\"description\": \"Customer segment classification\"\n\t\t},\n\t\t\"recommendations\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Marketing recommendations for this customer\"\n\t\t},\n\t\t\"email_subject\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Personalized email subject line\"\n\t\t},\n\t\t\"email_body\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Personalized HTML email content\"\n\t\t}\n\t},\n\t\"required\": [\"segment\", \"recommendations\", \"email_subject\", \"email_body\"]\n}"
+      },
+      "id": "a331690c-da5b-42af-bd49-c9de447fd370",
+      "name": "Segmentation Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        2192,
+        1520
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0e2de04d-0dd6-4df0-9c26-473d614461e9",
+      "name": "Report Segmentation Results",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        2624,
+        1408
+      ],
+      "webhookId": "36536ceb-036e-4c9e-bfb8-036287056ed3"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "topic": "customers/create"
+      },
+      "type": "n8n-nodes-base.shopifyTrigger",
+      "typeVersion": 1,
+      "position": [
+        1776,
+        1568
+      ],
+      "id": "fb264c02-607c-4962-944b-8af90a3c909f",
+      "name": "Shopify Trigger",
+      "webhookId": "c3fea432-cb90-4800-b842-706c1e156b7e",
+      "credentials": {
+        "shopifyOAuth2Api": {
+          "id": "tcMEUjeS4ejcxfIl",
+          "name": "Shopify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://your-store.myshopify.com/admin/api/2024-10/customers.json",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "limit",
+              "value": "250"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Shopify-Access-Token",
+              "value": "YOUR_ADMIN_API_ACCESS_TOKEN"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1008,
+        384
+      ],
+      "id": "68335ec6-da5f-4f06-bcd9-a0c117715c0f",
+      "name": "HTTP Request"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2026-01-12T12:34:50.507Z",
+      "updatedAt": "2026-01-12T12:34:50.507Z",
+      "role": "workflow:owner",
+      "workflowId": "fGo8aSPfkGR5g9F1",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-02-03T17:29:04.000Z",
+  "versionId": "861b4fc2-c166-4c04-8084-0cc970c65324"
+}

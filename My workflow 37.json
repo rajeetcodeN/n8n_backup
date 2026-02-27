@@ -1,0 +1,470 @@
+{
+  "active": false,
+  "connections": {
+    "Postgres Chat Memory1": {
+      "ai_memory": [
+        []
+      ]
+    },
+    "List Documents1": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Get many rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get many rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "supabase": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SD agent1": {
+      "main": [
+        []
+      ]
+    },
+    "Mistral Cloud Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Direct": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Vector Store1": {
+      "ai_tool": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-12-16T04:46:50.451Z",
+  "id": "h9vcvrqwkPpmR7in",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 37",
+  "nodes": [
+    {
+      "parameters": {
+        "tableName": "n8n_chat"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        -160,
+        240
+      ],
+      "id": "9f3f54b3-4a43-4dfa-9b68-8682c9cc4cc6",
+      "name": "Postgres Chat Memory1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}",
+        "options": {
+          "systemMessage": "=You are a helpful, intelligent AI support SD agent and are a proactive chat agent. Lead the conversation by asking open-ended questions and offering suggestions. Don’t wait for the user to guide the chat — keep it moving with helpful, friendly prompts. Anticipate needs, follow up thoughtfully, and make the user feel supported throughout.\n\n*Knowledge Access Instructions*\n   1.  First, for every user question, always use the Supabase store (n8n_test table) as the primary source for all questions.\n\n   2. Begin each query by searching only in Supabase (n8n_test). This content is primarily in German, so make sure all queries sent to Supabase are in German.\n\n   3. If relevant information is found in Supabase, respond in English by first providing the textual information, and then inserting the relevant image(s) immediately after the specific paragraph or section they relate to. Do not group images at the end of the response, and compulsory cite the internal document name and also provide the internal document url from where the information is provide.\nExample:\n\"For your reference, this information is based on the internal documentation related to Delivery Schedule with EDI Call-Off in SAP systems (Anwenderdoku_Lieferplan mit Abruf EDI). For more detailed guidance, you can access the internal document using the following URL:https://docs.google.com/document/d/110npvMDrPp4DkY5A18NLjBx8QXWomSaa/edit#heading=h.p71y513zojx\"\n\n   4. If no relevant information is found in Supabase:\nRespond to the user with:\n\"The information you requested is not available in our internal documentation. Would you like me to do a Web search?\"\n\n   5. Do NOT use web search tools automatically to perform web search.\n\n      -> Wait for the user's explicit confirmation (e.g., \"Yes\", \"Okay\", \"Please do\", etc.).\n\n   6. Only after receiving user permission, you should web search. To search the web always use both (web search 1 and web search 2 tools node) and they accept single string of English querry.\n\n  Clearly state that this is an external source.\nExample:\n\"This information comes from an external source (e.g.,from relevant website)...\"\n\n*Important Rules & Logic*\n   1. After getting permission for web search use that only for the immediate response, return to Supabase for all future queries unless the user explicitly asks for external help again.\n   2. If no data is found in Supabase or web:\n\"At the moment, there is no information available to fully address this request based on current internal and external sources.\"\n 3. Images should be placed inline, following the specific sentence or section they illustrate — not in a separate section. Use this format,\n\"![image](https://nxdpkwparbgndcupdlcr.supabase.co/storage/v1/object/public/images/extracted_images/\"+ document_metadata_id + \"_\" + image_name +\")\"\n\n  example,\n![image](https://nxdpkwparbgndcupdlcr.supabase.co/storage/v1/object/public/images/extracted_images/1SCQXpDQIjCppT32dk54Zs3Nzdoq4syu-_image10.png)\n\n*Format & Style Guidelines*\n   1. All Supabase queries must be in German and all responses to the user must be in English.\n   2. Responses must be Professional, Clear and helpful, small as possible but presise and well structured.\n  3. Only for guide/ instruction based response, follow this format:\n   • Step-by-Step Guide\n   • Things To Consider\n   • Further Understanding\nUnder \"Further Understanding,\"do not ask for related questions.Instead, write two lines in points asking users what topic to explore next based on user question and give some suggestions.\n\n**Things to Consider/Important Details/Common Pitfalls\n   •You should actively work to avoid common errors and pay close attention to important details, ensuring none are overlooked while performing the task.",
+          "returnIntermediateSteps": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -368,
+        -16
+      ],
+      "id": "fec0449c-ec2b-452d-9937-2caa2070665f",
+      "name": "SD agent1"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to fetch all available documents, including the table schema if the file is a CSV or Excel file.",
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "n8n_metadata",
+          "mode": "list",
+          "cachedResultName": "n8n_metadata"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgresTool",
+      "typeVersion": 2.5,
+      "position": [
+        -368,
+        240
+      ],
+      "id": "577f767c-d266-4343-9b3c-30df57fb70f2",
+      "name": "List Documents1"
+    },
+    {
+      "parameters": {
+        "agent": "sqlAgent",
+        "promptType": "define",
+        "text": "=Here is the database schema: {{ $json.schema }}\nHere is the user request: {{ $('Chat Trigger').item.json.chatInput }}",
+        "options": {}
+      },
+      "id": "839e37e6-7fe8-4f36-8ce6-7f37d5808cc2",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        1152,
+        -32
+      ],
+      "typeVersion": 1.6
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        -224
+      ],
+      "id": "fdf65477-1e4a-4d72-9b85-812686df3648",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "filterType": "string"
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1488,
+        -32
+      ],
+      "id": "8a92de2b-9edb-4da0-9ee5-70261d3f85c5",
+      "name": "Get many rows",
+      "credentials": {
+        "supabaseApi": {
+          "id": "9dYMIwoCFFwT3ZmR",
+          "name": "Supabase account 6 ayan"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "useCustomSchema": true,
+        "schema": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Schema', ``, 'string') }}",
+        "operation": "getAll",
+        "tableId": "schedulepost",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', ``, 'number') }}",
+        "filters": {
+          "conditions": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        656,
+        224
+      ],
+      "id": "420344b5-9258-4286-8df5-6845b5ef2a74",
+      "name": "supabase",
+      "credentials": {
+        "supabaseApi": {
+          "id": "HCQXqjukUb1jxXPk",
+          "name": "Supabase account 4(rn dbt)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=AI Schedule Post Query Agent – SYSTEM PROMPT\n\nPersona\n\nYou are a professional AI data support agent for scheduled social media posts.\nYou are precise, factual, and database-driven.\nYou never answer from memory or assumptions.\nYou only respond based on data retrieved from Supabase.\n\nPrimary Tool Requirement (MANDATORY)\n\nFor EVERY user question, you MUST use the Supabase tool as the primary and first source of truth.\n\nYou are connected to Supabase through n8n.\n\nYou are NOT allowed to answer any question unless a Supabase query has been executed.\n\nIf Supabase is not queried, the response is invalid.\n\nDatabase Scope (STRICT)\n\nYou are allowed to query ONLY the following table:\n\npublic.schedulepost\n\nTable meaning (ground truth):\n\nEach row represents one scheduled post\n\npost: text content of the post\n\nplatform: social media platform\n\nstatus: one of pending, approved, decline, posted\n\nready_to_post: boolean indicating readiness\n\ntime_of_posting: scheduled timestamp\n\nNo other tables exist.\n\nQuery Execution Rules\n\nYou MUST ALWAYS call the Supabase tool for every request\n\nYou MUST NEVER answer from logic alone\n\nYou MUST NEVER invent or summarize without data\n\nYou MUST NEVER use non-SELECT queries\n\nIf no rows match, return an empty result set\n\nLIMIT results to 50 unless explicitly requested otherwise\n\nAI-Related Content Detection Rule\n\nIf the user asks for AI-related posts, treat the following as keywords in the post column:\n\nai\n\nartificial intelligence\n\nautomation\n\nagent\n\nllm\n\nUse case-insensitive matching (ILIKE).\n\nTool Invocation Contract (MANDATORY OUTPUT FORMAT)\n\nFor every user request, you MUST output ONLY this JSON structure.\nThis output is used by n8n to force the Supabase tool execution.\n\n{\n  \"tool\": \"supabase\",\n  \"operation\": \"select\",\n  \"table\": \"public.schedulepost\",\n  \"filters\": {\n    \"post_keywords\": [],\n    \"platform\": null,\n    \"status\": null,\n    \"ready_to_post\": null,\n    \"date_from\": null,\n    \"date_to\": null\n  },\n  \"limit\": 50,\n  \"explanation_required\": true\n}\n\nFilter Rules\n\nUse post_keywords when the topic is mentioned (example: AI, marketing, automation)\n\nUse status only if explicitly requested\n\nUse ready_to_post only if explicitly requested\n\nDo NOT guess dates\n\nLeave unused fields as null\n\nDo NOT include SQL text directly\n\nResponse Rules (After Supabase Execution)\n\nAfter Supabase returns results:\n\nRespond in English\n\nSummarize only what the data shows\n\nIf no rows are returned, say:\n\n“No matching posts were found in the schedule.”"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        496,
+        -16
+      ],
+      "id": "0be68b09-722d-4633-a2f7-cc314cad3ca8",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": "mistral-small-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
+      "typeVersion": 1,
+      "position": [
+        496,
+        224
+      ],
+      "id": "b7b63256-3ccb-4798-9d75-f56f59110aca",
+      "name": "Mistral Cloud Chat Model",
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "k9FknrnRcIKYNX7T",
+          "name": "Mistral Cloud account 2 dbt rn"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        320,
+        -16
+      ],
+      "id": "4ae9ad57-0f61-4d25-9610-04096af8b76b",
+      "name": "When chat message received",
+      "webhookId": "4c406233-ef6d-472c-b7ef-bef0f5191ce8"
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-ada-002",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        512,
+        1552
+      ],
+      "id": "20cb4e3e-c130-471c-92f4-656abe6a8d32",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "BEMsaCWtnyqTUtIt",
+          "name": "OpenAi account 8 dbt digi"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        896,
+        448
+      ],
+      "id": "9c0c87b3-28a4-4abd-865e-d643e452df7c",
+      "name": "Simple Memory",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', `website url`, 'string') }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1424,
+        432
+      ],
+      "id": "ec3c44e1-41d3-4d00-b60a-ca9c4e247172",
+      "name": "HTTP Request",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "n8n_test",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', `Number of rows to return, default 4, max 10`, 'number') }}",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "content",
+              "condition": "ilike",
+              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Field_Value', `word to search, use \"*\" for wildcard placeholder, Example \"*ai*\"`, 'string') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        1376,
+        736
+      ],
+      "id": "c4673916-84ca-417a-8811-30d3fb0a6b9a",
+      "name": "Supabase Direct",
+      "credentials": {
+        "supabaseApi": {
+          "id": "9dYMIwoCFFwT3ZmR",
+          "name": "Supabase account 6 ayan"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "n8n_test",
+        "toolDescription": "Get website related Data",
+        "tableName": {
+          "__rl": true,
+          "value": "n8n_test",
+          "mode": "list",
+          "cachedResultName": "n8n_test"
+        },
+        "options": {
+          "queryName": "match5_documents"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.1,
+      "position": [
+        448,
+        1536
+      ],
+      "id": "d848b766-a0e5-4310-bfa8-49baf4a66030",
+      "name": "Supabase Vector Store1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "9dYMIwoCFFwT3ZmR",
+          "name": "Supabase account 6 ayan"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.que }}",
+        "options": {
+          "systemMessage": "=You are a website-embedded AI assistant.\n\nAlways follow these strict rules:\n\n1. First, use Supabase vector search (dense retrieval) to find related website content.\n2. Second, use Supabase direct search (sparse retrieval) to find exact match content.\n3. Both searches use the same website content database. Always perform both.\n4. Answer only using the site’s content. Keep answers very short and precise.\n5. If the user **explicitly mentions a blog** (e.g., \"send the blog on X\" or \"blog about Y\"), include a direct clickable link to that blog.\n6. If the user provides a URL, fetch and summarize or answer based on that page’s content.\n7. If the information is not found, say exactly: **“I couldn’t find that on this site.”**\n8. If the user asks a general question unrelated to the website, respond briefly and conversationally.\n9. be  conversational and supportive to user dont push and confused user with push lot of info"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        944,
+        224
+      ],
+      "id": "6ecefef6-e484-4475-af5e-e36c82e7c7e7",
+      "name": "AI Agent2"
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-12-16T04:46:50.458Z",
+      "updatedAt": "2025-12-16T04:46:50.458Z",
+      "role": "workflow:owner",
+      "workflowId": "h9vcvrqwkPpmR7in",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-16T14:54:36.000Z",
+  "versionId": "a3824932-219f-45f4-a828-0ae935145ddd"
+}

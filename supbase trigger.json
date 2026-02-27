@@ -192,7 +192,7 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -1560,
+        -1568,
         240
       ],
       "id": "08692db7-69cc-4938-a20d-a7a7cd91092a",
@@ -206,7 +206,7 @@
     },
     {
       "parameters": {
-        "person": "ZTphelMvjj",
+        "person": "=ZTphelMvjj",
         "text": "={{ $json.post }}",
         "shareMediaCategory": "IMAGE",
         "additionalFields": {}
@@ -214,8 +214,8 @@
       "type": "n8n-nodes-base.linkedIn",
       "typeVersion": 1,
       "position": [
-        -20,
-        200
+        -16,
+        208
       ],
       "id": "c97948c9-2ae1-4aae-a2e7-278838b73ca9",
       "name": "LinkedIn2",
@@ -234,7 +234,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -360,
+        -368,
         240
       ],
       "id": "64232df7-e395-4e3c-9c59-0a2828250222",
@@ -247,7 +247,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -520,
+        -528,
         240
       ],
       "id": "e9462c20-5747-43a7-8b8f-b4aef2c8060c",
@@ -262,7 +262,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "position": [
         -1600,
-        100
+        112
       ],
       "typeVersion": 1,
       "id": "d16416a7-dff3-468f-9825-f871dcb91c1f",
@@ -297,8 +297,8 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        140,
-        200
+        144,
+        208
       ],
       "id": "eb1d766c-2124-475d-961f-8fb0c02795df",
       "name": "Supabase6",
@@ -316,7 +316,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -1380,
+        -1376,
         240
       ],
       "id": "cc9e276a-0a93-4419-bf7f-076193a7acab",
@@ -345,7 +345,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -680,
+        -688,
         240
       ],
       "id": "52009cbd-9588-4d02-b65d-8d938c51bf82",
@@ -378,7 +378,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -1140,
+        -1136,
         240
       ],
       "id": "7c40573e-abd7-4486-b7a3-235a072d5de0",
@@ -393,8 +393,8 @@
       "type": "n8n-nodes-base.linkedIn",
       "typeVersion": 1,
       "position": [
-        -380,
-        -120
+        -384,
+        -128
       ],
       "id": "d2c6cbfc-bc0f-480e-87ef-07b809aaca56",
       "name": "LinkedIn3",
@@ -434,8 +434,8 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -200,
-        -120
+        -208,
+        -128
       ],
       "id": "68efe724-bec1-4392-856e-5df326800770",
       "name": "Supabase7",
@@ -455,8 +455,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
       "position": [
-        -220,
-        140
+        -224,
+        144
       ],
       "id": "b358e3b4-4915-42ca-a3d5-e252ccfa62bb",
       "name": "Merge"
@@ -484,7 +484,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -2180,
+        -2176,
         240
       ],
       "id": "6c8d8854-5065-466b-b591-1b6146f2d85d",
@@ -496,8 +496,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -2140,
-        420
+        -2144,
+        432
       ],
       "id": "9e07e6de-9376-4f0a-a547-43a1d9eb0e7f",
       "name": "When clicking ‘Test workflow’"
@@ -524,6 +524,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-08-17T12:09:48.000Z",
-  "versionId": "5b41418e-21bd-4953-911d-f86d6bb40e9c"
+  "updatedAt": "2026-01-06T17:24:51.000Z",
+  "versionId": "50b7fc26-29f5-4286-a96f-d026fb0b2723"
 }

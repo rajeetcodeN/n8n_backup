@@ -1,0 +1,128 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get many products",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get many orders",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-24T08:40:03.023Z",
+  "id": "wOn9xXnd6Mhd6dtQ",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 41",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "dc461a2d-4629-462f-a5d9-9097da3896e6",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "resource": "product",
+        "operation": "getAll",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.shopify",
+      "typeVersion": 1,
+      "position": [
+        352,
+        64
+      ],
+      "id": "d4428649-fe74-4308-bdbc-abb7a3a8ce15",
+      "name": "Get many products",
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "ACFB1H7KkPByan6l",
+          "name": "Shopify Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "operation": "getAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.shopify",
+      "typeVersion": 1,
+      "position": [
+        336,
+        -144
+      ],
+      "id": "08b4f2bf-b05f-48ec-9e30-e9f9f38066dc",
+      "name": "Get many orders",
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "ACFB1H7KkPByan6l",
+          "name": "Shopify Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "accessToken",
+        "topic": "orders/paid"
+      },
+      "type": "n8n-nodes-base.shopifyTrigger",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        208
+      ],
+      "id": "c8b3e221-87af-4c7a-9fe0-2bfa08a52d99",
+      "name": "Shopify Trigger",
+      "webhookId": "7c63957f-e6a5-488e-a1c8-f42f2a0c3bc7",
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "ACFB1H7KkPByan6l",
+          "name": "Shopify Access Token account"
+        }
+      }
+    }
+  ],
+  "origin": "n8n",
+  "pinData": {},
+  "repo": {
+    "owner": "rajeetcodeN",
+    "name": "n8n_backup"
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-12-24T08:40:03.030Z",
+      "updatedAt": "2025-12-24T08:40:03.030Z",
+      "role": "workflow:owner",
+      "workflowId": "wOn9xXnd6Mhd6dtQ",
+      "projectId": "ZwnuQmKDS754LNCN"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-26T12:21:07.000Z",
+  "versionId": "cb560a95-c896-443b-9891-102daba91c84"
+}
